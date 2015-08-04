@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.wandrell</groupId>
+	<artifactId>docs-maven-skin</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Docs Maven Skin</name>
+	<description>A Maven skin for using Maven Site as a documentation site</description>
+	<url>https://github.com/Bernardo-MG/docs-maven-skin</url>
+	<inceptionYear>2015</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>Apache v2 License</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</connection>
+		<developerConnection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</developerConnection>
+		<tag>head</tag>
+		<url>https://github.com/Bernardo-MG/docs-maven-skin</url>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://www.github.com/bernardo-mg/docs-maven-skin/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/Bernardo-MG/docs-maven-skin</url>
+		<notifiers />
+	</ciManagement>
+
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>releases</id>
+			<name>Releases Repository</name>
+			<url>https://api.bintray.com/maven/bernardo-mg/maven/docs-maven-skin</url>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>snapshots</id>
+			<name>Snapshots Repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<distributionManagement>
+				<site>
+					<id>site</id>
+					<name>Project Documentation Site</name>
+					<url>ftp://docs.wandrell.com/docs-maven-skin</url>
+				</site>
+			</distributionManagement>
+		</profile>
+		<profile>
+			<id>development</id>
+			<distributionManagement>
+				<site>
+					<id>site-development</id>
+					<name>Project Development Documentation Site</name>
+					<url>ftp://docs.wandrell.com/docs-maven-skin</url>
+				</site>
+			</distributionManagement>
+		</profile>
+	</profiles>
+
+	<organization>
+		<name>Bernardo Martínez Garrido</name>
+		<url>https://github.com/Bernardo-MG</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>bmg</id>
+			<name>Bernardo Martínez Garrido</name>
+			<email>programming@wandrell.com</email>
+			<url>https://github.com/Bernardo-MG</url>
+			<organization>Bernardo Martínez Garrido</organization>
+			<organizationUrl>https://github.com/Bernardo-MG</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+			<properties />
+		</developer>
+	</developers>
+
+	<properties>
+		<!-- Encoding -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+		<!-- Java version -->
+		<java.version.source>1.7</java.version.source>
+		<java.version.target>${java.version.source}</java.version.target>
+		<!-- Manifest data -->
+		<manifest.name>com/wandrell/site/skin/docs</manifest.name>
+		<!-- Dependencies versions -->
+		<wandrell.velocity.tools.version>0.1.0-SNAPSHOT</wandrell.velocity.tools.version>
+		<!-- Plugins versions -->
+		<plugin.compiler.version>3.3</plugin.compiler.version>
+		<plugin.deploy.version>2.8.2</plugin.deploy.version>
+		<plugin.enforcer.version>1.4</plugin.enforcer.version>
+		<plugin.jar.version>2.6</plugin.jar.version>
+		<plugin.resources.version>2.7</plugin.resources.version>
+		<plugin.source.version>2.4</plugin.source.version>
+		<!-- Extensions versions -->
+		<extension.wagon.version>2.9</extension.wagon.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<!-- Wandrell's Velocity Tools -->
+			<groupId>com.wandrell.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>${wandrell.velocity.tools.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<defaultGoal>clean package install</defaultGoal>
+		<extensions>
+			<extension>
+				<!-- Wagon -->
+				<!-- Enables the use of FTP -->
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>${extension.wagon.version}</version>
+			</extension>
+		</extensions>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.jacoco</groupId>
+										<artifactId>jacoco-maven-plugin</artifactId>
+										<versionRange>[0.5,)
+										</versionRange>
+										<goals>
+											<goal>prepare-agent</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<!-- m2e doesn't know what to do with jacoco, let's ignore it or 
+											annoying error markers appear see http://wiki.eclipse.org/M2E_plugin_execution_not_covered -->
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<!-- Resources -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${plugin.resources.version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- Compiler -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${plugin.compiler.version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<source>${java.version.source}</source>
+					<target>${java.version.target}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- Enforcer -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>${plugin.enforcer.version}</version>
+				<executions>
+					<execution>
+						<id>enforce</id>
+						<configuration>
+							<rules>
+								<dependencyConvergence />
+							</rules>
+						</configuration>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- Jar -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${plugin.jar.version}</version>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<addExtensions>false</addExtensions>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<packageName>${project.groupId}</packageName>
+						</manifest>
+						<manifestEntries>
+							<name>${manifest.name}</name>
+							<url>${project.url}</url>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- Source -->
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${plugin.source.version}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- Deploy -->
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${plugin.deploy.version}</version>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<configuration>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+							<url>${project.distributionManagement.snapshotRepository.url}</url>
+							<artifactId>${project.artifactId}</artifactId>
+							<groupId>${project.groupId}</groupId>
+							<version>${project.version}</version>
+							<file>${project.build.directory}/${project.build.finalName}.jar</file>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

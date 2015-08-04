@@ -1,0 +1,41 @@
+/*!
+ * Docs Boostrap Template quote styles
+ * Copyright 2015 Bernardo Martínez Garrido
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
+ * This file contains quote styles.
+ */
+
+/**
+* Preserve block.
+*/
+
+pre {
+    padding: 0;
+    overflow-x: auto;
+    -webkit-box-shadow: 0 0 5px #cccccc;
+    -moz-box-shadow: 0 0 5px #cccccc;
+    box-shadow: 0 0 5px #cccccc;
+}
+
+/**
+* Preserved code block.
+*/
+
+pre code {
+    padding: 0;
+    margin: 0;
+    white-space: pre;
+    overflow-wrap: normal;
+}
+
+/**
+* Font resizing to fit various screen sizes.
+*/
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+    pre code {
+        font-size: 12px;
+    }
+}

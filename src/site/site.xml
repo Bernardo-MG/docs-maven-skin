@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.3.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd">
+
+	<!-- Google Analytics not inherited for some reason -->
+	<googleAnalyticsAccountId>UA-1402675-6</googleAnalyticsAccountId>
+
+	<custom>
+		<reflowSkin>
+			<pages>
+				<index project="reflow-maven-skin" combine.self="override">
+					<shortTitle>Usage</shortTitle>
+					<breadcrumbs>true</breadcrumbs>
+					<!-- no ToC on the main index page -->
+					<toc>false</toc>
+					<sections>
+						<columns>2</columns>
+						<body />
+					</sections>
+				</index>
+				<config>
+					<toc>false</toc>
+				</config>
+				<layouts>
+					<tocTopMax>-1</tocTopMax>
+				</layouts>
+				<themes-index>
+					<toc>false</toc>
+					<sections>
+						<body />
+						<thumbs>3</thumbs>
+					</sections>
+				</themes-index>
+				<themes-bootswatch-cerulean>
+					<theme>bootswatch-cerulean</theme>
+					<toc offsetTop="225">top</toc>
+				</themes-bootswatch-cerulean>
+				<themes-bootswatch-readable>
+					<theme>bootswatch-readable</theme>
+					<toc offsetTop="250">top</toc>
+				</themes-bootswatch-readable>
+				<themes-bootswatch-spacelab>
+					<theme>bootswatch-spacelab</theme>
+				</themes-bootswatch-spacelab>
+				<themes-bootswatch-spruce>
+					<theme>bootswatch-spruce</theme>
+				</themes-bootswatch-spruce>
+				<themes-bootswatch-united>
+					<theme>bootswatch-united</theme>
+				</themes-bootswatch-united>
+				<advanced>
+					<sections>
+						<body />
+						<columns>2</columns>
+						<body />
+					</sections>
+				</advanced>
+				<toc-sidebar>
+					<toc>sidebar</toc>
+				</toc-sidebar>
+			</pages>
+		</reflowSkin>
+	</custom>
+
+	<body>
+
+		<breadcrumbs>
+			<item name="Maven skin" href="/" />
+		</breadcrumbs>
+
+	</body>
+</project>

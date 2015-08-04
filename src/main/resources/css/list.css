@@ -1,0 +1,61 @@
+/*!
+ * Docs Boostrap Template list styles
+ * Copyright 2015 Bernardo Martínez Garrido
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
+ * This file contains styles for the lists.
+ */
+
+dt:after {
+    content: ":";
+}
+
+/**
+* Horizontal definition list.
+*/
+
+.dl-horizontal dt {
+    float: left;
+    width: 6em;
+    text-align: left;
+    white-space: normal;
+}
+
+.dl-horizontal dd {
+    margin-left: 6em;
+}
+
+/**
+* Navigation definition list.
+*
+* These are used on the footer, grouping several links on a common theme.
+*/
+
+.dl-nav {
+    width: 12em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.dl-nav dt {
+    font-size: 19px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.dl-nav dt:after {
+    content: "";
+}
+
+/**
+* Icons inline list.
+*/
+
+.icons-list-inline {
+    font-size: 0;
+    list-style: none;
+}
+
+.icons-list-inline > li {
+    display: inline-block;
+    font-size: 19px;
+}

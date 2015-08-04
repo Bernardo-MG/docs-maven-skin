@@ -1,0 +1,39 @@
+/*!
+ * Docs Boostrap Template table styles
+ * Copyright 2015 Bernardo Martínez Garrido
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
+ * This file contains styles for tables.
+ */
+
+table {
+    -webkit-box-shadow: 0 0 5px #cccccc;
+    -moz-box-shadow: 0 0 5px #cccccc;
+    box-shadow: 0 0 5px #cccccc;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th {
+    background-color: #cccccc;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+/* Centers the column with the icon */
+.table-with-icon > tbody td:first-child {
+    text-align: center;
+}
+
+/**
+* If the table is not stripped all the rows have the same background
+*
+* This is to avoid the tables from having transparent backgrounds.
+*/
+table:not(.table-striped) > thead > tr > td,
+table:not(.table-striped) > tbody > tr > td,
+table:not(.table-striped) > tfoot > tr > td {
+    background-color: #ffffff;
+}

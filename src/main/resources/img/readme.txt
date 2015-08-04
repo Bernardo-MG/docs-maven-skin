@@ -1,0 +1,1 @@
+The file bg.png is the Crossword pattern from http://subtlepatterns.com/

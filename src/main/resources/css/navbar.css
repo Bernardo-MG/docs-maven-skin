@@ -1,0 +1,89 @@
+/*!
+ * Docs Boostrap Template navigation bar styles
+ * Copyright 2015 Bernardo Martínez Garrido
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
+ * This file contains styles for the navigation bar.
+ */
+
+/**
+* Fixes.
+*/
+
+/* Fix for the navigation bar covering the content when using internal links. */
+h1[id]:before,
+h2[id]:before,
+h3[id]:before,
+h4[id]:before,
+h5[id]:before,
+h6[id]:before,
+a[name]:before,
+section[id]:before,
+article[id]:before,
+article[id]:before {
+    display: block;
+    height: 3em;
+    margin-top: -3em;
+    content: "";
+    visibility: hidden;
+}
+
+/* Separates the content from the navigation bar. */
+body {
+    padding-top: 3em;
+}
+
+/**
+* General navigation bar configuration.
+*/
+
+/* To remove the unneeded navbar margin */
+.navbar-fixed-top {
+    margin-bottom: 0;
+}
+
+/**
+* Font sizes
+*/
+
+/* Font size equals to h2 */
+.navbar-main .navbar-brand {
+    font-size: 32px;
+}
+
+/* Font size equals to h4 */
+.navbar .navbar-body {
+    font-size: 19px;
+}
+
+/**
+* Font resizing to fit various screen sizes.
+*/
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+    /* Font size equals to h3 */
+    .navbar-main .navbar-brand {
+        font-size: 26px;
+    }
+
+    /* Font size equals to h5 */
+    .navbar-main .navbar-body {
+        font-size: 15px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+    /* Font size equals to h4 */
+    .navbar-main .navbar-brand {
+        font-size: 19px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+    .navbar-main .navbar-brand {
+        font-size: 85%;
+    }
+}

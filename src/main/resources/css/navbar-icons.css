@@ -1,0 +1,55 @@
+/*!
+ * Docs Boostrap Template navigation bar icons lists styles
+ * Copyright 2015 Bernardo Martínez Garrido
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
+ * This file contains styles for the navigation bar icons lists.
+ */
+
+/* For vertically centering the list */
+.navbar-main .icons-list-inline a {
+    display: block;
+    height: 50px;
+}
+
+/**
+* Hovering and focus.
+*/
+
+.navbar-main .icons-list-inline > li > a:hover,
+.navbar-main .icons-list-inline > li > a:focus {
+    color: #ffffff;
+    background-color: #090909;
+}
+
+.navbar-main .icons-list-inline > .active > a,
+.navbar-main .icons-list-inline > .active > a:hover,
+.navbar-main .icons-list-inline > .active > a:focus {
+    color: #ffffff;
+    background-color: #090909;
+}
+
+/**
+* Resizing for various screen sizes.
+*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 992px) {
+    .navbar-main .icons-list-inline > li > a {
+        padding: 0.6em 0.6em 0.6em 0.6em;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .navbar-main .icons-list-inline > li > a {
+        padding: 0.6em 0.6em 0.6em 0.6em;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+    .navbar-main .icons-list-inline > li > a {
+        padding: 0.6em 1em 0.6em 1em;
+    }
+}

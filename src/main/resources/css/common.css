@@ -1,0 +1,29 @@
+/*!
+ * Docs Boostrap Template general styles
+ * Copyright 2015 Bernardo Martínez Garrido
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ *
+ * This file contains general-use styles, meant to be applied to all the pages on the site.
+ */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: url('../img/bg.png');
+}
+
+/**
+* Internal links.
+*
+* These are links pointing to the same page, and are shown this way: "[link]".
+*/
+.internal-link:before {
+    content: "[";
+}
+
+.internal-link:after {
+    content: "]";
+}
