@@ -51,12 +51,12 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 ## License
 
-The project has been released under version 2.0 of the [Apache License][license].
+The project has been released under the [MIT License][license].
 
 [reflow]: http://andriusvelykis.github.io/reflow-maven-skin/
 [docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
-[license]: http://www.apache.org/licenses/LICENSE-2.0
+[license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
