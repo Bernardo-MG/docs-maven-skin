@@ -28,7 +28,6 @@
 #set ( $bodyContent = $siteTool.transformImagesToFigures( $bodyContent ) )
 #set ( $bodyContent = $siteTool.transformIcons( $bodyContent ) )
 #set ( $bodyContent = $siteTool.fixReport($bodyContent, $config.fileId) )
-#depsCollapse ()
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"#if ( $locale ) lang="$locale.language"#end>
 <head>

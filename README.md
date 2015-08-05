@@ -55,12 +55,8 @@ The project has been released under version 2.0 of the [Apache License][license]
 
 [reflow]: http://andriusvelykis.github.io/reflow-maven-skin/
 [docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
-[bintray-repo]: https://bintray.com/bernardo-mg/maven/java-patterns/view
-[maven-repo]: http://mvnrepository.com/artifact/com.wandrell/java-patterns
-[issues]: https://github.com/Bernardo-MG/java-patterns/issues
-[javadoc-develop]: http://docs.wandrell.com/development/maven/java-patterns/apidocs
-[javadoc-release]: http://docs.wandrell.com/maven/java-patterns/apidocs
+[bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
+[maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven/docs-maven-skin
+[issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
 [license]: http://www.apache.org/licenses/LICENSE-2.0
-[scm]: http://github.com/Bernardo-MG/java-patterns
-[site-develop]: http://docs.wandrell.com/development/maven/java-patterns
-[site-release]: http://docs.wandrell.com/maven/java-patterns
+[scm]: https://github.com/Bernardo-MG/docs-maven-skin

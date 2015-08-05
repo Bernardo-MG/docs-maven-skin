@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.wandrell</groupId>
+	<groupId>com.wandrell.maven</groupId>
 	<artifactId>docs-maven-skin</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -112,7 +112,7 @@
 		<!-- Manifest data -->
 		<manifest.name>com/wandrell/site/skin/docs</manifest.name>
 		<!-- Dependencies versions -->
-		<wandrell.velocity.tools.version>0.1.0-SNAPSHOT</wandrell.velocity.tools.version>
+		<wandrell.velocity.siteFixer.version>0.1.0-SNAPSHOT</wandrell.velocity.siteFixer.version>
 		<!-- Plugins versions -->
 		<plugin.compiler.version>3.3</plugin.compiler.version>
 		<plugin.deploy.version>2.8.2</plugin.deploy.version>
@@ -128,8 +128,8 @@
 		<dependency>
 			<!-- Wandrell's Velocity Tools -->
 			<groupId>com.wandrell.velocity</groupId>
-			<artifactId>velocity-tools</artifactId>
-			<version>${wandrell.velocity.tools.version}</version>
+			<artifactId>maven-site-fixer</artifactId>
+			<version>${wandrell.velocity.siteFixer.version}</version>
 		</dependency>
 	</dependencies>
 
