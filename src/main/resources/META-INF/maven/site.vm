@@ -86,7 +86,7 @@
     <![endif]-->
         
 </head>
-<body class="page-$config.fileId project-$config.projectId">
+<body>
 <header class="header">
     <nav id="navbar-main" class="navbar navbar-main navbar-default navbar-fixed-top">
         <div class="container-fluid">
