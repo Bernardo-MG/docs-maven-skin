@@ -151,6 +151,19 @@
 
 	<build>
 		<defaultGoal>clean package install</defaultGoal>
+		<resources>
+			<resource>
+				<directory>src/main/resources/</directory>
+			</resource>
+			<resource>
+				<!-- Filter skin template to add generator version -->
+				<directory>src/main/resources/</directory>
+				<includes>
+					<include>META-INF/maven/*</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<extensions>
 			<extension>
 				<!-- Wagon -->
@@ -201,6 +214,12 @@
 				<version>${plugin.resources.version}</version>
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
+					<!-- Override resource filtering delimiters to avoid filtering Velocity 
+						variables, which have the same pattern ${replace.me}. Instead, using @replace.me@. -->
+					<useDefaultDelimiters>false</useDefaultDelimiters>
+					<delimiters>
+						<delimiter>@</delimiter>
+					</delimiters>
 				</configuration>
 			</plugin>
 			<plugin>
