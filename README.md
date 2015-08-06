@@ -79,13 +79,13 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 The project has been released under the [MIT License][license].
 
 [library-archetype]: https://github.com/bernardo-mg/library-maven-archetype
-[docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
+[docs-template]: https://github.com/Bernardo-MG/docs-maven-skin
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
-[javadoc-develop]: http://docs.wandrell.com/development/maven/velocity-tools/apidocs
-[javadoc-release]: http://docs.wandrell.com/maven/velocity-tools/apidocs
+[javadoc-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin/apidocs
+[javadoc-release]: http://docs.wandrell.com/maven/docs-maven-skin/apidocs
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
-[site-develop]: http://docs.wandrell.com/development/maven/velocity-tools
-[site-release]: http://docs.wandrell.com/maven/velocity-tools
+[site-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin
+[site-release]: http://docs.wandrell.com/maven/docs-maven-skin
