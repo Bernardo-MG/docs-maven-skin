@@ -217,7 +217,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name<span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu" role="menu">
 #foreach ( $item in $menu.items )
-                            <li>#link ( $item.href $item.name $item.target )</li>
+                            <li>#link ( $item.href $item.name )</li>
 #end
                         </ul>
                     </li>
@@ -229,39 +229,12 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Outputs a list of links
- *#
-#*--------------------------------------------------*#
-#macro ( links $links )
-#foreach ( $item in $links )
-<li>#link ( $item.href $item.name $item.target )</li>
-#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
  * Shortcut to display a basic hyperlink
  *#
 #*--------------------------------------------------*#
-#macro ( link $href $name $target )
-#fullLink ( $href $name $target false )
+#macro ( link $href $name )
+<a href="$href" title="$name">${name}</a>
 #end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Outputs a hyperlink with image and other attributes
- *#
-#*--------------------------------------------------*#
-#macro ( fullLink $href $name $target $alt)
-<a#if ( $href ) href="$href"#end#if ( $name ) title="$name"#end#if ( $target ) target="$target"#end>${name}</a>#end
 #*
 
 
@@ -424,7 +397,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 #*--------------------------------------------------*#
 #macro ( menuItem $item )
 						<li #classAttr( $activeClass )>
-							#fullLink ( $item.href $item.name $item.target $item.alt)
+							#link ( $item.href $item.name )
 						</li>
 #end
 #*
@@ -438,7 +411,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  *#
 #*--------------------------------------------------*#
 #macro ( listItem $item )
-                                <dd>#fullLink ( $item.href $item.name $item.target $item.alt)</dd>
+                                <dd>#link ( $item.href $item.name )</dd>
 #end
 #*
 
