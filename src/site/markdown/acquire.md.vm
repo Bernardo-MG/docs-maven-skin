@@ -1,0 +1,91 @@
+#set( $symbol_pound = '#' )
+${symbol_pound} Acquiring the project
+
+The project files are hosted on a [Bintray repository][bintray-repo], and have been replicated on JCenter and OSS Sonatype, which also replicates into the [Maven Central Repository][maven-repo]. While this means that it should be possible to download the Archetype from any of those repositories, and that most dependency systems will be able to acquire the library without additional configuration, if for some reason one should be picked the recommended one is Bintray.
+
+All the info required to set up the dependency can be found at the [dependency information](./dependency-info.html) section, or the repositories information pages.
+
+${symbol_pound}${symbol_pound} Velocity dependency
+
+The project requires Velocity 1.7 or higher to work correctly. The problem is that the site plugin makes use of Velocity 1.5, stopping the Skin from working correctly.
+
+The way to fix this is to add the correct dependency to the site plugin, like this:
+
+```xml
+<build>
+	<plugins>
+		...
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-site-plugin</artifactId>
+			<dependencies>
+				...
+				<dependency>
+					<!-- Velocity -->
+					<groupId>org.apache.velocity</groupId>
+					<artifactId>velocity</artifactId>
+					<version>${plugin.site.velocity.version}</version>
+				</dependency>
+				...
+			</dependencies>
+			...
+		</plugin>
+		...
+	</plugins>
+</build>
+```
+
+${symbol_pound}${symbol_pound} Reducing the dependency scope
+
+As the skin is used by the site plugin, the best way to use it is by adding it as a dependency to said plugin. which will also reduce the scope of the dependency. For that use the following configuration:
+
+```xml
+<build>
+	<plugins>
+		...
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-site-plugin</artifactId>
+			<dependencies>
+				...
+				<dependency>
+					<!-- Docs Maven Skin -->
+					<groupId>com.wandrell.maven.skins</groupId>
+					<artifactId>docs-maven-skin</artifactId>
+					<version>${site.skin.version}</version>
+				</dependency>
+				<dependency>
+					<!-- Velocity -->
+					<groupId>org.apache.velocity</groupId>
+					<artifactId>velocity</artifactId>
+					<version>${plugin.site.velocity.version}</version>
+				</dependency>
+				...
+			</dependencies>
+			...
+		</plugin>
+		...
+	</plugins>
+</build>
+```
+
+Versions are meant to be kept in the properties section of the POM.
+
+${symbol_pound}${symbol_pound} Snapshots
+
+Snapshot artifacts are stored on OSS Sonatype. They can be accessed by adding the following lines to the POM file:
+
+```xml
+<repositories>
+	...
+	<repository>
+		<id>oss-sonatype-snapshots</id>
+		<name>OSS Sonatype snapshots repository</name>
+		<url>https://oss.sonatype.org/content/groups/staging</url>
+	</repository>
+	...
+</repositories>
+```
+
+[bintray-repo]: ${bintrayURL}
+[maven-repo]: ${mavenURL}

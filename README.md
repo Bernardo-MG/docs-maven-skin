@@ -1,8 +1,10 @@
 # Docs Maven Skin
 
-A Bootstrap-based HTML5 skin for Maven Site, meant to help using it as a documentation site for it's project.
+A minimalist Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
 
-It has been created using the [Reflow Maven skin][reflow] as the basis and adapting the [Docs Bootstrap Template][docs-template].
+While it can be used by itself, just remember to check the documentation to find out how to set it up, new projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin.
+
+The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.wandrell/docs-maven-skin.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/docs-maven-skin/images/download.svg)][bintray-repo]
@@ -10,9 +12,32 @@ It has been created using the [Reflow Maven skin][reflow] as the basis and adapt
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
 
+## Feature
+
+- Minimalist and reactive look
+- HTML5
+- Bootstrap
+- Font Awesome icons
+
 ## Documentation
 
-Currently there is no documentation for the project.
+Documentation is always generated for the latest release, kept in the 'master' branch:
+
+- The [latest release documentation page][site-release].
+- The [the latest release Javadoc site][javadoc-release].
+
+Documentation is also generated from the latest snapshot, taken from the 'develop' branch:
+
+- The [the latest snapshot documentation page][site-develop].
+- The [the latest snapshot Javadoc site][javadoc-develop].
+
+The documentation site sources come along the source code (as it is a Maven site), so it is always possible to generate them using the following Maven command:
+
+```
+$ mvn verify site
+```
+
+The verify phase is required, as otherwise some of the reports won't be created.
 
 ## Usage
 
@@ -53,10 +78,14 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
-[reflow]: http://andriusvelykis.github.io/reflow-maven-skin/
+[library-archetype]: https://github.com/bernardo-mg/library-maven-archetype
 [docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
+[javadoc-develop]: http://docs.wandrell.com/development/maven/velocity-tools/apidocs
+[javadoc-release]: http://docs.wandrell.com/maven/velocity-tools/apidocs
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
+[site-develop]: http://docs.wandrell.com/development/maven/velocity-tools
+[site-release]: http://docs.wandrell.com/maven/velocity-tools

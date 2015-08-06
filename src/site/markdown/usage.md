@@ -1,3 +1,22 @@
+#Usage
+
+Once the dependencies have been set, the skin can be used by adding the following element to the site.xml file:
+
+```xml
+<skin>
+	<groupId>com.wandrell.maven</groupId>
+	<artifactId>docs-maven-skin</artifactId>
+	<version>${site.skin.version}</version>
+</skin>
+```
+
+The version is expected to be defined in the properties section of the POM.
+
+## Example site.xml
+
+The site requires a correctly configured site.xml file to work. For more details check the correct documentation page, but the following shows an example of how it should look:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/DECORATION/1.6.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -36,6 +55,14 @@
 			<bottomNav>
 				<menu>General Info</menu>
 			</bottomNav>
+			<pages>
+				<index>
+					<sections>
+						<body />
+						<columns>2</columns>
+					</sections>
+				</index>
+			</pages>
 		</skinConfig>
 	</custom>
 
@@ -56,3 +83,6 @@
 		</menu>
 	</body>
 </project>
+```
+
+Note that this example includes some properties which are read from the POM file.

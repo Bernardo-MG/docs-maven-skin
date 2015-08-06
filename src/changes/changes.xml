@@ -1,0 +1,15 @@
+<document xmlns="http://maven.apache.org/changes/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+	<properties>
+		<title>Project Changes</title>
+		<author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
+	</properties>
+	<body>
+		<release version="0.1.0" date="2015-07-29" description="First release">
+			<action dev="bmg" type="update">
+				First release of the library.
+			</action>
+		</release>
+	</body>
+</document>
