@@ -4,7 +4,7 @@ For the skin to work properly, a few things have to be prepared on the site.xml 
 
 ## Skin config
 
-First of all, a skin configuration element, called <skinConfig>, should be added to the <custom> one.
+First of all, a skin configuration element, called skinConfig, should be added to the custom one.
 
 The general structure of it will look like the following example:
 
