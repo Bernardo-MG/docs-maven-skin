@@ -194,34 +194,6 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Checks if the given link is the currently active one
- *
- * Receives:
- *		href: the link to check
- *#
-#*--------------------------------------------------*#
-#macro ( activeLink $href )
-#if ( $href )
-#if ( '' == $href || ( $alignedFileName.endsWith("index.html") && './' == $href ) )
-## Link is empty or it is the index, which is also being shown
-#set ( $activeLink = true )
-#set ( $activeClass = 'active' )
-#else
-#set ( $activeLink = false )
-#set ( $activeClass = '' )
-#end
-#else
-#set ( $activeLink = false )
-#set ( $activeClass = 'disabled' )
-#end## /if ( $href )
-#end## /activeLink
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
  * Creates a class="name" attribute if the given name exists
  *#
 #*--------------------------------------------------*#
@@ -245,8 +217,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name<span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu" role="menu">
 #foreach ( $item in $menu.items )
-#activeLink ( $item.href )
-                            <li#classAttr( $activeClass )>#link ( $item.href $item.name $item.target )</li>
+                            <li>#link ( $item.href $item.name $item.target )</li>
 #end
                         </ul>
                     </li>
@@ -263,8 +234,7 @@
 #*--------------------------------------------------*#
 #macro ( links $links )
 #foreach ( $item in $links )
-#activeLink ( $item.href )
-<li#classAttr( $activeClass )>#link ( $item.href $item.name $item.target )</li>
+<li>#link ( $item.href $item.name $item.target )</li>
 #end
 #end
 #*
@@ -437,10 +407,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 #macro ( displayTree $item )
 	#if ( $item && $item.items && $item.items.size() > 0 )
 		#foreach ( $subitem in $item.items )
-			#activeLink ( $subitem.href )
-			#if ( $activeLink )
-				#set ( $displayTree = true )
-			#end
+			#set ( $displayTree = true )
 			#displayTree ( $subitem )
 		#end
 	#end
@@ -456,16 +423,8 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  *#
 #*--------------------------------------------------*#
 #macro ( menuItem $item )
-	#set ( $collapseClass = false )
-	#activeLink ( $item.href )
-	#set ( $active = $activeLink )
-	#if ( $active )
-		#set ( $currentLink = "#" )
-	#else
-		#set ( $currentLink = $item.href )
-	#end
 						<li #classAttr( $activeClass )>
-							#fullLink ( $currentLink $item.name $item.target $item.alt)
+							#fullLink ( $item.href $item.name $item.target $item.alt)
 						</li>
 #end
 #*
@@ -479,14 +438,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  *#
 #*--------------------------------------------------*#
 #macro ( listItem $item )
-#activeLink ( $item.href )
-#set ( $active = $activeLink )
-#if ( $active )
-#set ( $currentLink = "#" )
-#else
-#set ( $currentLink = $item.href )
-#end
-                                <dd #classAttr( $activeClass )>#fullLink ( $currentLink $item.name $item.target $item.alt)</dd>
+                                <dd>#fullLink ( $item.href $item.name $item.target $item.alt)</dd>
 #end
 #*
 
