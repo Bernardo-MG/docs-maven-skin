@@ -12,7 +12,7 @@
 	<custom>
 		<skinConfig>
 			<keywords>Maven Site, fix, HTML5</keywords>
-			<descriptionUrl>Check the documentation for the Docs Maven Skin</descriptionUrl>
+			<descriptionUrl>Documentation for the Docs Maven Skin</descriptionUrl>
 			<twitterSite>@wandrell</twitterSite>
 			<interpreters>
 				<interpreter>JDK 7</interpreter>
@@ -48,6 +48,7 @@
 		<menu name="Documentation" inherit="bottom">
 			<item name="Acquire" href="./acquire.html" />
 			<item name="Usage" href="./usage.html" />
+			<item name="Preparing the site.xml file" href="./usage.html" />
 		</menu>
 		<menu name="Info and reports" inherit="bottom">
 			<item name="Info" href="./info.html" />
