@@ -52,6 +52,7 @@
 #else
     <title>$project.name</title>
 #end
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Metadata -->
     <meta name="description" content="$config.descriptionUrl.getValue()">

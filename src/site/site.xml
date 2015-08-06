@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0 http://maven.apache.org/xsd/decoration-1.6.0.xsd">
 
 	<skin>
-		<groupId>com.wandrell.maven</groupId>
+		<groupId>com.wandrell.maven.skins</groupId>
 		<artifactId>docs-maven-skin</artifactId>
 		<version>${site.skin.version}</version>
 	</skin>
