@@ -113,7 +113,7 @@
 		<manifest.name>com/wandrell/site/skin/docs</manifest.name>
 		<!-- Dependencies versions -->
 		<velocity.version>1.7</velocity.version>
-		<wandrell.velocity.siteFixer.version>0.1.0-SNAPSHOT</wandrell.velocity.siteFixer.version>
+		<wandrell.siteFixer.version>0.1.0</wandrell.siteFixer.version>
 		<!-- Plugins versions -->
 		<plugin.changes.version>2.11</plugin.changes.version>
 		<plugin.compiler.version>3.3</plugin.compiler.version>
@@ -139,7 +139,7 @@
 			<!-- Maven Site Fixer -->
 			<groupId>com.wandrell.velocity</groupId>
 			<artifactId>maven-site-fixer</artifactId>
-			<version>${wandrell.velocity.siteFixer.version}</version>
+			<version>${wandrell.siteFixer.version}</version>
 		</dependency>
 		<dependency>
 			<!-- Velocity -->
