@@ -112,7 +112,7 @@
 #buildIconsMenu()
 #if ( $decoration.body.menus )
 #if ( $config.topNav )
-#filterMenusBig( $decoration.body.menus, $config.topNav.getChildren() )
+#findMenus( $decoration.body.menus, $config.topNav.getChildren() )
 #else
 #set ( $menuColumns = $decoration.body.menus )
 #end
@@ -194,11 +194,14 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Creates a class="name" attribute if the given name exists
+ * Creates a class="attrValue" attribute if the given name exists.
+ *
+ * Receives:
+ *		attrValue: the value for the class attribute
  *#
 #*--------------------------------------------------*#
-#macro ( classAttr $name )
-#if ( $name && '' != $name )class="$name"#end
+#macro ( classAttr $attrValue )
+#if ( $attrValue && '' != $attrValue )class="$attrValue"#end
 #end 
 #*
 
@@ -207,12 +210,14 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Creates dropdown menu items
+ * Creates dropdown menu items.
+ *
+ * Receives:
+ *		menus: a list of menus to process. These are Doxia decoration menus.
  *#
 #*--------------------------------------------------*#
 #macro ( topMenu $menus )
 #foreach ( $menu in $menus )
-#if ( $menu.name )
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name<span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -221,7 +226,7 @@
 #end
                         </ul>
                     </li>
-#end#end#end
+#end#end
 #*
 
 
@@ -229,7 +234,11 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Shortcut to display a basic hyperlink
+ * Shortcut to display a basic hyperlink.
+ *
+ * Receives:
+ *		href: the value for the href attribute
+ *		name: the name of the link
  *#
 #*--------------------------------------------------*#
 #macro ( link $href $name )
@@ -247,10 +256,12 @@
  *
  * 	<sections>
  * 		<body/> - the main body of the page
- * 		<thumbs>x</thumbs> - x-column grid layout for thumbnails (first image is used as thumbnail)
  * 		<columns>x</columns> - x-column grid layout
- * 		<carousel/> - carousel (spinning images with captions)
  * 	</sections>
+ *
+ * Receives:
+ *		bodyContent: HTML content of the body
+ *		sectionConfig: decoration nodes for the pages
  *#
 #*--------------------------------------------------*#
 #macro ( bodySections $bodyContent $sectionConfig )
@@ -306,7 +317,11 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Outputs subsections into a column grid
+ * Outputs subsections into a column grid.
+ *
+ * Receives:
+ *		colCount: number of columns for the section
+ *		subsections: subsections for creating the columns
  *#
 #*--------------------------------------------------*#
 #macro ( columns $colCount $subsections )
@@ -374,53 +389,10 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Recursively checks if any of the submenu items is the current one
- *#
-#*--------------------------------------------------*#
-#macro ( displayTree $item )
-	#if ( $item && $item.items && $item.items.size() > 0 )
-		#foreach ( $subitem in $item.items )
-			#set ( $displayTree = true )
-			#displayTree ( $subitem )
-		#end
-	#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Recursively outputs menu item and its children
- *#
-#*--------------------------------------------------*#
-#macro ( menuItem $item )
-						<li #classAttr( $activeClass )>
-							#link ( $item.href $item.name )
-						</li>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Recursively outputs menu item and its children
- *#
-#*--------------------------------------------------*#
-#macro ( listItem $item )
-                                <dd>#link ( $item.href $item.name )</dd>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Creates a list menu with submenus
+ * Creates a list menu with submenus.
+ *
+ * Receives:
+ *		menu: Doxia decoration menu to build the list menu
  *#
 #*--------------------------------------------------*#
 #macro ( listMenu $menu )
@@ -428,9 +400,9 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 #if ( $menu.name )
                                 <dt>$menu.name</dt>
 #end
-#if ( $menu.items && $menu.items.size() > 0 )
+#if ( $menu.items )
 #foreach ( $item in $menu.items )
-#listItem ( $item )
+                                <dd>#link ( $item.href $item.name )</dd>
 #end
 #end
                             </dl>
@@ -442,14 +414,18 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Filters menus by their ref or name, and returns the matching results.
- * The regex is used to check the match
+ * Finds a menu based on its name.
+ *
+ * Receives:
+ *		menus: Doxia decoration menus collection
+ *		menuName: name of the menu to find
  *#
 #*--------------------------------------------------*#
-#macro ( filterMenus $menus $filterRegex )
+#macro ( findMenu $menus $menuName )
+#set ($foundMenu = false)
 #foreach ($menu in $menus)
-#if ( ( $menu.ref && $menu.ref == $filterRegex ) || ( $menu.name && $menu.name == $filterRegex ) )
-#set ( $filteredMenu = $menu )
+#if ( ( $menu.ref && $menu.ref == $menuName ) || ( $menu.name && $menu.name == $menuName ) )
+#set ( $foundMenu = $menu )
 #end
 #end
 #end
@@ -460,16 +436,19 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Filters menus by their ref or name, and returns the matching results.
- * The regex is used to check the match
+ * Finds a collection of menus based on their names.
+ *
+ * Receives:
+ *		menus: Doxia decoration menus collection
+ *		menuNames: names of the menus to find
  *#
 #*--------------------------------------------------*#
-#macro ( filterMenusBig $menus $menuNames )
+#macro ( findMenus $menus $menuNames )
 #set ( $menuColumns = [] )
 #foreach ( $menuName in $menuNames )
-#filterMenus ( $menus, $menuName.getValue() )
-#if ( $filteredMenu )
-#call ( $menuColumns.add( $filteredMenu ) )
+#findMenu ( $menus, $menuName.getValue() )
+#if ( $foundMenu )
+#call ( $menuColumns.add( $foundMenu ) )
 #end
 #end
 #end
@@ -480,21 +459,12 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Outputs bottom navigation columns. The menus can be split into columns to be
- * placed in the bottom navigation. This is done with the `bottomNav` config option:
- *
- * 	<bottomNav maxSpan="8"> - maximum span is indicated in the attribute (default =9)
- * 		<column>regex</column> - indicates to add a column with the indicated regex filter
- * 		<column>regex</column> - ...
- * 		<column>regex</column> - ...
- * 	</bottomNav>
- *
- * (The above produces a 3-column navigation with `span2` for each column (because max is 8)).
+ * Outputs bottom navigation columns.
  *#
 #macro ( bottomNav )
 #set ( $maxNavSpan = 12 )
 #if ( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
-#filterMenusBig( $decoration.body.menus, $config.bottomNav.getChildren() )
+#findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
 #else
 #set ( $menuColumns = $decoration.body.menus )
 #end
@@ -528,7 +498,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Displays a 'Last published' date message.
+ * Builds a list menu with the releases repositories.
  *#
 #*--------------------------------------------------*#
 #macro ( releasesBottomMenu )
@@ -546,7 +516,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Displays a 'Last published' date message.
+ * Builds a list menu with the code services.
  *#
 #*--------------------------------------------------*#
 #macro ( codeBottomMenu )
@@ -578,7 +548,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Displays a 'Last published' date message.
+ * Builds the publish date.
  *#
 #*--------------------------------------------------*#
 #macro ( publishDate )
@@ -593,31 +563,11 @@ $dateValue#end
 *#
 #*--------------------------------------------------*###
 #**
- * Outputs XML DOM objects as html elements into the rendered document.
- * Taken from maven-fluido-skin.
- *#
-#*--------------------------------------------------*#
-#macro ( htmlContent $items )
-	#foreach ( $item in $items )
-		#set ( $itemHtml = $item.toString().trim() )
-		#set ( $documentHeader = '<?xml version="1.0" encoding="UTF-8"?>' )
-		#if ( $item.name == "script" )
-			#set ( $itemHtml = $StringUtils.replace( $item.toUnescapedString(), $documentHeader, "" ) )
-		#else
-			#set ( $itemHtml = $StringUtils.replace( $item.toString(), $documentHeader, "" ) )
-		#end
-		#evaluate ( $itemHtml )
-	#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
  * Marks the first header inside the content as page header, by wrapping it into
  * a div with `page-header` class
+ *
+ * Receives:
+ *		content: section where the wrapper will be added
  *#
 #*--------------------------------------------------*#
 #macro ( bodyWithHeader $content )
@@ -631,7 +581,7 @@ $dateValue#end
 *#
 #*--------------------------------------------------*###
 #**
- * Builds icons menu
+ * Builds the icons menu.
  *#
 #*--------------------------------------------------*#
 #macro ( buildIconsMenu )
@@ -654,7 +604,7 @@ $dateValue#end
 *#
 #*--------------------------------------------------*###
 #**
- * Builds supported Java versions list
+ * Builds the supported Java versions list.
  *#
 #*--------------------------------------------------*#
 #macro ( buildVersionsList )
