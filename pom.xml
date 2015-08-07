@@ -128,7 +128,7 @@
 		<!-- Extensions versions -->
 		<extension.wagon.version>2.9</extension.wagon.version>
 		<!-- Maven Site -->
-		<site.skin.version>0.1.0-SNAPSHOT</site.skin.version>
+		<site.skin.version>0.1.0</site.skin.version>
 		<repoDownloadURL>https://dl.bintray.com/bernardo-mg/maven/</repoDownloadURL>
 		<bintrayURL>https://bintray.com/bernardo-mg/maven/maven-site-fixer/view</bintrayURL>
 		<mavenURL>http://mvnrepository.com/artifact/com.wandrell.velocity/maven-site-fixer</mavenURL>
