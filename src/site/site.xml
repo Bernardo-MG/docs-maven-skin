@@ -48,12 +48,11 @@
 		<menu name="Documentation" inherit="bottom">
 			<item name="Acquire" href="./acquire.html" />
 			<item name="Usage" href="./usage.html" />
-			<item name="Preparing the site.xml file" href="./usage.html" />
+			<item name="Preparing the site.xml file" href="./site_xml.html" />
 		</menu>
 		<menu name="Info and reports" inherit="bottom">
 			<item name="Info" href="./info.html" />
 			<item name="Reports" href="./reports.html" />
-			<item name="JavaDocs" href="./apidocs/" />
 		</menu>
 	</body>
 </project>
