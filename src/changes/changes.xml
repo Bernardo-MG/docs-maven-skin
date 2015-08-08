@@ -11,5 +11,10 @@
 				First release of the skin.
 			</action>
 		</release>
+		<release version="0.1.1" date="2015-08-08" description="Maven site">
+			<action dev="bmg" type="update">
+				Site is now working.
+			</action>
+		</release>
 	</body>
 </document>
