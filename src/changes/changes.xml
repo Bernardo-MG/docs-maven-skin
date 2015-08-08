@@ -15,6 +15,9 @@
 			<action dev="bmg" type="update">
 				Site is now working.
 			</action>
+			<action dev="bmg" type="fix">
+				Corrected links.
+			</action>
 		</release>
 	</body>
 </document>
