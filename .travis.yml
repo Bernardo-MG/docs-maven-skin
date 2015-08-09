@@ -12,9 +12,9 @@ matrix:
     - jdk: oraclejdk8
   include:
     - jdk: oraclejdk7
-      env: DEPLOY=true DEPLOY_DOCS=false
+      env: DEPLOY=true DEPLOY_DOCS=false PULL_REQUEST=$TRAVIS_PULL_REQUEST SCM_BRANCH=$TRAVIS_BRANCH
     - jdk: oraclejdk8
-      env: DEPLOY=false DEPLOY_DOCS=true
+      env: DEPLOY=false DEPLOY_DOCS=true PULL_REQUEST=$TRAVIS_PULL_REQUEST SCM_BRANCH=$TRAVIS_BRANCH
     
 before_install:
   - chmod +x ./.scripts/create-maven-settings.sh
@@ -22,7 +22,7 @@ before_install:
   - chmod +x ./.scripts/deploy-site.sh
   - ./.scripts/create-maven-settings.sh
 script:
-  - mvn clean verify
+  - mvn clean verify archetype:integration-test
 after_success:
   - ./.scripts/deploy-site.sh
   - ./.scripts/deploy.sh
