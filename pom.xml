@@ -110,7 +110,7 @@
 		<java.version.source>1.7</java.version.source>
 		<java.version.target>${java.version.source}</java.version.target>
 		<!-- Manifest data -->
-		<manifest.name>com/wandrell/site/skin/docs</manifest.name>
+		<manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
 		<!-- Dependencies versions -->
 		<velocity.version>1.7</velocity.version>
 		<wandrell.siteFixer.version>0.1.0</wandrell.siteFixer.version>
