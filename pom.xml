@@ -6,7 +6,7 @@
 
 	<groupId>com.wandrell.maven.skins</groupId>
 	<artifactId>docs-maven-skin</artifactId>
-	<version>0.1.2-SNAPSHOT</version>
+	<version>0.1.2</version>
 	<packaging>jar</packaging>
 
 	<name>Docs Maven Skin</name>
