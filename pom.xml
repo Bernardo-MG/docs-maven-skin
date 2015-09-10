@@ -6,7 +6,7 @@
 
 	<groupId>com.wandrell.maven.skins</groupId>
 	<artifactId>docs-maven-skin</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.1.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Docs Maven Skin</name>
@@ -129,9 +129,8 @@
 		<extension.wagon.version>2.9</extension.wagon.version>
 		<!-- Maven Site -->
 		<site.skin.version>0.1.0</site.skin.version>
-		<repoDownloadURL>https://dl.bintray.com/bernardo-mg/maven/</repoDownloadURL>
-		<bintrayURL>https://bintray.com/bernardo-mg/maven/maven-site-fixer/view</bintrayURL>
-		<mavenURL>http://mvnrepository.com/artifact/com.wandrell.velocity/maven-site-fixer</mavenURL>
+		<bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
+		<mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
 	</properties>
 
 	<dependencies>
