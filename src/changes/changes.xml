@@ -19,5 +19,10 @@
 				Corrected links.
 			</action>
 		</release>
+		<release version="0.1.2" date="2015-09-10" description="Maven site">
+			<action dev="bmg" type="fix">
+				Corrected releases repositories links.
+			</action>
+		</release>
 	</body>
 </document>

@@ -6,7 +6,7 @@ While it can be used by itself, just remember to check the documentation to find
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.wandrell/docs-maven-skin.svg)][maven-repo]
+[![Maven Central](https://img.shields.io/maven-central/v/com.wandrell.maven.skins/docs-maven-skin.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/docs-maven-skin/images/download.svg)][bintray-repo]
 
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
@@ -81,7 +81,7 @@ The project has been released under the [MIT License][license].
 [library-archetype]: https://github.com/bernardo-mg/library-maven-archetype
 [docs-template]: https://github.com/Bernardo-MG/docs-maven-skin
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
-[maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven/docs-maven-skin
+[maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
 [javadoc-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin/apidocs
 [javadoc-release]: http://docs.wandrell.com/maven/docs-maven-skin/apidocs
