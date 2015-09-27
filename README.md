@@ -19,6 +19,10 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 - Bootstrap
 - Font Awesome icons
 
+## Demo
+
+To check how the skin looks take a look at the documentation, linked below this section, which is a Maven Site making use of the skin.
+
 ## Documentation
 
 Documentation is always generated for the latest release, kept in the 'master' branch:
@@ -79,7 +83,7 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 The project has been released under the [MIT License][license].
 
 [library-archetype]: https://github.com/bernardo-mg/library-maven-archetype
-[docs-template]: https://github.com/Bernardo-MG/docs-maven-skin
+[docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
