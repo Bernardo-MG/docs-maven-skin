@@ -19,6 +19,10 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 - Bootstrap
 - Font Awesome icons
 
+## Demo
+
+To check how the skin looks take a look at the documentation, linked below this section, which is a Maven Site making use of the skin.
+
 ## Documentation
 
 Documentation is always generated for the latest release, kept in the 'master' branch:
