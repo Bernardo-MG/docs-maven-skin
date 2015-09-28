@@ -37,7 +37,7 @@ The way to fix this is to add the correct dependency to the site plugin, like th
 
 ${symbol_pound}${symbol_pound} Reducing the dependency scope
 
-As the skin is used by the site plugin, the best way to use it is by adding it as a dependency to said plugin. which will also reduce the scope of the dependency. For that use the following configuration:
+As the skin is used by the site plugin, the best way to use it is by adding it as a dependency to said plugin, which will also reduce the scope of the dependency. For that use the following configuration:
 
 ```xml
 <build>
