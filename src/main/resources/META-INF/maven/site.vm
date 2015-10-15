@@ -138,7 +138,7 @@
                 <div id="navbar-footer" class="col-md-10 col-sm-12 col-xs-12">
                     <div class="row">
 #if( $decoration.body.menus )
-#bottomNav ()
+#bottomNav()
 #end
                     </div>
                 </div>
@@ -150,8 +150,8 @@
                                 <dt id="project-version">Version</dt>
                                 <dd>${project.version}</dd>
                                 <dt id="project-published">Published</dt>
-                                <dd><time>#publishDate ()</time></dd>
-#buildVersionsList ()
+                                <dd><time>#publishDate()</time></dd>
+#buildVersionsList()
                             </dl>
                         </div>
                         <div class="col-md-0 col-sm-4 col-xs-0"></div>
@@ -161,8 +161,8 @@
         </div>
         <div class="container copyright">
             <ul class="list-copyright list-unstyled">
-                <li>#copyright ()</li>
-                <li>#license ()</li>
+                <li>#copyright()</li>
+                <li>#license()</li>
             </ul>
         </div>
     </div>
@@ -355,8 +355,11 @@
 #macro ( copyright )
 #if ( $project )
 #set ( $currentYear = ${currentDate.year} + 1900 )
-<span class="fa fa-copyright"></span>${project.inceptionYear}
-#if ( ${project.inceptionYear} && ( ${project.inceptionYear} != ${currentYear.toString()} ) )-${currentYear}
+#if ( ${project.inceptionYear} )
+#if ( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa fa-copyright"></span>${project.inceptionYear}-${currentYear}
+#else <span class="fa fa-copyright"></span>${project.inceptionYear}
+#end
+#else <span class="fa fa-copyright"></span>${currentYear}
 #end
 #if ( ${project.organization} && ${project.organization.name} )
 #if ( ${project.organization.url} )
