@@ -13,7 +13,7 @@
 		<skinConfig>
 			<keywords>Maven Site, fix, HTML5</keywords>
 			<descriptionUrl>Documentation for the Docs Maven Skin</descriptionUrl>
-			<twitterSite>@wandrell</twitterSite>
+			<twitterSite>@Wandrell_BMG</twitterSite>
 			<interpreters>
 				<interpreter>JDK 7</interpreter>
 				<interpreter>JDK 8</interpreter>
