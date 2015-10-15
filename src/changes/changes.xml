@@ -40,6 +40,9 @@
 				Images are correctly transformed into
 				figures.
 			</action>
+			<action dev="bmg" type="fix">
+				Report links are now working correctly.
+			</action>
 		</release>
 	</body>
 </document>
