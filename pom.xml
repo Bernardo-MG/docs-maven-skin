@@ -118,15 +118,15 @@
 		<plugin.changes.version>2.11</plugin.changes.version>
 		<plugin.compiler.version>3.3</plugin.compiler.version>
 		<plugin.deploy.version>2.8.2</plugin.deploy.version>
-		<plugin.enforcer.version>1.4</plugin.enforcer.version>
+		<plugin.enforcer.version>1.4.1</plugin.enforcer.version>
 		<plugin.jar.version>2.6</plugin.jar.version>
-		<plugin.reports.version>2.8</plugin.reports.version>
+		<plugin.reports.version>2.8.1</plugin.reports.version>
 		<plugin.resources.version>2.7</plugin.resources.version>
-		<plugin.site.velocity.version>1.7</plugin.site.velocity.version>
+		<plugin.site.velocity.version>${velocity.version}</plugin.site.velocity.version>
 		<plugin.site.version>3.4</plugin.site.version>
 		<plugin.source.version>2.4</plugin.source.version>
 		<!-- Extensions versions -->
-		<extension.wagon.version>2.9</extension.wagon.version>
+		<extension.wagon.version>2.10</extension.wagon.version>
 		<!-- Maven Site -->
 		<site.skin.version>0.1.0</site.skin.version>
 		<bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
@@ -289,7 +289,7 @@
 						<!-- Velocity -->
 						<groupId>org.apache.velocity</groupId>
 						<artifactId>velocity</artifactId>
-						<version>${velocity.version}</version>
+						<version>${plugin.site.velocity.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>

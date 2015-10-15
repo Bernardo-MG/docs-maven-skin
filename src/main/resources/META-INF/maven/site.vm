@@ -164,6 +164,9 @@
                 <li>#copyright()</li>
                 <li>#license()</li>
             </ul>
+            <ul class="list-unstyled">
+                <li>Rendered using <a href="@project.url@">@project.name@ @project.version@</a></li>
+            </ul>
         </div>
     </div>
 </footer>

@@ -25,6 +25,9 @@
 			</action>
 		</release>
 		<release version="0.2.0" date="2015-10-15" description="Various fixes">
+			<action dev="bmg" type="add">
+				Added skin information to the footer.
+			</action>
 			<action dev="bmg" type="fix">
 				Inception year is no longer compulsory
 				for the footer copyright year.
