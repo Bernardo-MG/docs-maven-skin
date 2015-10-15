@@ -11,7 +11,7 @@
 				First release of the skin.
 			</action>
 		</release>
-		<release version="0.1.1" date="2015-08-08" description="Maven site">
+		<release version="0.1.1" date="2015-08-08" description="Maven site fix">
 			<action dev="bmg" type="update">
 				Site is now working.
 			</action>
@@ -19,9 +19,29 @@
 				Corrected links.
 			</action>
 		</release>
-		<release version="0.1.2" date="2015-09-10" description="Maven site">
+		<release version="0.1.2" date="2015-09-10" description="Maven site fix">
 			<action dev="bmg" type="fix">
 				Corrected releases repositories links.
+			</action>
+		</release>
+		<release version="0.2.0" date="2015-10-15" description="Various fixes">
+			<action dev="bmg" type="add">
+				Added skin information to the footer.
+			</action>
+			<action dev="bmg" type="fix">
+				Inception year is no longer compulsory
+				for the footer copyright year.
+			</action>
+			<action dev="bmg" type="fix">
+				Only the first h1 heading is
+				transformed into the page header.
+			</action>
+			<action dev="bmg" type="fix">
+				Images are correctly transformed into
+				figures.
+			</action>
+			<action dev="bmg" type="fix">
+				Report links are now working correctly.
 			</action>
 		</release>
 	</body>
