@@ -22,8 +22,10 @@ The main features offered by the skin are:
 
 - Minimalist and reactive look
 - HTML5
-- Bootstrap
-- Font Awesome icons
+- [Bootstrap][bootstrap]
+- [Font Awesome][font_awesome] icons
 
+[bootstrap]: http://getbootstrap.com/
 [docs_template]: https://github.com/Bernardo-MG/docs-bootstrap-template
+[font_awesome]: https://fortawesome.github.io/Font-Awesome/
 [reflow]: http://andriusvelykis.github.io/reflow-maven-skin/
