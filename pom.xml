@@ -113,7 +113,7 @@
 		<manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
 		<!-- Dependencies versions -->
 		<velocity.version>1.7</velocity.version>
-		<wandrell.siteFixer.version>0.1.0</wandrell.siteFixer.version>
+		<wandrell.siteFixer.version>0.2.0</wandrell.siteFixer.version>
 		<!-- Plugins versions -->
 		<plugin.ant.version>1.8</plugin.ant.version>
 		<plugin.assembly.version>2.5.5</plugin.assembly.version>
