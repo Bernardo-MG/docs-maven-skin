@@ -44,5 +44,12 @@
 				Report links are now working correctly.
 			</action>
 		</release>
+		<release version="0.2.1" date="2015-10-15" description="Visual changes">
+			<action dev="bmg" type="add">
+				The footer link, sending the user to
+				the project page, no longer
+				spans the version.
+			</action>
+		</release>
 	</body>
 </document>

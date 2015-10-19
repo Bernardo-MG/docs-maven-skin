@@ -167,7 +167,7 @@
                 <li>#license()</li>
             </ul>
             <ul class="list-unstyled">
-                <li>Rendered using <a href="@project.url@">@project.name@ @project.version@</a></li>
+                <li>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</li>
             </ul>
         </div>
     </div>
