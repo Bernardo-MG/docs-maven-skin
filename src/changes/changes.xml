@@ -51,5 +51,14 @@
 				spans the version.
 			</action>
 		</release>
+		<release version="0.2.2" date="2015-11-8" description="Numbering headings">
+			<action dev="bmg" type="add">
+				Headings of level 2 and 3 are now
+				numbered.
+			</action>
+			<action dev="bmg" type="update">
+				Headings font is now more noticeable.
+			</action>
+		</release>
 	</body>
 </document>
