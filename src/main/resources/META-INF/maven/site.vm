@@ -85,7 +85,7 @@
     <link rel="stylesheet" href="./lib/font-awesome-4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
-    <link rel="stylesheet" href="./css/docs.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <!-- HTML5 Shiv. For IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -167,7 +167,7 @@
                 <li>#license()</li>
             </ul>
             <ul class="list-unstyled">
-                <li>Rendered using <a href="@project.url@">@project.name@ @project.version@</a></li>
+                <li>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</li>
             </ul>
         </div>
     </div>
