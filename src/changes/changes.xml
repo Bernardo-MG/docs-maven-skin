@@ -44,14 +44,12 @@
 				Report links are now working correctly.
 			</action>
 		</release>
-		<release version="0.2.1" date="2015-10-15" description="Visual changes">
-			<action dev="bmg" type="add">
+		<release version="0.2.1" date="2015-11-8" description="Numbering headings">
+			<action dev="bmg" type="fix">
 				The footer link, sending the user to
 				the project page, no longer
 				spans the version.
 			</action>
-		</release>
-		<release version="0.2.2" date="2015-11-8" description="Numbering headings">
 			<action dev="bmg" type="add">
 				Headings of level 2 and 3 are now
 				numbered.
