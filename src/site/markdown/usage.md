@@ -12,7 +12,7 @@ Once the dependencies have been set, the skin can be used by adding the followin
 
 The version is expected to be defined in the properties section of the POM.
 
-## Example site.xml
+## Sample site.xml
 
 The site requires a correctly configured site.xml file to work. For more details check the correct documentation page, but the following shows an example of how it should look:
 
