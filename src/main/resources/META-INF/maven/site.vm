@@ -184,6 +184,7 @@
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./js/chevron-toggle.js"></script>
 <script src="./js/smooth-scroll.js"></script>
+<script src="./js/heading-numbering.js"></script>
 <script src="./lib/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
