@@ -23,7 +23,7 @@
  *#
 #*--------------------------------------------------*#
 #**
- * Initialization macro.
+ * Body content is modified and edited by the various utilities.
  *#
 #*--------------------------------------------------*#
 #set( $bodyContent = $html5UpdateTool.updateCodeSections( $bodyContent ) )
@@ -69,16 +69,24 @@
 
     <!-- Facebook OpenGraph -->
     <meta property="og:type" content="website"/>
+    if($config.canonicalLink)
     <meta property="og:url" content="$config.canonicalLink.getValue()"/>
+    #end
     <meta property="og:site" content="$title"/>
     <meta property="og:title" content="$title"/>
+    if($config.descriptionUrl)
     <meta property="og:description" content="$config.descriptionUrl.getValue()"/>
+    #end
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary"/>
+    if($config.twitterSite)
     <meta name="twitter:site" content="$config.twitterSite.getValue()"/>
+    #end
     <meta name="twitter:title" content="$title"/>
+    if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
+    #end
 
     <!-- CSS -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
