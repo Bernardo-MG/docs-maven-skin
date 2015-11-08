@@ -44,11 +44,16 @@
 				Report links are now working correctly.
 			</action>
 		</release>
-		<release version="0.2.1" date="2015-11-8" description="Numbering headings">
+		<release version="0.2.1" date="2015-11-8"
+			description="Numbering headings and small fixes">
 			<action dev="bmg" type="fix">
 				The footer link, sending the user to
 				the project page, no longer
 				spans the version.
+			</action>
+			<action dev="bmg" type="fix">
+				Paragraphs spanning the full width no
+				longer set to span 12 columns in a row.
 			</action>
 			<action dev="bmg" type="fix">
 				The header meta-data is no longer
