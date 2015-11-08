@@ -69,24 +69,24 @@
 
     <!-- Facebook OpenGraph -->
     <meta property="og:type" content="website"/>
-    #if($config.canonicalLink)
+#if($config.canonicalLink)
     <meta property="og:url" content="$config.canonicalLink.getValue()"/>
-    #end
+#end
     <meta property="og:site" content="$title"/>
     <meta property="og:title" content="$title"/>
-    #if($config.descriptionUrl)
+#if($config.descriptionUrl)
     <meta property="og:description" content="$config.descriptionUrl.getValue()"/>
-    #end
+#end
 
+#if($config.twitterSite)
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary"/>
-    #if($config.twitterSite)
     <meta name="twitter:site" content="$config.twitterSite.getValue()"/>
-    #end
     <meta name="twitter:title" content="$title"/>
-    #if($config.descriptionUrl)
+#if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
-    #end
+#end
+#end
 
     <!-- CSS -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
@@ -301,8 +301,8 @@
 #else
 #set( $subsections = [ $section ] )
 #if( !$lastBody )
-    <div class="row">
-        <div class="span12">
+    <div>
+        <div>
 #else
                 <hr />
 #end## /foreach($section in $sections)

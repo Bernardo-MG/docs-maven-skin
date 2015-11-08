@@ -50,6 +50,10 @@
 				the project page, no longer
 				spans the version.
 			</action>
+			<action dev="bmg" type="fix">
+				The header meta-data is no longer
+				generated when the required data is missing.
+			</action>
 			<action dev="bmg" type="add">
 				Headings of level 2 and 3 are now
 				numbered.
