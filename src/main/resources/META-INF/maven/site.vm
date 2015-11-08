@@ -69,22 +69,22 @@
 
     <!-- Facebook OpenGraph -->
     <meta property="og:type" content="website"/>
-    if($config.canonicalLink)
+    #if($config.canonicalLink)
     <meta property="og:url" content="$config.canonicalLink.getValue()"/>
     #end
     <meta property="og:site" content="$title"/>
     <meta property="og:title" content="$title"/>
-    if($config.descriptionUrl)
+    #if($config.descriptionUrl)
     <meta property="og:description" content="$config.descriptionUrl.getValue()"/>
     #end
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary"/>
-    if($config.twitterSite)
+    #if($config.twitterSite)
     <meta name="twitter:site" content="$config.twitterSite.getValue()"/>
     #end
     <meta name="twitter:title" content="$title"/>
-    if($config.descriptionUrl)
+    #if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
     #end
 
