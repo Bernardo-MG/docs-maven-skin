@@ -80,10 +80,9 @@
                     <plugins>
                         <plugin>
                             <!-- m2e lifecycle mapping -->
-                            <!-- This is used to configure the Maven plugin 
-                                for Eclipse. -->
-                            <!-- Among other things, it allows registering 
-                                goals, which Eclipse would otherwise reject. -->
+                            <!-- This is used to configure the Maven plugin for Eclipse. -->
+                            <!-- Among other things, it allows registering goals, 
+                                which Eclipse would otherwise reject. -->
                             <!-- It has no real effect on Maven. -->
                             <groupId>org.eclipse.m2e</groupId>
                             <artifactId>lifecycle-mapping</artifactId>
@@ -93,21 +92,21 @@
                                     <pluginExecutions>
                                         <pluginExecution>
                                             <!-- jacoco plugin configuration -->
-                                            <!-- Fixes the errors with Eclipse 
-                                                not recognizing the plugin configuration -->
+                                            <!-- Fixes the errors with Eclipse not 
+                                                recognizing the plugin configuration -->
                                             <pluginExecutionFilter>
                                                 <groupId>org.jacoco</groupId>
                                                 <artifactId>jacoco-maven-plugin</artifactId>
                                                 <versionRange>[0.5,)</versionRange>
                                                 <goals>
-                                                    <!-- The 'prepare-agent' 
-                                                        goal is registered to m2e. -->
+                                                    <!-- The 'prepare-agent' goal 
+                                                        is registered to m2e. -->
                                                     <goal>prepare-agent</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <!-- As m2e doesn't know 
-                                                    what to do with jacoco, it is ignored to avoid error warnings. -->
+                                                <!-- As m2e doesn't know what to 
+                                                    do with jacoco, it is ignored to avoid error warnings. -->
                                                 <ignore />
                                             </action>
                                         </pluginExecution>
@@ -122,8 +121,11 @@
             </build>
         </profile>
         <profile>
-            <id>default</id>
+            <!-- Release site deployment profile -->
+            <!-- Sets the site repository to point to the releases repo -->
+            <id>deploy-site-release</id>
             <activation>
+                <!-- Active by default so the repository appears in the reports -->
                 <activeByDefault>true</activeByDefault>
             </activation>
             <distributionManagement>
@@ -135,7 +137,9 @@
             </distributionManagement>
         </profile>
         <profile>
-            <id>development</id>
+            <!-- Development site deployment profile -->
+            <!-- Sets the site repository to point to the development repo -->
+            <id>deploy-site-development</id>
             <distributionManagement>
                 <site>
                     <id>site-development</id>
@@ -143,6 +147,15 @@
                     <url>ftp://docs.wandrell.com/docs-maven-skin</url>
                 </site>
             </distributionManagement>
+        </profile>
+        <profile>
+            <!-- Deployment profile -->
+            <!-- Sets ups the environment for deployment -->
+            <id>deployment</id>
+            <properties>
+                <!-- Tests are skipped -->
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
         </profile>
     </profiles>
 
@@ -191,7 +204,7 @@
         <plugin.ant.version>1.8</plugin.ant.version>
         <plugin.assembly.version>2.6</plugin.assembly.version>
         <plugin.changes.version>2.11</plugin.changes.version>
-        <plugin.clean.version>2.6.1</plugin.clean.version>
+        <plugin.clean.version>3.0.0</plugin.clean.version>
         <plugin.compiler.version>3.3</plugin.compiler.version>
         <plugin.dependency.version>2.10</plugin.dependency.version>
         <plugin.deploy.version>2.8.2</plugin.deploy.version>
@@ -207,9 +220,9 @@
         <plugin.source.version>2.4</plugin.source.version>
         <plugin.surefire.version>2.18.1</plugin.surefire.version>
         <!-- Extensions versions -->
-        <extension.wagon.version>2.9</extension.wagon.version>
+        <extension.wagon.version>2.10</extension.wagon.version>
         <!-- Maven Site -->
-        <site.skin.version>0.2.1</site.skin.version>
+        <site.skin.version>0.2.3-SNAPSHOT</site.skin.version>
         <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
         <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
     </properties>
@@ -263,22 +276,20 @@
         </extensions>
         <pluginManagement>
             <plugins>
-                <!-- The following plugins always appear on the plugins list, 
-                    even when they have not been added to the project. -->
-                <!-- This configuration block allows keeping them always 
-                    updated. -->
+                <!-- The following plugins always appear on the plugins list, even 
+                    when they have not been added to the project. -->
+                <!-- This configuration block allows keeping them always updated. -->
                 <plugin>
                     <!-- Dependency -->
-                    <!-- Takes care of dependencies, both copying and showing 
-                        their info. -->
+                    <!-- Takes care of dependencies, both copying and showing their 
+                        info. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${plugin.dependency.version}</version>
                 </plugin>
                 <plugin>
                     <!-- Assembly -->
-                    <!-- Builds a distributable file from all the project 
-                        components. -->
+                    <!-- Builds a distributable file from all the project components. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${plugin.assembly.version}</version>
@@ -328,9 +339,8 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${plugin.resources.version}</version>
                 <configuration>
-                    <!-- Override resource filtering delimiters to avoid 
-                        filtering Velocity variables, which have the same pattern ${replace.me}. 
-                        Instead, using @replace.me@. -->
+                    <!-- Override resource filtering delimiters to avoid filtering 
+                        Velocity variables, which have the same pattern ${replace.me}. Instead, using @replace.me@. -->
                     <useDefaultDelimiters>false</useDefaultDelimiters>
                     <delimiters>
                         <delimiter>@</delimiter>
@@ -346,19 +356,22 @@
             </plugin>
             <plugin>
                 <!-- Enforcer -->
-                <!-- Stops the project from being built if it does not comply 
-                    with a set of rules. -->
+                <!-- Stops the project from being built if it does not comply with 
+                    a set of rules. -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>${plugin.enforcer.version}</version>
                 <executions>
                     <execution>
                         <id>enforce</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
                         <configuration>
                             <rules>
                                 <!-- Dependencies convergence. -->
-                                <!-- This variant of the rule requires less 
-                                    configuration, making use of Maven's dependency resolver. -->
+                                <!-- This variant of the rule requires less configuration, 
+                                    making use of Maven's dependency resolver. -->
                                 <requireUpperBoundDeps />
                                 <!-- Not obsolete JDK. -->
                                 <requireJavaVersion>
@@ -366,61 +379,21 @@
                                 </requireJavaVersion>
                                 <!-- No plugin without version. -->
                                 <requirePluginVersions>
-                                    <message>Best Practice is to always
-                                        define plugin versions!</message>
+                                    <message><![CDATA[Best Practice is to always define plugin versions.]]></message>
                                     <banLatest>true</banLatest>
                                     <banRelease>true</banRelease>
                                     <banSnapshots>true</banSnapshots>
                                     <phases>clean,deploy,site,test,verify</phases>
                                 </requirePluginVersions>
-                                <!-- Source encoding should be set. -->
-                                <requireProperty>
-                                    <property>project.build.sourceEncoding</property>
-                                    <message>Indicate the source
-                                        encoding for the project.</message>
-                                    <regex>.*</regex>
-                                    <regexMessage>It should be a valid
-                                        text encoding format.</regexMessage>
-                                </requireProperty>
-                                <!-- Report output encoding should be set. -->
-                                <requireProperty>
-                                    <property>project.reporting.outputEncoding</property>
-                                    <message>Indicate the encoding for
-                                        the reporting output.</message>
-                                    <regex>.*</regex>
-                                    <regexMessage>It should be a valid
-                                        text encoding format.</regexMessage>
-                                </requireProperty>
-                                <!-- Source JDK should be set. -->
-                                <requireProperty>
-                                    <property>maven.compiler.source</property>
-                                    <message>Indicate the source JDK.</message>
-                                    <regex>\d+\.\d+[\.\d+]?.*</regex>
-                                    <regexMessage>It should be a valid
-                                        JDK version.</regexMessage>
-                                </requireProperty>
-                                <!-- Target JDK should be set. -->
-                                <requireProperty>
-                                    <property>maven.compiler.target</property>
-                                    <message>Indicate the target JDK.</message>
-                                    <regex>\d+\.\d+[\.\d+]?.*</regex>
-                                    <regexMessage>It should be a valid
-                                        JDK version.</regexMessage>
-                                </requireProperty>
                                 <!-- Manifest name should be given. -->
                                 <requireProperty>
                                     <property>manifest.name</property>
-                                    <message>Give a name for the
-                                        manifest.</message>
+                                    <message><![CDATA[Give a name for the manifest.]]></message>
                                     <regex>.*</regex>
-                                    <regexMessage>It should be a valid
-                                        name.</regexMessage>
+                                    <regexMessage><![CDATA[It should be a valid name.]]></regexMessage>
                                 </requireProperty>
                             </rules>
                         </configuration>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -467,8 +440,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <!-- Relativizing the links has a tendency to end breaking 
-                        them -->
+                    <!-- Relativizing the links has a tendency to end breaking them -->
                     <relativizeDecorationLinks>false</relativizeDecorationLinks>
                 </configuration>
             </plugin>
@@ -478,6 +450,7 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${plugin.source.version}</version>
                 <executions>
+                    <!-- Source plugin is bound to the deploy phase -->
                     <execution>
                         <!-- Generates the jar for the deployment -->
                         <id>attach-sources</id>
@@ -491,14 +464,13 @@
             <plugin>
                 <!-- Deploy -->
                 <!-- Takes care of the deployment phase -->
-                <!-- It is set to generate and deploy a POM file along the 
-                    artifact -->
+                <!-- It is set to generate and deploy a POM file along the artifact -->
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${plugin.deploy.version}</version>
                 <executions>
+                    <!-- Deploy plugin is bound to the deploy phase -->
                     <execution>
                         <id>deploy</id>
-                        <phase>deploy</phase>
                         <goals>
                             <goal>deploy</goal>
                         </goals>
@@ -518,9 +490,10 @@
                 <artifactId>maven-changes-plugin</artifactId>
                 <version>${plugin.changes.version}</version>
                 <executions>
+                    <!-- Changes plugin is bound to the pre-site phase -->
                     <execution>
                         <id>check-changes</id>
-                        <phase>verify</phase>
+                        <phase>pre-site</phase>
                         <goals>
                             <goal>changes-check</goal>
                         </goals>

@@ -22,10 +22,13 @@ The main features offered by the skin are:
 
 - Minimalist and reactive look
 - HTML5
-- [Bootstrap][bootstrap]
+- [Bootstrap 3][bootstrap]
 - [Font Awesome][font_awesome] icons
+- Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
 
 [bootstrap]: http://getbootstrap.com/
 [docs_template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [font_awesome]: https://fortawesome.github.io/Font-Awesome/
 [reflow]: http://andriusvelykis.github.io/reflow-maven-skin/
+[open-graph]: http://ogp.me/
+[twitter-cards]: https://dev.twitter.com/cards/overview
