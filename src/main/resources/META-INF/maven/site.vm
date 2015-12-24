@@ -61,13 +61,17 @@
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Metadata -->
+#if($config.descriptionUrl)
     <meta name="description" content="$config.descriptionUrl.getValue()">
+#end
+#if($config.keywords)
     <meta name="keywords" content="$config.keywords.getValue()">
+#end
 #foreach( $author in $project.developers )
     <meta name="author" content="$author.name" />
 #end
 
-    <!-- Facebook OpenGraph -->
+    <!-- Facebook Open Graph -->
     <meta property="og:type" content="website"/>
 #if($config.canonicalLink)
     <meta property="og:url" content="$config.canonicalLink.getValue()"/>

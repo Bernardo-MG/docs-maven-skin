@@ -80,10 +80,9 @@
                     <plugins>
                         <plugin>
                             <!-- m2e lifecycle mapping -->
-                            <!-- This is used to configure the Maven plugin 
-                                for Eclipse. -->
-                            <!-- Among other things, it allows registering 
-                                goals, which Eclipse would otherwise reject. -->
+                            <!-- This is used to configure the Maven plugin for Eclipse. -->
+                            <!-- Among other things, it allows registering goals, 
+                                which Eclipse would otherwise reject. -->
                             <!-- It has no real effect on Maven. -->
                             <groupId>org.eclipse.m2e</groupId>
                             <artifactId>lifecycle-mapping</artifactId>
@@ -93,21 +92,21 @@
                                     <pluginExecutions>
                                         <pluginExecution>
                                             <!-- jacoco plugin configuration -->
-                                            <!-- Fixes the errors with Eclipse 
-                                                not recognizing the plugin configuration -->
+                                            <!-- Fixes the errors with Eclipse not 
+                                                recognizing the plugin configuration -->
                                             <pluginExecutionFilter>
                                                 <groupId>org.jacoco</groupId>
                                                 <artifactId>jacoco-maven-plugin</artifactId>
                                                 <versionRange>[0.5,)</versionRange>
                                                 <goals>
-                                                    <!-- The 'prepare-agent' 
-                                                        goal is registered to m2e. -->
+                                                    <!-- The 'prepare-agent' goal 
+                                                        is registered to m2e. -->
                                                     <goal>prepare-agent</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <!-- As m2e doesn't know 
-                                                    what to do with jacoco, it is ignored to avoid error warnings. -->
+                                                <!-- As m2e doesn't know what to 
+                                                    do with jacoco, it is ignored to avoid error warnings. -->
                                                 <ignore />
                                             </action>
                                         </pluginExecution>
@@ -263,22 +262,20 @@
         </extensions>
         <pluginManagement>
             <plugins>
-                <!-- The following plugins always appear on the plugins list, 
-                    even when they have not been added to the project. -->
-                <!-- This configuration block allows keeping them always 
-                    updated. -->
+                <!-- The following plugins always appear on the plugins list, even 
+                    when they have not been added to the project. -->
+                <!-- This configuration block allows keeping them always updated. -->
                 <plugin>
                     <!-- Dependency -->
-                    <!-- Takes care of dependencies, both copying and showing 
-                        their info. -->
+                    <!-- Takes care of dependencies, both copying and showing their 
+                        info. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${plugin.dependency.version}</version>
                 </plugin>
                 <plugin>
                     <!-- Assembly -->
-                    <!-- Builds a distributable file from all the project 
-                        components. -->
+                    <!-- Builds a distributable file from all the project components. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${plugin.assembly.version}</version>
@@ -328,9 +325,8 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${plugin.resources.version}</version>
                 <configuration>
-                    <!-- Override resource filtering delimiters to avoid 
-                        filtering Velocity variables, which have the same pattern ${replace.me}. 
-                        Instead, using @replace.me@. -->
+                    <!-- Override resource filtering delimiters to avoid filtering 
+                        Velocity variables, which have the same pattern ${replace.me}. Instead, using @replace.me@. -->
                     <useDefaultDelimiters>false</useDefaultDelimiters>
                     <delimiters>
                         <delimiter>@</delimiter>
@@ -346,8 +342,8 @@
             </plugin>
             <plugin>
                 <!-- Enforcer -->
-                <!-- Stops the project from being built if it does not comply 
-                    with a set of rules. -->
+                <!-- Stops the project from being built if it does not comply with 
+                    a set of rules. -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>${plugin.enforcer.version}</version>
@@ -357,8 +353,8 @@
                         <configuration>
                             <rules>
                                 <!-- Dependencies convergence. -->
-                                <!-- This variant of the rule requires less 
-                                    configuration, making use of Maven's dependency resolver. -->
+                                <!-- This variant of the rule requires less configuration, 
+                                    making use of Maven's dependency resolver. -->
                                 <requireUpperBoundDeps />
                                 <!-- Not obsolete JDK. -->
                                 <requireJavaVersion>
@@ -367,7 +363,8 @@
                                 <!-- No plugin without version. -->
                                 <requirePluginVersions>
                                     <message>Best Practice is to always
-                                        define plugin versions!</message>
+                                        define
+                                        plugin versions!</message>
                                     <banLatest>true</banLatest>
                                     <banRelease>true</banRelease>
                                     <banSnapshots>true</banSnapshots>
@@ -377,19 +374,23 @@
                                 <requireProperty>
                                     <property>project.build.sourceEncoding</property>
                                     <message>Indicate the source
-                                        encoding for the project.</message>
+                                        encoding for the
+                                        project.</message>
                                     <regex>.*</regex>
                                     <regexMessage>It should be a valid
-                                        text encoding format.</regexMessage>
+                                        text
+                                        encoding format.</regexMessage>
                                 </requireProperty>
                                 <!-- Report output encoding should be set. -->
                                 <requireProperty>
                                     <property>project.reporting.outputEncoding</property>
                                     <message>Indicate the encoding for
-                                        the reporting output.</message>
+                                        the
+                                        reporting output.</message>
                                     <regex>.*</regex>
                                     <regexMessage>It should be a valid
-                                        text encoding format.</regexMessage>
+                                        text
+                                        encoding format.</regexMessage>
                                 </requireProperty>
                                 <!-- Source JDK should be set. -->
                                 <requireProperty>
@@ -397,7 +398,8 @@
                                     <message>Indicate the source JDK.</message>
                                     <regex>\d+\.\d+[\.\d+]?.*</regex>
                                     <regexMessage>It should be a valid
-                                        JDK version.</regexMessage>
+                                        JDK
+                                        version.</regexMessage>
                                 </requireProperty>
                                 <!-- Target JDK should be set. -->
                                 <requireProperty>
@@ -405,7 +407,8 @@
                                     <message>Indicate the target JDK.</message>
                                     <regex>\d+\.\d+[\.\d+]?.*</regex>
                                     <regexMessage>It should be a valid
-                                        JDK version.</regexMessage>
+                                        JDK
+                                        version.</regexMessage>
                                 </requireProperty>
                                 <!-- Manifest name should be given. -->
                                 <requireProperty>
@@ -467,8 +470,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <!-- Relativizing the links has a tendency to end breaking 
-                        them -->
+                    <!-- Relativizing the links has a tendency to end breaking them -->
                     <relativizeDecorationLinks>false</relativizeDecorationLinks>
                 </configuration>
             </plugin>
@@ -491,8 +493,7 @@
             <plugin>
                 <!-- Deploy -->
                 <!-- Takes care of the deployment phase -->
-                <!-- It is set to generate and deploy a POM file along the 
-                    artifact -->
+                <!-- It is set to generate and deploy a POM file along the artifact -->
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${plugin.deploy.version}</version>
                 <executions>

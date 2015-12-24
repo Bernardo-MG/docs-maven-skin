@@ -13,25 +13,25 @@ The way to fix this is to add the correct dependency to the site plugin, like th
 
 ```xml
 <build>
-	<plugins>
-		...
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-site-plugin</artifactId>
-			<dependencies>
-				...
-				<dependency>
-					<!-- Velocity -->
-					<groupId>org.apache.velocity</groupId>
-					<artifactId>velocity</artifactId>
-					<version>${plugin.site.velocity.version}</version>
-				</dependency>
-				...
-			</dependencies>
-			...
-		</plugin>
-		...
-	</plugins>
+    <plugins>
+        ...
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <dependencies>
+                ...
+                <dependency>
+                    <!-- Velocity -->
+                    <groupId>org.apache.velocity</groupId>
+                    <artifactId>velocity</artifactId>
+                    <version>${plugin.site.velocity.version}</version>
+                </dependency>
+                ...
+            </dependencies>
+            ...
+        </plugin>
+        ...
+    </plugins>
 </build>
 ```
 
@@ -41,31 +41,31 @@ As the skin is used by the site plugin, the best way to use it is by adding it a
 
 ```xml
 <build>
-	<plugins>
-		...
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-site-plugin</artifactId>
-			<dependencies>
-				...
-				<dependency>
-					<!-- Docs Maven Skin -->
-					<groupId>com.wandrell.maven.skins</groupId>
-					<artifactId>docs-maven-skin</artifactId>
-					<version>${site.skin.version}</version>
-				</dependency>
-				<dependency>
-					<!-- Velocity -->
-					<groupId>org.apache.velocity</groupId>
-					<artifactId>velocity</artifactId>
-					<version>${plugin.site.velocity.version}</version>
-				</dependency>
-				...
-			</dependencies>
-			...
-		</plugin>
-		...
-	</plugins>
+    <plugins>
+        ...
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <dependencies>
+                ...
+                <dependency>
+                    <!-- Docs Maven Skin -->
+                    <groupId>com.wandrell.maven.skins</groupId>
+                    <artifactId>docs-maven-skin</artifactId>
+                    <version>${site.skin.version}</version>
+                </dependency>
+                <dependency>
+                    <!-- Velocity -->
+                    <groupId>org.apache.velocity</groupId>
+                    <artifactId>velocity</artifactId>
+                    <version>${plugin.site.velocity.version}</version>
+                </dependency>
+                ...
+            </dependencies>
+            ...
+        </plugin>
+        ...
+    </plugins>
 </build>
 ```
 
@@ -77,13 +77,13 @@ Snapshot artifacts are stored on OSS Sonatype. They can be accessed by adding th
 
 ```xml
 <repositories>
-	...
-	<repository>
-		<id>oss-sonatype-snapshots</id>
-		<name>OSS Sonatype snapshots repository</name>
-		<url>https://oss.sonatype.org/content/groups/staging</url>
-	</repository>
-	...
+    ...
+    <repository>
+        <id>oss-sonatype-snapshots</id>
+        <name>OSS Sonatype snapshots repository</name>
+        <url>https://oss.sonatype.org/content/groups/staging</url>
+    </repository>
+    ...
 </repositories>
 ```
 

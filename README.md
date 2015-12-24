@@ -16,8 +16,9 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 
 - Minimalist and reactive look
 - HTML5
-- Bootstrap
-- Font Awesome icons
+- [Bootstrap 3][bootstrap]
+- [Font Awesome][font_awesome] icons
+- Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
 
 ## Demo
 
@@ -82,8 +83,6 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
-[library-archetype]: https://github.com/bernardo-mg/library-maven-archetype
-[docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
@@ -93,3 +92,10 @@ The project has been released under the [MIT License][license].
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
 [site-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin
 [site-release]: http://docs.wandrell.com/maven/docs-maven-skin
+
+[library-archetype]: https://github.com/bernardo-mg/library-maven-archetype
+[docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
+[bootstrap]: http://getbootstrap.com/
+[font_awesome]: https://fortawesome.github.io/Font-Awesome/
+[open-graph]: http://ogp.me/
+[twitter-cards]: https://dev.twitter.com/cards/overview
