@@ -121,8 +121,11 @@
             </build>
         </profile>
         <profile>
-            <id>default</id>
+            <!-- Release site deployment profile -->
+            <!-- Sets the site repository to point to the releases repo -->
+            <id>deploy-site-release</id>
             <activation>
+                <!-- Active by default so the repository appears in the reports -->
                 <activeByDefault>true</activeByDefault>
             </activation>
             <distributionManagement>
@@ -134,7 +137,9 @@
             </distributionManagement>
         </profile>
         <profile>
-            <id>development</id>
+            <!-- Development site deployment profile -->
+            <!-- Sets the site repository to point to the development repo -->
+            <id>deploy-site-development</id>
             <distributionManagement>
                 <site>
                     <id>site-development</id>
@@ -142,6 +147,15 @@
                     <url>ftp://docs.wandrell.com/docs-maven-skin</url>
                 </site>
             </distributionManagement>
+        </profile>
+        <profile>
+            <!-- Deployment profile -->
+            <!-- Sets ups the environment for deployment -->
+            <id>deployment</id>
+            <properties>
+                <!-- Tests are skipped -->
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
         </profile>
     </profiles>
 
@@ -190,7 +204,7 @@
         <plugin.ant.version>1.8</plugin.ant.version>
         <plugin.assembly.version>2.6</plugin.assembly.version>
         <plugin.changes.version>2.11</plugin.changes.version>
-        <plugin.clean.version>2.6.1</plugin.clean.version>
+        <plugin.clean.version>3.0.0</plugin.clean.version>
         <plugin.compiler.version>3.3</plugin.compiler.version>
         <plugin.dependency.version>2.10</plugin.dependency.version>
         <plugin.deploy.version>2.8.2</plugin.deploy.version>
@@ -206,7 +220,7 @@
         <plugin.source.version>2.4</plugin.source.version>
         <plugin.surefire.version>2.18.1</plugin.surefire.version>
         <!-- Extensions versions -->
-        <extension.wagon.version>2.9</extension.wagon.version>
+        <extension.wagon.version>2.10</extension.wagon.version>
         <!-- Maven Site -->
         <site.skin.version>0.2.1</site.skin.version>
         <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
@@ -350,6 +364,9 @@
                 <executions>
                     <execution>
                         <id>enforce</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
                         <configuration>
                             <rules>
                                 <!-- Dependencies convergence. -->
@@ -362,68 +379,21 @@
                                 </requireJavaVersion>
                                 <!-- No plugin without version. -->
                                 <requirePluginVersions>
-                                    <message>Best Practice is to always
-                                        define
-                                        plugin versions!</message>
+                                    <message><![CDATA[Best Practice is to always define plugin versions.]]></message>
                                     <banLatest>true</banLatest>
                                     <banRelease>true</banRelease>
                                     <banSnapshots>true</banSnapshots>
                                     <phases>clean,deploy,site,test,verify</phases>
                                 </requirePluginVersions>
-                                <!-- Source encoding should be set. -->
-                                <requireProperty>
-                                    <property>project.build.sourceEncoding</property>
-                                    <message>Indicate the source
-                                        encoding for the
-                                        project.</message>
-                                    <regex>.*</regex>
-                                    <regexMessage>It should be a valid
-                                        text
-                                        encoding format.</regexMessage>
-                                </requireProperty>
-                                <!-- Report output encoding should be set. -->
-                                <requireProperty>
-                                    <property>project.reporting.outputEncoding</property>
-                                    <message>Indicate the encoding for
-                                        the
-                                        reporting output.</message>
-                                    <regex>.*</regex>
-                                    <regexMessage>It should be a valid
-                                        text
-                                        encoding format.</regexMessage>
-                                </requireProperty>
-                                <!-- Source JDK should be set. -->
-                                <requireProperty>
-                                    <property>maven.compiler.source</property>
-                                    <message>Indicate the source JDK.</message>
-                                    <regex>\d+\.\d+[\.\d+]?.*</regex>
-                                    <regexMessage>It should be a valid
-                                        JDK
-                                        version.</regexMessage>
-                                </requireProperty>
-                                <!-- Target JDK should be set. -->
-                                <requireProperty>
-                                    <property>maven.compiler.target</property>
-                                    <message>Indicate the target JDK.</message>
-                                    <regex>\d+\.\d+[\.\d+]?.*</regex>
-                                    <regexMessage>It should be a valid
-                                        JDK
-                                        version.</regexMessage>
-                                </requireProperty>
                                 <!-- Manifest name should be given. -->
                                 <requireProperty>
                                     <property>manifest.name</property>
-                                    <message>Give a name for the
-                                        manifest.</message>
+                                    <message><![CDATA[Give a name for the manifest.]]></message>
                                     <regex>.*</regex>
-                                    <regexMessage>It should be a valid
-                                        name.</regexMessage>
+                                    <regexMessage><![CDATA[It should be a valid name.]]></regexMessage>
                                 </requireProperty>
                             </rules>
                         </configuration>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -480,6 +450,7 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${plugin.source.version}</version>
                 <executions>
+                    <!-- Source plugin is bound to the deploy phase -->
                     <execution>
                         <!-- Generates the jar for the deployment -->
                         <id>attach-sources</id>
@@ -497,9 +468,9 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${plugin.deploy.version}</version>
                 <executions>
+                    <!-- Deploy plugin is bound to the deploy phase -->
                     <execution>
                         <id>deploy</id>
-                        <phase>deploy</phase>
                         <goals>
                             <goal>deploy</goal>
                         </goals>
@@ -519,9 +490,10 @@
                 <artifactId>maven-changes-plugin</artifactId>
                 <version>${plugin.changes.version}</version>
                 <executions>
+                    <!-- Changes plugin is bound to the pre-site phase -->
                     <execution>
                         <id>check-changes</id>
-                        <phase>verify</phase>
+                        <phase>pre-site</phase>
                         <goals>
                             <goal>changes-check</goal>
                         </goals>
