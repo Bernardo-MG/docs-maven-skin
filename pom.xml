@@ -10,7 +10,7 @@
 
     <groupId>com.wandrell.maven.skins</groupId>
     <artifactId>docs-maven-skin</artifactId>
-    <version>0.2.3-SNAPSHOT</version>
+    <version>0.2.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Docs Maven Skin</name>
@@ -199,7 +199,7 @@
         <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
         <!-- Dependencies versions -->
         <velocity.version>1.7</velocity.version>
-        <wandrell.siteFixer.version>0.3.0</wandrell.siteFixer.version>
+        <wandrell.siteFixer.version>0.3.4</wandrell.siteFixer.version>
         <!-- Plugins versions -->
         <plugin.ant.version>1.8</plugin.ant.version>
         <plugin.assembly.version>2.6</plugin.assembly.version>
