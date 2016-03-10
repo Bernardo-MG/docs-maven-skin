@@ -76,7 +76,7 @@
                 Updated project configuration.
             </action>
         </release>
-        <release version="0.2.4" date="2015-3-9" description="Various fixes">
+        <release version="0.2.4" date="2015-3-10" description="Various fixes">
             <action dev="bmg" type="fix">
                 Fixed Maven Site deployment.
             </action>
