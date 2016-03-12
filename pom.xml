@@ -222,7 +222,7 @@
         <!-- Extensions versions -->
         <extension.wagon.version>2.10</extension.wagon.version>
         <!-- Maven Site -->
-        <site.skin.version>0.2.3</site.skin.version>
+        <site.skin.version>0.2.4</site.skin.version>
         <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
         <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
     </properties>
