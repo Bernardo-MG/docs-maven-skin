@@ -5,12 +5,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ********************************************** -->
+    <!-- ****************** BASE POM ****************** -->
+    <!-- ********************************************** -->
+
+    <parent>
+        <groupId>com.wandrell.maven</groupId>
+        <artifactId>base-pom</artifactId>
+        <version>0.1.1</version>
+    </parent>
+
+    <!-- ********************************************** -->
     <!-- **************** PROJECT INFO **************** -->
     <!-- ********************************************** -->
 
     <groupId>com.wandrell.maven.skins</groupId>
     <artifactId>docs-maven-skin</artifactId>
-    <version>0.2.4-SNAPSHOT</version>
+    <version>0.2.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Docs Maven Skin</name>
@@ -69,6 +79,11 @@
 
     <profiles>
         <profile>
+            <!-- Profile for the Eclipse Maven plugin -->
+            <!-- Sets the POM so this plugin does not give the usual unregistered
+                goals errors -->
+            <!-- It will be activated automatically on Eclipse if this has the m2e
+                plugin, by detecting the version property -->
             <id>eclipse</id>
             <activation>
                 <property>
@@ -88,30 +103,6 @@
                             <artifactId>lifecycle-mapping</artifactId>
                             <version>${plugin.lifecycle.version}</version>
                             <configuration>
-                                <lifecycleMappingMetadata>
-                                    <pluginExecutions>
-                                        <pluginExecution>
-                                            <!-- jacoco plugin configuration -->
-                                            <!-- Fixes the errors with Eclipse not
-                                                recognizing the plugin configuration -->
-                                            <pluginExecutionFilter>
-                                                <groupId>org.jacoco</groupId>
-                                                <artifactId>jacoco-maven-plugin</artifactId>
-                                                <versionRange>[0.5,)</versionRange>
-                                                <goals>
-                                                    <!-- The 'prepare-agent' goal
-                                                        is registered to m2e. -->
-                                                    <goal>prepare-agent</goal>
-                                                </goals>
-                                            </pluginExecutionFilter>
-                                            <action>
-                                                <!-- As m2e doesn't know what to
-                                                    do with jacoco, it is ignored to avoid error warnings. -->
-                                                <ignore />
-                                            </action>
-                                        </pluginExecution>
-                                    </pluginExecutions>
-                                </lifecycleMappingMetadata>
                                 <downloadSources>true</downloadSources>
                                 <downloadJavadocs>true</downloadJavadocs>
                             </configuration>
@@ -189,38 +180,14 @@
     <!-- ********************************************** -->
 
     <properties>
-        <!-- Encoding -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-        <!-- Java version -->
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
         <!-- Manifest data -->
         <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
         <!-- Dependencies versions -->
         <velocity.version>1.7</velocity.version>
         <wandrell.siteFixer.version>0.3.4</wandrell.siteFixer.version>
         <!-- Plugins versions -->
-        <plugin.ant.version>1.8</plugin.ant.version>
-        <plugin.assembly.version>2.6</plugin.assembly.version>
         <plugin.changes.version>2.11</plugin.changes.version>
-        <plugin.clean.version>3.0.0</plugin.clean.version>
-        <plugin.compiler.version>3.3</plugin.compiler.version>
-        <plugin.dependency.version>2.10</plugin.dependency.version>
-        <plugin.deploy.version>2.8.2</plugin.deploy.version>
-        <plugin.enforcer.version>1.4.1</plugin.enforcer.version>
-        <plugin.install.version>2.5.2</plugin.install.version>
-        <plugin.jar.version>2.6</plugin.jar.version>
-        <plugin.lifecycle.version>1.0.0</plugin.lifecycle.version>
-        <plugin.release.version>2.5.2</plugin.release.version>
-        <plugin.reports.version>2.8.1</plugin.reports.version>
-        <plugin.resources.version>2.7</plugin.resources.version>
-        <plugin.site.velocity.version>${velocity.version}</plugin.site.velocity.version>
-        <plugin.site.version>3.4</plugin.site.version>
-        <plugin.source.version>2.4</plugin.source.version>
-        <plugin.surefire.version>2.18.1</plugin.surefire.version>
-        <!-- Extensions versions -->
-        <extension.wagon.version>2.10</extension.wagon.version>
+        <plugin.site.velocity.version>1.7</plugin.site.velocity.version>
         <!-- Maven Site -->
         <site.skin.version>0.2.4</site.skin.version>
         <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
@@ -252,236 +219,7 @@
 
     <build>
         <defaultGoal>clean package install</defaultGoal>
-        <resources>
-            <resource>
-                <directory>src/main/resources/</directory>
-            </resource>
-            <resource>
-                <!-- Filter skin template to add generator version -->
-                <directory>src/main/resources/</directory>
-                <includes>
-                    <include>META-INF/maven/*</include>
-                </includes>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-        <extensions>
-            <extension>
-                <!-- Wagon -->
-                <!-- Enables the use of FTP. -->
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ftp</artifactId>
-                <version>${extension.wagon.version}</version>
-            </extension>
-        </extensions>
-        <pluginManagement>
-            <plugins>
-                <!-- The following plugins always appear on the plugins list, even
-                    when they have not been added to the project. -->
-                <!-- This configuration block allows keeping them always updated. -->
-                <plugin>
-                    <!-- Dependency -->
-                    <!-- Takes care of dependencies, both copying and showing their
-                        info. -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${plugin.dependency.version}</version>
-                </plugin>
-                <plugin>
-                    <!-- Assembly -->
-                    <!-- Builds a distributable file from all the project components. -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>${plugin.assembly.version}</version>
-                </plugin>
-                <plugin>
-                    <!-- Release -->
-                    <!-- Generates releases and updates the project. -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>${plugin.release.version}</version>
-                </plugin>
-                <plugin>
-                    <!-- Ant Run -->
-                    <!-- Capable of handling Ant scripts. -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <version>${plugin.ant.version}</version>
-                </plugin>
-                <plugin>
-                    <!-- Surefire -->
-                    <!-- Runs unit tests -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${plugin.surefire.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
-            <plugin>
-                <!-- Clean -->
-                <!-- Cleans the output folder. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>${plugin.clean.version}</version>
-            </plugin>
-            <plugin>
-                <!-- Install -->
-                <!-- Installs the project into the local Maven repository. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>${plugin.install.version}</version>
-            </plugin>
-            <plugin>
-                <!-- Resources -->
-                <!-- Handles the project resources. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>${plugin.resources.version}</version>
-                <configuration>
-                    <!-- Override resource filtering delimiters to avoid filtering
-                        Velocity variables, which have the same pattern ${replace.me}. Instead, using @replace.me@. -->
-                    <useDefaultDelimiters>false</useDefaultDelimiters>
-                    <delimiters>
-                        <delimiter>@</delimiter>
-                    </delimiters>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- Compiler -->
-                <!-- Handles the source code. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${plugin.compiler.version}</version>
-            </plugin>
-            <plugin>
-                <!-- Enforcer -->
-                <!-- Stops the project from being built if it does not comply with
-                    a set of rules. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${plugin.enforcer.version}</version>
-                <executions>
-                    <execution>
-                        <id>enforce</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <!-- Dependencies convergence. -->
-                                <!-- This variant of the rule requires less configuration,
-                                    making use of Maven's dependency resolver. -->
-                                <requireUpperBoundDeps />
-                                <!-- Not obsolete JDK. -->
-                                <requireJavaVersion>
-                                    <version>[1.7,)</version>
-                                </requireJavaVersion>
-                                <!-- No plugin without version. -->
-                                <requirePluginVersions>
-                                    <message><![CDATA[Best Practice is to always define plugin versions.]]></message>
-                                    <banLatest>true</banLatest>
-                                    <banRelease>true</banRelease>
-                                    <banSnapshots>true</banSnapshots>
-                                    <phases>clean,deploy,site,test,verify</phases>
-                                </requirePluginVersions>
-                                <!-- Manifest name should be given. -->
-                                <requireProperty>
-                                    <property>manifest.name</property>
-                                    <message><![CDATA[Give a name for the manifest.]]></message>
-                                    <regex>.*</regex>
-                                    <regexMessage><![CDATA[It should be a valid name.]]></regexMessage>
-                                </requireProperty>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <!-- Jar -->
-                <!-- Generates the jar file -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${plugin.jar.version}</version>
-                <configuration>
-                    <archive>
-                        <index>true</index>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                            <packageName>${project.groupId}</packageName>
-                        </manifest>
-                        <manifestEntries>
-                            <name>${manifest.name}</name>
-                            <url>${project.url}</url>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- Site -->
-                <!-- Generates the Maven Site -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>${plugin.site.version}</version>
-                <dependencies>
-                    <dependency>
-                        <!-- Docs Maven Skin -->
-                        <groupId>com.wandrell.maven.skins</groupId>
-                        <artifactId>docs-maven-skin</artifactId>
-                        <version>${site.skin.version}</version>
-                    </dependency>
-                    <dependency>
-                        <!-- Velocity -->
-                        <groupId>org.apache.velocity</groupId>
-                        <artifactId>velocity</artifactId>
-                        <version>${plugin.site.velocity.version}</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <!-- Relativizing the links has a tendency to end breaking them -->
-                    <relativizeDecorationLinks>false</relativizeDecorationLinks>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- Source -->
-                <!-- Bundles the source into a jar -->
-                <artifactId>maven-source-plugin</artifactId>
-                <version>${plugin.source.version}</version>
-                <executions>
-                    <!-- Source plugin is bound to the deploy phase -->
-                    <execution>
-                        <!-- Generates the jar for the deployment -->
-                        <id>attach-sources</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <!-- Deploy -->
-                <!-- Takes care of the deployment phase -->
-                <!-- It is set to generate and deploy a POM file along the artifact -->
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>${plugin.deploy.version}</version>
-                <executions>
-                    <!-- Deploy plugin is bound to the deploy phase -->
-                    <execution>
-                        <id>deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                        <configuration>
-                            <generatePom>true</generatePom>
-                            <url>${project.distributionManagement.repository.url}</url>
-                            <file>${project.build.directory}/${project.build.finalName}.jar</file>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <!-- Changes -->
                 <!-- Takes care of the changes log -->
@@ -510,6 +248,26 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <!-- Site -->
+                <!-- Generates the Maven Site -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <!-- Docs Maven Skin -->
+                        <groupId>com.wandrell.maven.skins</groupId>
+                        <artifactId>docs-maven-skin</artifactId>
+                        <version>${site.skin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <!-- Velocity -->
+                        <groupId>org.apache.velocity</groupId>
+                        <artifactId>velocity</artifactId>
+                        <version>${plugin.site.velocity.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
@@ -520,47 +278,56 @@
     <reporting>
         <plugins>
             <plugin>
-                <!-- Project Info -->
-                <!-- Generates general information reports -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${plugin.reports.version}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>summary</report>
-                            <report>license</report>
-                            <report>modules</report>
-                            <report>project-team</report>
-                            <report>dependencies</report>
-                            <report>dependency-info</report>
-                            <report>dependency-management</report>
-                            <report>plugins</report>
-                            <report>plugin-management</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
+                <!-- FindBugs -->
+                <!-- Checks for patterns which are prone to errors -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Exclusion patterns -->
+                    <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>
+                </configuration>
             </plugin>
             <plugin>
-                <!-- Site -->
-                <!-- Generates the Maven Site -->
+                <!-- Checkstyle -->
+                <!-- Checks that the source files comply with style standards -->
+                <!-- It is using a customized rules file -->
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>${plugin.site.version}</version>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <!-- The customized rules file -->
+                    <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>
+                    <!-- Excludes generated code -->
+                    <excludes>**/generated/**/*</excludes>
+                </configuration>
             </plugin>
             <plugin>
-                <!-- Changes -->
-                <!-- Generates the changes report from the changes log -->
+                <!-- Javadoc -->
+                <!-- Generates the javadocs -->
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-changes-plugin</artifactId>
-                <version>${plugin.changes.version}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>changes-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <sourceFileExcludes>
+                        <!-- Excludes generated code -->
+                        <exclude>**/generated/**/*</exclude>
+                    </sourceFileExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- PMD -->
+                <!-- Checks that the code complies with a series of code quality
+                    rules -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <rulesets>
+                        <!-- The customized rules file -->
+                        <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
+                    </rulesets>
+                    <excludes>
+                        <!-- Excludes generated code -->
+                        <exclude>**/generated/**/*</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>

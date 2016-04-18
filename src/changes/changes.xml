@@ -40,7 +40,8 @@
                 figures.
             </action>
             <action dev="bmg" type="fix">
-                Report links are now working correctly.
+                Report links are now working
+                correctly.
             </action>
         </release>
         <release version="0.2.1" date="2015-11-8"
@@ -76,7 +77,7 @@
                 Updated project configuration.
             </action>
         </release>
-        <release version="0.2.4" date="2015-3-10" description="Various fixes">
+        <release version="0.2.4" date="2015-03-10" description="Various fixes">
             <action dev="bmg" type="fix">
                 Fixed Maven Site deployment.
             </action>
@@ -85,7 +86,17 @@
                 options.
             </action>
             <action dev="bmg" type="fix">
-                Fixed security vulnerability in dependencies.
+                Fixed security vulnerability in
+                dependencies.
+            </action>
+        </release>
+        <release version="0.2.5" date="2015-04-18" description="Updates">
+            <action dev="bmg" type="update">
+                Updated POM configuration. It now uses
+                a parent POM.
+            </action>
+            <action dev="bmg" type="update">
+                Updated scripts.
             </action>
         </release>
     </body>
