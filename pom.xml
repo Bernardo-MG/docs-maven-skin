@@ -81,7 +81,7 @@
                         <plugin>
                             <!-- m2e lifecycle mapping -->
                             <!-- This is used to configure the Maven plugin for Eclipse. -->
-                            <!-- Among other things, it allows registering goals, 
+                            <!-- Among other things, it allows registering goals,
                                 which Eclipse would otherwise reject. -->
                             <!-- It has no real effect on Maven. -->
                             <groupId>org.eclipse.m2e</groupId>
@@ -92,20 +92,20 @@
                                     <pluginExecutions>
                                         <pluginExecution>
                                             <!-- jacoco plugin configuration -->
-                                            <!-- Fixes the errors with Eclipse not 
+                                            <!-- Fixes the errors with Eclipse not
                                                 recognizing the plugin configuration -->
                                             <pluginExecutionFilter>
                                                 <groupId>org.jacoco</groupId>
                                                 <artifactId>jacoco-maven-plugin</artifactId>
                                                 <versionRange>[0.5,)</versionRange>
                                                 <goals>
-                                                    <!-- The 'prepare-agent' goal 
+                                                    <!-- The 'prepare-agent' goal
                                                         is registered to m2e. -->
                                                     <goal>prepare-agent</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <!-- As m2e doesn't know what to 
+                                                <!-- As m2e doesn't know what to
                                                     do with jacoco, it is ignored to avoid error warnings. -->
                                                 <ignore />
                                             </action>
@@ -222,7 +222,7 @@
         <!-- Extensions versions -->
         <extension.wagon.version>2.10</extension.wagon.version>
         <!-- Maven Site -->
-        <site.skin.version>0.2.4</site.skin.version>
+        <site.skin.version>${ project.artifactId }</site.skin.version>
         <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
         <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
     </properties>
@@ -276,12 +276,12 @@
         </extensions>
         <pluginManagement>
             <plugins>
-                <!-- The following plugins always appear on the plugins list, even 
+                <!-- The following plugins always appear on the plugins list, even
                     when they have not been added to the project. -->
                 <!-- This configuration block allows keeping them always updated. -->
                 <plugin>
                     <!-- Dependency -->
-                    <!-- Takes care of dependencies, both copying and showing their 
+                    <!-- Takes care of dependencies, both copying and showing their
                         info. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -339,7 +339,7 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${plugin.resources.version}</version>
                 <configuration>
-                    <!-- Override resource filtering delimiters to avoid filtering 
+                    <!-- Override resource filtering delimiters to avoid filtering
                         Velocity variables, which have the same pattern ${replace.me}. Instead, using @replace.me@. -->
                     <useDefaultDelimiters>false</useDefaultDelimiters>
                     <delimiters>
@@ -356,7 +356,7 @@
             </plugin>
             <plugin>
                 <!-- Enforcer -->
-                <!-- Stops the project from being built if it does not comply with 
+                <!-- Stops the project from being built if it does not comply with
                     a set of rules. -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -370,7 +370,7 @@
                         <configuration>
                             <rules>
                                 <!-- Dependencies convergence. -->
-                                <!-- This variant of the rule requires less configuration, 
+                                <!-- This variant of the rule requires less configuration,
                                     making use of Maven's dependency resolver. -->
                                 <requireUpperBoundDeps />
                                 <!-- Not obsolete JDK. -->
