@@ -98,6 +98,9 @@
             <action dev="bmg" type="update">
                 Updated scripts.
             </action>
+            <action dev="bmg" type="update">
+                Updated dependencies.
+            </action>
         </release>
     </body>
 </document>
