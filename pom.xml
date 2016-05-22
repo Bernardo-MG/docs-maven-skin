@@ -1,350 +1,349 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+   <modelVersion>4.0.0</modelVersion>
 
-    <!-- ********************************************** -->
-    <!-- ****************** BASE POM ****************** -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- ****************** BASE POM ****************** -->
+   <!-- ********************************************** -->
 
-    <parent>
-        <groupId>com.wandrell.maven</groupId>
-        <artifactId>base-pom</artifactId>
-        <version>1.0.1</version>
-    </parent>
+   <parent>
+      <groupId>com.wandrell.maven</groupId>
+      <artifactId>base-pom</artifactId>
+      <version>1.0.1</version>
+   </parent>
 
-    <!-- ********************************************** -->
-    <!-- **************** PROJECT INFO **************** -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- **************** PROJECT INFO **************** -->
+   <!-- ********************************************** -->
 
-    <groupId>com.wandrell.maven.skins</groupId>
-    <artifactId>docs-maven-skin</artifactId>
-    <version>0.2.5-SNAPSHOT</version>
-    <packaging>jar</packaging>
+   <groupId>com.wandrell.maven.skins</groupId>
+   <artifactId>docs-maven-skin</artifactId>
+   <version>0.2.5-SNAPSHOT</version>
+   <packaging>jar</packaging>
 
-    <name>Docs Maven Skin</name>
-    <description>A Maven skin for using Maven Site as a documentation site</description>
-    <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
-    <inceptionYear>2015</inceptionYear>
+   <name>Docs Maven Skin</name>
+   <description>A Maven skin for using Maven Site as a documentation site</description>
+   <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
+   <inceptionYear>2015</inceptionYear>
 
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+   <licenses>
+      <license>
+         <name>MIT License</name>
+         <url>http://www.opensource.org/licenses/mit-license.php</url>
+         <distribution>repo</distribution>
+      </license>
+   </licenses>
 
-    <!-- ********************************************** -->
-    <!-- ********* INFRASTRUCTURE AND SERVICES ******** -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- ********* INFRASTRUCTURE AND SERVICES ******** -->
+   <!-- ********************************************** -->
 
-    <scm>
-        <connection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</connection>
-        <developerConnection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</developerConnection>
-        <tag>head</tag>
-        <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
-    </scm>
+   <scm>
+      <connection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</connection>
+      <developerConnection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</developerConnection>
+      <tag>head</tag>
+      <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
+   </scm>
 
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://www.github.com/bernardo-mg/docs-maven-skin/issues</url>
-    </issueManagement>
+   <issueManagement>
+      <system>GitHub</system>
+      <url>https://www.github.com/bernardo-mg/docs-maven-skin/issues</url>
+   </issueManagement>
 
-    <ciManagement>
-        <system>Travis CI</system>
-        <url>https://travis-ci.org/Bernardo-MG/docs-maven-skin</url>
-        <notifiers />
-    </ciManagement>
+   <ciManagement>
+      <system>Travis CI</system>
+      <url>https://travis-ci.org/Bernardo-MG/docs-maven-skin</url>
+      <notifiers />
+   </ciManagement>
 
-    <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>releases</id>
-            <name>Releases Repository</name>
-            <url>https://api.bintray.com/maven/bernardo-mg/maven/docs-maven-skin</url>
-        </repository>
-        <snapshotRepository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>snapshots</id>
-            <name>Snapshots Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+   <distributionManagement>
+      <repository>
+         <uniqueVersion>false</uniqueVersion>
+         <id>releases</id>
+         <name>Releases Repository</name>
+         <url>https://api.bintray.com/maven/bernardo-mg/maven/docs-maven-skin</url>
+      </repository>
+      <snapshotRepository>
+         <uniqueVersion>false</uniqueVersion>
+         <id>snapshots</id>
+         <name>Snapshots Repository</name>
+         <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+      </snapshotRepository>
+   </distributionManagement>
 
-    <!-- ********************************************** -->
-    <!-- ****************** PROFILES ****************** -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- ****************** PROFILES ****************** -->
+   <!-- ********************************************** -->
 
-    <profiles>
-        <profile>
-            <!-- Profile for the Eclipse Maven plugin -->
-            <!-- Sets the POM so this plugin does not give the usual unregistered
-                goals errors -->
-            <!-- It will be activated automatically on Eclipse if this has the m2e
-                plugin, by detecting the version property -->
-            <id>eclipse</id>
-            <activation>
-                <property>
-                    <name>m2e.version</name>
-                </property>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <!-- m2e lifecycle mapping -->
-                            <!-- This is used to configure the Maven plugin for Eclipse. -->
-                            <!-- Among other things, it allows registering goals,
-                                which Eclipse would otherwise reject. -->
-                            <!-- It has no real effect on Maven. -->
-                            <groupId>org.eclipse.m2e</groupId>
-                            <artifactId>lifecycle-mapping</artifactId>
-                            <version>${plugin.lifecycle.version}</version>
-                            <configuration>
-                                <downloadSources>true</downloadSources>
-                                <downloadJavadocs>true</downloadJavadocs>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-        <profile>
-            <!-- Release site deployment profile -->
-            <!-- Sets the site repository to point to the releases repo -->
-            <id>deploy-site-release</id>
-            <activation>
-                <!-- Active by default so the repository appears in the reports -->
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <distributionManagement>
-                <site>
-                    <id>site</id>
-                    <name>Project Documentation Site</name>
-                    <url>ftp://docs.wandrell.com/docs-maven-skin</url>
-                </site>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <!-- Development site deployment profile -->
-            <!-- Sets the site repository to point to the development repo -->
-            <id>deploy-site-development</id>
-            <distributionManagement>
-                <site>
-                    <id>site-development</id>
-                    <name>Project Development Documentation Site</name>
-                    <url>ftp://docs.wandrell.com/docs-maven-skin</url>
-                </site>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <!-- Deployment profile -->
-            <!-- Sets ups the environment for deployment -->
-            <id>deployment</id>
-            <properties>
-                <!-- Tests are skipped -->
-                <maven.test.skip>true</maven.test.skip>
-            </properties>
-        </profile>
-    </profiles>
+   <profiles>
+      <profile>
+         <!-- Profile for the Eclipse Maven plugin -->
+         <!-- Sets the POM so this plugin does not give the usual unregistered goals 
+            errors -->
+         <!-- It will be activated automatically on Eclipse if this has the m2e plugin, 
+            by detecting the version property -->
+         <id>eclipse</id>
+         <activation>
+            <property>
+               <name>m2e.version</name>
+            </property>
+         </activation>
+         <build>
+            <pluginManagement>
+               <plugins>
+                  <plugin>
+                     <!-- m2e lifecycle mapping -->
+                     <!-- This is used to configure the Maven plugin for Eclipse. -->
+                     <!-- Among other things, it allows registering goals, which 
+                        Eclipse would otherwise reject. -->
+                     <!-- It has no real effect on Maven. -->
+                     <groupId>org.eclipse.m2e</groupId>
+                     <artifactId>lifecycle-mapping</artifactId>
+                     <version>${plugin.lifecycle.version}</version>
+                     <configuration>
+                        <downloadSources>true</downloadSources>
+                        <downloadJavadocs>true</downloadJavadocs>
+                     </configuration>
+                  </plugin>
+               </plugins>
+            </pluginManagement>
+         </build>
+      </profile>
+      <profile>
+         <!-- Release site deployment profile -->
+         <!-- Sets the site repository to point to the releases repo -->
+         <id>deploy-site-release</id>
+         <activation>
+            <!-- Active by default so the repository appears in the reports -->
+            <activeByDefault>true</activeByDefault>
+         </activation>
+         <distributionManagement>
+            <site>
+               <id>site</id>
+               <name>Project Documentation Site</name>
+               <url>ftp://docs.wandrell.com/docs-maven-skin</url>
+            </site>
+         </distributionManagement>
+      </profile>
+      <profile>
+         <!-- Development site deployment profile -->
+         <!-- Sets the site repository to point to the development repo -->
+         <id>deploy-site-development</id>
+         <distributionManagement>
+            <site>
+               <id>site-development</id>
+               <name>Project Development Documentation Site</name>
+               <url>ftp://docs.wandrell.com/docs-maven-skin</url>
+            </site>
+         </distributionManagement>
+      </profile>
+      <profile>
+         <!-- Deployment profile -->
+         <!-- Sets ups the environment for deployment -->
+         <id>deployment</id>
+         <properties>
+            <!-- Tests are skipped -->
+            <maven.test.skip>true</maven.test.skip>
+         </properties>
+      </profile>
+   </profiles>
 
-    <!-- ********************************************** -->
-    <!-- *********** ORGANIZATION AND MEMBERS ********* -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- *********** ORGANIZATION AND MEMBERS ********* -->
+   <!-- ********************************************** -->
 
-    <organization>
-        <name>Bernardo Martínez Garrido</name>
-        <url>https://github.com/Bernardo-MG</url>
-    </organization>
+   <organization>
+      <name>Bernardo Martínez Garrido</name>
+      <url>https://github.com/Bernardo-MG</url>
+   </organization>
 
-    <developers>
-        <developer>
-            <id>bmg</id>
-            <name>Bernardo Martínez Garrido</name>
-            <email>programming@wandrell.com</email>
-            <url>https://github.com/Bernardo-MG</url>
-            <organization>Bernardo Martínez Garrido</organization>
-            <organizationUrl>https://github.com/Bernardo-MG</organizationUrl>
-            <roles>
-                <role>Developer</role>
-            </roles>
-            <timezone>+1</timezone>
-            <properties />
-        </developer>
-    </developers>
+   <developers>
+      <developer>
+         <id>bmg</id>
+         <name>Bernardo Martínez Garrido</name>
+         <email>programming@wandrell.com</email>
+         <url>https://github.com/Bernardo-MG</url>
+         <organization>Bernardo Martínez Garrido</organization>
+         <organizationUrl>https://github.com/Bernardo-MG</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>+1</timezone>
+         <properties />
+      </developer>
+   </developers>
 
-    <!-- ********************************************** -->
-    <!-- **************** PROPERTIES ****************** -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- **************** PROPERTIES ****************** -->
+   <!-- ********************************************** -->
 
-    <properties>
-        <!-- Manifest data -->
-        <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
-        <!-- Dependencies versions -->
-        <velocity.version>1.7</velocity.version>
-        <wandrell.siteFixer.version>0.3.4</wandrell.siteFixer.version>
-        <!-- Plugins versions -->
-        <plugin.changes.version>2.12</plugin.changes.version>
-        <plugin.site.velocity.version>1.7</plugin.site.velocity.version>
-        <!-- Maven Site -->
-        <site.skin.version>0.2.5-SNAPSHOT</site.skin.version>
-        <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
-        <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
-    </properties>
+   <properties>
+      <!-- Manifest data -->
+      <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
+      <!-- Dependencies versions -->
+      <velocity.version>1.7</velocity.version>
+      <wandrell.siteFixer.version>0.3.4</wandrell.siteFixer.version>
+      <!-- Plugins versions -->
+      <plugin.changes.version>2.12</plugin.changes.version>
+      <plugin.site.velocity.version>1.7</plugin.site.velocity.version>
+      <!-- Maven Site -->
+      <site.skin.version>0.2.4</site.skin.version>
+      <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
+      <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
+   </properties>
 
-    <!-- ********************************************** -->
-    <!-- *************** DEPENDENCIES ***************** -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- *************** DEPENDENCIES ***************** -->
+   <!-- ********************************************** -->
 
-    <dependencies>
-        <dependency>
-            <!-- Maven Site Fixer -->
-            <groupId>com.wandrell.velocity</groupId>
-            <artifactId>maven-site-fixer</artifactId>
-            <version>${wandrell.siteFixer.version}</version>
-        </dependency>
-        <dependency>
-            <!-- Velocity -->
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
-            <version>${velocity.version}</version>
-        </dependency>
-    </dependencies>
+   <dependencies>
+      <dependency>
+         <!-- Maven Site Fixer -->
+         <groupId>com.wandrell.velocity</groupId>
+         <artifactId>maven-site-fixer</artifactId>
+         <version>${wandrell.siteFixer.version}</version>
+      </dependency>
+      <dependency>
+         <!-- Velocity -->
+         <groupId>org.apache.velocity</groupId>
+         <artifactId>velocity</artifactId>
+         <version>${velocity.version}</version>
+      </dependency>
+   </dependencies>
 
-    <!-- ********************************************** -->
-    <!-- ******************* BUILD ******************** -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- ******************* BUILD ******************** -->
+   <!-- ********************************************** -->
 
-    <build>
-        <defaultGoal>clean package install</defaultGoal>
-        <plugins>
-            <plugin>
-                <!-- Changes -->
-                <!-- Takes care of the changes log -->
-                <!-- It is set to also validate the changes log file -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-changes-plugin</artifactId>
-                <version>${plugin.changes.version}</version>
-                <executions>
-                    <!-- Changes plugin is bound to the pre-site phase -->
-                    <execution>
-                        <id>check-changes</id>
-                        <phase>pre-site</phase>
-                        <goals>
-                            <goal>changes-check</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>validate-changes</id>
-                        <phase>pre-site</phase>
-                        <goals>
-                            <goal>changes-validate</goal>
-                        </goals>
-                        <configuration>
-                            <failOnError>true</failOnError>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <!-- Site -->
-                <!-- Generates the Maven Site -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <dependencies>
-                    <dependency>
-                        <!-- Docs Maven Skin -->
-                        <groupId>com.wandrell.maven.skins</groupId>
-                        <artifactId>docs-maven-skin</artifactId>
-                        <version>${site.skin.version}</version>
-                    </dependency>
-                    <dependency>
-                        <!-- Velocity -->
-                        <groupId>org.apache.velocity</groupId>
-                        <artifactId>velocity</artifactId>
-                        <version>${plugin.site.velocity.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <!-- Resources -->
-                <!-- Handles the project resources. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                     <!-- Variables to to override will be delimited with a @. -->
-                     <!-- This avoids collisions with Velocity variables. -->
-                     <!-- So instead of replacing ${project.name} Maven will replace @project.name@. -->
-                    <useDefaultDelimiters>false</useDefaultDelimiters>
-                    <delimiters>
-                        <delimiter>@</delimiter>
-                    </delimiters>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+   <build>
+      <defaultGoal>clean package install</defaultGoal>
+      <plugins>
+         <plugin>
+            <!-- Changes -->
+            <!-- Takes care of the changes log -->
+            <!-- It is set to also validate the changes log file -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-changes-plugin</artifactId>
+            <version>${plugin.changes.version}</version>
+            <executions>
+               <!-- Changes plugin is bound to the pre-site phase -->
+               <execution>
+                  <id>check-changes</id>
+                  <phase>pre-site</phase>
+                  <goals>
+                     <goal>changes-check</goal>
+                  </goals>
+               </execution>
+               <execution>
+                  <id>validate-changes</id>
+                  <phase>pre-site</phase>
+                  <goals>
+                     <goal>changes-validate</goal>
+                  </goals>
+                  <configuration>
+                     <failOnError>true</failOnError>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <!-- Site -->
+            <!-- Generates the Maven Site -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <dependencies>
+               <dependency>
+                  <!-- Docs Maven Skin -->
+                  <groupId>com.wandrell.maven.skins</groupId>
+                  <artifactId>docs-maven-skin</artifactId>
+                  <version>${site.skin.version}</version>
+               </dependency>
+               <dependency>
+                  <!-- Velocity -->
+                  <groupId>org.apache.velocity</groupId>
+                  <artifactId>velocity</artifactId>
+                  <version>${plugin.site.velocity.version}</version>
+               </dependency>
+            </dependencies>
+         </plugin>
+         <plugin>
+            <!-- Resources -->
+            <!-- Handles the project resources. -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <configuration>
+               <!-- Variables to to override will be delimited with a @. -->
+               <!-- This avoids collisions with Velocity variables. -->
+               <!-- So instead of replacing ${project.name} Maven will replace @project.name@. -->
+               <useDefaultDelimiters>false</useDefaultDelimiters>
+               <delimiters>
+                  <delimiter>@</delimiter>
+               </delimiters>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 
-    <!-- ********************************************** -->
-    <!-- ****************** REPORTS ******************* -->
-    <!-- ********************************************** -->
+   <!-- ********************************************** -->
+   <!-- ****************** REPORTS ******************* -->
+   <!-- ********************************************** -->
 
-    <reporting>
-        <plugins>
-            <plugin>
-                <!-- FindBugs -->
-                <!-- Checks for patterns which are prone to errors -->
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <configuration>
-                    <!-- Exclusion patterns -->
-                    <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- Checkstyle -->
-                <!-- Checks that the source files comply with style standards -->
-                <!-- It is using a customized rules file -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <configuration>
-                    <!-- The customized rules file -->
-                    <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>
-                    <!-- Excludes generated code -->
-                    <excludes>**/generated/**/*</excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- Javadoc -->
-                <!-- Generates the javadocs -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                    <sourceFileExcludes>
-                        <!-- Excludes generated code -->
-                        <exclude>**/generated/**/*</exclude>
-                    </sourceFileExcludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- PMD -->
-                <!-- Checks that the code complies with a series of code quality
-                    rules -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <configuration>
-                    <rulesets>
-                        <!-- The customized rules file -->
-                        <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
-                    </rulesets>
-                    <excludes>
-                        <!-- Excludes generated code -->
-                        <exclude>**/generated/**/*</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
+   <reporting>
+      <plugins>
+         <plugin>
+            <!-- FindBugs -->
+            <!-- Checks for patterns which are prone to errors -->
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <configuration>
+               <!-- Exclusion patterns -->
+               <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>
+            </configuration>
+         </plugin>
+         <plugin>
+            <!-- Checkstyle -->
+            <!-- Checks that the source files comply with style standards -->
+            <!-- It is using a customized rules file -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <configuration>
+               <!-- The customized rules file -->
+               <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>
+               <!-- Excludes generated code -->
+               <excludes>**/generated/**/*</excludes>
+            </configuration>
+         </plugin>
+         <plugin>
+            <!-- Javadoc -->
+            <!-- Generates the javadocs -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+               <sourceFileExcludes>
+                  <!-- Excludes generated code -->
+                  <exclude>**/generated/**/*</exclude>
+               </sourceFileExcludes>
+            </configuration>
+         </plugin>
+         <plugin>
+            <!-- PMD -->
+            <!-- Checks that the code complies with a series of code quality rules -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <configuration>
+               <rulesets>
+                  <!-- The customized rules file -->
+                  <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
+               </rulesets>
+               <excludes>
+                  <!-- Excludes generated code -->
+                  <exclude>**/generated/**/*</exclude>
+               </excludes>
+            </configuration>
+         </plugin>
+      </plugins>
+   </reporting>
 
 </project>
