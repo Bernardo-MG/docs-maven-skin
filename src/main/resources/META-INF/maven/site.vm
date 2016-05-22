@@ -265,38 +265,6 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Outputs subsections into a column grid.
- *
- * Receives:
- *		colCount: number of columns for the section
- *		subsections: subsections for creating the columns
- *#
-#*--------------------------------------------------*#
-#macro( columns $colCount $subsections )
-#set( $colCount = $convert.toNumber($colCount) )
-    <div class="row">
-#set( $colSpan = 12 / $colCount )
-#set( $i = 1 )
-#foreach( $subsection in $subsections )
-        <div class="col-md-$colSpan col-sm-12 col-xs-12">
-            $subsection
-        </div>
-#set( $mod = $i % $colCount )
-#if( $mod == 0 )
-    </div>
-    <div class="row">
-#end
-#set( $i = $i + 1 )
-#end
-    </div>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
  * Renders copyright year (inception-currentDate) and organization.
  *#
 #*--------------------------------------------------*#
