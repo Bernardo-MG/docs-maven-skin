@@ -189,7 +189,7 @@
         <plugin.changes.version>2.12</plugin.changes.version>
         <plugin.site.velocity.version>1.7</plugin.site.velocity.version>
         <!-- Maven Site -->
-        <site.skin.version>0.2.4</site.skin.version>
+        <site.skin.version>0.2.5-SNAPSHOT</site.skin.version>
         <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
         <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
     </properties>
@@ -267,6 +267,21 @@
                         <version>${plugin.site.velocity.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <!-- Resources -->
+                <!-- Handles the project resources. -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                     <!-- Variables to to override will be delimited with a @. -->
+                     <!-- This avoids collisions with Velocity variables. -->
+                     <!-- So instead of replacing ${project.name} Maven will replace @project.name@. -->
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                </configuration>
             </plugin>
         </plugins>
     </build>
