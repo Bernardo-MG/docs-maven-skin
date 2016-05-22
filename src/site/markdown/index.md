@@ -4,8 +4,6 @@ Maven handles not only dependencies, but also several project-related resources,
 
 This small customizable webpage can be created automatically by Maven, and is meant to be a centralized reference for any Maven project, but sadly is not as easy and simple to use as it is meant to, due to it's dependency on old Doxia plugins and the small range of Maven Site Skins available.
 
----
-
 ## Why this library?
 
 Using the Maven Site as a documentation site sounds attractive, but is rarely done due to several problems, the first of them all being that most of the available skins are outdated and ugly.
