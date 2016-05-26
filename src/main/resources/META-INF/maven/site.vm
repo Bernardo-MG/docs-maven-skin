@@ -138,7 +138,7 @@
     </nav>
 </header>
 <section id="main-section" class="container">
-#bodyWithHeader ( $bodyContent )
+#wrapFirstHeading ( $bodyContent )
     <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
 <footer class="footer">
@@ -433,16 +433,16 @@ $dateValue
 *#
 #*--------------------------------------------------*###
 #**
- * Marks the first header inside the content as page header, by wrapping it into
+ * Wraps the first heading inside the content as page header, by wrapping it into
  * a div with `page-header` class
  *
  * Receives:
  *        content: section where the wrapper will be added
  *#
 #*--------------------------------------------------*#
-#macro( bodyWithHeader $content )
-#**##set( $bodyWithHeader = $htmlTool.wrapFirst($content, "h1", '<header class="page-header"></header>') )
-    $bodyWithHeader
+#macro( wrapFirstHeading $content )
+#**##set( $content = $htmlTool.wrapFirst($content, "h1", '<header class="page-header"></header>') )
+    $content
 #end
 #*
 
