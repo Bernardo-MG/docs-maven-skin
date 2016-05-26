@@ -214,7 +214,7 @@
  *#
 #*--------------------------------------------------*#
 #macro( classAttr $attrValue )
-#if( $attrValue && '' != $attrValue )class="$attrValue"#end
+#**##if( $attrValue && '' != $attrValue )class="$attrValue"#end
 #end 
 #*
 
