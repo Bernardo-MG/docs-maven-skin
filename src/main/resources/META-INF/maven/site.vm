@@ -87,9 +87,9 @@
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="$config.twitterSite.getValue()"/>
     <meta name="twitter:title" content="$title"/>
-#if($config.descriptionUrl)
+#**##if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
-#end
+#**##end
 #end
 
     <!-- CSS -->
@@ -125,12 +125,12 @@
                 <ul class="nav navbar-nav navbar-right">
 #buildIconsMenu()
 #if( $decoration.body.menus )
-#if( $config.topNav )
-#findMenus( $decoration.body.menus, $config.topNav.getChildren() )
-#else
-#set( $menuColumns = $decoration.body.menus )
-#end
-#topMenu ( $menuColumns )
+#**##if( $config.topNav )
+#*    *##findMenus( $decoration.body.menus, $config.topNav.getChildren() )
+#**##else
+#*    *##set( $menuColumns = $decoration.body.menus )
+#**##end
+#**##topMenu ( $menuColumns )
 #end
                 </ul>
             </div>
@@ -138,7 +138,7 @@
     </nav>
 </header>
 <section id="main-section" class="container">
-    #bodyWithHeader ( $bodyContent )
+#bodyWithHeader ( $bodyContent )
     <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
 <footer class="footer">
@@ -148,7 +148,7 @@
                 <div id="navbar-footer" class="col-md-9 col-sm-12 col-xs-12">
                     <div class="row">
 #if( $decoration.body.menus )
-#bottomNav()
+#**##bottomNav()
 #end
                     </div>
                 </div>
