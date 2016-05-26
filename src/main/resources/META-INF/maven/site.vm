@@ -138,7 +138,7 @@
     </nav>
 </header>
 <section id="main-section" class="container">
-	#bodyWithHeader ( $bodyContent )
+    #bodyWithHeader ( $bodyContent )
     <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
 <footer class="footer">
@@ -193,10 +193,10 @@
  * Convenience directive to invoke a macro and ignore the return value.
  *
  * Usage:
- *		#call ( $hashtable.put("foo", "bar") )
+ *        #call ( $hashtable.put("foo", "bar") )
  *
  * Receives:
- *		foo: the macro to call
+ *        foo: the macro to call
  *#
 #*--------------------------------------------------*#
 #macro( call $foo )#if($foo)#end#end
@@ -210,7 +210,7 @@
  * Creates a class="attrValue" attribute if the given name exists.
  *
  * Receives:
- *		attrValue: the value for the class attribute
+ *        attrValue: the value for the class attribute
  *#
 #*--------------------------------------------------*#
 #macro( classAttr $attrValue )
@@ -226,20 +226,21 @@
  * Creates dropdown menu items.
  *
  * Receives:
- *		menus: a list of menus to process. These are Doxia decoration menus.
+ *        menus: a list of menus to process. These are Doxia decoration menus.
  *#
 #*--------------------------------------------------*#
 #macro( topMenu $menus )
-#foreach( $menu in $menus )
+#**##foreach( $menu in $menus )
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu" role="menu">
-#foreach( $item in $menu.items )
+#*    *##foreach( $item in $menu.items )
                             <li>#link ( $item.href $item.name )</li>
-#end
+#*    *##end
                         </ul>
                     </li>
-#end#end
+#**##end
+#end
 #*
 
 
@@ -250,8 +251,8 @@
  * Shortcut to display a basic hyperlink.
  *
  * Receives:
- *		href: the value for the href attribute
- *		name: the name of the link
+ *        href: the value for the href attribute
+ *        name: the name of the link
  *#
 #*--------------------------------------------------*#
 #macro( link $href $name )
@@ -268,21 +269,21 @@
  *#
 #*--------------------------------------------------*#
 #macro( copyright )
-#if( $project )
-#set( $currentYear = ${currentDate.year} + 1900 )
-#if( ${project.inceptionYear} )
-#if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa fa-copyright"></span>${project.inceptionYear}-${currentYear}
-#else <span class="fa fa-copyright"></span>${project.inceptionYear}
-#end
-#else <span class="fa fa-copyright"></span>${currentYear}
-#end
-#if( ${project.organization} && ${project.organization.name} )
-#if( ${project.organization.url} )
+#**##if( $project )
+#*    *##set( $currentYear = ${currentDate.year} + 1900 )
+#*    *##if( ${project.inceptionYear} )
+#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa fa-copyright"></span>${project.inceptionYear}-${currentYear}
+#*        *##else <span class="fa fa-copyright"></span>${project.inceptionYear}
+#*        *##end
+#*    *##else <span class="fa fa-copyright"></span>${currentYear}
+#*    *##end
+#*    *##if( ${project.organization} && ${project.organization.name} )
+#*        *##if( ${project.organization.url} )
 <a href="$project.organization.url">${project.organization.name}</a>
-#else
+#*    *##else
 ${project.organization.name}
-#end
-#end
+#*    *##end
+#**##end
 #end
 #end
 #*
@@ -296,9 +297,9 @@ ${project.organization.name}
  *#
 #*--------------------------------------------------*#
 #macro( license )
-#if( $project.licenses && $project.licenses[0] )
+#**##if( $project.licenses && $project.licenses[0] )
 Code released under the <a href="$project.licenses[0].url">$project.licenses[0].name</a>
-#end
+#**##end
 #end
 #*
 
@@ -310,19 +311,19 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  * Creates a list menu with submenus.
  *
  * Receives:
- *		menu: Doxia decoration menu to build the list menu
+ *        menu: Doxia decoration menu to build the list menu
  *#
 #*--------------------------------------------------*#
 #macro( listMenu $menu )
                             <dl class="dl-nav">
-#if( $menu.name )
+#**##if( $menu.name )
                                 <dt>$menu.name</dt>
-#end
-#if( $menu.items )
-#foreach( $item in $menu.items )
+#**##end
+#**##if( $menu.items )
+#*    *##foreach( $item in $menu.items )
                                 <dd>#link ( $item.href $item.name )</dd>
-#end
-#end
+#*    *##end
+#**##end
                             </dl>
 #end
 #*
@@ -335,17 +336,17 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  * Finds a menu based on its name.
  *
  * Receives:
- *		menus: Doxia decoration menus collection
- *		menuName: name of the menu to find
+ *        menus: Doxia decoration menus collection
+ *        menuName: name of the menu to find
  *#
 #*--------------------------------------------------*#
 #macro( findMenu $menus $menuName )
-#set($foundMenu = false)
-#foreach($menu in $menus)
-#if( ( $menu.ref && $menu.ref == $menuName ) || ( $menu.name && $menu.name == $menuName ) )
-#set( $foundMenu = $menu )
-#end
-#end
+#**##set($foundMenu = false)
+#**##foreach($menu in $menus)
+#*    *##if( ( $menu.ref && $menu.ref == $menuName ) || ( $menu.name && $menu.name == $menuName ) )
+#*        *##set( $foundMenu = $menu )
+#*    *##end
+#**##end
 #end
 #*
 
@@ -357,18 +358,18 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  * Finds a collection of menus based on their names.
  *
  * Receives:
- *		menus: Doxia decoration menus collection
- *		menuNames: names of the menus to find
+ *        menus: Doxia decoration menus collection
+ *        menuNames: names of the menus to find
  *#
 #*--------------------------------------------------*#
 #macro( findMenus $menus $menuNames )
-#set( $menuColumns = [] )
-#foreach( $menuName in $menuNames )
-#findMenu ( $menus, $menuName.getValue() )
-#if( $foundMenu )
-#call ( $menuColumns.add( $foundMenu ) )
-#end
-#end
+#**##set( $menuColumns = [] )
+#**##foreach( $menuName in $menuNames )
+#*    *##findMenu ( $menus, $menuName.getValue() )
+#*    *##if( $foundMenu )
+#*        *##call ( $menuColumns.add( $foundMenu ) )
+#*    *##end
+#**##end
 #end
 #*
 
@@ -380,33 +381,33 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  * Outputs bottom navigation columns.
  *#
 #macro( bottomNav )
-#set( $maxNavSpan = 12 )
-#if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
-#findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
-#else
-#set( $menuColumns = $decoration.body.menus )
-#end
-#set( $menuCount = ($menuColumns.size() + 2) )
-#set( $navSpan = $maxNavSpan / $menuCount )
-#if( $navSpan <= 0 )
-#set( $navSpan = 1 )
-#end
-#set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
-#set( $navColIndex = 0 )
-#foreach( $menuCol in $menuColumns )
-#if( $navColIndex == $menuCount - 1 )
-#set( $navSpan = $lastNavSpan )
-#end
+#**##set( $maxNavSpan = 12 )
+#**##if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
+#*    *##findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
+#**##else
+#*    *##set( $menuColumns = $decoration.body.menus )
+#**##end
+#**##set( $menuCount = ($menuColumns.size() + 2) )
+#**##set( $navSpan = $maxNavSpan / $menuCount )
+#**##if( $navSpan <= 0 )
+#*    *##set( $navSpan = 1 )
+#**##end
+#**##set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
+#**##set( $navColIndex = 0 )
+#**##foreach( $menuCol in $menuColumns )
+#*    *##if( $navColIndex == $menuCount - 1 )
+#*        *##set( $navSpan = $lastNavSpan )
+#*    *##end
                        <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#listMenu ( $menuCol )
+#*    *##listMenu ( $menuCol )
                        </div>
-#set( $navColIndex = $navColIndex + 1 )
-#end
+#*    *##set( $navColIndex = $navColIndex + 1 )
+#**##end
                        <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#codeBottomMenu()
+#**##codeBottomMenu()
                        </div>
                        <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#releasesBottomMenu()
+#**##releasesBottomMenu()
                        </div>
 #end
 #*
@@ -420,11 +421,11 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  *#
 #*--------------------------------------------------*#
 #macro( releasesBottomMenu )
-							<dl class="dl-nav">
+                            <dl class="dl-nav">
                                 <dt>Releases repositories</dt>
-#foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
+#**##foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
                                 <dd><a href="$releasesRepo.getChild('url').getValue()">$releasesRepo.getChild('name').getValue()</a></dd>
-#end
+#**##end
                             </dl>
 #end
 #*
@@ -438,25 +439,25 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  *#
 #*--------------------------------------------------*#
 #macro( codeBottomMenu )
-							<dl class="dl-nav">
+                            <dl class="dl-nav">
                                 <dt>Code</dt>
-#if( $project.scm )
+#**##if( $project.scm )
                                 <dd><a href="$project.scm.url" class="link-noted">SCM
-#if($project.scm.url.matches('.*github\.com.*'))
+#*    *##if($project.scm.url.matches('.*github\.com.*'))
                                  <span class="note">GitHub</span>
-#end
+#*    *##end
                                 </a></dd>
-#end
-#if( $project.ciManagement )
+#**##end
+#**##if( $project.ciManagement )
                                 <dd><a href="$project.ciManagement.url" class="link-noted">CI
                                  <span class="note">$project.ciManagement.system</span>
                                 </a></dd>
-#end
-#if( $project.issueManagement )
+#**##end
+#**##if( $project.issueManagement )
                                 <dd><a href="$project.issueManagement.url" class="link-noted">Issues
                                  <span class="note">$project.issueManagement.system</span>
                                 </a></dd>
-#end
+#**##end
                             </dl>
 #end
 #*
@@ -470,10 +471,11 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
  *#
 #*--------------------------------------------------*#
 #macro( publishDate )
-#set( $format = "yyyy-MM-dd" )
-##$dateFormat.applyPattern( $format )
-#set( $dateValue = $dateFormat.format( $currentDate ) )
-$dateValue#end
+#**##set( $format = "yyyy-MM-dd" )
+#**###$dateFormat.applyPattern( $format )
+#**##set( $dateValue = $dateFormat.format( $currentDate ) )
+$dateValue
+#end
 #*
 
 
@@ -485,12 +487,12 @@ $dateValue#end
  * a div with `page-header` class
  *
  * Receives:
- *		content: section where the wrapper will be added
+ *        content: section where the wrapper will be added
  *#
 #*--------------------------------------------------*#
 #macro( bodyWithHeader $content )
-	#set( $bodyWithHeader = $htmlTool.wrapFirst($content, "h1", '<header class="page-header"></header>') )
-	$bodyWithHeader
+#**##set( $bodyWithHeader = $htmlTool.wrapFirst($content, "h1", '<header class="page-header"></header>') )
+    $bodyWithHeader
 #end
 #*
 
@@ -503,15 +505,15 @@ $dateValue#end
  *#
 #*--------------------------------------------------*#
 #macro( buildIconsMenu )
-				<li>
+                <li>
                     <ul class="list-unstyled icons-list-inline">
-#if($project.scm)
-#if($project.scm.url.matches('.*github\.com.*'))
+#**##if($project.scm)
+#*    *##if($project.scm.url.matches('.*github\.com.*'))
                         <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span
                                 class="navbar-icon fa fa-github"
                                 aria-hidden="true"></span></a></li>
-#end
-#end
+#*    *##end
+#**##end
                     </ul>
                 </li>
 #end
@@ -526,10 +528,10 @@ $dateValue#end
  *#
 #*--------------------------------------------------*#
 #macro( buildVersionsList )
-#if($config.interpreters)
+#**##if($config.interpreters)
                                 <dt id="project-works-on">Tested on</dt>
-#foreach( $interpreter in $config.interpreters.getChildren() )
+#*    *##foreach( $interpreter in $config.interpreters.getChildren() )
                                 <dd>$interpreter.getValue()</dd>
-#end
-#end
+#*    *##end
+#**##end
 #end
