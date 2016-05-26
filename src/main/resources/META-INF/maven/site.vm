@@ -188,23 +188,6 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
-#*--------------------------------------------------*#
-#**
- * Convenience directive to invoke a macro and ignore the return value.
- *
- * Usage:
- *        #call ( $hashtable.put("foo", "bar") )
- *
- * Receives:
- *        foo: the macro to call
- *#
-#*--------------------------------------------------*#
-#macro( call $foo )#if($foo)#end#end
-#*
-
-
-
-*#
 #*--------------------------------------------------*###
 #**
  * Creates a class="attrValue" attribute if the given name exists.
@@ -367,7 +350,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 #**##foreach( $menuName in $menuNames )
 #*    *##findMenu ( $menus, $menuName.getValue() )
 #*    *##if( $foundMenu )
-#*        *##call ( $menuColumns.add( $foundMenu ) )
+#*        *###$menuColumns.add( $foundMenu )
 #*    *##end
 #**##end
 #end
