@@ -93,6 +93,9 @@
       </release>
       <release version="0.3.0" date="2015-05-22" description="UI changes">
          <action dev="bmg" type="update">
+            Changed theme. Now it is based on Bootswatch Simplex.
+         </action>
+         <action dev="bmg" type="update">
             Removed support for multiple columns in a single page.
          </action>
          <action dev="bmg" type="update">

@@ -1,9 +1,8 @@
 /*!
- * Docs Boostrap Template general styles
- * Copyright 2015 Bernardo Martínez Garrido
  * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
- *
- * This file contains general-use styles, meant to be applied to all the pages on the site.
+ */
+/*!
+ * General-use styles, meant to be applied to all the pages on the site.
  */
 
 html {
@@ -11,8 +10,43 @@ html {
     min-height: 100%;
 }
 
-body {
-    background: url('../img/bg.png');
+/**
+* Colors changed to improve contrast against the background.
+*/
+
+a {
+    color: #1552bc;
+}
+
+table a {
+    color: #0050aa;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+    color: #595959;
 }
 
 /**
