@@ -190,22 +190,6 @@
 </html>
 #*--------------------------------------------------*###
 #**
- * Creates a class="attrValue" attribute if the given name exists.
- *
- * Receives:
- *        attrValue: the value for the class attribute
- *#
-#*--------------------------------------------------*#
-#macro( classAttr $attrValue )
-#**##if( $attrValue && '' != $attrValue )class="$attrValue"#end
-#end 
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
  * Creates dropdown menu items.
  *
  * Receives:
