@@ -14,7 +14,7 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
 
-## Feature
+## Features
 
 - Minimalist and reactive look
 - HTML5
