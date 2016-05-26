@@ -280,11 +280,11 @@
 #*    *##if( ${project.organization} && ${project.organization.name} )
 #*        *##if( ${project.organization.url} )
 <a href="$project.organization.url">${project.organization.name}</a>
-#*    *##else
+#*        *##else
 ${project.organization.name}
+#*        *##end
 #*    *##end
 #**##end
-#end
 #end
 #*
 
