@@ -91,7 +91,10 @@
             dependencies.
          </action>
       </release>
-      <release version="0.2.5" date="2015-05-22" description="Updates">
+      <release version="0.3.0" date="2015-05-22" description="UI changes">
+         <action dev="bmg" type="update">
+            Removed support for multiple columns in a single page.
+         </action>
          <action dev="bmg" type="update">
             Updated POM configuration. It now uses a parent POM.
          </action>
@@ -100,9 +103,6 @@
          </action>
          <action dev="bmg" type="update">
             Updated dependencies.
-         </action>
-         <action dev="bmg" type="update">
-            Removed support for multiple columns in a single page.
          </action>
       </release>
    </body>

@@ -20,7 +20,7 @@
 
    <groupId>com.wandrell.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>0.2.5-SNAPSHOT</version>
+   <version>0.3.0-SNAPSHOT</version>
    <packaging>jar</packaging>
 
    <name>Docs Maven Skin</name>
@@ -80,9 +80,9 @@
    <profiles>
       <profile>
          <!-- Profile for the Eclipse Maven plugin -->
-         <!-- Sets the POM so this plugin does not give the usual unregistered goals 
+         <!-- Sets the POM so this plugin does not give the usual unregistered goals
             errors -->
-         <!-- It will be activated automatically on Eclipse if this has the m2e plugin, 
+         <!-- It will be activated automatically on Eclipse if this has the m2e plugin,
             by detecting the version property -->
          <id>eclipse</id>
          <activation>
@@ -96,7 +96,7 @@
                   <plugin>
                      <!-- m2e lifecycle mapping -->
                      <!-- This is used to configure the Maven plugin for Eclipse. -->
-                     <!-- Among other things, it allows registering goals, which 
+                     <!-- Among other things, it allows registering goals, which
                         Eclipse would otherwise reject. -->
                      <!-- It has no real effect on Maven. -->
                      <groupId>org.eclipse.m2e</groupId>
