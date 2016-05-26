@@ -123,7 +123,7 @@
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-#buildIconsMenu()
+#iconsMenu()
 #if( $decoration.body.menus )
 #**##if( $config.topNav )
 #*    *##findMenus( $decoration.body.menus, $config.topNav.getChildren() )
@@ -160,7 +160,7 @@
                                 <dd>${project.version}</dd>
                                 <dt id="project-published">Published</dt>
                                 <dd><time>#publishDate()</time></dd>
-#buildVersionsList()
+#versionsList()
                             </dl>
                         </div>
                         <div class="col-md-0 col-sm-4 col-xs-0"></div>
@@ -252,7 +252,7 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( buildIconsMenu )
+#macro( iconsMenu )
                 <li>
                     <ul class="list-unstyled icons-list-inline">
 #**##if($project.scm)
@@ -398,7 +398,7 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( buildVersionsList )
+#macro( versionsList )
 #**##if($config.interpreters)
                                 <dt id="project-works-on">Tested on</dt>
 #*    *##foreach( $interpreter in $config.interpreters.getChildren() )
