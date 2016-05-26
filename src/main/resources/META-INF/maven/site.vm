@@ -509,7 +509,7 @@ $dateValue#end
 #if($project.scm)
 #if($project.scm.url.matches('.*github\.com.*'))
                         <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span
-                                class="navbar-icon fa fa-inverse fa-github"
+                                class="navbar-icon fa fa-github"
                                 aria-hidden="true"></span></a></li>
 #end
 #end
