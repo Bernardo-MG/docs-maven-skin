@@ -202,28 +202,11 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu" role="menu">
 #*    *##foreach( $item in $menu.items )
-                            <li>#link ( $item.href $item.name )</li>
+                            <li><a href="$item.href" title="$item.name">$item.name</a></li>
 #*    *##end
                         </ul>
                     </li>
 #**##end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Shortcut to display a basic hyperlink.
- *
- * Receives:
- *        href: the value for the href attribute
- *        name: the name of the link
- *#
-#*--------------------------------------------------*#
-#macro( link $href $name )
-<a href="$href" title="$name">${name}</a>
 #end
 #*
 
@@ -288,7 +271,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 #**##end
 #**##if( $menu.items )
 #*    *##foreach( $item in $menu.items )
-                                <dd>#link ( $item.href $item.name )</dd>
+                                <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
 #*    *##end
 #**##end
                             </dl>
@@ -334,7 +317,7 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 #**##foreach( $menuName in $menuNames )
 #*    *##findMenu ( $menus, $menuName.getValue() )
 #*    *##if( $foundMenu )
-#*        *###$menuColumns.add( $foundMenu )
+#*        *##if($menuColumns.add( $foundMenu ))#end
 #*    *##end
 #**##end
 #end
