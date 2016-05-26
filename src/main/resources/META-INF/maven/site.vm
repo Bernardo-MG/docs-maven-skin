@@ -145,16 +145,15 @@
     <div class="footer-content">
         <div class="container-fluid">
             <div class="row">
-                <div id="navbar-footer" class="col-md-10 col-sm-12 col-xs-12">
+                <div id="navbar-footer" class="col-md-9 col-sm-12 col-xs-12">
                     <div class="row">
 #if( $decoration.body.menus )
 #bottomNav()
 #end
                     </div>
                 </div>
-                <div class="footer-info col-md-2 col-sm-12 col-xs-12">
+                <div class="footer-info col-md-3 col-sm-12 col-xs-12">
                     <div class="row">
-                        <div class="col-md-0 col-sm-4 col-xs-0"></div>
                         <div class="col-md-12 col-sm-4 col-xs-12">
                             <dl class="dl-horizontal">
                                 <dt id="project-version">Version</dt>
