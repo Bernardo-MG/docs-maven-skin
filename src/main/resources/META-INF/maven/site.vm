@@ -138,11 +138,7 @@
     </nav>
 </header>
 <section id="main-section" class="container">
-	#if( $config.sections )
-	#bodySections ( $bodyContent $config.sections )
-	#else
 	#bodyWithHeader ( $bodyContent )
-	#end
     <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
 <footer class="footer">
@@ -261,104 +257,6 @@
 #*--------------------------------------------------*#
 #macro( link $href $name )
 <a href="$href" title="$name">${name}</a>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Partitions the body contents into sections with possibly different representations.
- * Available body types, indicated in custom page config `sections` tag:
- *
- * 	<sections>
- * 		<body/> - the main body of the page
- * 		<columns>x</columns> - x-column grid layout
- * 	</sections>
- *
- * Receives:
- *		bodyContent: HTML content of the body
- *		sectionConfig: decoration nodes for the pages
- *#
-#*--------------------------------------------------*#
-#macro( bodySections $bodyContent $sectionConfig )
-#set( $sections = $htmlTool.split( $bodyContent, "hr" ) )
-#set( $sectCount = $sectionConfig.getChildCount() )
-#set( $lastBody = false )
-#set( $bodyFound = false )
-#set( $sectIndex = 0 )
-#foreach($section in $sections)
-#if( $sectIndex < $sectCount )
-#set( $sectType = $sectionConfig.getChild($sectIndex).getName() )
-#set( $sectTypeValue = $sectionConfig.getChild($sectIndex).getValue() )
-#else
-#set( $sectType = 'body' )#
-#end## /if( $sectIndex < $sectCount )
-#if( 'columns' == $sectType )
-#set( $subsections = $htmlTool.splitOnStart( $section, "h1, h2, h3, h4, h5, h6") )
-#if( $lastBody )
-        </div>
-    </div>
-#end## /if( 'columns' == $sectType )
-#columns ( $sectTypeValue $subsections )
-#set( $lastBody = false )
-#else
-#set( $subsections = [ $section ] )
-#if( !$lastBody )
-    <div>
-        <div>
-#else
-                <hr />
-#end## /foreach($section in $sections)
-#foreach( $subsection in $subsections )
-#if( !$bodyFound )
-#bodyWithHeader ( $subsection )
-#else
-                $subsection
-#end
-#set( $bodyFound = true )
-#end
-#set( $lastBody = true )
-#end
-#set( $sectIndex = $sectIndex + 1 )
-#end
-#if( $lastBody )
-        </div>
-    </div>
-#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Outputs subsections into a column grid.
- *
- * Receives:
- *		colCount: number of columns for the section
- *		subsections: subsections for creating the columns
- *#
-#*--------------------------------------------------*#
-#macro( columns $colCount $subsections )
-#set( $colCount = $convert.toNumber($colCount) )
-    <div class="row">
-#set( $colSpan = 12 / $colCount )
-#set( $i = 1 )
-#foreach( $subsection in $subsections )
-        <div class="col-md-$colSpan col-sm-12 col-xs-12">
-            $subsection
-        </div>
-#set( $mod = $i % $colCount )
-#if( $mod == 0 )
-    </div>
-    <div class="row">
-#end
-#set( $i = $i + 1 )
-#end
-    </div>
 #end
 #*
 
