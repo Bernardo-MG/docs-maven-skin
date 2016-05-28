@@ -91,7 +91,7 @@
             dependencies.
          </action>
       </release>
-      <release version="0.3.0" date="2015-05-22" description="UI changes">
+      <release version="0.3.0" date="2015-05-28" description="UI changes">
          <action dev="bmg" type="update">
             Changed theme. Now it is based on Bootswatch Simplex.
          </action>
@@ -99,10 +99,13 @@
             Removed support for multiple columns in a single page.
          </action>
          <action dev="bmg" type="update">
+            Updated Javascripts.
+         </action>
+         <action dev="bmg" type="update">
             Updated POM configuration. It now uses a parent POM.
          </action>
          <action dev="bmg" type="update">
-            Updated scripts.
+            Updated CI scripts.
          </action>
          <action dev="bmg" type="update">
             Updated dependencies.
