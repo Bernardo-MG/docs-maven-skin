@@ -179,7 +179,7 @@
         </div>
     </div>
 </footer>
-<script src="./lib/jquery/jquery-1.11.3.min.js"></script>
+<script src="./lib/jquery/jquery-1.12.4.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./js/chevron-toggle.js"></script>
 <script src="./js/smooth-scroll.js"></script>
