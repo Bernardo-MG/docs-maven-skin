@@ -91,7 +91,7 @@
             dependencies.
          </action>
       </release>
-      <release version="0.3.0" date="2015-05-28" description="UI changes">
+      <release version="0.3.0" date="2015-05-30" description="UI changes">
          <action dev="bmg" type="update">
             Changed theme. Now it is based on Bootswatch Simplex.
          </action>
@@ -109,6 +109,12 @@
          </action>
          <action dev="bmg" type="update">
             Updated dependencies.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed empty headings on tag reports.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed errors rendering heading numbers.
          </action>
       </release>
    </body>
