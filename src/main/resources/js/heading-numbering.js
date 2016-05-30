@@ -42,11 +42,14 @@ function numberHeadings() {
         hIndex = parseInt(this.nodeName.substring(1)) - firstHeading;
 
         // Initializes heading index
-        if (indices.length < (hIndex + 1)) {
+        if (indices.length <= hIndex) {
             // There are gaps in the numbering array
             for (var i = indices.length; i <= hIndex; i++) {
                 indices[i] = 0;
             }
+        } else if (indices.length > (hIndex + 1)) {
+            // Lower indices are removed
+            indices.splice(hIndex + 1, indices.length);
         }
 
         // Increases the count for the current heading
