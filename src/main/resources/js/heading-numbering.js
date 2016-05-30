@@ -17,20 +17,7 @@
  *
  * Also, the headings order is expected to be respected, and no heading level should be skipped, for example by
  * adding a level 3 heading after a level 1 heading.
- *
- * Loading this file will automatically initialize the scripts. This way the headings are numbered just by adding it.
  */
-
-var indices = [];
-
-/**
- * Initializes the heading numbering.
- */
-$(document).ready(function () {
-
-    headingNumbering();
-
-});
 
 /**
  * Gives a number to the headings of level 2 and 3.
@@ -44,28 +31,33 @@ $(document).ready(function () {
  * 2.1 Level 3 heading
  * 2.2 Level 3 heading
  */
-function headingNumbering() {
+function numberHeadings() {
+    var indices = [];
+    var firstHeading = 2;
 
-    jQuery('h2,h3').each(function (i, e) {
+    jQuery('h2,h3').each(function () {
         var hIndex;
 
-        hIndex = parseInt(this.nodeName.substring(1)) - 2;
+        // Prepares the index for this heading
+        hIndex = parseInt(this.nodeName.substring(1)) - firstHeading;
 
-        // Getting deeper into the heading hierarchy
-        if (indices.length - 1 > hIndex) {
-            indices = indices.slice(0, hIndex + 1);
-        }
-
-        // Getting out of the heading hierarchy
-        if (indices[hIndex] === undefined) {
-            indices[hIndex] = 0;
+        // Initializes heading index
+        if (indices.length <= hIndex) {
+            // There are gaps in the numbering array
+            for (var i = indices.length; i <= hIndex; i++) {
+                indices[i] = 0;
+            }
+        } else if (indices.length > (hIndex + 1)) {
+            // Lower indices are removed
+            indices.splice(hIndex + 1, indices.length);
         }
 
         // Increases the count for the current heading
         indices[hIndex]++;
 
         // Displays the heading numbering
-        jQuery(this).prepend(indices.join(".") + ". ");
+        var numbering = indices.join(".") + ". ";
+        jQuery(this).prepend(numbering);
     });
 
 }

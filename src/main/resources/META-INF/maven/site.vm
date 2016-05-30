@@ -1,7 +1,7 @@
 #*
  * The MIT License (MIT)
  * 
- * Copyright (c) 2015 Bernardo Martínez Garrido
+ * Copyright (c) 2015-2016 Bernardo Martínez Garrido
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -87,14 +87,14 @@
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="$config.twitterSite.getValue()"/>
     <meta name="twitter:title" content="$title"/>
-#if($config.descriptionUrl)
+#**##if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
-#end
+#**##end
 #end
 
     <!-- CSS -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./lib/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/font-awesome-4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.css">
@@ -103,7 +103,7 @@
     <!--[if lt IE 9]>
     <script src="./lib/html5shiv/html5shiv.min.js"></script>
     <![endif]-->
-        
+
 </head>
 <body>
 <header class="header">
@@ -123,14 +123,14 @@
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-#buildIconsMenu()
+#iconsMenu()
 #if( $decoration.body.menus )
-#if( $config.topNav )
-#findMenus( $decoration.body.menus, $config.topNav.getChildren() )
-#else
-#set( $menuColumns = $decoration.body.menus )
-#end
-#topMenu ( $menuColumns )
+#**##if( $config.topNav )
+#*    *##findMenus( $decoration.body.menus, $config.topNav.getChildren() )
+#**##else
+#*    *##set( $menuColumns = $decoration.body.menus )
+#**##end
+#**##dropdownMenu ( $menuColumns )
 #end
                 </ul>
             </div>
@@ -138,34 +138,29 @@
     </nav>
 </header>
 <section id="main-section" class="container">
-	#if( $config.sections )
-	#bodySections ( $bodyContent $config.sections )
-	#else
-	#bodyWithHeader ( $bodyContent )
-	#end
+#wrapFirstHeading ( $bodyContent )
     <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
 <footer class="footer">
     <div class="footer-content">
         <div class="container-fluid">
             <div class="row">
-                <div id="navbar-footer" class="col-md-10 col-sm-12 col-xs-12">
+                <div id="navbar-footer" class="col-md-9 col-sm-12 col-xs-12">
                     <div class="row">
 #if( $decoration.body.menus )
-#bottomNav()
+#**##bottomNav()
 #end
                     </div>
                 </div>
-                <div class="footer-info col-md-2 col-sm-12 col-xs-12">
+                <div class="footer-info col-md-3 col-sm-12 col-xs-12">
                     <div class="row">
-                        <div class="col-md-0 col-sm-4 col-xs-0"></div>
                         <div class="col-md-12 col-sm-4 col-xs-12">
                             <dl class="dl-horizontal">
                                 <dt id="project-version">Version</dt>
                                 <dd>${project.version}</dd>
                                 <dt id="project-published">Published</dt>
                                 <dd><time>#publishDate()</time></dd>
-#buildVersionsList()
+#versionsList()
                             </dl>
                         </div>
                         <div class="col-md-0 col-sm-4 col-xs-0"></div>
@@ -184,67 +179,38 @@
         </div>
     </div>
 </footer>
-<script src="./lib/jquery/jquery-1.11.3.min.js"></script>
+<script src="./lib/jquery/jquery-1.12.4.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./js/chevron-toggle.js"></script>
 <script src="./js/smooth-scroll.js"></script>
 <script src="./js/heading-numbering.js"></script>
 <script src="./lib/highlight/highlight.pack.js"></script>
+<script src="./js/initialize.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
-#*--------------------------------------------------*#
-#**
- * Convenience directive to invoke a macro and ignore the return value.
- *
- * Usage:
- *		#call ( $hashtable.put("foo", "bar") )
- *
- * Receives:
- *		foo: the macro to call
- *#
-#*--------------------------------------------------*#
-#macro( call $foo )#if($foo)#end#end
-#*
-
-
-
-*#
 #*--------------------------------------------------*###
 #**
- * Creates a class="attrValue" attribute if the given name exists.
+ * Renders a dropdown menu with the received menus as the selection options.
+ *
+ * The menu items are meant to come from the decoration XML file.
  *
  * Receives:
- *		attrValue: the value for the class attribute
+ *        menus: a list of menus to process. These are Doxia decoration menus.
  *#
 #*--------------------------------------------------*#
-#macro( classAttr $attrValue )
-#if( $attrValue && '' != $attrValue )class="$attrValue"#end
-#end 
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Creates dropdown menu items.
- *
- * Receives:
- *		menus: a list of menus to process. These are Doxia decoration menus.
- *#
-#*--------------------------------------------------*#
-#macro( topMenu $menus )
-#foreach( $menu in $menus )
+#macro( dropdownMenu $menus )
+#**##foreach( $menu in $menus )
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu" role="menu">
-#foreach( $item in $menu.items )
-                            <li>#link ( $item.href $item.name )</li>
-#end
+#*    *##foreach( $item in $menu.items )
+                            <li><a href="$item.href" title="$item.name">$item.name</a></li>
+#*    *##end
                         </ul>
                     </li>
-#end#end
+#**##end
+#end
 #*
 
 
@@ -252,180 +218,26 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Shortcut to display a basic hyperlink.
+ * Renders a list with links.
+ *
+ * This will be a definitions list, where each definition is a link.
+ *
+ * The menu item is meant to come from the decoration XML file.
  *
  * Receives:
- *		href: the value for the href attribute
- *		name: the name of the link
+ *        menu: Doxia decoration menu to build the list menu
  *#
 #*--------------------------------------------------*#
-#macro( link $href $name )
-<a href="$href" title="$name">${name}</a>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Partitions the body contents into sections with possibly different representations.
- * Available body types, indicated in custom page config `sections` tag:
- *
- * 	<sections>
- * 		<body/> - the main body of the page
- * 		<columns>x</columns> - x-column grid layout
- * 	</sections>
- *
- * Receives:
- *		bodyContent: HTML content of the body
- *		sectionConfig: decoration nodes for the pages
- *#
-#*--------------------------------------------------*#
-#macro( bodySections $bodyContent $sectionConfig )
-#set( $sections = $htmlTool.split( $bodyContent, "hr" ) )
-#set( $sectCount = $sectionConfig.getChildCount() )
-#set( $lastBody = false )
-#set( $bodyFound = false )
-#set( $sectIndex = 0 )
-#foreach($section in $sections)
-#if( $sectIndex < $sectCount )
-#set( $sectType = $sectionConfig.getChild($sectIndex).getName() )
-#set( $sectTypeValue = $sectionConfig.getChild($sectIndex).getValue() )
-#else
-#set( $sectType = 'body' )#
-#end## /if( $sectIndex < $sectCount )
-#if( 'columns' == $sectType )
-#set( $subsections = $htmlTool.splitOnStart( $section, "h1, h2, h3, h4, h5, h6") )
-#if( $lastBody )
-        </div>
-    </div>
-#end## /if( 'columns' == $sectType )
-#columns ( $sectTypeValue $subsections )
-#set( $lastBody = false )
-#else
-#set( $subsections = [ $section ] )
-#if( !$lastBody )
-    <div>
-        <div>
-#else
-                <hr />
-#end## /foreach($section in $sections)
-#foreach( $subsection in $subsections )
-#if( !$bodyFound )
-#bodyWithHeader ( $subsection )
-#else
-                $subsection
-#end
-#set( $bodyFound = true )
-#end
-#set( $lastBody = true )
-#end
-#set( $sectIndex = $sectIndex + 1 )
-#end
-#if( $lastBody )
-        </div>
-    </div>
-#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Outputs subsections into a column grid.
- *
- * Receives:
- *		colCount: number of columns for the section
- *		subsections: subsections for creating the columns
- *#
-#*--------------------------------------------------*#
-#macro( columns $colCount $subsections )
-#set( $colCount = $convert.toNumber($colCount) )
-    <div class="row">
-#set( $colSpan = 12 / $colCount )
-#set( $i = 1 )
-#foreach( $subsection in $subsections )
-        <div class="col-md-$colSpan col-sm-12 col-xs-12">
-            $subsection
-        </div>
-#set( $mod = $i % $colCount )
-#if( $mod == 0 )
-    </div>
-    <div class="row">
-#end
-#set( $i = $i + 1 )
-#end
-    </div>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Renders copyright year (inception-currentDate) and organization.
- *#
-#*--------------------------------------------------*#
-#macro( copyright )
-#if( $project )
-#set( $currentYear = ${currentDate.year} + 1900 )
-#if( ${project.inceptionYear} )
-#if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa fa-copyright"></span>${project.inceptionYear}-${currentYear}
-#else <span class="fa fa-copyright"></span>${project.inceptionYear}
-#end
-#else <span class="fa fa-copyright"></span>${currentYear}
-#end
-#if( ${project.organization} && ${project.organization.name} )
-#if( ${project.organization.url} )
-<a href="$project.organization.url">${project.organization.name}</a>
-#else
-${project.organization.name}
-#end
-#end
-#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Renders copyright year (inception-currentDate) and organization.
- *#
-#*--------------------------------------------------*#
-#macro( license )
-#if( $project.licenses && $project.licenses[0] )
-Code released under the <a href="$project.licenses[0].url">$project.licenses[0].name</a>
-#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Creates a list menu with submenus.
- *
- * Receives:
- *		menu: Doxia decoration menu to build the list menu
- *#
-#*--------------------------------------------------*#
-#macro( listMenu $menu )
+#macro( linksList $menu )
                             <dl class="dl-nav">
-#if( $menu.name )
+#**##if( $menu.name )
                                 <dt>$menu.name</dt>
-#end
-#if( $menu.items )
-#foreach( $item in $menu.items )
-                                <dd>#link ( $item.href $item.name )</dd>
-#end
-#end
+#**##end
+#**##if( $menu.items )
+#*    *##foreach( $item in $menu.items )
+                                <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
+#*    *##end
+#**##end
                             </dl>
 #end
 #*
@@ -435,186 +247,22 @@ Code released under the <a href="$project.licenses[0].url">$project.licenses[0].
 *#
 #*--------------------------------------------------*###
 #**
- * Finds a menu based on its name.
+ * Renders the icons menu.
  *
- * Receives:
- *		menus: Doxia decoration menus collection
- *		menuName: name of the menu to find
- *#
-#*--------------------------------------------------*#
-#macro( findMenu $menus $menuName )
-#set($foundMenu = false)
-#foreach($menu in $menus)
-#if( ( $menu.ref && $menu.ref == $menuName ) || ( $menu.name && $menu.name == $menuName ) )
-#set( $foundMenu = $menu )
-#end
-#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Finds a collection of menus based on their names.
+ * These are the icons shown in the upper navigation bar.
  *
- * Receives:
- *		menus: Doxia decoration menus collection
- *		menuNames: names of the menus to find
  *#
 #*--------------------------------------------------*#
-#macro( findMenus $menus $menuNames )
-#set( $menuColumns = [] )
-#foreach( $menuName in $menuNames )
-#findMenu ( $menus, $menuName.getValue() )
-#if( $foundMenu )
-#call ( $menuColumns.add( $foundMenu ) )
-#end
-#end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Outputs bottom navigation columns.
- *#
-#macro( bottomNav )
-#set( $maxNavSpan = 12 )
-#if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
-#findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
-#else
-#set( $menuColumns = $decoration.body.menus )
-#end
-#set( $menuCount = ($menuColumns.size() + 2) )
-#set( $navSpan = $maxNavSpan / $menuCount )
-#if( $navSpan <= 0 )
-#set( $navSpan = 1 )
-#end
-#set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
-#set( $navColIndex = 0 )
-#foreach( $menuCol in $menuColumns )
-#if( $navColIndex == $menuCount - 1 )
-#set( $navSpan = $lastNavSpan )
-#end
-                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#listMenu ( $menuCol )
-                       </div>
-#set( $navColIndex = $navColIndex + 1 )
-#end
-                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#codeBottomMenu()
-                       </div>
-                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#releasesBottomMenu()
-                       </div>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Builds a list menu with the releases repositories.
- *#
-#*--------------------------------------------------*#
-#macro( releasesBottomMenu )
-							<dl class="dl-nav">
-                                <dt>Releases repositories</dt>
-#foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
-                                <dd><a href="$releasesRepo.getChild('url').getValue()">$releasesRepo.getChild('name').getValue()</a></dd>
-#end
-                            </dl>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Builds a list menu with the code services.
- *#
-#*--------------------------------------------------*#
-#macro( codeBottomMenu )
-							<dl class="dl-nav">
-                                <dt>Code</dt>
-#if( $project.scm )
-                                <dd><a href="$project.scm.url" class="link-noted">SCM
-#if($project.scm.url.matches('.*github\.com.*'))
-                                 <span class="note">GitHub</span>
-#end
-                                </a></dd>
-#end
-#if( $project.ciManagement )
-                                <dd><a href="$project.ciManagement.url" class="link-noted">CI
-                                 <span class="note">$project.ciManagement.system</span>
-                                </a></dd>
-#end
-#if( $project.issueManagement )
-                                <dd><a href="$project.issueManagement.url" class="link-noted">Issues
-                                 <span class="note">$project.issueManagement.system</span>
-                                </a></dd>
-#end
-                            </dl>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Builds the publish date.
- *#
-#*--------------------------------------------------*#
-#macro( publishDate )
-#set( $format = "yyyy-MM-dd" )
-##$dateFormat.applyPattern( $format )
-#set( $dateValue = $dateFormat.format( $currentDate ) )
-$dateValue#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Marks the first header inside the content as page header, by wrapping it into
- * a div with `page-header` class
- *
- * Receives:
- *		content: section where the wrapper will be added
- *#
-#*--------------------------------------------------*#
-#macro( bodyWithHeader $content )
-	#set( $bodyWithHeader = $htmlTool.wrapFirst($content, "h1", '<header class="page-header"></header>') )
-	$bodyWithHeader
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Builds the icons menu.
- *#
-#*--------------------------------------------------*#
-#macro( buildIconsMenu )
-				<li>
+#macro( iconsMenu )
+                <li>
                     <ul class="list-unstyled icons-list-inline">
-#if($project.scm)
-#if($project.scm.url.matches('.*github\.com.*'))
+#**##if($project.scm)
+#*    *##if($project.scm.url.matches('.*github\.com.*'))
                         <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span
-                                class="navbar-icon fa fa-inverse fa-github"
+                                class="navbar-icon fa fa-github"
                                 aria-hidden="true"></span></a></li>
-#end
-#end
+#*    *##end
+#**##end
                     </ul>
                 </li>
 #end
@@ -625,14 +273,264 @@ $dateValue#end
 *#
 #*--------------------------------------------------*###
 #**
- * Builds the supported Java versions list.
+ * Finds a collection of menus based on their names.
+ *
+ * Will iterate over the received menus, and will load all the found menus
+ * inside the menuColumns variable.
+ *
+ * Receives:
+ *        menus: Doxia decoration menus collection
+ *        menuNames: names of the menus to find
+ * Returns:
+ *        menuColumns: an array with all the found menus
  *#
 #*--------------------------------------------------*#
-#macro( buildVersionsList )
-#if($config.interpreters)
+#macro( findMenus $menus $menuNames )
+#**##set( $menuColumns = [] )
+#**##foreach( $menuName in $menuNames )
+#*    *##findMenu ( $menus, $menuName.getValue() )
+#*    *##if( $foundMenu )
+#*        *##if($menuColumns.add( $foundMenu ))#end
+#*    *##end
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Finds a menu based on its name.
+ *
+ * Will iterate over the received menus, and will set the last menu found with
+ * the given name into the foundMenu variable.
+ *
+ * If no menu was found then this variable will be set as false.
+ *
+ * Receives:
+ *        menus: Doxia decoration menus collection
+ *        menuName: name of the menu to find
+ * Returns:
+ *        foundMenu: false if no menu was found, contains the menu otherwise
+ *#
+#*--------------------------------------------------*#
+#macro( findMenu $menus $menuName )
+#**##set( $foundMenu = false )
+#**##foreach($menu in $menus)
+#*    *##if( ( $menu.ref && $menu.ref == $menuName ) || ( $menu.name && $menu.name == $menuName ) )
+#*        *##set( $foundMenu = $menu )
+#*    *##end
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the bottom navigation.
+ *#
+#*--------------------------------------------------*#
+#macro( bottomNav )
+#**##set( $maxNavSpan = 12 )
+#**##if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
+#*    *##findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
+#**##else
+#*    *##set( $menuColumns = $decoration.body.menus )
+#**##end
+#**##set( $menuCount = ($menuColumns.size() + 2) )
+#**##set( $navSpan = $maxNavSpan / $menuCount )
+#**##if( $navSpan <= 0 )
+#*    *##set( $navSpan = 1 )
+#**##end
+#**##set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
+#**##set( $navColIndex = 0 )
+#**##foreach( $menuCol in $menuColumns )
+#*    *##if( $navColIndex == $menuCount - 1 )
+#*        *##set( $navSpan = $lastNavSpan )
+#*    *##end
+                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
+#*    *##linksList ( $menuCol )
+                       </div>
+#*    *##set( $navColIndex = $navColIndex + 1 )
+#**##end
+                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
+#**##resourcesList()
+                       </div>
+                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
+#**##releasesList()
+                       </div>
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders a list with the releases repositories links.
+ * 
+ * This will be a definitions list, loaded from the releaseRepositories node
+ * in the site configuration file.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( releasesList )
+                            <dl class="dl-nav">
+                                <dt>Releases repositories</dt>
+#**##foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
+                                <dd><a href="$releasesRepo.getChild('url').getValue()">$releasesRepo.getChild('name').getValue()</a></dd>
+#**##end
+                            </dl>
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the supported Java versions list.
+ * 
+ * This will be a definitions list, loaded from the interpreters node
+ * in the site configuration file.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( versionsList )
+#**##if($config.interpreters)
                                 <dt id="project-works-on">Tested on</dt>
-#foreach( $interpreter in $config.interpreters.getChildren() )
+#*    *##foreach( $interpreter in $config.interpreters.getChildren() )
                                 <dd>$interpreter.getValue()</dd>
+#*    *##end
+#**##end
 #end
+#*--------------------------------------------------*###
+#**
+ * Renders a list with the project resources.
+ * 
+ * This will be a definitions list, generated from the project configuration
+ * information.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( resourcesList )
+                            <dl class="dl-nav">
+                                <dt>Code</dt>
+#**##if( $project.scm )
+                                <dd><a href="$project.scm.url" class="link-noted">SCM
+#*    *##if($project.scm.url.matches('.*github\.com.*'))
+                                 <span class="note">GitHub</span>
+#*    *##end
+                                </a></dd>
+#**##end
+#**##if( $project.ciManagement )
+                                <dd><a href="$project.ciManagement.url" class="link-noted">CI
+                                 <span class="note">$project.ciManagement.system</span>
+                                </a></dd>
+#**##end
+#**##if( $project.issueManagement )
+                                <dd><a href="$project.issueManagement.url" class="link-noted">Issues
+                                 <span class="note">$project.issueManagement.system</span>
+                                </a></dd>
+#**##end
+                            </dl>
 #end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the copyright year and organization.
+ *
+ * This will show the copyright logo, followed by the year and the organization data.
+ * 
+ * If the inception year is the current year, this will be the shown year. Otherwise
+ * the inception year followed by the current year will be used, separating
+ * them with a hyphen.
+ *
+ * If there is no inception year then the current year will be shown.
+ *
+ * For the organization, its name and URL will be used to create a link.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( copyright )
+#**##if( $project )
+#*    *##set( $currentYear = ${currentDate.year} + 1900 )
+#*    *##if( ${project.inceptionYear} )
+#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa fa-copyright"></span>${project.inceptionYear}-${currentYear}
+#*        *##else <span class="fa fa-copyright"></span>${project.inceptionYear}
+#*        *##end
+#*    *##else <span class="fa fa-copyright"></span>${currentYear}
+#*    *##end
+#*    *##if( ${project.organization} && ${project.organization.name} )
+#*        *##if( ${project.organization.url} )
+<a href="$project.organization.url">${project.organization.name}</a>
+#*        *##else
+${project.organization.name}
+#*        *##end
+#*    *##end
+#**##end
 #end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the license information.
+ *
+ * This will be the license name and its URL as a link.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( license )
+#**##if( $project.licenses && $project.licenses[0] )
+Code released under the <a href="$project.licenses[0].url">$project.licenses[0].name</a>
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the publish date.
+ *#
+#*--------------------------------------------------*#
+#macro( publishDate )
+#**##set( $format = "yyyy-MM-dd" )
+#**###$dateFormat.applyPattern( $format )
+#**##set( $dateValue = $dateFormat.format( $currentDate ) )
+$dateValue
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Wraps the first heading inside the content as page header, by wrapping it into
+ * a div with `page-header` class
+ *
+ * Receives:
+ *        content: section where the wrapper will be added
+ *#
+#*--------------------------------------------------*#
+#macro( wrapFirstHeading $content )
+#**##set( $content = $htmlTool.wrapFirst($content, "h1", '<header class="page-header"></header>') )
+    $content
+#end
+#*
+
+
+
+*#

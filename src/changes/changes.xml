@@ -1,92 +1,121 @@
 <document xmlns="http://maven.apache.org/changes/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
-    <properties>
-        <title>Project Changes</title>
-        <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
-    </properties>
-    <body>
-        <release version="0.1.0" date="2015-08-07" description="First release">
-            <action dev="bmg" type="update">
-                First release of the skin.
-            </action>
-        </release>
-        <release version="0.1.1" date="2015-08-08" description="Maven site fix">
-            <action dev="bmg" type="update">
-                Site is now working.
-            </action>
-            <action dev="bmg" type="fix">
-                Corrected links.
-            </action>
-        </release>
-        <release version="0.1.2" date="2015-09-10" description="Maven site fix">
-            <action dev="bmg" type="fix">
-                Corrected releases repositories links.
-            </action>
-        </release>
-        <release version="0.2.0" date="2015-10-15" description="Various fixes">
-            <action dev="bmg" type="add">
-                Added skin information to the footer.
-            </action>
-            <action dev="bmg" type="fix">
-                Inception year is no longer compulsory
-                for the footer copyright year.
-            </action>
-            <action dev="bmg" type="fix">
-                Only the first h1 heading is
-                transformed into the page header.
-            </action>
-            <action dev="bmg" type="fix">
-                Images are correctly transformed into
-                figures.
-            </action>
-            <action dev="bmg" type="fix">
-                Report links are now working correctly.
-            </action>
-        </release>
-        <release version="0.2.1" date="2015-11-8"
-            description="Numbering headings and small fixes">
-            <action dev="bmg" type="fix">
-                The footer link, sending the user to
-                the project page, no longer
-                spans the version.
-            </action>
-            <action dev="bmg" type="fix">
-                Paragraphs spanning the full width no
-                longer set to span 12 columns in a row.
-            </action>
-            <action dev="bmg" type="fix">
-                The header meta-data is no longer
-                generated when the required data is missing.
-            </action>
-            <action dev="bmg" type="add">
-                Headings of level 2 and 3 are now
-                numbered.
-            </action>
-            <action dev="bmg" type="update">
-                Headings font is now more noticeable.
-            </action>
-        </release>
-        <release version="0.2.2" date="2015-11-22" description="Updated configuration">
-            <action dev="bmg" type="update">
-                Updated project configuration.
-            </action>
-        </release>
-        <release version="0.2.3" date="2015-12-7" description="Updated configuration">
-            <action dev="bmg" type="update">
-                Updated project configuration.
-            </action>
-        </release>
-        <release version="0.2.4" date="2015-3-10" description="Various fixes">
-            <action dev="bmg" type="fix">
-                Fixed Maven Site deployment.
-            </action>
-            <action dev="bmg" type="fix">
-                Fixed chevron separation in menu
-                options.
-            </action>
-            <action dev="bmg" type="fix">
-                Fixed security vulnerability in dependencies.
-            </action>
-        </release>
-    </body>
+   xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+   <properties>
+      <title>Project Changes</title>
+      <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
+   </properties>
+   <body>
+      <release version="0.1.0" date="2015-08-07" description="First release">
+         <action dev="bmg" type="update">
+            First release of the skin.
+         </action>
+      </release>
+      <release version="0.1.1" date="2015-08-08" description="Maven site fix">
+         <action dev="bmg" type="update">
+            Site is now working.
+         </action>
+         <action dev="bmg" type="fix">
+            Corrected links.
+         </action>
+      </release>
+      <release version="0.1.2" date="2015-09-10" description="Maven site fix">
+         <action dev="bmg" type="fix">
+            Corrected releases repositories links.
+         </action>
+      </release>
+      <release version="0.2.0" date="2015-10-15" description="Various fixes">
+         <action dev="bmg" type="add">
+            Added skin information to the footer.
+         </action>
+         <action dev="bmg" type="fix">
+            Inception year is no longer compulsory
+            for the footer copyright year.
+         </action>
+         <action dev="bmg" type="fix">
+            Only the first h1 heading is
+            transformed
+            into the page header.
+         </action>
+         <action dev="bmg" type="fix">
+            Images are correctly transformed into
+            figures.
+         </action>
+         <action dev="bmg" type="fix">
+            Report links are now working
+            correctly.
+         </action>
+      </release>
+      <release version="0.2.1" date="2015-11-8" description="Numbering headings and small fixes">
+         <action dev="bmg" type="fix">
+            The footer link, sending the user to
+            the
+            project page, no longer
+            spans the version.
+         </action>
+         <action dev="bmg" type="fix">
+            Paragraphs spanning the full width no
+            longer set to span 12 columns in a row.
+         </action>
+         <action dev="bmg" type="fix">
+            The header meta-data is no longer
+            generated when the required data is missing.
+         </action>
+         <action dev="bmg" type="add">
+            Headings of level 2 and 3 are now
+            numbered.
+         </action>
+         <action dev="bmg" type="update">
+            Headings font is now more noticeable.
+         </action>
+      </release>
+      <release version="0.2.2" date="2015-11-22" description="Updated configuration">
+         <action dev="bmg" type="update">
+            Updated project configuration.
+         </action>
+      </release>
+      <release version="0.2.3" date="2015-12-7" description="Updated configuration">
+         <action dev="bmg" type="update">
+            Updated project configuration.
+         </action>
+      </release>
+      <release version="0.2.4" date="2015-03-10" description="Various fixes">
+         <action dev="bmg" type="fix">
+            Fixed Maven Site deployment.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed chevron separation in menu
+            options.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed security vulnerability in
+            dependencies.
+         </action>
+      </release>
+      <release version="0.3.0" date="2015-05-30" description="UI changes">
+         <action dev="bmg" type="update">
+            Changed theme. Now it is based on Bootswatch Simplex.
+         </action>
+         <action dev="bmg" type="update">
+            Removed support for multiple columns in a single page.
+         </action>
+         <action dev="bmg" type="update">
+            Updated Javascripts.
+         </action>
+         <action dev="bmg" type="update">
+            Updated POM configuration. It now uses a parent POM.
+         </action>
+         <action dev="bmg" type="update">
+            Updated CI scripts.
+         </action>
+         <action dev="bmg" type="update">
+            Updated dependencies.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed empty headings on tag reports.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed errors rendering heading numbers.
+         </action>
+      </release>
+   </body>
 </document>

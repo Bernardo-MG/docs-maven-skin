@@ -6,13 +6,15 @@ While it can be used by itself, just remember to check the documentation to find
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
+**WARNING:** *this version of the skin only supports the Maven Site plugin up to version 3.4.*
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.wandrell.maven.skins/docs-maven-skin.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/docs-maven-skin/images/download.svg)][bintray-repo]
 
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
 
-## Feature
+## Features
 
 - Minimalist and reactive look
 - HTML5
@@ -50,9 +52,13 @@ The application is coded in Velocity Template Language, using Maven to manage th
 
 ### Prerequisites
 
-This project requires a Maven-based project, with Maven Site enabled.
+As a Maven Skin, the project requirements are very specific:
 
-All other dependencies are handled through Maven, and noted in the included POM file.
+- Maven
+- Maven Site plugin
+- Maven Site enabled
+
+The Maven Site plugin is supported up to the v3.4 version. Tests have shown it won't work correctly in newer versions.
 
 ### Installing
 

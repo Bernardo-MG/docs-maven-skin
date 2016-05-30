@@ -1,10 +1,8 @@
-#Maven Site as a documentation site
+# Maven Site as a documentation site
 
 Maven handles not only dependencies, but also several project-related resources, such as reports or general project information, which can be integrated into a single web page: the Maven Site.
 
 This small customizable webpage can be created automatically by Maven, and is meant to be a centralized reference for any Maven project, but sadly is not as easy and simple to use as it is meant to, due to it's dependency on old Doxia plugins and the small range of Maven Site Skins available.
-
----
 
 ## Why this library?
 
@@ -25,6 +23,10 @@ The main features offered by the skin are:
 - [Bootstrap 3][bootstrap]
 - [Font Awesome][font_awesome] icons
 - Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
+
+## Maven Site plugin support
+
+This version of the skin only support the Maven Site plugin up to version 3.4. Newer versions have a bug which make them unable to load the Velocity custom tools which the skin depends on.
 
 [bootstrap]: http://getbootstrap.com/
 [docs_template]: https://github.com/Bernardo-MG/docs-bootstrap-template

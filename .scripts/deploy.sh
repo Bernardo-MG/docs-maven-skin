@@ -1,5 +1,6 @@
 #!/bin/bash
-# This script deploys the project artifact.
+#
+# Deploys the project artifact.
 #
 # Make sure you have the deployment configuration ready before using it, including
 # the environment variables which will indicate if the script is to be run or not.
@@ -23,13 +24,13 @@ if [ "$DEPLOY" == "true" ] && [ "$PULL_REQUEST" == "false" ] && [ "$VERSION_TYPE
    echo "Deploying Java artifact"
 
    mvn deploy -P deployment --settings ~/settings.xml
-   
+
    exit 0
-      
+
 else
 
    echo "Java artifact won't be deployed"
-   
+
    exit 0
 
 fi
