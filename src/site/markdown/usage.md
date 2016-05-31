@@ -55,14 +55,6 @@ The site requires a correctly configured site.xml file to work. For more details
             <bottomNav>
                 <menu>General Info</menu>
             </bottomNav>
-            <pages>
-                <index>
-                    <sections>
-                        <body />
-                        <columns>2</columns>
-                    </sections>
-                </index>
-            </pages>
         </skinConfig>
     </custom>
 
