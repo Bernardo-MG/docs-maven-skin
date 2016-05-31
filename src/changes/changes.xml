@@ -117,5 +117,11 @@
             Fixed errors rendering heading numbers.
          </action>
       </release>
+      <release version="0.3.1" date="2015-05-30" description="Maven site fixed">
+         <action dev="bmg" type="fix">
+            The project no longer collides with itself when creating the
+            maven site.
+         </action>
+      </release>
    </body>
 </document>
