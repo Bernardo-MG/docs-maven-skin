@@ -189,7 +189,7 @@
       <plugin.changes.version>2.12</plugin.changes.version>
       <plugin.site.velocity.version>1.7</plugin.site.velocity.version>
       <!-- Maven Site -->
-      <site.skin.version>0.3.0-SNAPSHOT</site.skin.version>
+      <site.skin.version>0.3.0</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
    </properties>
