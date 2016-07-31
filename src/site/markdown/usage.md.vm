@@ -1,18 +1,17 @@
-#Usage
+#set( $symbol_pound = '#' )
+${symbol_pound} Usage
 
-Once the dependencies have been set, the skin can be used by adding the following element to the site.xml file:
+[Once the dependencies have been set][acquire], the skin can be used by adding the following element to the site.xml file:
 
 ```xml
 <skin>
     <groupId>com.wandrell.maven</groupId>
     <artifactId>docs-maven-skin</artifactId>
-    <version>${site.skin.version}</version>
+    <version>${project.version}</version>
 </skin>
 ```
 
-As shown, it is recommended defining the version in the properties section of the POM, which will then be replaced by Maven automatically before creating the site.
-
-## Sample site.xml
+${symbol_pound}${symbol_pound} Sample site.xml
 
 The site requires a correctly configured site.xml file to work. For more details check the [site.xml page][site_xml], but the following shows an example of how it should look:
 
@@ -25,7 +24,7 @@ The site requires a correctly configured site.xml file to work. For more details
     <skin>
         <groupId>com.wandrell.maven</groupId>
         <artifactId>docs-maven-skin</artifactId>
-        <version>${site.skin.version}</version>
+        <version>${project.version}</version>
     </skin>
 
     <custom>
@@ -55,14 +54,6 @@ The site requires a correctly configured site.xml file to work. For more details
             <bottomNav>
                 <menu>General Info</menu>
             </bottomNav>
-            <pages>
-                <index>
-                    <sections>
-                        <body />
-                        <columns>2</columns>
-                    </sections>
-                </index>
-            </pages>
         </skinConfig>
     </custom>
 
@@ -85,6 +76,7 @@ The site requires a correctly configured site.xml file to work. For more details
 </project>
 ```
 
-Note that this example site.xml shown includes some properties which are read from the POM file, such as *${bintrayURL}*.
+Note that while this example site.xml shows a working file, it is recommended taking advantage of Maven's variable substitution for setting up things such as the skin version or the external URLs.
 
+[acquire]: ./acquire.html
 [site_xml]: ./site_xml.html
