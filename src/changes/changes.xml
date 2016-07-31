@@ -123,5 +123,10 @@
             maven site.
          </action>
       </release>
+      <release version="0.3.2" date="2015-07-31" description="Improved usage info">
+         <action dev="bmg" type="fix">
+            The readme and docs now state more clearly how to use the skin.
+         </action>
+      </release>
    </body>
 </document>

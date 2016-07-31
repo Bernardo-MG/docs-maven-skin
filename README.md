@@ -48,7 +48,9 @@ The verify phase is required, as otherwise some of the reports won't be created.
 
 ## Usage
 
-The application is coded in Velocity Template Language, using Maven to manage the project.
+The project is coded in Velocity Template Language, using Maven to manage the project.
+
+It also requires Maven to be used, being set up as a Maven Skin for the Maven Site of any other Maven-based project.
 
 ### Prerequisites
 
@@ -69,6 +71,20 @@ If for some reason manual installation is necessary, just use the following Mave
 ```
 $ mvn install
 ```
+
+### Setting up the skin
+
+To use the Skin when generating a Maven Site just add the following to the site.xml file:
+
+```xml
+<skin>
+    <groupId>com.wandrell.maven</groupId>
+    <artifactId>docs-maven-skin</artifactId>
+    <version>[current version]</version>
+</skin>
+```
+
+More detailed information can be found in the documentation (check the links in the documentation section earlier in this file).
 
 ## Collaborate
 
