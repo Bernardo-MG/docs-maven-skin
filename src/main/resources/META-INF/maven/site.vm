@@ -145,28 +145,10 @@
 <footer class="footer">
     <div class="footer-content">
         <div class="container-fluid">
-            <div class="row">
-                <div id="navbar-footer" class="col-md-9 col-sm-12 col-xs-12">
-                    <div class="row">
+            <div id="navbar-footer" class="row">
 #if( $decoration.body.menus )
 #**##bottomNav()
 #end
-                    </div>
-                </div>
-                <div class="footer-info col-md-3 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-4 col-xs-12">
-                            <dl class="dl-horizontal">
-                                <dt id="project-version">Version</dt>
-                                <dd>${project.version}</dd>
-                                <dt id="project-published">Published</dt>
-                                <dd><time>#publishDate()</time></dd>
-#versionsList()
-                            </dl>
-                        </div>
-                        <div class="col-md-0 col-sm-4 col-xs-0"></div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="container copyright">
@@ -406,23 +388,6 @@
 
 
 *#
-#*--------------------------------------------------*###
-#**
- * Renders the supported Java versions list.
- * 
- * This will be a definitions list, loaded from the interpreters node
- * in the site configuration file.
- *
- *#
-#*--------------------------------------------------*#
-#macro( versionsList )
-#**##if($config.interpreters)
-                                <dt id="project-works-on">Tested on</dt>
-#*    *##foreach( $interpreter in $config.interpreters.getChildren() )
-                                <dd>$interpreter.getValue()</dd>
-#*    *##end
-#**##end
-#end
 #*--------------------------------------------------*###
 #**
  * Renders a list with the project resources.
