@@ -128,5 +128,10 @@
             The readme and docs now state more clearly how to use the skin.
          </action>
       </release>
+      <release version="0.3.3" date="2015-09-03" description="Visual corrections">
+         <action dev="bmg" type="fix">
+            The icons list is easier to see and use in smaller screens.
+         </action>
+      </release>
    </body>
 </document>
