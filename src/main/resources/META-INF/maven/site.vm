@@ -151,14 +151,9 @@
 #end
             </div>
         </div>
-        <div class="container copyright">
-            <ul class="list-copyright list-unstyled">
-                <li>#copyright()</li>
-                <li>#license()</li>
-            </ul>
-            <ul class="list-unstyled">
-                <li>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</li>
-            </ul>
+        <div class="row">
+            <div>#copyright()</div>
+            <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
         </div>
     </div>
 </footer>
@@ -456,24 +451,7 @@
 ${project.organization.name}
 #*        *##end
 #*    *##end
-#**##end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Renders the license information.
- *
- * This will be the license name and its URL as a link.
- *
- *#
-#*--------------------------------------------------*#
-#macro( license )
-#**##if( $project.licenses && $project.licenses[0] )
-Code released under the <a href="$project.licenses[0].url">$project.licenses[0].name</a>
+<a href="$project.licenses[0].url">$project.licenses[0].name</a>
 #**##end
 #end
 #*
