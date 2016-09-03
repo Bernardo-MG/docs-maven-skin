@@ -377,7 +377,7 @@
 #*--------------------------------------------------*#
 #macro( releasesList )
                             <dl class="dl-nav">
-                                <dt>Releases repositories</dt>
+                                <dt>Releases</dt>
 #**##foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
                                 <dd><a href="$releasesRepo.getChild('url').getValue()">$releasesRepo.getChild('name').getValue()</a></dd>
 #**##end
