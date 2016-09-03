@@ -255,7 +255,7 @@
 #*--------------------------------------------------*#
 #macro( iconsMenu )
                 <li>
-                    <ul class="list-unstyled icons-list-inline">
+                    <ul class="list-unstyled icons-list">
 #**##if($project.scm)
 #*    *##if($project.scm.url.matches('.*github\.com.*'))
                         <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span
