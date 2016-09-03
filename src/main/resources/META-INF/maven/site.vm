@@ -122,6 +122,7 @@
             </div>
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
+#navBarVersion()
                 <ul class="nav navbar-nav navbar-right">
 #iconsMenu()
 #if( $decoration.body.menus )
@@ -266,6 +267,20 @@
 #**##end
                     </ul>
                 </li>
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Creates the version information in the header.
+ *
+ *#
+#*--------------------------------------------------*#
+#navBarVersion()
+            <small class="navbar-text">${project.version} (#publishDate())</small>
 #end
 #*
 
