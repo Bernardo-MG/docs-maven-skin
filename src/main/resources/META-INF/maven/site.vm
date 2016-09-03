@@ -260,7 +260,8 @@
 #*    *##if($project.scm.url.matches('.*github\.com.*'))
                         <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span
                                 class="navbar-icon fa fa-github"
-                                aria-hidden="true"></span></a></li>
+                                aria-hidden="true"></span>
+                                <span class="hidden-md hidden-lg"> Github</span></a></li>
 #*    *##end
 #**##end
                     </ul>
