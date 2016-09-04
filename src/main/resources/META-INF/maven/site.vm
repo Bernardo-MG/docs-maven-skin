@@ -151,8 +151,8 @@
 #end
             </div>
 	        <div class="row">
-	            <div>#copyright()</div>
-	            <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
+	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
+	            <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
 	        </div>
         </div>
     </div>
