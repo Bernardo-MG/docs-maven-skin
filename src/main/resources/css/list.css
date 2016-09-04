@@ -10,21 +10,6 @@ dt:after {
 }
 
 /**
-* Horizontal definition list.
-*/
-
-.dl-horizontal dt {
-    float: left;
-    width: 6em;
-    text-align: left;
-    white-space: normal;
-}
-
-.dl-horizontal dd {
-    margin-left: 6em;
-}
-
-/**
 * Navigation definition list.
 *
 * These are used on the footer, grouping several links on a common theme.
