@@ -128,7 +128,16 @@
             The readme and docs now state more clearly how to use the skin.
          </action>
       </release>
-      <release version="0.3.3" date="2015-09-03" description="Visual corrections">
+      <release version="0.4.0" date="2015-09-03" description="Visual corrections">
+         <action dev="bmg" type="update">
+            Removed the additional info column from the footer.
+         </action>
+         <action dev="bmg" type="update">
+            Moved version info to the navbar.
+         </action>
+         <action dev="bmg" type="update">
+            Removed the "tested on" list.
+         </action>
          <action dev="bmg" type="fix">
             The icons list is easier to see and use in smaller screens.
          </action>
