@@ -256,7 +256,7 @@
  *
  *#
 #*--------------------------------------------------*#
-#navBarVersion()
+#macro( navBarVersion )
             <small class="navbar-text">${project.version} (#publishDate())</small>
 #end
 #*
