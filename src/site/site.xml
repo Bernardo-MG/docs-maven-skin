@@ -13,11 +13,6 @@
             <keywords>Maven Site, fix, HTML5</keywords>
             <descriptionUrl>Documentation for the Docs Maven Skin</descriptionUrl>
             <twitterSite>@Wandrell_BMG</twitterSite>
-            <interpreters>
-                <interpreter>JDK 7</interpreter>
-                <interpreter>JDK 8</interpreter>
-                <interpreter>OpenJDK 7</interpreter>
-            </interpreters>
             <releaseRepositories>
                 <releaseRepository>
                     <name>Bintray</name>
