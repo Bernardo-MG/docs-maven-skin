@@ -150,10 +150,10 @@
 #**##bottomNav()
 #end
             </div>
-        </div>
-        <div class="row">
-            <div>#copyright()</div>
-            <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
+	        <div class="row">
+	            <div>#copyright()</div>
+	            <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
+	        </div>
         </div>
     </div>
 </footer>
