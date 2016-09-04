@@ -10,21 +10,6 @@ dt:after {
 }
 
 /**
-* Horizontal definition list.
-*/
-
-.dl-horizontal dt {
-    float: left;
-    width: 6em;
-    text-align: left;
-    white-space: normal;
-}
-
-.dl-horizontal dd {
-    margin-left: 6em;
-}
-
-/**
 * Navigation definition list.
 *
 * These are used on the footer, grouping several links on a common theme.
@@ -49,12 +34,25 @@ dt:after {
 * Icons inline list.
 */
 
-.icons-list-inline {
+.icons-list {
     font-size: 0;
     list-style: none;
 }
 
-.icons-list-inline > li {
-    display: inline-block;
+.icons-list > li {
     font-size: 19px;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 992px) {
+    .icons-list > li {
+        display: inline-block;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .icons-list > li {
+        display: inline-block;
+    }
 }

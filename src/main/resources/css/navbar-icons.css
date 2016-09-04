@@ -6,7 +6,7 @@
  */
 
 /* For vertically centering the list */
-.navbar-main .icons-list-inline a {
+.navbar-main .icons-list a {
     display: block;
 }
 
@@ -16,21 +16,21 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 992px) {
-    .navbar-main .icons-list-inline > li > a {
+    .navbar-main .icons-list > li > a {
         margin: 1em 0.3em 1em 0.3em;
     }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-    .navbar-main .icons-list-inline > li > a {
+    .navbar-main .icons-list > li > a {
         margin: 1em 0.3em 1em 0.3em;
     }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-    .navbar-main .icons-list-inline > li > a {
+    .navbar-main .icons-list > li > a {
         padding: 0.6em 1em 0.6em 1em;
         margin: 0 0.1em 0 0.2em;
     }

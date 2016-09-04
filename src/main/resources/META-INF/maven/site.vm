@@ -122,6 +122,7 @@
             </div>
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
+#navBarVersion()
                 <ul class="nav navbar-nav navbar-right">
 #iconsMenu()
 #if( $decoration.body.menus )
@@ -144,38 +145,15 @@
 <footer class="footer">
     <div class="footer-content">
         <div class="container-fluid">
-            <div class="row">
-                <div id="navbar-footer" class="col-md-9 col-sm-12 col-xs-12">
-                    <div class="row">
+            <div id="navbar-footer" class="row">
 #if( $decoration.body.menus )
 #**##bottomNav()
 #end
-                    </div>
-                </div>
-                <div class="footer-info col-md-3 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-4 col-xs-12">
-                            <dl class="dl-horizontal">
-                                <dt id="project-version">Version</dt>
-                                <dd>${project.version}</dd>
-                                <dt id="project-published">Published</dt>
-                                <dd><time>#publishDate()</time></dd>
-#versionsList()
-                            </dl>
-                        </div>
-                        <div class="col-md-0 col-sm-4 col-xs-0"></div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="container copyright">
-            <ul class="list-copyright list-unstyled">
-                <li>#copyright()</li>
-                <li>#license()</li>
-            </ul>
-            <ul class="list-unstyled">
-                <li>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</li>
-            </ul>
+	        <div class="row">
+	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
+	            <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
+	        </div>
         </div>
     </div>
 </footer>
@@ -255,16 +233,31 @@
 #*--------------------------------------------------*#
 #macro( iconsMenu )
                 <li>
-                    <ul class="list-unstyled icons-list-inline">
+                    <ul class="list-unstyled icons-list">
 #**##if($project.scm)
 #*    *##if($project.scm.url.matches('.*github\.com.*'))
                         <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span
                                 class="navbar-icon fa fa-github"
-                                aria-hidden="true"></span></a></li>
+                                aria-hidden="true"></span>
+                                <span class="hidden-md hidden-lg"> Github</span></a></li>
 #*    *##end
 #**##end
                     </ul>
                 </li>
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Creates the version information in the header.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( navBarVersion )
+            <small class="navbar-text">${project.version} (#publishDate())</small>
 #end
 #*
 
@@ -379,7 +372,7 @@
 #*--------------------------------------------------*#
 #macro( releasesList )
                             <dl class="dl-nav">
-                                <dt>Releases repositories</dt>
+                                <dt>Releases</dt>
 #**##foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
                                 <dd><a href="$releasesRepo.getChild('url').getValue()">$releasesRepo.getChild('name').getValue()</a></dd>
 #**##end
@@ -390,23 +383,6 @@
 
 
 *#
-#*--------------------------------------------------*###
-#**
- * Renders the supported Java versions list.
- * 
- * This will be a definitions list, loaded from the interpreters node
- * in the site configuration file.
- *
- *#
-#*--------------------------------------------------*#
-#macro( versionsList )
-#**##if($config.interpreters)
-                                <dt id="project-works-on">Tested on</dt>
-#*    *##foreach( $interpreter in $config.interpreters.getChildren() )
-                                <dd>$interpreter.getValue()</dd>
-#*    *##end
-#**##end
-#end
 #*--------------------------------------------------*###
 #**
  * Renders a list with the project resources.
@@ -475,24 +451,7 @@
 ${project.organization.name}
 #*        *##end
 #*    *##end
-#**##end
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Renders the license information.
- *
- * This will be the license name and its URL as a link.
- *
- *#
-#*--------------------------------------------------*#
-#macro( license )
-#**##if( $project.licenses && $project.licenses[0] )
-Code released under the <a href="$project.licenses[0].url">$project.licenses[0].name</a>
+<a href="$project.licenses[0].url">$project.licenses[0].name</a>
 #**##end
 #end
 #*
