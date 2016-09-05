@@ -4,13 +4,19 @@
 
 |Report|Description|
 |---|---|
-|[Dependencies](./dependencies.html)|Dependencies used by the project.|
-|[Plugins](./plugins.html)|Maven plugins used by the project.|
-|[Plugins Management](./plugin-management.html)|Maven plugins that are defined through pluginManagement.|
+|[Dependencies][dependencies]|Dependencies used by the project.|
+|[Dependencies Analysis][dependency-analysis]|Dependencies analysis of the project (used declared, used undeclared, unused declared).|
+|[Plugins][plugins]|Maven plugins used by the project.|
+|[Plugins Management][plugins-manage]|Maven plugins that are defined through pluginManagement.|
 
 ## Other
 
 |Report|Description|
 |---|---|
-|[Changes](./changes-report.html)|Full history of changes.|
+|[Changes][changes]|Full history of changes.|
 
+[changes]: ./changes-report.html
+[dependencies]: ./dependencies.html
+[dependency-analysis]: ./dependency-analysis.html
+[plugins]: ./plugins.html
+[plugins-manage]: ./plugin-management.html

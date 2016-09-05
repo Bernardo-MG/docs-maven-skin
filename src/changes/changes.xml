@@ -142,5 +142,10 @@
             The icons list is easier to see and use in smaller screens.
          </action>
       </release>
+      <release version="0.4.1" date="2016-09-05" description="Added reports">
+         <action dev="bmg" type="add">
+            Added dependencies analysis report.
+         </action>
+      </release>
    </body>
 </document>
