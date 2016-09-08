@@ -25,12 +25,21 @@ before_install:
   - chmod -R +x ~/.scripts/*
   # Prepares CI environment
   - source ~/.scripts/travis/load-travis-environment.sh
+install:
+  # JSHint
+  - npm install -g jshint
+  # Recess
+  - npm install -g recess
 before_script:
   # Creates Maven settings
   - ~/.scripts/java/maven/create-maven-settings.sh $VERSION_TYPE
 script:
   # Unit and integration tests are run
   - mvn clean verify
+  # Javascript validation
+  - jshint ./src/main/resources/js/*
+  # CSS Validation
+  - recess ./src/main/resources/css/*
 after_success:
   # Documentation deployment script
   - ~/.scripts/java/maven/deploy-site.sh $DO_DEPLOY_DOCS deployment
