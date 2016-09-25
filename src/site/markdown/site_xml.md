@@ -14,9 +14,6 @@ The general structure of this element will look like the following example:
         <keywords></keywords>
         <descriptionUrl></descriptionUrl>
         <twitterSite></twitterSite>
-        <interpreters>
-            <interpreter></interpreter>
-        </interpreters>
         <releaseRepositories>
             <releaseRepository>
                 <name></name>
@@ -138,28 +135,6 @@ And the following menu:
     ...
 </body>
 ```
-
-#### Interpreters list
-
-The Java interpreters node will be used for creating the list of supporter interpreters in the footer.
-
-For example, using following list:
-
-```xml
-<custom>
-    <skinConfig>
-        ...
-        <interpreters>
-            <interpreter>JDK 7</interpreter>
-            <interpreter>JDK 8</interpreter>
-            <interpreter>OpenJDK 7</interpreter>
-        </interpreters>
-        ...
-    </skinConfig>
-</custom>
-```
-
-This will create list in the footer with an item for each of the three interpreters.
 
 
 [metadata]: ./metadata.html

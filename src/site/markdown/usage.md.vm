@@ -32,11 +32,6 @@ The site requires a correctly configured site.xml file to work. For more details
             <keywords>Maven Site, fix, HTML5</keywords>
             <descriptionUrl>Check the documentation for the Docs Maven Skin</descriptionUrl>
             <twitterSite>@wandrell</twitterSite>
-            <interpreters>
-                <interpreter>JDK 7</interpreter>
-                <interpreter>JDK 8</interpreter>
-                <interpreter>OpenJDK 7</interpreter>
-            </interpreters>
             <releaseRepositories>
                 <releaseRepository>
                     <name>Bintray</name>
