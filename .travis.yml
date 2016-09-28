@@ -20,7 +20,7 @@ matrix:
 
 before_install:
   # Gets scripts
-  - git clone -b v0.2.0 --single-branch https://github.com/Bernardo-MG/ci-shell-scripts.git ~/.scripts
+  - git clone -b v0.2.4 --single-branch https://github.com/Bernardo-MG/ci-shell-scripts.git ~/.scripts
   # Sets scripts as executable
   - chmod -R +x ~/.scripts/*
   # Prepares CI environment
