@@ -17,14 +17,6 @@
  */
 
 /**
- * Initialize the chevron toggle feature.
- */
-function initChevronToggle() {
-    $('.dropdown').on('show.bs.dropdown', toggleDropdownChevronOpen);
-    $('.dropdown').on('hide.bs.dropdown', toggleDropdownChevronClosed);
-}
-
-/**
  * Toggles the chevron on the active dropdown menu, so it points down, indicating it is open.
  */
 function toggleDropdownChevronOpen() {
@@ -40,4 +32,12 @@ function toggleDropdownChevronClosed() {
     $(this).find('.chevron_toggleable')
         .removeClass("fa fa-chevron-down")
         .addClass("fa fa-chevron-up");
+}
+
+/**
+ * Initialize the chevron toggle feature.
+ */
+function initChevronToggle() {
+    $('.dropdown').on('show.bs.dropdown', toggleDropdownChevronOpen);
+    $('.dropdown').on('hide.bs.dropdown', toggleDropdownChevronClosed);
 }

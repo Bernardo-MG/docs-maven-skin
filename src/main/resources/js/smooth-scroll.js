@@ -10,18 +10,6 @@
  */
 
 /**
- * Initialize the smooth scroll feature.
- */
-function initSmoothScroll() {
-    $('a[href^="#"]').on('click', function (e) {
-        // Prevents default anchor click behavior
-        e.preventDefault();
-
-        smoothScroll(this.hash);
-    });
-}
-
-/**
  * Scrolls smoothly to the element with the specified hash.
  *
  * @param hash hash for the element where to scroll
@@ -36,4 +24,16 @@ function smoothScroll(hash) {
             window.location.hash = hash;
         });
     }
+}
+
+/**
+ * Initialize the smooth scroll feature.
+ */
+function initSmoothScroll() {
+    $('a[href^="#"]').on('click', function (e) {
+        // Prevents default anchor click behavior
+        e.preventDefault();
+
+        smoothScroll(this.hash);
+    });
 }

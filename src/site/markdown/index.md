@@ -22,6 +22,7 @@ The main features offered by the skin are:
 - HTML5
 - [Bootstrap 3][bootstrap]
 - [Font Awesome][font_awesome] icons
+- [highlight.js][highlight] for syntax highlighting
 - Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
 
 ## Maven Site plugin support
@@ -31,6 +32,7 @@ This version of the skin only support the Maven Site plugin up to version 3.4. N
 [bootstrap]: http://getbootstrap.com/
 [docs_template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [font_awesome]: https://fortawesome.github.io/Font-Awesome/
+[highlight]: https://highlightjs.org/
 [reflow]: http://andriusvelykis.github.io/reflow-maven-skin/
 [open-graph]: http://ogp.me/
 [twitter-cards]: https://dev.twitter.com/cards/overview

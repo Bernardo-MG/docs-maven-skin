@@ -5,44 +5,98 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
-      <release version="0.1.0" date="2015-08-07" description="First release">
-         <action dev="bmg" type="update">
-            First release of the skin.
-         </action>
-      </release>
-      <release version="0.1.1" date="2015-08-08" description="Maven site fix">
-         <action dev="bmg" type="update">
-            Site is now working.
-         </action>
-         <action dev="bmg" type="fix">
-            Corrected links.
-         </action>
-      </release>
-      <release version="0.1.2" date="2015-09-10" description="Maven site fix">
-         <action dev="bmg" type="fix">
-            Corrected releases repositories links.
-         </action>
-      </release>
-      <release version="0.2.0" date="2015-10-15" description="Various fixes">
+      <release version="0.4.2" date="2016-09-28" description="JSHint">
          <action dev="bmg" type="add">
-            Added skin information to the footer.
+            JS files are now validated with JSHint.
+         </action>
+         <action dev="bmg" type="update">
+            Maven site is now deployed through SSH.
+         </action>
+      </release>
+      <release version="0.4.1" date="2016-09-05" description="Added reports">
+         <action dev="bmg" type="add">
+            Added dependencies analysis report.
+         </action>
+      </release>
+      <release version="0.4.0" date="2016-09-04" description="Visual corrections">
+         <action dev="bmg" type="update">
+            Removed the additional info column from
+            the footer.
+         </action>
+         <action dev="bmg" type="update">
+            Moved version info to the navbar.
+         </action>
+         <action dev="bmg" type="update">
+            Removed the "tested on" list.
          </action>
          <action dev="bmg" type="fix">
-            Inception year is no longer compulsory
-            for the footer copyright year.
+            The icons list is easier to see and use
+            in smaller screens.
+         </action>
+      </release>
+      <release version="0.3.2" date="2016-07-31" description="Improved usage info">
+         <action dev="bmg" type="fix">
+            The readme and docs now state more
+            clearly how to use the skin.
+         </action>
+      </release>
+      <release version="0.3.1" date="2016-05-30" description="Maven site fixed">
+         <action dev="bmg" type="fix">
+            The project no longer collides with
+            itself when creating the
+            maven site.
+         </action>
+      </release>
+      <release version="0.3.0" date="2016-05-30" description="UI changes">
+         <action dev="bmg" type="update">
+            Changed theme. Now it is based on
+            Bootswatch Simplex.
+         </action>
+         <action dev="bmg" type="update">
+            Removed support for multiple columns in a
+            single page.
+         </action>
+         <action dev="bmg" type="update">
+            Updated Javascripts.
+         </action>
+         <action dev="bmg" type="update">
+            Updated POM configuration. It now uses a
+            parent POM.
+         </action>
+         <action dev="bmg" type="update">
+            Updated CI scripts.
+         </action>
+         <action dev="bmg" type="update">
+            Updated dependencies.
          </action>
          <action dev="bmg" type="fix">
-            Only the first h1 heading is
-            transformed
-            into the page header.
+            Fixed empty headings on tag reports.
          </action>
          <action dev="bmg" type="fix">
-            Images are correctly transformed into
-            figures.
+            Fixed errors rendering heading numbers.
+         </action>
+      </release>
+      <release version="0.2.4" date="2016-03-10" description="Various fixes">
+         <action dev="bmg" type="fix">
+            Fixed Maven Site deployment.
          </action>
          <action dev="bmg" type="fix">
-            Report links are now working
-            correctly.
+            Fixed chevron separation in menu
+            options.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed security vulnerability in
+            dependencies.
+         </action>
+      </release>
+      <release version="0.2.3" date="2015-12-7" description="Updated configuration">
+         <action dev="bmg" type="update">
+            Updated project configuration.
+         </action>
+      </release>
+      <release version="0.2.2" date="2015-11-22" description="Updated configuration">
+         <action dev="bmg" type="update">
+            Updated project configuration.
          </action>
       </release>
       <release version="0.2.1" date="2015-11-8" description="Numbering headings and small fixes">
@@ -68,83 +122,44 @@
             Headings font is now more noticeable.
          </action>
       </release>
-      <release version="0.2.2" date="2015-11-22" description="Updated configuration">
-         <action dev="bmg" type="update">
-            Updated project configuration.
-         </action>
-      </release>
-      <release version="0.2.3" date="2015-12-7" description="Updated configuration">
-         <action dev="bmg" type="update">
-            Updated project configuration.
-         </action>
-      </release>
-      <release version="0.2.4" date="2016-03-10" description="Various fixes">
-         <action dev="bmg" type="fix">
-            Fixed Maven Site deployment.
-         </action>
-         <action dev="bmg" type="fix">
-            Fixed chevron separation in menu
-            options.
-         </action>
-         <action dev="bmg" type="fix">
-            Fixed security vulnerability in
-            dependencies.
-         </action>
-      </release>
-      <release version="0.3.0" date="2016-05-30" description="UI changes">
-         <action dev="bmg" type="update">
-            Changed theme. Now it is based on Bootswatch Simplex.
-         </action>
-         <action dev="bmg" type="update">
-            Removed support for multiple columns in a single page.
-         </action>
-         <action dev="bmg" type="update">
-            Updated Javascripts.
-         </action>
-         <action dev="bmg" type="update">
-            Updated POM configuration. It now uses a parent POM.
-         </action>
-         <action dev="bmg" type="update">
-            Updated CI scripts.
-         </action>
-         <action dev="bmg" type="update">
-            Updated dependencies.
-         </action>
-         <action dev="bmg" type="fix">
-            Fixed empty headings on tag reports.
-         </action>
-         <action dev="bmg" type="fix">
-            Fixed errors rendering heading numbers.
-         </action>
-      </release>
-      <release version="0.3.1" date="2016-05-30" description="Maven site fixed">
-         <action dev="bmg" type="fix">
-            The project no longer collides with itself when creating the
-            maven site.
-         </action>
-      </release>
-      <release version="0.3.2" date="2016-07-31" description="Improved usage info">
-         <action dev="bmg" type="fix">
-            The readme and docs now state more clearly how to use the skin.
-         </action>
-      </release>
-      <release version="0.4.0" date="2016-09-04" description="Visual corrections">
-         <action dev="bmg" type="update">
-            Removed the additional info column from the footer.
-         </action>
-         <action dev="bmg" type="update">
-            Moved version info to the navbar.
-         </action>
-         <action dev="bmg" type="update">
-            Removed the "tested on" list.
-         </action>
-         <action dev="bmg" type="fix">
-            The icons list is easier to see and use in smaller screens.
-         </action>
-      </release>
-      <release version="0.4.1" date="2016-09-05" description="Added reports">
+      <release version="0.2.0" date="2015-10-15" description="Various fixes">
          <action dev="bmg" type="add">
-            Added dependencies analysis report.
+            Added skin information to the footer.
+         </action>
+         <action dev="bmg" type="fix">
+            Inception year is no longer compulsory
+            for the footer copyright year.
+         </action>
+         <action dev="bmg" type="fix">
+            Only the first h1 heading is
+            transformed
+            into the page header.
+         </action>
+         <action dev="bmg" type="fix">
+            Images are correctly transformed into
+            figures.
+         </action>
+         <action dev="bmg" type="fix">
+            Report links are now working
+            correctly.
+         </action>
+      </release>
+      <release version="0.1.2" date="2015-09-10" description="Maven site fix">
+         <action dev="bmg" type="fix">
+            Corrected releases repositories links.
+         </action>
+      </release>
+      <release version="0.1.1" date="2015-08-08" description="Maven site fix">
+         <action dev="bmg" type="update">
+            Site is now working.
+         </action>
+         <action dev="bmg" type="fix">
+            Corrected links.
+         </action>
+      </release>
+      <release version="0.1.0" date="2015-08-07" description="First release">
+         <action dev="bmg" type="update">
+            First release of the skin.
          </action>
       </release>
    </body>

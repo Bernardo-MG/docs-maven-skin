@@ -2,7 +2,7 @@
 
 A minimalist Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
 
-While it can be used by itself, just remember to check the documentation to find out how to set it up. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin.
+It is easy to use, just remember to check [the documentation][site-release] to find out how to set it up. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin and shows how it is configured.
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
@@ -20,11 +20,12 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 - HTML5
 - [Bootstrap 3][bootstrap]
 - [Font Awesome][font_awesome] icons
+- [highlight.js][highlight] for syntax highlighting
 - Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
 
 ## Demo
 
-To check how the skin looks take a look at the documentation, linked below this section, which is a Maven Site making use of the skin.
+To check the Docs Maven Skin at work take a look at the documentation, linked below this section, which is a Maven Site making use of this skin.
 
 ## Documentation
 
@@ -119,5 +120,6 @@ The project has been released under the [MIT License][license].
 [docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [bootstrap]: http://getbootstrap.com/
 [font_awesome]: https://fortawesome.github.io/Font-Awesome/
+[highlight]: https://highlightjs.org/
 [open-graph]: http://ogp.me/
 [twitter-cards]: https://dev.twitter.com/cards/overview

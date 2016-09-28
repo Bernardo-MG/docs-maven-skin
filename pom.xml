@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.wandrell.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.5</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +20,7 @@
 
    <groupId>com.wandrell.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>0.4.1</version>
+   <version>0.4.2</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -122,7 +122,7 @@
             <site>
                <id>site</id>
                <name>Project Documentation Site</name>
-               <url>ftp://docs.wandrell.com/docs-maven-skin</url>
+               <url>scp://docs.wandrell.com:2222/home1/duenco/www/maven/docs-maven-skin</url>
             </site>
          </distributionManagement>
       </profile>
@@ -134,7 +134,7 @@
             <site>
                <id>site-development</id>
                <name>Project Development Documentation Site</name>
-               <url>ftp://docs.wandrell.com/docs-maven-skin</url>
+               <url>scp://docs.wandrell.com:2222/home1/duenco/www/development/maven/docs-maven-skin</url>
             </site>
          </distributionManagement>
       </profile>
@@ -186,6 +186,7 @@
       <wandrell.siteFixer.version>0.4.1</wandrell.siteFixer.version>
       <!-- Plugins versions -->
       <plugin.changes.version>2.12</plugin.changes.version>
+      <plugin.jshint.version>1.6.0</plugin.jshint.version>
       <plugin.site.velocity.version>1.7</plugin.site.velocity.version>
       <!-- Maven Site -->
       <site.skin.version>0.4.0</site.skin.version>
@@ -293,6 +294,30 @@
                <delimiters>
                   <delimiter>@</delimiter>
                </delimiters>
+            </configuration>
+         </plugin>
+         <plugin>
+            <!-- JSHint -->
+            <groupId>com.cj.jshintmojo</groupId>
+            <artifactId>jshint-maven-plugin</artifactId>
+            <version>${plugin.jshint.version}</version>
+            <executions>
+               <execution>
+                  <id>jshint</id>
+                  <phase>test</phase>
+                  <goals>
+                     <goal>lint</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <options>maxdepth:3,latedef,nonew,jquery</options>
+               <directories>
+                  <directory>src/main/resources/js</directory>
+               </directories>
+               <reporter>checkstyle</reporter>
+               <reportFile>target/jshint.xml</reportFile>
+               <failOnError>true</failOnError>
             </configuration>
          </plugin>
       </plugins>
