@@ -5,6 +5,11 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.4.3" date="2016-10-01" description="Metada changes">
+         <action dev="bmg" type="add">
+            Corrected charset declaration.
+         </action>
+      </release>
       <release version="0.4.2" date="2016-09-28" description="JSHint">
          <action dev="bmg" type="add">
             JS files are now validated with JSHint.
