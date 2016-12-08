@@ -5,6 +5,11 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.5.1" date="2016-12-08" description="Updated skin">
+         <action dev="bmg" type="update">
+            The project now generates the site with the previous version of itself.
+         </action>
+      </release>
       <release version="0.5.0" date="2016-12-08" description="Updated tools">
          <action dev="bmg" type="add">
             Compatible with Maven Site 3.6.
