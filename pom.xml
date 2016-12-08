@@ -182,14 +182,12 @@
       <!-- Manifest data -->
       <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
       <!-- Dependencies versions -->
-      <velocity.version>1.7</velocity.version>
       <wandrell.siteFixer.version>0.4.4</wandrell.siteFixer.version>
       <!-- Plugins versions -->
       <plugin.changes.version>2.12</plugin.changes.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
-      <plugin.site.velocity.version>1.7</plugin.site.velocity.version>
       <!-- Maven Site -->
-      <site.skin.version>0.4.0</site.skin.version>
+      <site.skin.version>0.5.0</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
    </properties>
@@ -204,12 +202,6 @@
          <groupId>com.wandrell.velocity</groupId>
          <artifactId>maven-site-fixer</artifactId>
          <version>${wandrell.siteFixer.version}</version>
-      </dependency>
-      <dependency>
-         <!-- Velocity -->
-         <groupId>org.apache.velocity</groupId>
-         <artifactId>velocity</artifactId>
-         <version>${velocity.version}</version>
       </dependency>
    </dependencies>
 
@@ -272,12 +264,6 @@
                   <groupId>com.wandrell.maven.skins</groupId>
                   <artifactId>docs-maven-skin</artifactId>
                   <version>${site.skin.version}</version>
-               </dependency>
-               <dependency>
-                  <!-- Velocity -->
-                  <groupId>org.apache.velocity</groupId>
-                  <artifactId>velocity</artifactId>
-                  <version>${plugin.site.velocity.version}</version>
                </dependency>
             </dependencies>
          </plugin>
