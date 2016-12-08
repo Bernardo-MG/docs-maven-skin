@@ -5,6 +5,14 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.5.0" date="2016-12-08" description="Updated tools">
+         <action dev="bmg" type="add">
+            Compatible with Maven Site 3.6.
+         </action>
+         <action dev="bmg" type="fix">
+            Corrected heading numbering script.
+         </action>
+      </release>
       <release version="0.4.4" date="2016-12-08" description="Updated tools">
          <action dev="bmg" type="add">
             Updated custom tools to use them with Maven Site 3.6.
