@@ -25,10 +25,6 @@ The main features offered by the skin are:
 - [highlight.js][highlight] for syntax highlighting
 - Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
 
-## Maven Site plugin support
-
-This version of the skin only support the Maven Site plugin up to version 3.4. Newer versions have a bug which make them unable to load the Velocity custom tools which the skin depends on.
-
 [bootstrap]: http://getbootstrap.com/
 [docs_template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [font_awesome]: https://fortawesome.github.io/Font-Awesome/
