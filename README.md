@@ -2,7 +2,7 @@
 
 A minimalist Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
 
-It is easy to use, just remember to check [the documentation][site-release] to find out how to set it up. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin and shows how it is configured.
+It is easy to use, just remember to check [the documentation][site-release] to find out how to set it up, and to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin and shows how it is configured.
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
