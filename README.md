@@ -45,6 +45,10 @@ $ mvn verify site
 
 The verify phase is required, as otherwise some of the reports won't be created.
 
+## Acknowledgement
+
+The project started as a fork of the [Reflow Maven Skin][reflow-skin], but it quickly became its own thing. Still, it owes much to that project.
+
 ## Usage
 
 The project is coded in Velocity Template Language, using Maven to manage the project.
@@ -102,6 +106,7 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
+[reflow-skin]: https://github.com/andriusvelykis/reflow-maven-skin
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
