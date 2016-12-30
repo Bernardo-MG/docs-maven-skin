@@ -1,4 +1,4 @@
-#parse( "info-macros.vm" )
-#parse( "list-macros.vm" )
-#parse( "menu-macros.vm" )
-#parse( "util-macros.vm" )
+#parse( "macros/info-macros.vm" )
+#parse( "macros/list-macros.vm" )
+#parse( "macros/menu-macros.vm" )
+#parse( "macros/util-macros.vm" )
