@@ -1,0 +1,151 @@
+#*--------------------------------------------------*###
+#**
+ * Renders a dropdown menu with the received menus as the selection options.
+ *
+ * The menu items are meant to come from the decoration XML file.
+ *
+ * Receives:
+ *        menus: a list of menus to process. These are Doxia decoration menus.
+ *#
+#*--------------------------------------------------*#
+#macro( dropdownMenu $menus )
+#**##foreach( $menu in $menus )
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+#*    *##foreach( $item in $menu.items )
+                            <li><a href="$item.href" title="$item.name">$item.name</a></li>
+#*    *##end
+                        </ul>
+                    </li>
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the icons menu.
+ *
+ * These are the icons shown in the upper navigation bar.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( iconsMenu )
+                <li>
+                    <ul class="list-unstyled icons-list">
+#**##if($project.scm)
+#*    *##if($project.scm.url.matches('.*github\.com.*'))
+                        <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span
+                                class="navbar-icon fa fa-github"
+                                aria-hidden="true"></span>
+                                <span class="hidden-md hidden-lg"> Github</span></a></li>
+#*    *##end
+#**##end
+                    </ul>
+                </li>
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Finds a collection of menus based on their names.
+ *
+ * Will iterate over the received menus, and will load all the found menus
+ * inside the menuColumns variable.
+ *
+ * Receives:
+ *        menus: Doxia decoration menus collection
+ *        menuNames: names of the menus to find
+ * Returns:
+ *        menuColumns: an array with all the found menus
+ *#
+#*--------------------------------------------------*#
+#macro( findMenus $menus $menuNames )
+#**##set( $menuColumns = [] )
+#**##foreach( $menuName in $menuNames )
+#*    *##findMenu ( $menus, $menuName.getValue() )
+#*    *##if( $foundMenu )
+#*        *##if($menuColumns.add( $foundMenu ))#end
+#*    *##end
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Finds a menu based on its name.
+ *
+ * Will iterate over the received menus, and will set the last menu found with
+ * the given name into the foundMenu variable.
+ *
+ * If no menu was found then this variable will be set as false.
+ *
+ * Receives:
+ *        menus: Doxia decoration menus collection
+ *        menuName: name of the menu to find
+ * Returns:
+ *        foundMenu: false if no menu was found, contains the menu otherwise
+ *#
+#*--------------------------------------------------*#
+#macro( findMenu $menus $menuName )
+#**##set( $foundMenu = false )
+#**##foreach($menu in $menus)
+#*    *##if( ( $menu.ref && $menu.ref == $menuName ) || ( $menu.name && $menu.name == $menuName ) )
+#*        *##set( $foundMenu = $menu )
+#*    *##end
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the bottom navigation.
+ *#
+#*--------------------------------------------------*#
+#macro( bottomNav )
+#**##set( $maxNavSpan = 12 )
+#**##if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
+#*    *##findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
+#**##else
+#*    *##set( $menuColumns = $decoration.body.menus )
+#**##end
+#**##set( $menuCount = ($menuColumns.size() + 2) )
+#**##set( $navSpan = $maxNavSpan / $menuCount )
+#**##if( $navSpan <= 0 )
+#*    *##set( $navSpan = 1 )
+#**##end
+#**##set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
+#**##set( $navColIndex = 0 )
+#**##foreach( $menuCol in $menuColumns )
+#*    *##if( $navColIndex == $menuCount - 1 )
+#*        *##set( $navSpan = $lastNavSpan )
+#*    *##end
+                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
+#*    *##linksList ( $menuCol )
+                       </div>
+#*    *##set( $navColIndex = $navColIndex + 1 )
+#**##end
+                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
+#**##resourcesList()
+                       </div>
+                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
+#**##releasesList()
+                       </div>
+#end
+#*
+
+
+
+*#
