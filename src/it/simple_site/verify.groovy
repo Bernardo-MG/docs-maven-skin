@@ -41,14 +41,14 @@ assert html.contains( '<meta name="author" content="Bernardo Martínez Garrido" 
 
 // Verifies Open Graph metadata
 assert html.contains( '<meta property="og:type" content="website"/>' )
-assert html.contains( '<meta property="og:site" content="simple-site &#x2013; library-maven-archetype-example"/>' )
-assert html.contains( '<meta property="og:title" content="simple-site &#x2013; library-maven-archetype-example"/>' )
+assert html.contains( '<meta property="og:site" content="Simple site example &#x2013; library-maven-archetype-example"/>' )
+assert html.contains( '<meta property="og:title" content="Simple site example &#x2013; library-maven-archetype-example"/>' )
 assert html.contains( '<meta property="og:description" content="Check the documentation for Basic Maven Project"/>' )
 
 // Verifies Twitter Card metadata
 assert html.contains( '<meta name="twitter:card" content="summary"/>' )
 assert html.contains( '<meta name="twitter:site" content="@bmg"/>' )
-assert html.contains( '<meta name="twitter:title" content="simple-site &#x2013; library-maven-archetype-example"/>' )
+assert html.contains( '<meta name="twitter:title" content="Simple site example &#x2013; library-maven-archetype-example"/>' )
 assert html.contains( '<meta name="twitter:description" content="Check the documentation for Basic Maven Project"/>' )
 
 // Verifies the data in the navbar
