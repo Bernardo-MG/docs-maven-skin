@@ -301,6 +301,22 @@
                      <outputDirectory>${project.build.directory}/site/examples/simple_site/</outputDirectory>
                   </configuration>
                </execution>
+               <execution>
+                  <!-- Copies the minimal site test results -->
+                  <id>copy-minimal</id>
+                  <phase>site</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <resources>
+                        <resource>
+                           <directory>${project.build.directory}/it/minimal/target/site/</directory>
+                        </resource>
+                     </resources>
+                     <outputDirectory>${project.build.directory}/site/examples/minimal/</outputDirectory>
+                  </configuration>
+               </execution>
             </executions>
          </plugin>
          <plugin>

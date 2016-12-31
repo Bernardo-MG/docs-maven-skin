@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="library-maven-archetype-exampleUnit" parallel="instances" thread-count="4">
+
+    <test name="library-maven-archetype-example_unit">
+        <packages>
+            <package name="com.wandrell.library_maven_archetype_example.test.unit.*" />
+        </packages>
+    </test>
+
+</suite>
