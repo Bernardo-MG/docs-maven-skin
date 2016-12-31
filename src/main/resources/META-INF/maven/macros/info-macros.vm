@@ -61,8 +61,7 @@ ${project.organization.name}
 #**##set( $format = "yyyy-MM-dd" )
 #**###$dateFormat.applyPattern( $format )
 #**##set( $dateValue = $dateFormat.format( $currentDate ) )
-$dateValue
-#end
+$dateValue#end
 #*
 
 

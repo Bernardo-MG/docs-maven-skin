@@ -50,3 +50,8 @@ assert html.contains( '<meta name="twitter:card" content="summary"/>' )
 assert html.contains( '<meta name="twitter:site" content="@bmg"/>' )
 assert html.contains( '<meta name="twitter:title" content="simple-site &#x2013; library-maven-archetype-example"/>' )
 assert html.contains( '<meta name="twitter:description" content="Check the documentation for Basic Maven Project"/>' )
+
+// Verifies the data in the navbar
+
+// Verifies the project information is shown
+assert html.contains( '<small class="navbar-text">1.0.0 (2016-12-31)</small>' )
