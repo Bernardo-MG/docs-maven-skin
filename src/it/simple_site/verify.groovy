@@ -1,0 +1,11 @@
+File acquire = new File( basedir, "target/site/acquire.html" )
+File index = new File( basedir, "target/site/index.html" )
+File info = new File( basedir, "target/site/info.html" )
+File reports = new File( basedir, "target/site/reports.html" )
+File usage = new File( basedir, "target/site/usage.html" )
+
+assert acquire.exists()
+assert index.exists()
+assert info.exists()
+assert reports.exists()
+assert usage.exists()
