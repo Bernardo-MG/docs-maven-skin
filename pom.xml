@@ -298,7 +298,7 @@
                            <directory>${project.build.directory}/it/simple_site/target/site/</directory>
                         </resource>
                      </resources>
-                     <outputDirectory>${project.build.directory}/site/simple_site/</outputDirectory>
+                     <outputDirectory>${project.build.directory}/site/examples/simple_site/</outputDirectory>
                   </configuration>
                </execution>
             </executions>
