@@ -284,6 +284,24 @@
                   <delimiter>@</delimiter>
                </delimiters>
             </configuration>
+            <executions>
+               <execution>
+                  <!-- Copies the simple site test results -->
+                  <id>copy-simple_site</id>
+                  <phase>site</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <resources>
+                        <resource>
+                           <directory>${project.build.directory}/it/simple_site/target/site/</directory>
+                        </resource>
+                     </resources>
+                     <outputDirectory>${project.build.directory}/site/simple_site/</outputDirectory>
+                  </configuration>
+               </execution>
+            </executions>
          </plugin>
          <plugin>
             <!-- JSHint -->
@@ -338,27 +356,6 @@
                      <goal>integration-test</goal>
                      <goal>verify</goal>
                   </goals>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-resources-plugin</artifactId>
-            <executions>
-               <execution>
-                  <id>copy-sidebar</id>
-                  <phase>site</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <resources>
-                        <resource>
-                           <directory>${project.build.directory}/it/simple_site/target/site/</directory>
-                        </resource>
-                     </resources>
-                     <outputDirectory>${project.build.directory}/site/simple_site/</outputDirectory>
-                  </configuration>
                </execution>
             </executions>
          </plugin>
