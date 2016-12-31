@@ -79,9 +79,9 @@
    <profiles>
       <profile>
          <!-- Profile for the Eclipse Maven plugin -->
-         <!-- Sets the POM so this plugin does not give the usual unregistered goals
+         <!-- Sets the POM so this plugin does not give the usual unregistered goals 
             errors -->
-         <!-- It will be activated automatically on Eclipse if this has the m2e plugin,
+         <!-- It will be activated automatically on Eclipse if this has the m2e plugin, 
             by detecting the version property -->
          <id>eclipse</id>
          <activation>
@@ -95,7 +95,7 @@
                   <plugin>
                      <!-- m2e lifecycle mapping -->
                      <!-- This is used to configure the Maven plugin for Eclipse. -->
-                     <!-- Among other things, it allows registering goals, which
+                     <!-- Among other things, it allows registering goals, which 
                         Eclipse would otherwise reject. -->
                      <!-- It has no real effect on Maven. -->
                      <groupId>org.eclipse.m2e</groupId>
@@ -185,11 +185,14 @@
       <wandrell.siteFixer.version>0.4.4</wandrell.siteFixer.version>
       <!-- Plugins versions -->
       <plugin.changes.version>2.12</plugin.changes.version>
+      <plugin.invoker.version>2.0.0</plugin.invoker.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
       <!-- Maven Site -->
       <site.skin.version>0.5.0</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
+      <!-- Integration tests -->
+      <basePom.version>1.1.0</basePom.version>
    </properties>
 
    <!-- ********************************************** -->
@@ -281,9 +284,28 @@
                   <delimiter>@</delimiter>
                </delimiters>
             </configuration>
+            <executions>
+               <execution>
+                  <!-- Copies the simple site test results -->
+                  <id>copy-simple_site</id>
+                  <phase>site</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <resources>
+                        <resource>
+                           <directory>${project.build.directory}/it/simple_site/target/site/</directory>
+                        </resource>
+                     </resources>
+                     <outputDirectory>${project.build.directory}/site/simple_site/</outputDirectory>
+                  </configuration>
+               </execution>
+            </executions>
          </plugin>
          <plugin>
             <!-- JSHint -->
+            <!-- Validates the JS files -->
             <groupId>com.cj.jshintmojo</groupId>
             <artifactId>jshint-maven-plugin</artifactId>
             <version>${plugin.jshint.version}</version>
@@ -305,6 +327,37 @@
                <reportFile>target/jshint.xml</reportFile>
                <failOnError>true</failOnError>
             </configuration>
+         </plugin>
+         <plugin>
+            <!-- Maven Invoker -->
+            <!-- Runs the IT test -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <version>${plugin.invoker.version}</version>
+            <configuration>
+               <debug>true</debug>
+               <projectsDirectory>src/it</projectsDirectory>
+               <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+               <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+               <preBuildHookScript>setup</preBuildHookScript>
+               <postBuildHookScript>verify</postBuildHookScript>
+               <pomIncludes>
+                  <pomInclude>*/pom.xml</pomInclude>
+               </pomIncludes>
+               <goals>
+                  <goal>site</goal>
+               </goals>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>integration-test</id>
+                  <goals>
+                     <goal>install</goal>
+                     <goal>integration-test</goal>
+                     <goal>verify</goal>
+                  </goals>
+               </execution>
+            </executions>
          </plugin>
       </plugins>
    </build>
