@@ -37,12 +37,14 @@
  *#
 #*--------------------------------------------------*#
 #macro( releasesList )
+#**##if( $config.releaseRepositories && $config.releaseRepositories.getChildCount() > 0 )
                             <dl class="dl-nav">
                                 <dt>Releases</dt>
-#**##foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
+#*    *##foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
                                 <dd><a href="$releasesRepo.getChild('url').getValue()">$releasesRepo.getChild('name').getValue()</a></dd>
-#**##end
+#*    *##end
                             </dl>
+#**##end
 #end
 #*
 
@@ -59,26 +61,28 @@
  *#
 #*--------------------------------------------------*#
 #macro( resourcesList )
+#**##if( $project.scm &&  $project.ciManagement && $project.issueManagement )
                             <dl class="dl-nav">
                                 <dt>Code</dt>
-#**##if( $project.scm )
+#*    *##if( $project.scm )
                                 <dd><a href="$project.scm.url" class="link-noted">SCM
-#*    *##if($project.scm.url.matches('.*github\.com.*'))
+#*        *##if($project.scm.url.matches('.*github\.com.*'))
                                  <span class="note">GitHub</span>
-#*    *##end
+#*        *##end
                                 </a></dd>
-#**##end
-#**##if( $project.ciManagement )
+#*    *##end
+#*    *##if( $project.ciManagement )
                                 <dd><a href="$project.ciManagement.url" class="link-noted">CI
                                  <span class="note">$project.ciManagement.system</span>
                                 </a></dd>
-#**##end
-#**##if( $project.issueManagement )
+#*    *##end
+#*    *##if( $project.issueManagement )
                                 <dd><a href="$project.issueManagement.url" class="link-noted">Issues
                                  <span class="note">$project.issueManagement.system</span>
                                 </a></dd>
-#**##end
+#*    *##end
                             </dl>
+#**##end
 #end
 #*
 
