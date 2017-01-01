@@ -38,13 +38,19 @@
 #*    *##else <span class="fa fa-copyright"></span>${currentYear}
 #*    *##end
 #*    *##if( ${project.organization} && ${project.organization.name} )
+#*        *##set( $orgNameShown = true )
 #*        *##if( ${project.organization.url} )
 <a href="$project.organization.url">${project.organization.name}</a>
 #*        *##else
 ${project.organization.name}
 #*        *##end
+#*    *##else
+#*        *##set( $orgNameShown = false )
 #*    *##end
 #**#  #if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )
+#*    *##if( ${orgNameShown} )
+-
+#*    *##end
 <a href="$project.licenses[0].url">$project.licenses[0].name</a>
 #**#  #end
 #**##end
