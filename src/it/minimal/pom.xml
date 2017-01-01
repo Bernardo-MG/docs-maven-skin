@@ -5,16 +5,6 @@
    <modelVersion>4.0.0</modelVersion>
 
    <!-- ********************************************** -->
-   <!-- ****************** BASE POM ****************** -->
-   <!-- ********************************************** -->
-
-   <parent>
-      <groupId>com.wandrell.maven</groupId>
-      <artifactId>base-pom</artifactId>
-      <version>@basePom.version@</version>
-   </parent>
-
-   <!-- ********************************************** -->
    <!-- **************** PROJECT INFO **************** -->
    <!-- ********************************************** -->
 
@@ -28,13 +18,13 @@
    <!-- ********************************************** -->
 
    <properties>
-      <!-- Manifest data -->
-      <manifest.name>com/wandrell/maven/skins/minimal-site</manifest.name>
       <!-- Dependencies versions -->
       <guava.version>20.0</guava.version>
       <log4j.version>2.7</log4j.version>
       <mockito.version>1.10.19</mockito.version>
       <testng.version>6.10</testng.version>
+      <!-- Plugins versions -->
+      <plugin.site.version>3.6</plugin.site.version>
       <!-- Maven Site -->
       <site.skin.version>@project.version@</site.skin.version>
    </properties>
@@ -95,6 +85,7 @@
             <!-- Generates the Maven Site -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
+            <version>${plugin.site.version}</version>
             <dependencies>
                <dependency>
                   <!-- Docs Maven Skin -->
