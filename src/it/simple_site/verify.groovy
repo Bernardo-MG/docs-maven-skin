@@ -54,4 +54,4 @@ assert html.contains( '<meta name="twitter:description" content="Check the docum
 // Verifies the data in the navbar
 
 // Verifies the project information is shown
-assert html.contains( '<small class="navbar-text">1.0.0 (2016-12-31)</small>' )
+assert html =~ /<small class="navbar-text">1\.0\.0 \([0-9]+-[0-9]+-[0-9]+\)<\/small>/
