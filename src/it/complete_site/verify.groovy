@@ -1,4 +1,4 @@
-// This script verifies that a simple site contains all the elements. Meaning that this
+// This script verifies that a complete site contains all the elements. Meaning that this
 // test validates that all the common pieces of the site are generated when the Skin
 // has all the data it requires.
 

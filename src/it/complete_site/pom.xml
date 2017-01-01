@@ -19,12 +19,12 @@
    <!-- ********************************************** -->
 
    <groupId>com.wandrell.maven.skins</groupId>
-   <artifactId>simple-site</artifactId>
+   <artifactId>complete-site</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
    <name>Simple site example</name>
-   <description>An example for a simple site</description>
+   <description>An example for a complete site</description>
    <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
    <inceptionYear>2015</inceptionYear>
 
@@ -104,7 +104,7 @@
 
    <properties>
       <!-- Manifest data -->
-      <manifest.name>com/wandrell/maven/skins/simple-site</manifest.name>
+      <manifest.name>com/wandrell/maven/skins/complete-site</manifest.name>
       <!-- Dependencies versions -->
       <guava.version>20.0</guava.version>
       <log4j.version>2.7</log4j.version>
