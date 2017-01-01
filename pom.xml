@@ -286,8 +286,8 @@
             </configuration>
             <executions>
                <execution>
-                  <!-- Copies the simple site test results -->
-                  <id>copy-simple_site</id>
+                  <!-- Copies the complete site test results -->
+                  <id>copy-complete_site</id>
                   <phase>site</phase>
                   <goals>
                      <goal>copy-resources</goal>
@@ -295,10 +295,10 @@
                   <configuration>
                      <resources>
                         <resource>
-                           <directory>${project.build.directory}/it/simple_site/target/site/</directory>
+                           <directory>${project.build.directory}/it/complete_site/target/site/</directory>
                         </resource>
                      </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/simple_site/</outputDirectory>
+                     <outputDirectory>${project.build.directory}/site/examples/complete_site/</outputDirectory>
                   </configuration>
                </execution>
                <execution>
