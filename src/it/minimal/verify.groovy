@@ -1,3 +1,4 @@
+// This script verifies that a minimal site contains only the barebones of a site.
 
 // The files to test are read
 File index = new File( basedir, "target/site/index.html" )

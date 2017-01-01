@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.6.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0 http://maven.apache.org/xsd/decoration-1.6.0.xsd">
+
+    <skin>
+        <groupId>com.wandrell.maven.skins</groupId>
+        <artifactId>docs-maven-skin</artifactId>
+        <version>${site.skin.version}</version>
+    </skin>
+
+    <custom>
+        <skinConfig>
+            <releaseRepositories>
+                <releaseRepository>
+                    <name>Bintray</name>
+                    <url>${bintrayURL}</url>
+                </releaseRepository>
+                <releaseRepository>
+                    <name>Maven Central</name>
+                    <url>${mavenURL}</url>
+                </releaseRepository>
+            </releaseRepositories>
+            <bottomNav>
+                <menu>General Info</menu>
+            </bottomNav>
+        </skinConfig>
+    </custom>
+
+    <body>
+        <menu name="General Info" inherit="top">
+            <item name="Acquire" href="./acquire.html" />
+            <item name="Usage" href="./usage.html" />
+        </menu>
+    </body>
+
+</project>
