@@ -1,3 +1,4 @@
+// This script verifies that a site contains the bottom navigation.
 
 // The files to test are read
 File index = new File( basedir, "target/site/index.html" )

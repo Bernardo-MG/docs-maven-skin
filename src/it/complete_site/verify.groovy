@@ -1,4 +1,6 @@
-// This script verifies that a site contains the bottom navigation.
+// This script verifies that a complete site contains all the elements. Meaning that this
+// test validates that all the common pieces of the site are generated when the Skin
+// has all the data it requires.
 
 // The files to test are read
 File acquire = new File( basedir, "target/site/acquire.html" )
