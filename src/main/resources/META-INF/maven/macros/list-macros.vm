@@ -64,19 +64,19 @@
 #**##if( $project.scm &&  $project.ciManagement && $project.issueManagement )
                             <dl class="dl-nav">
                                 <dt>Code</dt>
-#*    *##if( $project.scm )
+#*    *##if( $project.scm && $project.scm.url )
                                 <dd><a href="$project.scm.url" class="link-noted">SCM
 #*        *##if($project.scm.url.matches('.*github\.com.*'))
                                  <span class="note">GitHub</span>
 #*        *##end
                                 </a></dd>
 #*    *##end
-#*    *##if( $project.ciManagement )
+#*    *##if( $project.ciManagement && $project.ciManagement.url && $project.ciManagement.system )
                                 <dd><a href="$project.ciManagement.url" class="link-noted">CI
                                  <span class="note">$project.ciManagement.system</span>
                                 </a></dd>
 #*    *##end
-#*    *##if( $project.issueManagement )
+#*    *##if( $project.issueManagement && $project.issueManagement.url && $project.issueManagement.system )
                                 <dd><a href="$project.issueManagement.url" class="link-noted">Issues
                                  <span class="note">$project.issueManagement.system</span>
                                 </a></dd>
