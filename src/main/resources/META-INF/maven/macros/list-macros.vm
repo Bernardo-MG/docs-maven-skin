@@ -40,8 +40,8 @@
 #**##if( $config.releaseRepositories && $config.releaseRepositories.getChildCount() > 0 )
                             <dl class="dl-nav">
                                 <dt>Releases</dt>
-#*    *##foreach( $releasesRepo in $config.releaseRepositories.getChildren() )
-                                <dd><a href="$releasesRepo.getChild('url').getValue()">$releasesRepo.getChild('name').getValue()</a></dd>
+#*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
+                                <dd><a href="$releasesRepo.getChild('url').value">$releasesRepo.getChild('name').value</a></dd>
 #*    *##end
                             </dl>
 #**##end
