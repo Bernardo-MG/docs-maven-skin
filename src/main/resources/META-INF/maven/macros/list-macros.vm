@@ -61,26 +61,21 @@
 #*--------------------------------------------------*#
 #macro( resourcesList )
 #**##if( $project.scm &&  $project.ciManagement && $project.issueManagement )
-                            <dl class="dl-nav">
-                                <dt>Code</dt>
+#set( $codeMenu = $menuTool.menu("Code") )
 #*    *##if( $project.scm && $project.scm.url )
-                                <dd><a href="$project.scm.url" class="link-noted">SCM
 #*        *##if($project.scm.url.matches('.*github\.com.*'))
-                                 <span class="note">GitHub</span>
+#set( $codeMenu = $menuTool.addLinkItem($codeMenu, "SCM", $project.scm.url, "GitHub") )
+#*        *##else
+#set( $codeMenu = $menuTool.addLinkItem($codeMenu, "SCM", $project.scm.url) )
 #*        *##end
-                                </a></dd>
 #*    *##end
 #*    *##if( $project.ciManagement && $project.ciManagement.url && $project.ciManagement.system )
-                                <dd><a href="$project.ciManagement.url" class="link-noted">CI
-                                 <span class="note">$project.ciManagement.system</span>
-                                </a></dd>
+#set( $codeMenu = $menuTool.addLinkItem($codeMenu, "CI", $project.ciManagement.url, $project.ciManagement.system) )
 #*    *##end
 #*    *##if( $project.issueManagement && $project.issueManagement.url && $project.issueManagement.system )
-                                <dd><a href="$project.issueManagement.url" class="link-noted">Issues
-                                 <span class="note">$project.issueManagement.system</span>
-                                </a></dd>
+#set( $codeMenu = $menuTool.addLinkItem($codeMenu, "Issues", $project.issueManagement.url, $project.issueManagement.system) )
 #*    *##end
-                            </dl>
+#linksListNoted( $codeMenu )
 #**##end
 #end
 #*
@@ -88,3 +83,27 @@
 
 
 *#
+#*--------------------------------------------------*###
+#**
+ * Renders a list with links and a note.
+ *
+ * This will be a definitions list, where each definition is a link.
+ *
+ * The menu item is meant to come from the decoration XML file.
+ *
+ * Receives:
+ *        menu: Doxia decoration menu to build the list menu
+ *#
+#*--------------------------------------------------*#
+#macro( linksListNoted $menu )
+                            <dl class="dl-nav">
+#**##if( $menu.name )
+                                <dt>$menu.name</dt>
+#**##end
+#**##if( $menu.items )
+#*    *##foreach( $item in $menu.items )
+                                <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
+#*    *##end
+#**##end
+                            </dl>
+#end
