@@ -17,7 +17,11 @@
 #**##end
 #**##if( $menu.items )
 #*    *##foreach( $item in $menu.items )
+#*        *##if( $item.description )
+                                <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
+#*        *##else
                                 <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
+#*        *##end
 #*    *##end
 #**##end
                             </dl>
@@ -75,7 +79,7 @@
 #*    *##if( $project.issueManagement && $project.issueManagement.url && $project.issueManagement.system )
 #set( $codeMenu = $menuTool.addLinkItem($codeMenu, "Issues", $project.issueManagement.url, $project.issueManagement.system) )
 #*    *##end
-#linksListNoted( $codeMenu )
+#linksList( $codeMenu )
 #**##end
 #end
 #*
@@ -83,27 +87,3 @@
 
 
 *#
-#*--------------------------------------------------*###
-#**
- * Renders a list with links and a note.
- *
- * This will be a definitions list, where each definition is a link.
- *
- * The menu item is meant to come from the decoration XML file.
- *
- * Receives:
- *        menu: Doxia decoration menu to build the list menu
- *#
-#*--------------------------------------------------*#
-#macro( linksListNoted $menu )
-                            <dl class="dl-nav">
-#**##if( $menu.name )
-                                <dt>$menu.name</dt>
-#**##end
-#**##if( $menu.items )
-#*    *##foreach( $item in $menu.items )
-                                <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
-#*    *##end
-#**##end
-                            </dl>
-#end
