@@ -20,5 +20,5 @@ assert html.contains( '<dd><a href="https://travis-ci.org/Bernardo-MG/docs-maven
 assert html.contains( '<a href="https://www.github.com/bernardo-mg/docs-maven-skin/issues" class="link-noted">Issues' )
 
 assert html.contains( '<dt>Releases</dt>' )
-assert html.contains( '<dd><a href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view">Bintray</a></dd>' )
-assert html.contains( '<dd><a href="http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin">Maven Central</a></dd>' )
+assert html.contains( '<dd><a href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" title="Bintray">Bintray</a></dd>' )
+assert html.contains( '<dd><a href="http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin" title="Maven Central">Maven Central</a></dd>' )

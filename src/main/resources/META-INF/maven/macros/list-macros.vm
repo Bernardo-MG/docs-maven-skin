@@ -38,12 +38,11 @@
 #*--------------------------------------------------*#
 #macro( releasesList )
 #**##if( $config.releaseRepositories && $config.releaseRepositories.getChildCount() > 0 )
-                            <dl class="dl-nav">
-                                <dt>Releases</dt>
+#set( $releasesMenu = $menuTool.menu("Releases") )
 #*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
-                                <dd><a href="$releasesRepo.getChild('url').value">$releasesRepo.getChild('name').value</a></dd>
+#set( $releasesMenu = $menuTool.addLinkItem($releasesMenu, $releasesRepo.getChild('name').value, $releasesRepo.getChild('url').value) )
 #*    *##end
-                            </dl>
+#linksList( $releasesMenu )
 #**##end
 #end
 #*
