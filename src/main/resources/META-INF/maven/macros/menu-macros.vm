@@ -121,7 +121,9 @@
 #**##else
 #*    *##set( $menuColumns = $decoration.body.menus )
 #**##end
-#**##set( $menuCount = ($menuColumns.size() + 2) )
+#**##resourcesList($menuColumns)
+#**##releasesList($menuColumns)
+#**##set( $menuCount = ($menuColumns.size()) )
 #**##set( $navSpan = $maxNavSpan / $menuCount )
 #**##if( $navSpan <= 0 )
 #*    *##set( $navSpan = 1 )
@@ -137,12 +139,6 @@
                        </div>
 #*    *##set( $navColIndex = $navColIndex + 1 )
 #**##end
-                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#**##resourcesList()
-                       </div>
-                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#**##releasesList()
-                       </div>
 #end
 #*
 
