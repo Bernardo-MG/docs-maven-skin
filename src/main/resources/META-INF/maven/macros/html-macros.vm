@@ -1,0 +1,18 @@
+#*--------------------------------------------------*###
+#**
+ * Wraps the first heading inside the content as page header, by wrapping it into
+ * a div with `page-header` class
+ *
+ * Receives:
+ *        content: section where the wrapper will be added
+ *#
+#*--------------------------------------------------*#
+#macro( wrapFirstHeading $content )
+#**##set( $content = $htmlTool.wrapFirst($content, "h1", '<header class="page-header"></header>') )
+    $content
+#end
+#*
+
+
+
+*#

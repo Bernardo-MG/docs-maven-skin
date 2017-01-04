@@ -5,6 +5,14 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.5.2" date="2016-12-08" description="Footer menus">
+         <action dev="bmg" type="update">
+            Improved the creation of the footer navigation menus.
+         </action>
+         <action dev="bmg" type="update">
+            The scripts file was divided into various files.
+         </action>
+      </release>
       <release version="0.5.1" date="2016-12-08" description="Updated skin">
          <action dev="bmg" type="update">
             The project now generates the site with the previous version of itself.

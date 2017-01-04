@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+   <modelVersion>4.0.0</modelVersion>
+
+   <!-- ********************************************** -->
+   <!-- **************** PROJECT INFO **************** -->
+   <!-- ********************************************** -->
+
+   <groupId>com.wandrell.maven.skins</groupId>
+   <artifactId>bottom-nav-site</artifactId>
+   <version>1.0.0</version>
+   <packaging>jar</packaging>
+
+   <!-- ********************************************** -->
+   <!-- ********* INFRASTRUCTURE AND SERVICES ******** -->
+   <!-- ********************************************** -->
+
+   <scm>
+      <connection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</connection>
+      <developerConnection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</developerConnection>
+      <tag>head</tag>
+      <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
+   </scm>
+
+   <issueManagement>
+      <system>GitHub</system>
+      <url>https://www.github.com/bernardo-mg/docs-maven-skin/issues</url>
+   </issueManagement>
+
+   <ciManagement>
+      <system>Travis CI</system>
+      <url>https://travis-ci.org/Bernardo-MG/docs-maven-skin</url>
+      <notifiers />
+   </ciManagement>
+
+   <distributionManagement>
+      <repository>
+         <uniqueVersion>false</uniqueVersion>
+         <id>releases</id>
+         <name>Releases Repository</name>
+         <url>https://api.bintray.com/maven/bernardo-mg/maven/docs-maven-skin</url>
+      </repository>
+      <snapshotRepository>
+         <uniqueVersion>false</uniqueVersion>
+         <id>snapshots</id>
+         <name>Snapshots Repository</name>
+         <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+      </snapshotRepository>
+   </distributionManagement>
+
+   <!-- ********************************************** -->
+   <!-- **************** PROPERTIES ****************** -->
+   <!-- ********************************************** -->
+
+   <properties>
+      <!-- Dependencies versions -->
+      <guava.version>20.0</guava.version>
+      <log4j.version>2.7</log4j.version>
+      <mockito.version>1.10.19</mockito.version>
+      <testng.version>6.10</testng.version>
+      <!-- Plugins versions -->
+      <plugin.site.version>3.6</plugin.site.version>
+      <!-- Maven Site -->
+      <site.skin.version>@project.version@</site.skin.version>
+      <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
+      <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
+   </properties>
+
+   <!-- ********************************************** -->
+   <!-- *************** DEPENDENCIES ***************** -->
+   <!-- ********************************************** -->
+
+   <dependencies>
+      <dependency>
+         <!-- Guava -->
+         <groupId>com.google.guava</groupId>
+         <artifactId>guava</artifactId>
+         <version>${guava.version}</version>
+      </dependency>
+      <!-- ============================================== -->
+      <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->
+      <!-- ============================================== -->
+      <dependency>
+         <!-- Log4j core -->
+         <groupId>org.apache.logging.log4j</groupId>
+         <artifactId>log4j-core</artifactId>
+         <version>${log4j.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <!-- Log4j SLF4J Bridge -->
+         <groupId>org.apache.logging.log4j</groupId>
+         <artifactId>log4j-slf4j-impl</artifactId>
+         <version>${log4j.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <!-- Mockito -->
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-all</artifactId>
+         <version>${mockito.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <!-- TestNG -->
+         <groupId>org.testng</groupId>
+         <artifactId>testng</artifactId>
+         <version>${testng.version}</version>
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <!-- ********************************************** -->
+   <!-- ******************* BUILD ******************** -->
+   <!-- ********************************************** -->
+
+   <build>
+      <defaultGoal>clean package install</defaultGoal>
+      <plugins>
+         <plugin>
+            <!-- Site -->
+            <!-- Generates the Maven Site -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>${plugin.site.version}</version>
+            <dependencies>
+               <dependency>
+                  <!-- Docs Maven Skin -->
+                  <groupId>com.wandrell.maven.skins</groupId>
+                  <artifactId>docs-maven-skin</artifactId>
+                  <version>${site.skin.version}</version>
+               </dependency>
+            </dependencies>
+         </plugin>
+      </plugins>
+   </build>
+
+</project>

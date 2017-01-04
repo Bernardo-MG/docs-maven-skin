@@ -1,0 +1,33 @@
+#*--------------------------------------------------*###
+#**
+ * Renders a list with links.
+ *
+ * This will be a definitions list, where each definition is a link.
+ *
+ * The menu item is meant to come from the decoration XML file.
+ *
+ * Receives:
+ *        menu: Doxia decoration menu to build the list menu
+ *#
+#*--------------------------------------------------*#
+#macro( linksList $menu )
+                            <dl class="dl-nav">
+#**##if( $menu.name )
+                                <dt>$menu.name</dt>
+#**##end
+#**##if( $menu.items )
+#*    *##foreach( $item in $menu.items )
+#*        *##if( $item.description )
+                                <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
+#*        *##else
+                                <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
+#*        *##end
+#*    *##end
+#**##end
+                            </dl>
+#end
+#*
+
+
+
+*#

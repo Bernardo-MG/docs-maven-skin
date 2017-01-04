@@ -1,0 +1,77 @@
+#*--------------------------------------------------*###
+#**
+ * Creates the version information in the header.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( navBarVersion )
+            <small class="navbar-text">${project.version} (#publishDate())</small>
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the copyright year and organization.
+ *
+ * This will show the copyright logo, followed by the year and the organization data.
+ * 
+ * If the inception year is the current year, this will be the shown year. Otherwise
+ * the inception year followed by the current year will be used, separating
+ * them with a hyphen.
+ *
+ * If there is no inception year then the current year will be shown.
+ *
+ * For the organization, its name and URL will be used to create a link.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( copyright )
+#**##if( $project )
+#*    *##set( $currentYear = ${currentDate.year} + 1900 )
+#*    *##if( ${project.inceptionYear} )
+#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa fa-copyright"></span>${project.inceptionYear}-${currentYear}
+#*        *##else <span class="fa fa-copyright"></span>${project.inceptionYear}
+#*        *##end
+#*    *##else <span class="fa fa-copyright"></span>${currentYear}
+#*    *##end
+#*    *##if( ${project.organization} && ${project.organization.name} )
+#*        *##set( $orgNameShown = true )
+#*        *##if( ${project.organization.url} )
+<a href="$project.organization.url">${project.organization.name}</a>
+#*        *##else
+${project.organization.name}
+#*        *##end
+#*    *##else
+#*        *##set( $orgNameShown = false )
+#*    *##end
+#*    *##if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )
+#*        *##if( ${orgNameShown} )
+-
+#*        *##end
+<a href="$project.licenses[0].url">$project.licenses[0].name</a>
+#**#  #end
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Renders the publish date.
+ *#
+#*--------------------------------------------------*#
+#macro( publishDate )
+#**##set( $format = "yyyy-MM-dd" )
+#**###$dateFormat.applyPattern( $format )
+#**##set( $dateValue = $dateFormat.format( $currentDate ) )
+$dateValue#end
+#*
+
+
+
+*#

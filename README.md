@@ -1,8 +1,8 @@
 # Docs Maven Skin
 
-A minimalist Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
+A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
 
-It is easy to use, just remember to check [the documentation][site-release] to find out how to set it up. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin and shows how it is configured.
+It is easy to use, just remember to check [the documentation][site-release] to find out how to set it up, and to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin and shows how it is configured.
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
@@ -44,6 +44,10 @@ $ mvn verify site
 ```
 
 The verify phase is required, as otherwise some of the reports won't be created.
+
+## Acknowledgement
+
+The project started as a fork of the [Reflow Maven Skin][reflow-skin], but it quickly became its own thing. Still, it owes much to that project.
 
 ## Usage
 
@@ -102,6 +106,7 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
+[reflow-skin]: https://github.com/andriusvelykis/reflow-maven-skin
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
