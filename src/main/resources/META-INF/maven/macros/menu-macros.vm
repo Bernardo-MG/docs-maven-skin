@@ -60,8 +60,8 @@
 #macro( bottomNav )
 #**##set( $maxNavSpan = 12 )
 #**##set( $menuList = [] )
-#**##if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
-#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.getChildren(), $menuList )
+#**##if( $config.bottomNav && $config.bottomNav.childCount > 0 )
+#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.children, $menuList )
 #**##end
 #**##loadResourcesMenu($menuList)
 #**##loadReleasesMenu($menuList)
@@ -77,7 +77,7 @@
 #*        *##set( $navSpan = $lastNavSpan )
 #*    *##end
                        <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#*    *##linksList ( $menuCol )
+#*    *##linksList( $menuCol )
                        </div>
 #*    *##set( $navColIndex = $navColIndex + 1 )
 #**##end
@@ -99,7 +99,7 @@
  *#
 #*--------------------------------------------------*#
 #macro( loadReleasesMenu $menuList )
-#**##if( $config.releaseRepositories && $config.releaseRepositories.getChildCount() > 0 )
+#**##if( $config.releaseRepositories && $config.releaseRepositories.childCount > 0 )
 #*    *##set( $releasesMenu = $menuTool.menu("Releases") )
 #*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
 #*        *##set( $releasesMenu = $menuTool.addLinkItem($releasesMenu, $releasesRepo.getChild('name').value, $releasesRepo.getChild('url').value) )
@@ -165,7 +165,7 @@
 #*--------------------------------------------------*#
 #macro( loadMenus $menus $menuNames $menuList )
 #**##foreach( $menuName in $menuNames )
-#*    *##findMenu ( $menus, $menuName.getValue() )
+#*    *##findMenu ( $menus, $menuName.value )
 #*    *##if( $foundMenu )
 #*        *##set($bar = $menuList.add( $foundMenu ))
 #*    *##end
