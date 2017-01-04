@@ -40,7 +40,7 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( releasesMenu $menuList )
+#macro( loadReleasesMenu $menuList )
 #**##if( $config.releaseRepositories && $config.releaseRepositories.getChildCount() > 0 )
 #*    *##set( $releasesMenu = $menuTool.menu("Releases") )
 #*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
@@ -63,7 +63,7 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( resourcesMenu $menuList )
+#macro( loadResourcesMenu $menuList )
 #**##if( $project.scm ||  $project.ciManagement || $project.issueManagement )
 #*    *##set( $codeMenu = $menuTool.menu("Code") )
 #*    *##if( $project.scm && $project.scm.url )
