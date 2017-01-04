@@ -121,8 +121,8 @@
 #**##else
 #*    *##set( $menuColumns = $decoration.body.menus )
 #**##end
-#**##resourcesList($menuColumns)
-#**##releasesList($menuColumns)
+#**##resourcesMenu($menuColumns)
+#**##releasesMenu($menuColumns)
 #**##set( $menuCount = ($menuColumns.size()) )
 #**##set( $navSpan = $maxNavSpan / $menuCount )
 #**##if( $navSpan <= 0 )

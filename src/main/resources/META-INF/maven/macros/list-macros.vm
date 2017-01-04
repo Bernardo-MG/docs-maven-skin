@@ -33,20 +33,20 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Renders a list with the releases repositories links.
+ * Creates and loads a menu with the releases repositories links.
  * 
- * This will be a definitions list, loaded from the releaseRepositories node
- * in the site configuration file.
+ * If the required data exists then the menu will be loaded in the received
+ * list.
  *
  *#
 #*--------------------------------------------------*#
-#macro( releasesList $menuColumns )
+#macro( releasesMenu $menuList )
 #**##if( $config.releaseRepositories && $config.releaseRepositories.getChildCount() > 0 )
 #*    *##set( $releasesMenu = $menuTool.menu("Releases") )
 #*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
 #*        *##set( $releasesMenu = $menuTool.addLinkItem($releasesMenu, $releasesRepo.getChild('name').value, $releasesRepo.getChild('url').value) )
 #*    *##end
-#*    *##set( $bar = $menuColumns.add($releasesMenu) )
+#*    *##set( $bar = $menuList.add($releasesMenu) )
 #**##end
 #end
 #*
@@ -56,14 +56,14 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Renders a list with the project resources.
+ * Creates and loads a menu with the project resources.
  * 
- * This will be a definitions list, generated from the project configuration
- * information.
+ * If the required data exists then the menu will be loaded in the received
+ * list.
  *
  *#
 #*--------------------------------------------------*#
-#macro( resourcesList $menuColumns )
+#macro( resourcesMenu $menuList )
 #**##if( $project.scm &&  $project.ciManagement && $project.issueManagement )
 #*    *##set( $codeMenu = $menuTool.menu("Code") )
 #*    *##if( $project.scm && $project.scm.url )
@@ -79,7 +79,7 @@
 #*    *##if( $project.issueManagement && $project.issueManagement.url && $project.issueManagement.system )
 #*        *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "Issues", $project.issueManagement.url, $project.issueManagement.system) )
 #*    *##end
-#*    *##set( $bar = $menuColumns.add($codeMenu) )
+#*    *##set( $bar = $menuList.add($codeMenu) )
 #**##end
 #end
 #*
