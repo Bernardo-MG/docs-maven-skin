@@ -54,24 +54,20 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Finds a collection of menus based on their names.
- *
- * Will iterate over the received menus, and will load all the found menus
- * inside the menuColumns variable.
+ * Finds a collection of menus based on their names and loads them into the
+ * received collection.
  *
  * Receives:
  *        menus: Doxia decoration menus collection
  *        menuNames: names of the menus to find
- * Returns:
- *        menuColumns: an array with all the found menus
+ *        menuList: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( findMenus $menus $menuNames )
-#**##set( $menuColumns = [] )
+#macro( loadMenus $menus $menuNames $menuList )
 #**##foreach( $menuName in $menuNames )
 #*    *##findMenu ( $menus, $menuName.getValue() )
 #*    *##if( $foundMenu )
-#*        *##if($menuColumns.add( $foundMenu ))#end
+#*        *##set($bar = $menuList.add( $foundMenu ))
 #*    *##end
 #**##end
 #end
@@ -99,7 +95,7 @@
 #macro( findMenu $menus $menuName )
 #**##set( $foundMenu = false )
 #**##foreach($menu in $menus)
-#*    *##if( ( $menu.ref && $menu.ref == $menuName ) || ( $menu.name && $menu.name == $menuName ) )
+#*    *##if( $menu.name && $menu.name == $menuName )
 #*        *##set( $foundMenu = $menu )
 #*    *##end
 #**##end
@@ -116,19 +112,20 @@
 #*--------------------------------------------------*#
 #macro( bottomNav )
 #**##set( $maxNavSpan = 12 )
+#**##set( $menuList = [] )
 #**##if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
-#*    *##findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
+#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.getChildren(), $menuList )
 #**##end
-#**##loadResourcesMenu($menuColumns)
-#**##loadReleasesMenu($menuColumns)
-#**##set( $menuCount = ($menuColumns.size()) )
+#**##loadResourcesMenu($menuList)
+#**##loadReleasesMenu($menuList)
+#**##set( $menuCount = $menuList.size() )
 #**##set( $navSpan = $maxNavSpan / $menuCount )
 #**##if( $navSpan <= 0 )
 #*    *##set( $navSpan = 1 )
 #**##end
 #**##set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
 #**##set( $navColIndex = 0 )
-#**##foreach( $menuCol in $menuColumns )
+#**##foreach( $menuCol in $menuList )
 #*    *##if( $navColIndex == $menuCount - 1 )
 #*        *##set( $navSpan = $lastNavSpan )
 #*    *##end

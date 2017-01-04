@@ -38,6 +38,8 @@
  * If the required data exists then the menu will be loaded in the received
  * list.
  *
+ * Receives:
+ *        menuList: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
 #macro( loadReleasesMenu $menuList )
@@ -61,6 +63,8 @@
  * If the required data exists then the menu will be loaded in the received
  * list.
  *
+ * Receives:
+ *        menuList: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
 #macro( loadResourcesMenu $menuList )
