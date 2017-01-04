@@ -64,13 +64,13 @@
  *#
 #*--------------------------------------------------*#
 #macro( resourcesMenu $menuList )
-#**##if( $project.scm &&  $project.ciManagement && $project.issueManagement )
+#**##if( $project.scm ||  $project.ciManagement || $project.issueManagement )
 #*    *##set( $codeMenu = $menuTool.menu("Code") )
 #*    *##if( $project.scm && $project.scm.url )
 #*        *##if($project.scm.url.matches('.*github\.com.*'))
 #*            *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "SCM", $project.scm.url, "GitHub") )
 #*        *##else
-#*        *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "SCM", $project.scm.url) )
+#*            *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "SCM", $project.scm.url) )
 #*        *##end
 #*    *##end
 #*    *##if( $project.ciManagement && $project.ciManagement.url && $project.ciManagement.system )
