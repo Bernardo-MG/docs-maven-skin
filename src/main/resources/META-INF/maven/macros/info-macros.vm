@@ -47,10 +47,10 @@ ${project.organization.name}
 #*    *##else
 #*        *##set( $orgNameShown = false )
 #*    *##end
-#**#  #if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )
-#*    *##if( ${orgNameShown} )
+#*    *##if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )
+#*        *##if( ${orgNameShown} )
 -
-#*    *##end
+#*        *##end
 <a href="$project.licenses[0].url">$project.licenses[0].name</a>
 #**#  #end
 #**##end
