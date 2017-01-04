@@ -5,7 +5,7 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
-      <release version="0.5.2" date="2016-12-08" description="Footer menus">
+      <release version="0.5.2" date="2017-01-04" description="Footer menus">
          <action dev="bmg" type="update">
             Improved the creation of the footer navigation menus.
          </action>
