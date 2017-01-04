@@ -118,8 +118,6 @@
 #**##set( $maxNavSpan = 12 )
 #**##if( $config.bottomNav && $config.bottomNav.getChildCount() > 0 )
 #*    *##findMenus( $decoration.body.menus, $config.bottomNav.getChildren() )
-#**##else
-#*    *##set( $menuColumns = $decoration.body.menus )
 #**##end
 #**##loadResourcesMenu($menuColumns)
 #**##loadReleasesMenu($menuColumns)
