@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.6.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0 http://maven.apache.org/xsd/decoration-1.6.0.xsd">
+
+   <skin>
+      <groupId>com.wandrell.maven.skins</groupId>
+      <artifactId>docs-maven-skin</artifactId>
+      <version>${site.skin.version}</version>
+   </skin>
+
+   <custom>
+      <skinConfig>
+         <topNav>
+            <menu>Documentation</menu>
+            <menu>Info and reports</menu>
+         </topNav>
+      </skinConfig>
+   </custom>
+
+   <body>
+      <menu name="Documentation" inherit="bottom">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Usage" href="./usage.html" />
+      </menu>
+      <menu name="Info and reports" inherit="bottom">
+         <item name="Info" href="./info.html" />
+         <item name="Reports" href="./reports.html" />
+      </menu>
+   </body>
+
+</project>

@@ -31,6 +31,10 @@ assert html.contains( '<dt>General Info</dt>' )
 assert html.contains( '<dt>Code</dt>' )
 assert html.contains( '<dt>Releases</dt>' )
 
+// Verifies the menus exist
+assert html.contains( '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>' )
+assert html.contains( '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info and reports <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>' )
+
 // Verifies the favicon is included
 assert html.contains( '<link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />' )
 
