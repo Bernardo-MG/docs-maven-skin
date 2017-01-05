@@ -132,7 +132,7 @@
 #iconsMenu()
 #if( $decoration.body.menus )
 #**##if( $config.topNav )
-#*    *##findMenus( $decoration.body.menus, $config.topNav.getChildren() )
+#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren() )
 #**##else
 #*    *##set( $menuColumns = $decoration.body.menus )
 #**##end
