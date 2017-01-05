@@ -5,6 +5,11 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.5.3" date="2017-01-05" description="Fixed menu">
+         <action dev="bmg" type="update">
+            Fixed menu generation.
+         </action>
+      </release>
       <release version="0.5.2" date="2017-01-04" description="Footer menus">
          <action dev="bmg" type="update">
             Improved the creation of the footer navigation menus.
