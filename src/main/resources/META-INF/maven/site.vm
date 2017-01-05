@@ -132,11 +132,12 @@
 #iconsMenu()
 #if( $decoration.body.menus )
 #**##if( $config.topNav )
-#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren() )
+#*    *##set( $menuList = [] )
+#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuList )
 #**##else
-#*    *##set( $menuColumns = $decoration.body.menus )
+#*    *##set( $menuList = $decoration.body.menus )
 #**##end
-#**##dropdownMenu ( $menuColumns )
+#**##dropdownMenu ( $menuList )
 #end
                 </ul>
             </div>
