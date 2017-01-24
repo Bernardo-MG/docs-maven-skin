@@ -398,10 +398,17 @@
             </configuration>
             <executions>
                <execution>
-                  <id>integration-test</id>
+                  <id>skin-it</id>
                   <goals>
                      <goal>install</goal>
                      <goal>run</goal>
+                  </goals>
+               </execution>
+               <execution>
+                  <id>skin-it-report</id>
+                  <phase>verify</phase>
+                  <goals>
+                     <goal>report</goal>
                   </goals>
                </execution>
             </executions>
