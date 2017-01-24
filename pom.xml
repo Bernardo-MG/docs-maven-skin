@@ -404,13 +404,6 @@
                      <goal>run</goal>
                   </goals>
                </execution>
-               <execution>
-                  <id>skin-it-report</id>
-                  <phase>verify</phase>
-                  <goals>
-                     <goal>report</goal>
-                  </goals>
-               </execution>
             </executions>
          </plugin>
       </plugins>
@@ -472,6 +465,13 @@
                   <exclude>**/generated/**/*</exclude>
                </excludes>
             </configuration>
+         </plugin>
+         <plugin>
+            <!-- Maven Invoker -->
+            <!-- IT tests report -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <version>${plugin.invoker.version}</version>
          </plugin>
       </plugins>
    </reporting>
