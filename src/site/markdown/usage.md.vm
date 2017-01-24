@@ -61,6 +61,7 @@ The site requires a correctly configured site.xml file to work. For more details
         <menu name="Documentation" inherit="bottom">
             <item name="Acquire" href="./acquire.html" />
             <item name="Usage" href="./usage.html" />
+            <item name="Tests" href="./tests.html" />
         </menu>
         <menu name="Info and reports" inherit="bottom">
             <item name="Info" href="./info.html" />
