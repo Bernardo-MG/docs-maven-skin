@@ -52,7 +52,12 @@
 #set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContent, '[id]', 'id' ) )
 #set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContent, '[href^=\"#\"]', 'href' ) )
 
-#set( $bodyContent = $html5UpdateTool.removeExternalLinks( $bodyContent ) )
+
+#**
+ * Removes external links.
+ *#
+#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'a.externalLink', 'externalLink' ) )
+ 
 #set( $bodyContent = $html5UpdateTool.removeNoHrefLinks( $bodyContent ) )
 #set( $bodyContent = $html5UpdateTool.updateTables( $bodyContent ) )
 #set( $bodyContent = $siteTool.transformTables( $bodyContent ) )
