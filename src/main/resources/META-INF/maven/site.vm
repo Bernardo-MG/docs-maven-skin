@@ -46,7 +46,12 @@
 #set( $bodyContent = $htmlTool.retag( $bodyContent, 'div.section', 'section' ) )
 #set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'section.section', 'section' ) )
 
-#set( $bodyContent = $html5UpdateTool.fixInternalLinks( $bodyContent ) )
+#**
+ * Fixes internal links.
+ *#
+#set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContent, '[id]', 'id' ) )
+#set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContent, '[href^=\"#\"]', 'href' ) )
+
 #set( $bodyContent = $html5UpdateTool.removeExternalLinks( $bodyContent ) )
 #set( $bodyContent = $html5UpdateTool.removeNoHrefLinks( $bodyContent ) )
 #set( $bodyContent = $html5UpdateTool.updateTables( $bodyContent ) )
