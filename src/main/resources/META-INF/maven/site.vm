@@ -63,7 +63,15 @@
  *#
 #set( $bodyContent = $htmlTool.unwrap( $bodyContent, 'a:not([href])' ) )
  
-#set( $bodyContent = $html5UpdateTool.updateTables( $bodyContent ) )
+#**
+ * Updates tables.
+ *#
+#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'table.bodyTable', 'bodyTable' ) )
+#set( $bodyContent = $html5UpdateTool.updateTableHeads( $bodyContent ) )
+#set( $bodyContent = $htmlTool.removeAttribute( $bodyContent, 'table[border]', 'border' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'tr.a', 'a' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'tr.b', 'b' ) )
+ 
 #set( $bodyContent = $siteTool.transformTables( $bodyContent ) )
 #set( $bodyContent = $siteTool.fixReport($bodyContent, $config.fileId) )
 #set( $bodyContent = $siteTool.transformIcons( $bodyContent ) )
