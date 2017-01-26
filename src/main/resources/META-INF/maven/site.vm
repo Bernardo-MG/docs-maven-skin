@@ -40,7 +40,12 @@
 #set( $bodyContent = $htmlTool.swapTagWithParent( $bodyContent, 'code > pre' ) )
 #set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'code.source', 'source' ) )
 
-#set( $bodyContent = $html5UpdateTool.updateSectionDiv( $bodyContent ) )
+#**
+ * Updates section divs.
+ *#
+#set( $bodyContent = $htmlTool.retag( $bodyContent, 'div.section', 'section' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'section.section', 'section' ) )
+
 #set( $bodyContent = $html5UpdateTool.fixInternalLinks( $bodyContent ) )
 #set( $bodyContent = $html5UpdateTool.removeExternalLinks( $bodyContent ) )
 #set( $bodyContent = $html5UpdateTool.removeNoHrefLinks( $bodyContent ) )
