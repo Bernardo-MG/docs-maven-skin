@@ -32,7 +32,14 @@
  * Body content is modified and edited by the various utilities.
  *#
 #*--------------------------------------------------*#
-#set( $bodyContent = $html5UpdateTool.updateCodeSections( $bodyContent ) )
+#**
+ * Updates code sections.
+ *#
+#set( $bodyContent = $htmlTool.retag( $bodyContent, 'div.source', 'code' ) )
+#set( $bodyContent = $htmlTool.unwrap( $bodyContent, 'code > code' ) )
+#set( $bodyContent = $htmlTool.swapTagWithParent( $bodyContent, 'code > pre' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'code.source', 'source' ) )
+
 #set( $bodyContent = $html5UpdateTool.updateSectionDiv( $bodyContent ) )
 #set( $bodyContent = $html5UpdateTool.fixInternalLinks( $bodyContent ) )
 #set( $bodyContent = $html5UpdateTool.removeExternalLinks( $bodyContent ) )
