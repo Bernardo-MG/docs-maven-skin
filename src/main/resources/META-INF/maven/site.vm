@@ -58,7 +58,11 @@
  *#
 #set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'a.externalLink', 'externalLink' ) )
  
-#set( $bodyContent = $html5UpdateTool.removeNoHrefLinks( $bodyContent ) )
+#**
+ * Removes links without href.
+ *#
+#set( $bodyContent = $htmlTool.unwrap( $bodyContent, 'a:not([href])' ) )
+ 
 #set( $bodyContent = $html5UpdateTool.updateTables( $bodyContent ) )
 #set( $bodyContent = $siteTool.transformTables( $bodyContent ) )
 #set( $bodyContent = $siteTool.fixReport($bodyContent, $config.fileId) )
