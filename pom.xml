@@ -387,9 +387,6 @@
                <projectsDirectory>${project.build.testOutputDirectory}/it</projectsDirectory>
                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                <postBuildHookScript>verify</postBuildHookScript>
-               <pomIncludes>
-                  <pomInclude>*/pom.xml</pomInclude>
-               </pomIncludes>
                <goals>
                   <goal>site</goal>
                </goals>
