@@ -33,44 +33,54 @@
  *#
 #*--------------------------------------------------*#
 #**
+ * Parses body content.
+ *#
+#set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )
+
+#**
  * Updates code sections.
  *#
-#set( $bodyContent = $htmlTool.retag( $bodyContent, 'div.source', 'code' ) )
-#set( $bodyContent = $htmlTool.unwrap( $bodyContent, 'code > code' ) )
-#set( $bodyContent = $htmlTool.swapTagWithParent( $bodyContent, 'code > pre' ) )
-#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'code.source', 'source' ) )
+#set( $bodyContent = $htmlTool.retag( $bodyContentParsed, 'div.source', 'code' ) )
+#set( $bodyContent = $htmlTool.unwrap( $bodyContentParsed, 'code > code' ) )
+#set( $bodyContent = $htmlTool.swapTagWithParent( $bodyContentParsed, 'code > pre' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContentParsed, 'code.source', 'source' ) )
 
 #**
  * Updates section divs.
  *#
-#set( $bodyContent = $htmlTool.retag( $bodyContent, 'div.section', 'section' ) )
-#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'section.section', 'section' ) )
+#set( $bodyContent = $htmlTool.retag( $bodyContentParsed, 'div.section', 'section' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContentParsed, 'section.section', 'section' ) )
 
 #**
  * Fixes internal links.
  *#
-#set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContent, '[id]', 'id' ) )
-#set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContent, '[href^=\"#\"]', 'href' ) )
+#set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[id]', 'id' ) )
+#set( $bodyContent = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[href^=\"#\"]', 'href' ) )
 
 
 #**
  * Removes external links.
  *#
-#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'a.externalLink', 'externalLink' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContentParsed, 'a.externalLink', 'externalLink' ) )
  
 #**
  * Removes links without href.
  *#
-#set( $bodyContent = $htmlTool.unwrap( $bodyContent, 'a:not([href])' ) )
+#set( $bodyContent = $htmlTool.unwrap( $bodyContentParsed, 'a:not([href])' ) )
  
 #**
  * Updates tables.
  *#
-#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'table.bodyTable', 'bodyTable' ) )
-#set( $bodyContent = $html5UpdateTool.updateTableHeads( $bodyContent ) )
-#set( $bodyContent = $htmlTool.removeAttribute( $bodyContent, 'table[border]', 'border' ) )
-#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'tr.a', 'a' ) )
-#set( $bodyContent = $htmlTool.removeClass( $bodyContent, 'tr.b', 'b' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContentParsed, 'table.bodyTable', 'bodyTable' ) )
+#set( $bodyContent = $html5UpdateTool.updateTableHeads( $bodyContentParsed ) )
+#set( $bodyContent = $htmlTool.removeAttribute( $bodyContentParsed, 'table[border]', 'border' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContentParsed, 'tr.a', 'a' ) )
+#set( $bodyContent = $htmlTool.removeClass( $bodyContentParsed, 'tr.b', 'b' ) )
+ 
+#**
+ * Recovers body content.
+ *#
+#set( $bodyContent = $bodyContentParsed.html() )
  
 #set( $bodyContent = $siteTool.transformTables( $bodyContent ) )
 #set( $bodyContent = $siteTool.fixReport($bodyContent, $config.fileId) )

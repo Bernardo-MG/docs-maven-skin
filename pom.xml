@@ -182,7 +182,7 @@
       <!-- Manifest data -->
       <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
       <!-- Dependencies versions -->
-      <wandrell.siteFixer.version>0.5.2</wandrell.siteFixer.version>
+      <wandrell.siteFixer.version>0.6.0</wandrell.siteFixer.version>
       <!-- Plugins versions -->
       <plugin.changes.version>2.12</plugin.changes.version>
       <plugin.invoker.version>2.0.0</plugin.invoker.version>
