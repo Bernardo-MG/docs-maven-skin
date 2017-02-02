@@ -99,6 +99,8 @@ They are run by using the [Maven Invoker Plugin][maven-invoker], and the configu
 
 Pay attention that the results from generating these tests are copied to the generated Maven Site by the Maven Resources Plugin.
 
+If using Eclipse the tests may not run, due to an incompatibility with the invoker. It is recommender running the tests through command line.
+
 ## Collaborate
 
 Any kind of help with the project will be well received, and there are two main ways to give such help:
