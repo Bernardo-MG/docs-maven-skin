@@ -191,7 +191,7 @@
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
       <!-- Integration tests -->
-      <basePom.version>1.1.0</basePom.version>
+      <basePom.version>1.1.1</basePom.version>
    </properties>
 
    <!-- ********************************************** -->
