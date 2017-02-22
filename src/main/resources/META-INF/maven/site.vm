@@ -208,9 +208,7 @@ $bodyContent
     <div class="footer-content">
         <div class="container-fluid">
             <div id="navbar-footer" class="row">
-#if( $decoration.body.menus )
-#**##bottomNav()
-#end
+#bottomNav()
             </div>
 	        <div class="row">
 	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
