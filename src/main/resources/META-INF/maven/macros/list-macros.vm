@@ -35,20 +35,20 @@
  *#
 #*--------------------------------------------------*#
 #macro( linksList $menu )
-                            <dl class="dl-nav">
+    <dl class="dl-nav">
 #**##if( $menu.name )
-                                <dt>$menu.name</dt>
+    <dt>$menu.name</dt>
 #**##end
 #**##if( $menu.items )
 #*    *##foreach( $item in $menu.items )
 #*        *##if( $item.description )
-                                <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
+              <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
 #*        *##else
-                                <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
+               <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
 #*        *##end
 #*    *##end
 #**##end
-                            </dl>
+    </dl>
 #end
 #*
 

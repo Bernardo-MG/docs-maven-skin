@@ -34,14 +34,14 @@
 #*--------------------------------------------------*#
 #macro( dropdownMenu $menus )
 #**##foreach( $menu in $menus )
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
-                        <ul class="dropdown-menu" role="menu">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
+        <ul class="dropdown-menu" role="menu">
 #*    *##foreach( $item in $menu.items )
-                            <li><a href="$item.href" title="$item.name">$item.name</a></li>
+            <li><a href="$item.href" title="$item.name">$item.name</a></li>
 #*    *##end
-                        </ul>
-                    </li>
+        </ul>
+    </li>
 #**##end
 #end
 #*
@@ -58,15 +58,15 @@
  *#
 #*--------------------------------------------------*#
 #macro( iconsMenu )
-                <li>
-                    <ul class="list-unstyled icons-list">
+    <li>
+        <ul class="list-unstyled icons-list">
 #**##if($project.scm)
 #*    *##if($project.scm.url.matches('.*github\.com.*'))
-                        <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span class="navbar-icon fa fa-github" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> Github</span></a></li>
+        <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span class="navbar-icon fa fa-github" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> Github</span></a></li>
 #*    *##end
 #**##end
-                    </ul>
-                </li>
+        </ul>
+    </li>
 #end
 #*
 

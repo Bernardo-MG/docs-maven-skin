@@ -24,20 +24,6 @@
 #*--------------------------------------------------*#
 #*--------------------------------------------------*###
 #**
- * Creates the version information in the header.
- *
- *#
-#*--------------------------------------------------*#
-#macro( navBarVersion )
-            <small class="navbar-text">${project.version} (#publishDate())</small>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
  * Renders the copyright year and organization.
  *
  * This will show the copyright logo, followed by the year and the organization data.
@@ -87,6 +73,9 @@ ${project.organization.name}
 #*--------------------------------------------------*###
 #**
  * Renders the publish date.
+ * 
+ * Makes use of the currentDate global variable, which contains teh current date, and
+ * the dateFormat variable, which contains an instance of the date formatter.
  *#
 #*--------------------------------------------------*#
 #macro( publishDate )

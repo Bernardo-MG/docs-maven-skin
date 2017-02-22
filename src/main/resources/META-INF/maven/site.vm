@@ -183,7 +183,7 @@
             </div>
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
-#navBarVersion()
+                <small class="navbar-text">${project.version} (#publishDate())</small>
                 <ul class="nav navbar-nav navbar-right">
 #iconsMenu()
 #if( $decoration.body.menus )
