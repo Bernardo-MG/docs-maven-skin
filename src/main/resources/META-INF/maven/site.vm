@@ -186,15 +186,13 @@
                 <small class="navbar-text">${project.version} (#publishDate())</small>
                 <ul class="nav navbar-nav navbar-right">
 #iconsMenu()
-#if( $decoration.body.menus )
-#**##if( $config.topNav )
-#*    *##set( $menuList = [] )
-#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuList )
-#**##else
-#*    *##set( $menuList = $decoration.body.menus )
-#**##end
-#**##dropdownMenu ( $menuList )
-#end
+*##if( $config.topNav )
+#**##set( $menuList = [] )
+#**##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuList )
+*##else
+#**##set( $menuList = $decoration.body.menus )
+*##end
+*##dropdownMenu ( $menuList )
                 </ul>
             </div>
         </div>
