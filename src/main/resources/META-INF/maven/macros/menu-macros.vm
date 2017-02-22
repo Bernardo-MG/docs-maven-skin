@@ -87,7 +87,11 @@
 #**##loadResourcesMenu($menuList)
 #**##loadReleasesMenu($menuList)
 #**##set( $menuCount = $menuList.size() )
-#**##set( $navSpan = $maxNavSpan / $menuCount )
+#**##if( $menuCount > 0 )
+#*  *##set( $navSpan = $maxNavSpan / $menuCount )
+#**##else
+#*  *##set( $navSpan = 0 )
+#**##end
 #**##if( $navSpan <= 0 )
 #*    *##set( $navSpan = 1 )
 #**##end
