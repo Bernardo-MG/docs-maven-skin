@@ -19,6 +19,9 @@ assert usage.exists()
 // Acquires the sample HTML content
 String html = index.getText()
 
+// Verified the heading is set
+assert html.contains( '<header class="page-header">' )
+
 // Verifies the skin info is included
 // Footer link
 assert html.contains( 'Rendered using <a href="https://github.com/Bernardo-MG/docs-maven-skin">Docs Maven Skin</a>' )
