@@ -385,7 +385,7 @@
             <version>${plugin.invoker.version}</version>
             <configuration>
                <debug>true</debug>
-               <streamLogs>true</streamLogs>
+               <streamLogs>false</streamLogs>
                <projectsDirectory>${project.build.testOutputDirectory}/it</projectsDirectory>
                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                <postBuildHookScript>verify</postBuildHookScript>
