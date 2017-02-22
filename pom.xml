@@ -79,10 +79,10 @@
    <profiles>
       <profile>
          <!-- Profile for the Eclipse Maven plugin -->
-         <!-- Sets the POM so this plugin does not give the usual unregistered goals 
-            errors -->
-         <!-- It will be activated automatically on Eclipse if this has the m2e plugin, 
-            by detecting the version property -->
+         <!-- Sets the POM so this plugin does not give the usual unregistered 
+            goals errors -->
+         <!-- It will be activated automatically on Eclipse if this has the 
+            m2e plugin, by detecting the version property -->
          <id>eclipse</id>
          <activation>
             <property>
@@ -94,9 +94,10 @@
                <plugins>
                   <plugin>
                      <!-- m2e lifecycle mapping -->
-                     <!-- This is used to configure the Maven plugin for Eclipse. -->
-                     <!-- Among other things, it allows registering goals, which 
-                        Eclipse would otherwise reject. -->
+                     <!-- This is used to configure the Maven plugin for 
+                        Eclipse. -->
+                     <!-- Among other things, it allows registering goals, 
+                        which Eclipse would otherwise reject. -->
                      <!-- It has no real effect on Maven. -->
                      <groupId>org.eclipse.m2e</groupId>
                      <artifactId>lifecycle-mapping</artifactId>
@@ -276,7 +277,8 @@
             <configuration>
                <!-- Variables to to override will be delimited with a @. -->
                <!-- This avoids collisions with Velocity variables. -->
-               <!-- So instead of replacing ${project.name} Maven will replace @project.name@. -->
+               <!-- So instead of replacing ${project.name} Maven will replace 
+                  @project.name@. -->
                <useDefaultDelimiters>false</useDefaultDelimiters>
                <delimiters>
                   <delimiter>@</delimiter>
@@ -332,7 +334,8 @@
                   </configuration>
                </execution>
                <execution>
-                  <!-- Copies the bottom navigation without generated sections site test results -->
+                  <!-- Copies the bottom navigation without generated sections 
+                     site test results -->
                   <id>copy-bottom_nav_no_auto</id>
                   <phase>site</phase>
                   <goals>
@@ -382,6 +385,7 @@
             <version>${plugin.invoker.version}</version>
             <configuration>
                <debug>true</debug>
+               <streamLogs>true</streamLogs>
                <projectsDirectory>${project.build.testOutputDirectory}/it</projectsDirectory>
                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                <postBuildHookScript>verify</postBuildHookScript>
@@ -421,7 +425,8 @@
          </plugin>
          <plugin>
             <!-- PMD -->
-            <!-- Checks that the code complies with a series of code quality rules -->
+            <!-- Checks that the code complies with a series of code quality 
+               rules -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-pmd-plugin</artifactId>
             <configuration>
