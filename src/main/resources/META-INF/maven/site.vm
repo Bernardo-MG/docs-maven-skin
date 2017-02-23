@@ -133,10 +133,12 @@ $bodyContent
 <footer class="footer">
     <div class="footer-content">
         <div class="container-fluid">
-            <div id="navbar-footer" class="row">
 #loadBottomNavMenuList()
-#bottomNav( $menuList $maxColSize )
+#if($menuList.size() > 0)
+            <div id="navbar-footer" class="row">
+#**##bottomNav( $menuList $maxColSize )
             </div>
+#end
 	        <div class="row">
 	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
 	            <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
