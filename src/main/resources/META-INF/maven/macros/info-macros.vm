@@ -61,8 +61,10 @@ ${project.organization.name}
 #*        *##if( ${orgNameShown} )
 -
 #*        *##end
-<a href="$project.licenses[0].url">$project.licenses[0].name</a>
-#**#  #end
+#*        *##foreach( $license in $project.licenses )
+<a href="$license.url">$license.name</a> 
+#*        *##end
+#*    *##end
 #**##end
 #end
 #*
