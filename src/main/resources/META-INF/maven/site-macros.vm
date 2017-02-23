@@ -25,4 +25,3 @@
 #parse( "macros/info-macros.vm" )
 #parse( "macros/list-macros.vm" )
 #parse( "macros/menu-macros.vm" )
-#parse( "macros/menu-lists-macros.vm" )

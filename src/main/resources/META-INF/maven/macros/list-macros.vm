@@ -24,34 +24,114 @@
 #*--------------------------------------------------*#
 #*--------------------------------------------------*###
 #**
- * Renders a list with links.
- *
- * This will be a definitions list, where each definition is a link.
- *
- * The menu item is meant to come from the decoration XML file.
+ * Creates and loads a menu with the releases repositories links.
+ * 
+ * If the required data exists then the menu will be loaded in the received
+ * list.
  *
  * Receives:
- *        menu: Doxia decoration menu to build the list menu
+ *        menus: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( linksList $menu )
-    <dl class="dl-nav">
-#**##if( $menu.name )
-    <dt>$menu.name</dt>
-#**##end
-#**##if( $menu.items )
-#*    *##foreach( $item in $menu.items )
-#*        *##if( $item.description )
-              <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
-#*        *##else
-               <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
-#*        *##end
+#macro( loadReleasesMenu $menus )
+#**##if( $config.releaseRepositories && $config.releaseRepositories.childCount > 0 )
+#*    *##set( $releasesMenu = $menuTool.menu("Releases") )
+#*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
+#*        *##set( $releasesMenu = $menuTool.addLinkItem($releasesMenu, $releasesRepo.getChild('name').value, $releasesRepo.getChild('url').value) )
 #*    *##end
+#*    *##set( $bar = $menus.add($releasesMenu) )
 #**##end
-    </dl>
 #end
 #*
 
 
 
 *#
+#*--------------------------------------------------*###
+#**
+ * Creates and loads a menu with the project resources.
+ * 
+ * If the required data exists then the menu will be loaded in the received
+ * list.
+ *
+ * Receives:
+ *        menus: collection where the results will be stored
+ *#
+#*--------------------------------------------------*#
+#macro( loadResourcesMenu $menus )
+#**##if( $project.scm ||  $project.ciManagement || $project.issueManagement )
+#*    *##set( $codeMenu = $menuTool.menu("Code") )
+#*    *##if( $project.scm && $project.scm.url )
+#*        *##if($project.scm.url.matches('.*github\.com.*'))
+#*            *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "SCM", $project.scm.url, "GitHub") )
+#*        *##else
+#*            *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "SCM", $project.scm.url) )
+#*        *##end
+#*    *##end
+#*    *##if( $project.ciManagement && $project.ciManagement.url && $project.ciManagement.system )
+#*        *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "CI", $project.ciManagement.url, $project.ciManagement.system) )
+#*    *##end
+#*    *##if( $project.issueManagement && $project.issueManagement.url && $project.issueManagement.system )
+#*        *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "Issues", $project.issueManagement.url, $project.issueManagement.system) )
+#*    *##end
+#*    *##set( $bar = $menus.add($codeMenu) )
+#**##end
+#end
+#*
+
+
+
+*#
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Finds a collection of menus based on their names and loads them into the
+ * received collection.
+ *
+ * Receives:
+ *        menus: Doxia decoration menus collection
+ *        menuNames: names of the menus to find
+ *        menuList: collection where the results will be stored
+ *#
+#*--------------------------------------------------*#
+#macro( loadMenus $menus $menuNames $menuList )
+#**##foreach( $menuName in $menuNames )
+#*    *##findMenu ( $menus, $menuName.value )
+#*    *##if( $foundMenu )
+#*        *##set($bar = $menuList.add( $foundMenu ))
+#*    *##end
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
+ * Finds a menu based on its name.
+ *
+ * Will iterate over the received menus, and will set the last menu found with
+ * the given name into the foundMenu variable.
+ *
+ * If no menu was found then this variable will be set as false.
+ *
+ * Receives:
+ *        menus: Doxia decoration menus collection
+ *        menuName: name of the menu to find
+ * Returns:
+ *        foundMenu: false if no menu was found, contains the menu otherwise
+ *#
+#*--------------------------------------------------*#
+#macro( findMenu $menus $menuName )
+#**##set( $foundMenu = false )
+#**##foreach($menu in $menus)
+#*    *##if( $menu.name && $menu.name == $menuName )
+#*        *##set( $foundMenu = $menu )
+#*    *##end
+#**##end
+#end
