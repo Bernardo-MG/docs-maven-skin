@@ -79,19 +79,20 @@
  *
  * Receives:
  *        menus: a list of menus to process. These are Doxia decoration menus.
+ *        maxColSize: the maximum size for the columns.
  *#
 #*--------------------------------------------------*#
-#macro( bottomNav $menus )
+#macro( bottomNav $menus $maxColSize )
 #**##set( $menuCount = $menus.size() )
 #**##if( $menuCount > 0 )
-#*  *##set( $navSpan = $maxNavSpan / $menuCount )
+#*  *##set( $navSpan = $maxColSize / $menuCount )
 #**##else
 #*  *##set( $navSpan = 0 )
 #**##end
 #**##if( $navSpan <= 0 )
 #*    *##set( $navSpan = 1 )
 #**##end
-#**##set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
+#**##set( $lastNavSpan = $maxColSize - ($navSpan * ($menuCount - 1)) )
 #**##set( $navColIndex = 0 )
 #**##foreach( $menuCol in $menus )
 #*    *##if( $navColIndex == $menuCount - 1 )

@@ -119,12 +119,7 @@
                 <small class="navbar-text">${project.version} (#publishDate())</small>
                 <ul class="nav navbar-nav navbar-right">
 #iconsMenu()
-#set( $menuList = [] )
-#if( $config.topNav && $decoration.body.menus )
-#**##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuList )
-#elseif( $decoration.body.menus )
-#**##set( $menuList = $decoration.body.menus )
-#end
+#loadTopNavMenuList()
 #dropdownMenu( $menuList )
                 </ul>
             </div>
@@ -139,14 +134,8 @@ $bodyContent
     <div class="footer-content">
         <div class="container-fluid">
             <div id="navbar-footer" class="row">
-#set( $maxNavSpan = 12 )
-#set( $menuList = [] )
-#if( $config.bottomNav )
-#**##loadMenus( $decoration.body.menus, $config.bottomNav.children, $menuList )
-#end
-#loadResourcesMenu($menuList)
-#loadReleasesMenu($menuList)
-#bottomNav( $menuList )
+#loadBottomNavMenuList()
+#bottomNav( $menuList $maxColSize )
             </div>
 	        <div class="row">
 	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
