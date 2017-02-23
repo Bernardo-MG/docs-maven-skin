@@ -98,10 +98,12 @@
 #*    *##if( $navColIndex == $elementsCount - 1 )
 #*        *##set( $navSpan = $lastNavSpan )
 #*    *##end
+#*    *##if( $element.items )
                        <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#*    *##linksMenu( $element )
+#*        *##linksMenu( $element )
                        </div>
-#*    *##set( $navColIndex = $navColIndex + 1 )
+#*        *##set( $navColIndex = $navColIndex + 1 )
+#*    *##end
 #**##end
 #end
 #*
@@ -126,13 +128,11 @@
 #**##if( $element.name )
     <dt>$element.name</dt>
 #**##end
-#**##if( $element.items )
-#*    *##foreach( $item in $element.items )
-#*        *##if( $item.description )
+#**##foreach( $item in $element.items )
+#*    *##if( $item.description )
               <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
-#*        *##else
+#*    *##else
                <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
-#*        *##end
 #*    *##end
 #**##end
     </dl>
