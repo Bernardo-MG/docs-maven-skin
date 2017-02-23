@@ -30,16 +30,16 @@
  * list.
  *
  * Receives:
- *        menus: collection where the results will be stored
+ *        elements: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( loadReleasesMenu $menus )
+#macro( loadReleasesMenu $elements )
 #**##if( $config.releaseRepositories && $config.releaseRepositories.childCount > 0 )
 #*    *##set( $releasesMenu = $menuTool.menu("Releases") )
 #*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
 #*        *##set( $releasesMenu = $menuTool.addLinkItem($releasesMenu, $releasesRepo.getChild('name').value, $releasesRepo.getChild('url').value) )
 #*    *##end
-#*    *##set( $bar = $menus.add($releasesMenu) )
+#*    *##set( $bar = $elements.add($releasesMenu) )
 #**##end
 #end
 #*
@@ -55,10 +55,10 @@
  * list.
  *
  * Receives:
- *        menus: collection where the results will be stored
+ *        elements: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( loadResourcesMenu $menus )
+#macro( loadResourcesMenu $elements )
 #**##if( $project.scm ||  $project.ciManagement || $project.issueManagement )
 #*    *##set( $codeMenu = $menuTool.menu("Code") )
 #*    *##if( $project.scm && $project.scm.url )
@@ -74,7 +74,7 @@
 #*    *##if( $project.issueManagement && $project.issueManagement.url && $project.issueManagement.system )
 #*        *##set( $codeMenu = $menuTool.addLinkItem($codeMenu, "Issues", $project.issueManagement.url, $project.issueManagement.system) )
 #*    *##end
-#*    *##set( $bar = $menus.add($codeMenu) )
+#*    *##set( $bar = $elements.add($codeMenu) )
 #**##end
 #end
 #*
@@ -93,16 +93,16 @@
  * received collection.
  *
  * Receives:
- *        menus: Doxia decoration menus collection
- *        menuNames: names of the menus to find
- *        menuList: collection where the results will be stored
+ *        elements: Doxia decoration menus collection
+ *        names: names of the menus to find
+ *        result: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( loadMenus $menus $menuNames $menuList )
-#**##foreach( $menuName in $menuNames )
-#*    *##findMenu ( $menus, $menuName.value )
+#macro( loadMenus $elements $names $result )
+#**##foreach( $name in $names )
+#*    *##findMenu ( $elements, $name.value )
 #*    *##if( $foundMenu )
-#*        *##set($bar = $menuList.add( $foundMenu ))
+#*        *##set($bar = $result.add( $foundMenu ))
 #*    *##end
 #**##end
 #end
@@ -122,15 +122,15 @@
  *
  * Receives:
  *        menus: Doxia decoration menus collection
- *        menuName: name of the menu to find
+ *        name: name of the menu to find
  * Returns:
  *        foundMenu: false if no menu was found, contains the menu otherwise
  *#
 #*--------------------------------------------------*#
-#macro( findMenu $menus $menuName )
+#macro( findMenu $elements $name )
 #**##set( $foundMenu = false )
-#**##foreach($menu in $menus)
-#*    *##if( $menu.name && $menu.name == $menuName )
+#**##foreach($menu in $elements)
+#*    *##if( $menu.name && $menu.name == $name )
 #*        *##set( $foundMenu = $menu )
 #*    *##end
 #**##end
