@@ -26,16 +26,16 @@
 #**
  * Loads the top navigation menu list.
  *
- * A menuList variable will be created, containing the menu data.
+ * A menuElements variable will be created, containing the menu data.
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadTopNavMenuList )
-#**##set( $menuList = [] )
+#macro( loadTopNavmenuElements )
+#**##set( $menuElements = [] )
 #**##if( $config.topNav && $decoration.body.menus )
-#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuList )
+#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuElements )
 #**##elseif( $decoration.body.menus )
-#*    *##set( $menuList = $decoration.body.menus )
+#*    *##set( $menuElements = $decoration.body.menus )
 #**##end
 #end
 #*
@@ -47,20 +47,20 @@
 #**
  * Loads the top navigation menu list.
  *
- * A menuList variable will be created, containing the menu data.
+ * A menuElements variable will be created, containing the menu data.
  *
  * Also a maxColSize variable will be set with the maximum column size.
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadBottomNavMenuList )
+#macro( loadBottomNavmenuElements )
 #**##set( $maxColSize = 12 )
-#**##set( $menuList = [] )
+#**##set( $menuElements = [] )
 #**##if( $config.bottomNav )
-#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.children, $menuList )
+#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.children, $menuElements )
 #**##end
-#**##loadResourcesMenu($menuList)
-#**##loadReleasesMenu($menuList)
+#**##loadResourcesMenu($menuElements)
+#**##loadReleasesMenu($menuElements)
 #end
 #*
 

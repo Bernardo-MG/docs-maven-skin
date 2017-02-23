@@ -29,15 +29,15 @@
  * The menu items are meant to come from the decoration XML file.
  *
  * Receives:
- *        menus: a list of menus to process. These are Doxia decoration menus.
+ *        elements: a list of menu elements to process. These are Doxia decoration menus.
  *#
 #*--------------------------------------------------*#
-#macro( dropdownMenu $menus )
-#**##foreach( $menu in $menus )
+#macro( dropdownMenu $elements )
+#**##foreach( $element in $elements )
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$menu.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$element.name <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span></a>
         <ul class="dropdown-menu" role="menu">
-#*    *##foreach( $item in $menu.items )
+#*    *##foreach( $item in $element.items )
             <li><a href="$item.href" title="$item.name">$item.name</a></li>
 #*    *##end
         </ul>
@@ -78,28 +78,28 @@
  * Renders the bottom navigation.
  *
  * Receives:
- *        menus: a list of menus to process. These are Doxia decoration menus.
+ *        elements: a list of menu elements to process. These are Doxia decoration menus.
  *        maxColSize: the maximum size for the columns.
  *#
 #*--------------------------------------------------*#
-#macro( bottomNav $menus $maxColSize )
-#**##set( $menuCount = $menus.size() )
-#**##if( $menuCount > 0 )
-#*  *##set( $navSpan = $maxColSize / $menuCount )
+#macro( bottomNav $elements $maxColSize )
+#**##set( $elementsCount = $elements.size() )
+#**##if( $elementsCount > 0 )
+#*  *##set( $navSpan = $maxColSize / $elementsCount )
 #**##else
 #*  *##set( $navSpan = 0 )
 #**##end
 #**##if( $navSpan <= 0 )
 #*    *##set( $navSpan = 1 )
 #**##end
-#**##set( $lastNavSpan = $maxColSize - ($navSpan * ($menuCount - 1)) )
+#**##set( $lastNavSpan = $maxColSize - ($navSpan * ($elementsCount - 1)) )
 #**##set( $navColIndex = 0 )
-#**##foreach( $menuCol in $menus )
-#*    *##if( $navColIndex == $menuCount - 1 )
+#**##foreach( $element in $elements )
+#*    *##if( $navColIndex == $elementsCount - 1 )
 #*        *##set( $navSpan = $lastNavSpan )
 #*    *##end
                        <div class="col-md-$navSpan col-sm-12 col-xs-12">
-#*    *##linksMenu( $menuCol )
+#*    *##linksMenu( $element )
                        </div>
 #*    *##set( $navColIndex = $navColIndex + 1 )
 #**##end
@@ -118,16 +118,16 @@
  * The menu item is meant to come from the decoration XML file.
  *
  * Receives:
- *        menu: Doxia decoration menu to build the list menu
+ *        menu: Doxia decoration menu element to build the list menu
  *#
 #*--------------------------------------------------*#
-#macro( linksMenu $menu )
+#macro( linksMenu $element )
     <dl class="dl-nav">
-#**##if( $menu.name )
-    <dt>$menu.name</dt>
+#**##if( $element.name )
+    <dt>$element.name</dt>
 #**##end
-#**##if( $menu.items )
-#*    *##foreach( $item in $menu.items )
+#**##if( $element.items )
+#*    *##foreach( $item in $element.items )
 #*        *##if( $item.description )
               <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
 #*        *##else
