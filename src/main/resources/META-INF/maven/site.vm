@@ -119,7 +119,7 @@
                 <small class="navbar-text">${project.version} (#publishDate())</small>
                 <ul class="nav navbar-nav navbar-right">
 #iconsMenu()
-#loadTopNavmenuElements()
+#loadTopNavMenuList()
 #dropdownMenu( $menuElements )
                 </ul>
             </div>
@@ -133,7 +133,7 @@ $bodyContent
 <footer class="footer">
     <div class="footer-content">
         <div class="container-fluid">
-#loadBottomNavmenuElements()
+#loadBottomNavMenuList()
 #if($menuElements.size() > 0)
             <div id="navbar-footer" class="row">
 #**##bottomNav( $menuElements $maxColSize )
