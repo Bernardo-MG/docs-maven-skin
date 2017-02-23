@@ -76,17 +76,13 @@
 #*--------------------------------------------------*###
 #**
  * Renders the bottom navigation.
+ *
+ * Receives:
+ *        menus: a list of menus to process. These are Doxia decoration menus.
  *#
 #*--------------------------------------------------*#
-#macro( bottomNav )
-#**##set( $maxNavSpan = 12 )
-#**##set( $menuList = [] )
-#**##if( $config.bottomNav && $config.bottomNav.childCount > 0 )
-#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.children, $menuList )
-#**##end
-#**##loadResourcesMenu($menuList)
-#**##loadReleasesMenu($menuList)
-#**##set( $menuCount = $menuList.size() )
+#macro( bottomNav $menus )
+#**##set( $menuCount = $menus.size() )
 #**##if( $menuCount > 0 )
 #*  *##set( $navSpan = $maxNavSpan / $menuCount )
 #**##else
@@ -97,7 +93,7 @@
 #**##end
 #**##set( $lastNavSpan = $maxNavSpan - ($navSpan * ($menuCount - 1)) )
 #**##set( $navColIndex = 0 )
-#**##foreach( $menuCol in $menuList )
+#**##foreach( $menuCol in $menus )
 #*    *##if( $navColIndex == $menuCount - 1 )
 #*        *##set( $navSpan = $lastNavSpan )
 #*    *##end

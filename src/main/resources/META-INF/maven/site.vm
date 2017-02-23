@@ -186,13 +186,13 @@
                 <small class="navbar-text">${project.version} (#publishDate())</small>
                 <ul class="nav navbar-nav navbar-right">
 #iconsMenu()
-*##if( $config.topNav )
-#**##set( $menuList = [] )
+#set( $menuList = [] )
+#if( $config.topNav && $decoration.body.menus )
 #**##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuList )
-*##else
+#elseif( $decoration.body.menus )
 #**##set( $menuList = $decoration.body.menus )
-*##end
-*##dropdownMenu ( $menuList )
+#end
+#dropdownMenu( $menuList )
                 </ul>
             </div>
         </div>
@@ -206,7 +206,14 @@ $bodyContent
     <div class="footer-content">
         <div class="container-fluid">
             <div id="navbar-footer" class="row">
-#bottomNav()
+#set( $maxNavSpan = 12 )
+#set( $menuList = [] )
+#if( $config.bottomNav )
+#**##loadMenus( $decoration.body.menus, $config.bottomNav.children, $menuList )
+#end
+#loadResourcesMenu($menuList)
+#loadReleasesMenu($menuList)
+#bottomNav( $menuList )
             </div>
 	        <div class="row">
 	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>

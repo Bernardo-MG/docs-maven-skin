@@ -1,3 +1,3 @@
-# Minimal page
+# Page with menu
 
-This is an example for a Maven Site using only the minimal required configuration.
+This is an example for a Maven Site with a menu.
