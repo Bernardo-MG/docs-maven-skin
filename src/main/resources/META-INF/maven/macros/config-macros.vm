@@ -26,16 +26,20 @@
 #**
  * Loads the top navigation menu list.
  *
- * A menuElements variable will be created, containing the menu data.
+ * The menu list will be loaded from the decoration menus. Only those defined in the topNav
+ * option, in the skin configuration, will be used. If this option is not set then all
+ * the menus will be loaded.
+ *
+ * Receives:
+ *        elements: collection where the menu items will be added
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadTopNavMenuList )
-#**##set( $menuElements = [] )
+#macro( loadTopNavMenuList $elements )
 #**##if( $config.topNav && $decoration.body.menus )
-#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $menuElements )
+#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $elements )
 #**##elseif( $decoration.body.menus )
-#*    *##set( $menuElements = $decoration.body.menus )
+#*    *##set( $elements = $decoration.body.menus )
 #**##end
 #end
 #*
@@ -47,20 +51,21 @@
 #**
  * Loads the top navigation menu list.
  *
- * A menuElements variable will be created, containing the menu data.
+ * The menu list will be loaded from the decoration menus. Only those defined in the bottomNav
+ * option, in the skin configuration, will be used. If this option is not set then all
+ * the menus will be loaded.
  *
- * Also a maxColSize variable will be set with the maximum column size.
+ * Receives:
+ *        elements: collection where the menu items will be added
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadBottomNavMenuList )
-#**##set( $maxColSize = 12 )
-#**##set( $menuElements = [] )
+#macro( loadBottomNavMenuList $elements )
 #**##if( $config.bottomNav )
-#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.children, $menuElements )
+#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.children, $elements )
 #**##end
-#**##loadResourcesMenu($menuElements)
-#**##loadReleasesMenu($menuElements)
+#**##loadResourcesMenu($elements)
+#**##loadReleasesMenu($elements)
 #end
 #*
 
