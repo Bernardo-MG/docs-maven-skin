@@ -31,3 +31,10 @@ assert !html.contains( '<meta name="twitter:card" content="summary"/>' )
 assert !html.contains( '<meta name="twitter:site" content="@bmg"/>' )
 assert !html.contains( '<meta name="twitter:title" content="Simple site example &#x2013; library-maven-archetype-example"/>' )
 assert !html.contains( '<meta name="twitter:description" content="Check the documentation for Basic Maven Project"/>' )
+
+// Verifies that the main menus are not generated
+assert !html.contains( '<li class="dropdown">' )
+
+// Verifies that the footer menus are not generated
+assert !html.contains( '<div id="navbar-footer" class="row">' )
+assert !html.contains( '<dl class="dl-nav">' )
