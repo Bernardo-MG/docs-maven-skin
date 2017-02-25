@@ -29,54 +29,54 @@
  *#
 #*--------------------------------------------------*#
 #macro( setUp )
-#**##**
-#**# * Parses body content.
-#**# *#
+#**
+ * Parses body content.
+ *#
 #**##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )
 
-#**##**
-#**# * Updates code sections.
-#**# *#
+#**
+ * Updates code sections.
+ *#
 #**##set( $empty = $htmlTool.retag( $bodyContentParsed, 'div.source', 'code' ) )
 #**##set( $empty = $htmlTool.unwrap( $bodyContentParsed, 'code > code' ) )
 #**##set( $empty = $htmlTool.swapTagWithParent( $bodyContentParsed, 'code > pre' ) )
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'code.source', 'source' ) )
 
-#**##**
-#**# * Updates section divs.
-#**# *#
+#**
+ * Updates section divs.
+ *#
 #**##set( $empty = $htmlTool.retag( $bodyContentParsed, 'div.section', 'section' ) )
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'section.section', 'section' ) )
 
-#**##**
-#**# * Fixes internal links.
-#**# *#
+#**
+ * Fixes internal links.
+ *#
 #**##set( $empty = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[id]', 'id' ) )
 #**##set( $empty = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[href^=\"#\"]', 'href' ) )
 
 
-#**##**
-#**# * Removes external links.
-#**# *#
+#**
+ * Removes external links.
+ *#
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'a.externalLink', 'externalLink' ) )
  
-#**##**
-#**# * Removes links without href.
-#**# *#
+#**
+ * Removes links without href.
+ *#
 #**##set( $empty = $htmlTool.unwrap( $bodyContentParsed, 'a:not([href])' ) )
  
-#**##**
-#**# * Updates tables.
-#**# *#
+#**
+ * Updates tables.
+ *#
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'table.bodyTable', 'bodyTable' ) )
 #**##set( $empty = $html5UpdateTool.updateTableHeads( $bodyContentParsed ) )
 #**##set( $empty = $htmlTool.removeAttribute( $bodyContentParsed, 'table[border]', 'border' ) )
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.a', 'a' ) )
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.b', 'b' ) )
  
-#**##**
-#**# * Recovers body content.
-#**# *#
+#**
+ * Recovers body content.
+ *#
 #**##set( $bodyContent = $bodyContentParsed.html() )
  
 #**##set( $bodyContent = $siteTool.transformTables( $bodyContent ) )
@@ -86,16 +86,16 @@
 #**##set( $bodyContent = $siteTool.fixHeadingIds($bodyContent) )
 #**##set( $bodyContent = $siteTool.fixAnchorLinks($bodyContent) )
 
-#**##**
-#**# * Parses body content.
-#**# *#
+#**
+ * Parses body content.
+ *#
 #**##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )
 
 #**##set( $empty = $htmlTool.wrapFirst($bodyContentParsed, 'h1', '<header class="page-header"></header>') )
  
-#**##**
-#**# * Recovers body content.
-#**# *#
+#**
+ * Recovers body content.
+ *#
 #**##set( $bodyContent = $bodyContentParsed.html() )
 #end
 #*
