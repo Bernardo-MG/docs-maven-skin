@@ -99,8 +99,14 @@
  *#
 #*--------------------------------------------------*#
 #macro( loadMenus $elements $names $result )
-#**##foreach( $name in $names )
-#*    *##addMenu ( $elements, $name.value )
+#**##set( $namesList = [] )
+#**##foreach($name in $names)
+#*    *##set($bar = $namesList.add( $name.value ))
+#**##end
+#**##foreach($menu in $elements)
+#*    *##if( $menu.name && $namesList.contains( $menu.name ) )
+#*        *##set($bar = $result.add( $menu ))
+#*    *##end
 #**##end
 #end
 #*
@@ -108,24 +114,3 @@
 
 
 *#
-#*--------------------------------------------------*###
-#**
- * Finds a menu based on its name and adds it to a collection.
- *
- * Will iterate over the received menus, and will add any menu found with
- * the given name into the result variable.
- *
- * Receives:
- *        elements: Doxia decoration menus collection
- *        name: name of the menu to find
- *        result: collection where the results will be stored
- *#
-#*--------------------------------------------------*#
-#macro( addMenu $elements $name $result )
-#**##set( $foundMenu = false )
-#**##foreach($menu in $elements)
-#*    *##if( $menu.name && $menu.name == $name )
-#*        *##set($bar = $result.add( $menu ))
-#*    *##end
-#**##end
-#end
