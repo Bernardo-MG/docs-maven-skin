@@ -24,8 +24,8 @@
 #*--------------------------------------------------*#
 #*--------------------------------------------------*###
 #**
- * Finds a collection of menus based on their names and loads them into the
- * received collection.
+ * Filters a collection, copying all the elements with the specified names into
+ * the result collection.
  *
  * Receives:
  *        elements: Doxia decoration menus collection
@@ -33,14 +33,14 @@
  *        result: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( loadMenus $elements $names $result )
+#macro( filterByName $elements $names $result )
 #**##set( $namesList = [] )
 #**##foreach($name in $names)
 #*    *##set($bar = $namesList.add( $name.value ))
 #**##end
-#**##foreach($menu in $elements)
-#*    *##if( $menu.name && $namesList.contains( $menu.name ) )
-#*        *##set($bar = $result.add( $menu ))
+#**##foreach($element in $elements)
+#*    *##if( $element.name && $namesList.contains( $element.name ) )
+#*        *##set($bar = $result.add( $element ))
 #*    *##end
 #**##end
 #end

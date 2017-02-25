@@ -41,7 +41,7 @@
 #*--------------------------------------------------*#
 #macro( loadTopNavMenuList $elements )
 #**##if( $config.topNav && $decoration.body.menus )
-#*    *##loadMenus( $decoration.body.menus, $config.topNav.getChildren(), $elements )
+#*    *##filterByName( $decoration.body.menus, $config.topNav.getChildren(), $elements )
 #**##elseif( $decoration.body.menus )
 #*    *##set( $elements = $decoration.body.menus )
 #**##end
@@ -70,7 +70,7 @@
 #*--------------------------------------------------*#
 #macro( loadBottomNavMenuList $elements )
 #**##if( $config.bottomNav )
-#*    *##loadMenus( $decoration.body.menus, $config.bottomNav.children, $elements )
+#*    *##filterByName( $decoration.body.menus, $config.bottomNav.children, $elements )
 #**##end
 #**##loadResourcesMenuList($elements)
 #**##loadReleasesMenuList($elements)
