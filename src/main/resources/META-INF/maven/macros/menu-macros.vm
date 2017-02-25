@@ -26,10 +26,9 @@
 #**
  * Renders a dropdown menu with the received menus as the selection options.
  *
- * The menu items are meant to come from the decoration XML file.
- *
  * Receives:
- *        elements: a list of menu elements to process. These are Doxia decoration menus.
+ *        elements: Doxia decoration menus collection
+ *
  *#
 #*--------------------------------------------------*#
 #macro( dropdownMenu $elements )
@@ -78,8 +77,8 @@
  * Renders the bottom navigation.
  *
  * Receives:
- *        elements: a list of menu elements to process. These are Doxia decoration menus.
- *        maxColSize: the maximum size for the columns.
+ *        elements: Doxia decoration menus collection
+ *        maxColSize: the maximum size for the columns
  *#
 #*--------------------------------------------------*#
 #macro( bottomNav $elements $maxColSize )
@@ -115,12 +114,11 @@
 #**
  * Renders a menu with links.
  *
+ * Receives:
+ *        element: Doxia decoration menu
+ *
  * This will be a definitions list, where each definition is a link.
  *
- * The menu item is meant to come from the decoration XML file.
- *
- * Receives:
- *        menu: Doxia decoration menu element to build the list menu
  *#
 #*--------------------------------------------------*#
 #macro( linksMenu $element )

@@ -24,13 +24,16 @@
 #*--------------------------------------------------*#
 #*--------------------------------------------------*###
 #**
- * Creates and loads a menu with the releases repositories links.
- * 
- * If the required data exists then the menu will be loaded in the received
- * list.
+ * Loads the menu items for the releases repositories into the received collection.
  *
  * Receives:
  *        elements: collection where the results will be stored
+ *
+ * Makes use of the following variables:
+ *        config.releaseRepositories: list of repositories with the releases, from the site configuration file
+ * 
+ * A Doxia menu will be generated for each releases repository, and added to the collection.
+ * 
  *#
 #*--------------------------------------------------*#
 #macro( loadReleasesMenu $elements )
@@ -49,13 +52,18 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Creates and loads a menu with the project resources.
- * 
- * If the required data exists then the menu will be loaded in the received
- * list.
+ * Loads the menu items for the various resources into the received collection.
+ *
+ * Makes use of the following variables:
+ *        project.scm: SCM info, from the POM
+ *        project.ciManagement: CI info, from the POM
+ *        project.issueManagement: issues site info, from the POM
  *
  * Receives:
  *        elements: collection where the results will be stored
+ * 
+ * A Doxia menu will be generated for the SCM, CI and issues sites, and added to the collection.
+ * 
  *#
 #*--------------------------------------------------*#
 #macro( loadResourcesMenu $elements )

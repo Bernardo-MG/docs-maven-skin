@@ -26,12 +26,16 @@
 #**
  * Loads the top navigation menu list.
  *
+ * Receives:
+ *        elements: collection where the menu items will be added
+ *
+ * Makes use of the following variables:
+ *        config.topNav: list of menu items for the top navigation, from the site configuration file
+ *        decoration.body.menus: list of menu items, from the site configuration file
+ *
  * The menu list will be loaded from the decoration menus. Only those defined in the topNav
  * option, in the skin configuration, will be used. If this option is not set then all
  * the menus will be loaded.
- *
- * Receives:
- *        elements: collection where the menu items will be added
  *
  *#
 #*--------------------------------------------------*#
@@ -51,12 +55,16 @@
 #**
  * Loads the top navigation menu list.
  *
+ * Receives:
+ *        elements: collection where the menu items will be added
+ *
+ * Makes use of the following variables:
+ *        config.bottomNav: list of menu items for the bottom navigation, from the site configuration file
+ *        decoration.body.menus: list of menu items, from the site configuration file
+ *
  * The menu list will be loaded from the decoration menus. Only those defined in the bottomNav
  * option, in the skin configuration, will be used. If this option is not set then all
  * the menus will be loaded.
- *
- * Receives:
- *        elements: collection where the menu items will be added
  *
  *#
 #*--------------------------------------------------*#
