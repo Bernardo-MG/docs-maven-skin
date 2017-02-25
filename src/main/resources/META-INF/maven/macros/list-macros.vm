@@ -100,10 +100,7 @@
 #*--------------------------------------------------*#
 #macro( loadMenus $elements $names $result )
 #**##foreach( $name in $names )
-#*    *##findMenu ( $elements, $name.value )
-#*    *##if( $foundMenu )
-#*        *##set($bar = $result.add( $foundMenu ))
-#*    *##end
+#*    *##addMenu ( $elements, $name.value )
 #**##end
 #end
 #*
@@ -113,25 +110,22 @@
 *#
 #*--------------------------------------------------*###
 #**
- * Finds a menu based on its name.
+ * Finds a menu based on its name and adds it to a collection.
  *
- * Will iterate over the received menus, and will set the last menu found with
- * the given name into the foundMenu variable.
- *
- * If no menu was found then this variable will be set as false.
+ * Will iterate over the received menus, and will add any menu found with
+ * the given name into the result variable.
  *
  * Receives:
- *        menus: Doxia decoration menus collection
+ *        elements: Doxia decoration menus collection
  *        name: name of the menu to find
- * Returns:
- *        foundMenu: false if no menu was found, contains the menu otherwise
+ *        result: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( findMenu $elements $name )
+#macro( addMenu $elements $name $result )
 #**##set( $foundMenu = false )
 #**##foreach($menu in $elements)
 #*    *##if( $menu.name && $menu.name == $name )
-#*        *##set( $foundMenu = $menu )
+#*        *##set($bar = $result.add( $menu ))
 #*    *##end
 #**##end
 #end
