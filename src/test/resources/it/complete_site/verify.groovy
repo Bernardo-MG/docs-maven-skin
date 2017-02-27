@@ -2,22 +2,27 @@
 // test validates that all the common pieces of the site are generated when the Skin
 // has all the data it requires.
 
-// The files to test are read
-File acquire = new File( basedir, "target/site/acquire.html" )
-File index = new File( basedir, "target/site/index.html" )
-File info = new File( basedir, "target/site/info.html" )
-File reports = new File( basedir, "target/site/reports.html" )
-File usage = new File( basedir, "target/site/usage.html" )
+import org.hamcrest.MatcherAssert
+import org.hamcrest.Matchers
 
 // Verifies that all the files were created
-assert acquire.exists()
-assert index.exists()
-assert info.exists()
-assert reports.exists()
-assert usage.exists()
+[
+    'target/site/acquire.html',
+    'target/site/index.html',
+    'target/site/info.html',
+    'target/site/reports.html',
+    'target/site/usage.html'
+].each {
+    def file = new File(basedir, it)
+    if (!file.exists()) {
+        throw new IllegalStateException(
+            "file ${file} doesn't exist"
+        )
+    }
+}
 
 // Acquires the sample HTML content
-String html = index.getText()
+def html = new File(basedir, 'target/site/index.html').text
 
 // Verified the heading is set
 assert html.contains( '<header class="page-header">' )

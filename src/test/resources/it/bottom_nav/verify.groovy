@@ -1,13 +1,22 @@
 // This script verifies that a site contains the bottom navigation.
 
-// The files to test are read
-File index = new File( basedir, "target/site/index.html" )
+import org.hamcrest.MatcherAssert
+import org.hamcrest.Matchers
 
 // Verifies that all the files were created
-assert index.exists()
+[
+    'target/site/index.html'
+].each {
+    def file = new File(basedir, it)
+    if (!file.exists()) {
+        throw new IllegalStateException(
+            "file ${file} doesn't exist"
+        )
+    }
+}
 
 // Acquires the sample HTML content
-String html = index.getText()
+def html = new File(basedir, 'target/site/index.html').text
 
 // Verifies the footer columns exist and contain the expected data
 assert html.contains( '<dt>General Info</dt>' )
