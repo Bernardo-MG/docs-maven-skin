@@ -2,6 +2,7 @@
 // test validates that all the common pieces of the site are generated when the Skin
 // has all the data it requires.
 
+import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 
@@ -23,6 +24,20 @@ import org.hamcrest.Matchers
 
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
+
+// Validate HTML
+def htmlResponse = new ValidatorBuilder().html().validate(html)
+
+MatcherAssert.assertThat(
+    'There are errors',
+    htmlResponse.errors(),
+    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
+)
+MatcherAssert.assertThat(
+    'There are warnings',
+    htmlResponse.warnings(),
+    Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
+)
 
 // Verified the heading is set
 assert html.contains( '<header class="page-header">' )
