@@ -19,7 +19,7 @@ import org.hamcrest.Matchers
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
 
-// Validate HTML
+// Validates HTML 5
 def htmlResponse = new ValidatorBuilder().html().validate(html)
 
 MatcherAssert.assertThat(
