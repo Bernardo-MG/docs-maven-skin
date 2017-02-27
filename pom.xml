@@ -184,6 +184,7 @@
       <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
       <!-- Dependencies versions -->
       <hamcrest.version>1.3</hamcrest.version>
+      <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <wandrell.siteFixer.version>0.6.1</wandrell.siteFixer.version>
       <!-- Plugins versions -->
@@ -401,6 +402,12 @@
                   <groupId>org.hamcrest</groupId>
                   <artifactId>hamcrest-all</artifactId>
                   <version>${hamcrest.version}</version>
+               </dependency>
+               <dependency>
+                  <!-- jcabi matchers -->
+                  <groupId>com.jcabi</groupId>
+                  <artifactId>jcabi-matchers</artifactId>
+                  <version>${jcabi.matchers.version}</version>
                </dependency>
                <dependency>
                   <!-- jcabi W3C -->
