@@ -33,11 +33,20 @@ MatcherAssert.assertThat(
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
 
-// Verifies the footer columns exist and contain the expected data
-assert html.contains( '<dt>General Info</dt>' )
-assert html.contains( '<dd><a href="./acquire.html" title="Acquire">Acquire</a></dd>' )
-assert html.contains( '<dd><a href="./usage.html" title="Usage">Usage</a></dd>' )
+// Parses HTML
+def body = Jsoup.parse(html).body()
 
-assert !html.contains( '<dt>Code</dt>' )
+// Verifies the footer columns exist
+def titles = body.select( 'dt' )
+assert titles.size() == 3
 
-assert !html.contains( '<dt>Releases</dt>' )
+// Verifies the footer columns contains the expected titles
+assert titles.get(0).html().equals('General Info')
+
+// Verifies the footer columns data
+def rows = body.select( 'dd' )
+assert rows.size() == 2
+
+// First column
+assert rows.get(0).html().equals('<a href="./acquire.html" title="Acquire">Acquire</a>')
+assert rows.get(1).html().equals('<a href="./usage.html" title="Usage">Usage</a>')
