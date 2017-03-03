@@ -3,6 +3,7 @@
 import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
+import org.jsoup.Jsoup
 
 // Verifies that all the files were created
 [
@@ -32,6 +33,11 @@ MatcherAssert.assertThat(
     htmlResponse.warnings(),
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
+
+// Parses HTML
+def body = Jsoup.parse(html).body()
+
+assert body.select( 'dt' ).size() == 3
 
 // Verifies the footer columns exist and contain the expected data
 assert html.contains( '<dt>General Info</dt>' )

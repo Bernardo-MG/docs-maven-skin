@@ -186,6 +186,7 @@
       <hamcrest.version>1.3</hamcrest.version>
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
+      <jsoup.version>1.9.2</jsoup.version>
       <wandrell.siteFixer.version>0.6.1</wandrell.siteFixer.version>
       <!-- Plugins versions -->
       <plugin.invoker.version>2.0.0</plugin.invoker.version>
@@ -414,6 +415,12 @@
                   <groupId>com.jcabi</groupId>
                   <artifactId>jcabi-w3c</artifactId>
                   <version>${jcabi.w3c.version}</version>
+               </dependency>
+               <dependency>
+                  <!-- JSoup -->
+                  <groupId>org.jsoup</groupId>
+                  <artifactId>jsoup</artifactId>
+                  <version>${jsoup.version}</version>
                </dependency>
             </dependencies>
             <executions>
