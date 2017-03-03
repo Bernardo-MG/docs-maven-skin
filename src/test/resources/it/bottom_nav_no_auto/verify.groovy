@@ -3,6 +3,7 @@
 import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
+import org.jsoup.Jsoup
 
 // Verifies that all the files were created
 [
