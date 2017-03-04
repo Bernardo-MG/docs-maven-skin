@@ -37,6 +37,13 @@ MatcherAssert.assertThat(
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
+// Verifies the skin info is included
+
+def div = body.select( 'footer.footer div.row div' ).last()
+
+// Skin info
+assert div.html().contains( 'Rendered using' )
+
 // Verifies the footer columns exist
 def titles = body.select( 'dt' )
 assert titles.size() == 3
