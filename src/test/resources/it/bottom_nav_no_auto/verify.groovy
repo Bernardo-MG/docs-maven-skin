@@ -39,7 +39,7 @@ def body = Jsoup.parse(html).body()
 
 // Verifies the footer columns exist
 def titles = body.select( 'dt' )
-assert titles.size() == 3
+assert titles.size() == 1
 
 // Verifies the footer columns contains the expected titles
 assert titles.get(0).html().equals('General Info')
