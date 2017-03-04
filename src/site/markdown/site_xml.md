@@ -37,30 +37,65 @@ The general structure of this element will look like the following example:
 |keywords|Value for the keywords HTML field|
 |descriptionUrl|Description of the page, used for Open Graph and Twitter Card|
 |twitterSite|The identifier (@tag) for Twitter Card|
-|interpreters|Java versions which the project supports|
-|releaseRepositories|Information of the various releases repositories which contain the project, such as for example Maven Central|
+|releaseRepositories|The various releases repositories which contain the project. For example, Maven Central|
 |topNav|Menus for the top navigation menu|
-|bottomNav|Additional menus for the bottom navigation|
+|bottomNav|Additional menus for the bottom navigation menu|
+
+#### Menus
+
+When menus are defined in one of the options these are taken from the site.xml file. The name set in the menu node should be the name of one of the defined menus.
+
+So for example the following menu may be set:
+
+```xml
+<custom>
+    <skinConfig>
+        ...
+        <topNav>
+            <menu>General Info</menu>
+        </topNav>
+        ...
+    </skinConfig>
+</custom>
+```
+
+Which would require the following menu to exist:
+
+```xml
+<body>
+    ...
+    <menu name="General Info" inherit="top">
+        <item name="Acquire" href="./acquire.html" />
+        <item name="Usage" href="./usage.html" />
+        <item name="Changes Log" href="./changes-report.html" />
+    </menu>
+    ...
+</body>
+```
 
 ### Facebook's Open Graph and Twitter Cards metadata
 
 The data contained in some of the elements will be used to generate the metadata on each page. For more information about this check the [metadata section][metadata].
 
+### Top navigation
+
+The top navigation is the dropdown menus in the navigation bar.
+
 ### Bottom navigation
 
-While it is possible to add menus to the bottom navigation, there should be always space for two additional menus which the skin will always add: the code and releases repos menus.
+The bottom navigation are the columns containing links in the footer.
 
-The code menu contains the information about the code services being used, such as continuous integration or code repository. This information is taken from the POM.
+### Bottom navigation auto-generated columns
 
-The releases menu contains the list of releases repositories defined on the *releaseRepositories* element.
+Two additional menus will be generated from the project and repositories information, the code and releases columns. These columns will be added after the ones defined by the user.
 
 #### Code column
 
 The code column will add a link for the SCM, CI and issues services being used. The data for these is taken automatically from the POM.
 
-#### Release repositories column
+#### Releases column
 
-For each entry in the *releaseRepositories* node a repository will be added to the footer.
+For each entry in the *releaseRepositories* node a repository link will be added to the column.
 
 Each of them should be a entry like the following:
 
@@ -102,38 +137,6 @@ In this case the URL will be read from the *mavenURL* property:
     <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
     ...
 </properties>
-```
-
-#### Additional columns
-
-Any additional menu defined in the menus section and added to the *bottomNav* node will be appended at the start of the bottom columns.
-
-For example, the general information column included in this page is done by using the following configuration:
-
-```xml
-<custom>
-    <skinConfig>
-        ...
-        <bottomNav>
-            <menu>General Info</menu>
-        </bottomNav>
-        ...
-    </skinConfig>
-</custom>
-```
-
-And the following menu:
-
-```xml
-<body>
-    ...
-    <menu name="General Info" inherit="top">
-        <item name="Acquire" href="./acquire.html" />
-        <item name="Usage" href="./usage.html" />
-        <item name="Changes Log" href="./changes-report.html" />
-    </menu>
-    ...
-</body>
 ```
 
 
