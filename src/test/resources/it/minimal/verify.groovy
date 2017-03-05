@@ -36,6 +36,7 @@ MatcherAssert.assertThat(
 
 // Parses HTML
 def body = Jsoup.parse(html).body()
+def head = Jsoup.parse(html).head()
 
 // Verifies the skin info is included
 
@@ -58,9 +59,25 @@ assert navbarFooter.size() == 0
 def dlNav = body.select( '.dl-nav' )
 assert dlNav.size() == 0
 
-// Verifies metadata is not included
-def meta = body.select( 'meta' )
-assert meta.size() == 0
+// Verifies that only the minimal metadata is included
+def meta = head.select( 'meta' )
+assert meta.size() == 6
+
+assert meta.get(0).attr( 'http-equiv' ).equals( 'Content-Type' )
+assert meta.get(1).attr( 'name' ).equals( 'viewport' )
+assert meta.get(2).attr( 'http-equiv' ).equals( 'X-UA-Compatible' )
+
+// Facebook Open Graph metadata
+assert meta.get(3).attr( 'property' ).equals( 'og:type' )
+assert meta.get(3).attr( 'content' ).equals( 'website' )
+
+assert meta.get(4).attr( 'property' ).equals( 'og:site' )
+assert meta.get(4).attr( 'content' ).contains( 'minimal-site' )
+assert meta.get(4).attr( 'content' ).contains( 'Minimal page' )
+
+assert meta.get(5).attr( 'property' ).equals( 'og:title' )
+assert meta.get(5).attr( 'content' ).contains( 'minimal-site' )
+assert meta.get(5).attr( 'content' ).contains( 'Minimal page' )
 
 // Verifies that the main menus are not generated
 def dropdown = body.select( 'li.dropdown' )
