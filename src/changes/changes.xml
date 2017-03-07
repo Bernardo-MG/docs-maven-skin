@@ -5,6 +5,17 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.5.4" date="2017-01-05" description="Fixed menu">
+         <action dev="bmg" type="update">
+            Tests now validate HTML 5.
+         </action>
+         <action dev="bmg" type="update">
+            Cleaned up and simplified all the Velocity macros.
+         </action>
+         <action dev="bmg" type="update">
+            Fixed menu generation.
+         </action>
+      </release>
       <release version="0.5.3" date="2017-01-05" description="Fixed menu">
          <action dev="bmg" type="update">
             Fixed menu generation.
