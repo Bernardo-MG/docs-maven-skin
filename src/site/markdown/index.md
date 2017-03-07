@@ -25,6 +25,10 @@ The main features offered by the skin are:
 - [highlight.js][highlight] for syntax highlighting
 - Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
 
+## Examples
+
+This site is already an example of the skin, as it was created by using the Maven Site plugin and the Docs Maven Skin.
+
 [bootstrap]: http://getbootstrap.com/
 [docs_template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [font_awesome]: https://fortawesome.github.io/Font-Awesome/

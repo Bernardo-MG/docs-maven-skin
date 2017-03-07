@@ -87,6 +87,20 @@ To use the Skin when generating a Maven Site just add the following to the site.
 
 More detailed information can be found in the documentation (check the links in the documentation section earlier in this file).
 
+### Running tests
+
+Several integration tests are included in the project, verifying various configurations. These can be run by using the usual Maven command:
+
+```
+$ mvn verify
+```
+
+They are run by using the [Maven Invoker Plugin][maven-invoker], and the configurations are included in the 'src/it' folder.
+
+Pay attention that the results from generating these tests are copied to the generated Maven Site by the Maven Resources Plugin.
+
+If using Eclipse the tests may not run, due to an incompatibility with the invoker. It is recommender running the tests through command line.
+
 ## Collaborate
 
 Any kind of help with the project will be well received, and there are two main ways to give such help:
@@ -116,6 +130,8 @@ The project has been released under the [MIT License][license].
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
 [site-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin
 [site-release]: http://docs.wandrell.com/maven/docs-maven-skin
+
+[maven-invoker]: http://maven.apache.org/plugins/maven-invoker-plugin/
 
 [library-archetype]: https://github.com/bernardo-mg/library-maven-archetype
 [docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template

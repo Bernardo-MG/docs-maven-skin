@@ -24,31 +24,25 @@
 #*--------------------------------------------------*#
 #*--------------------------------------------------*###
 #**
- * Renders a list with links.
- *
- * This will be a definitions list, where each definition is a link.
- *
- * The menu item is meant to come from the decoration XML file.
+ * Filters a collection, copying all the elements with the specified names into
+ * the result collection.
  *
  * Receives:
- *        menu: Doxia decoration menu to build the list menu
+ *        elements: Doxia decoration menus collection
+ *        names: names of the menus to find
+ *        result: collection where the results will be stored
  *#
 #*--------------------------------------------------*#
-#macro( linksList $menu )
-                            <dl class="dl-nav">
-#**##if( $menu.name )
-                                <dt>$menu.name</dt>
+#macro( filterByName $elements $names $result )
+#**##set( $namesList = [] )
+#**##foreach($name in $names)
+#*    *##set($bar = $namesList.add( $name.value ))
 #**##end
-#**##if( $menu.items )
-#*    *##foreach( $item in $menu.items )
-#*        *##if( $item.description )
-                                <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
-#*        *##else
-                                <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
-#*        *##end
+#**##foreach($element in $elements)
+#*    *##if( $element.name && $namesList.contains( $element.name ) )
+#*        *##set($bar = $result.add( $element ))
 #*    *##end
 #**##end
-                            </dl>
 #end
 #*
 

@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.wandrell.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.2</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +20,7 @@
 
    <groupId>com.wandrell.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>0.5.3</version>
+   <version>0.5.4</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -79,10 +79,10 @@
    <profiles>
       <profile>
          <!-- Profile for the Eclipse Maven plugin -->
-         <!-- Sets the POM so this plugin does not give the usual unregistered goals 
-            errors -->
-         <!-- It will be activated automatically on Eclipse if this has the m2e plugin, 
-            by detecting the version property -->
+         <!-- Sets the POM so this plugin does not give the usual unregistered 
+            goals errors -->
+         <!-- It will be activated automatically on Eclipse if this has the 
+            m2e plugin, by detecting the version property -->
          <id>eclipse</id>
          <activation>
             <property>
@@ -94,9 +94,10 @@
                <plugins>
                   <plugin>
                      <!-- m2e lifecycle mapping -->
-                     <!-- This is used to configure the Maven plugin for Eclipse. -->
-                     <!-- Among other things, it allows registering goals, which 
-                        Eclipse would otherwise reject. -->
+                     <!-- This is used to configure the Maven plugin for 
+                        Eclipse. -->
+                     <!-- Among other things, it allows registering goals, 
+                        which Eclipse would otherwise reject. -->
                      <!-- It has no real effect on Maven. -->
                      <groupId>org.eclipse.m2e</groupId>
                      <artifactId>lifecycle-mapping</artifactId>
@@ -182,17 +183,20 @@
       <!-- Manifest data -->
       <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
       <!-- Dependencies versions -->
-      <wandrell.siteFixer.version>0.5.0</wandrell.siteFixer.version>
+      <hamcrest.version>1.3</hamcrest.version>
+      <jcabi.matchers.version>1.4</jcabi.matchers.version>
+      <jcabi.w3c.version>1.3</jcabi.w3c.version>
+      <jsoup.version>1.9.2</jsoup.version>
+      <wandrell.siteFixer.version>0.6.1</wandrell.siteFixer.version>
       <!-- Plugins versions -->
-      <plugin.changes.version>2.12</plugin.changes.version>
       <plugin.invoker.version>2.0.0</plugin.invoker.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
       <!-- Maven Site -->
-      <site.skin.version>0.5.0</site.skin.version>
+      <site.skin.version>0.5.3</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
       <!-- Integration tests -->
-      <basePom.version>1.1.0</basePom.version>
+      <basePom.version>1.1.1</basePom.version>
    </properties>
 
    <!-- ********************************************** -->
@@ -234,7 +238,6 @@
             <!-- It is set to also validate the changes log file -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-changes-plugin</artifactId>
-            <version>${plugin.changes.version}</version>
             <executions>
                <!-- Changes plugin is bound to the pre-site phase -->
                <execution>
@@ -278,7 +281,8 @@
             <configuration>
                <!-- Variables to to override will be delimited with a @. -->
                <!-- This avoids collisions with Velocity variables. -->
-               <!-- So instead of replacing ${project.name} Maven will replace @project.name@. -->
+               <!-- So instead of replacing ${project.name} Maven will replace 
+                  @project.name@. -->
                <useDefaultDelimiters>false</useDefaultDelimiters>
                <delimiters>
                   <delimiter>@</delimiter>
@@ -334,7 +338,8 @@
                   </configuration>
                </execution>
                <execution>
-                  <!-- Copies the bottom navigation without generated sections site test results -->
+                  <!-- Copies the bottom navigation without generated sections 
+                     site test results -->
                   <id>copy-bottom_nav_no_auto</id>
                   <phase>site</phase>
                   <goals>
@@ -384,25 +389,46 @@
             <version>${plugin.invoker.version}</version>
             <configuration>
                <debug>true</debug>
-               <projectsDirectory>src/it</projectsDirectory>
-               <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+               <streamLogs>false</streamLogs>
+               <projectsDirectory>${project.build.testOutputDirectory}/it</projectsDirectory>
                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
-               <preBuildHookScript>setup</preBuildHookScript>
                <postBuildHookScript>verify</postBuildHookScript>
-               <pomIncludes>
-                  <pomInclude>*/pom.xml</pomInclude>
-               </pomIncludes>
                <goals>
                   <goal>site</goal>
                </goals>
             </configuration>
+            <dependencies>
+               <dependency>
+                  <!-- Hamcrest -->
+                  <groupId>org.hamcrest</groupId>
+                  <artifactId>hamcrest-all</artifactId>
+                  <version>${hamcrest.version}</version>
+               </dependency>
+               <dependency>
+                  <!-- jcabi matchers -->
+                  <groupId>com.jcabi</groupId>
+                  <artifactId>jcabi-matchers</artifactId>
+                  <version>${jcabi.matchers.version}</version>
+               </dependency>
+               <dependency>
+                  <!-- jcabi W3C -->
+                  <groupId>com.jcabi</groupId>
+                  <artifactId>jcabi-w3c</artifactId>
+                  <version>${jcabi.w3c.version}</version>
+               </dependency>
+               <dependency>
+                  <!-- JSoup -->
+                  <groupId>org.jsoup</groupId>
+                  <artifactId>jsoup</artifactId>
+                  <version>${jsoup.version}</version>
+               </dependency>
+            </dependencies>
             <executions>
                <execution>
-                  <id>integration-test</id>
+                  <id>skin-it</id>
                   <goals>
                      <goal>install</goal>
-                     <goal>integration-test</goal>
-                     <goal>verify</goal>
+                     <goal>run</goal>
                   </goals>
                </execution>
             </executions>
@@ -417,16 +443,6 @@
    <reporting>
       <plugins>
          <plugin>
-            <!-- FindBugs -->
-            <!-- Checks for patterns which are prone to errors -->
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-            <configuration>
-               <!-- Exclusion patterns -->
-               <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>
-            </configuration>
-         </plugin>
-         <plugin>
             <!-- Checkstyle -->
             <!-- Checks that the source files comply with style standards -->
             <!-- It is using a customized rules file -->
@@ -435,25 +451,12 @@
             <configuration>
                <!-- The customized rules file -->
                <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>
-               <!-- Excludes generated code -->
-               <excludes>**/generated/**/*</excludes>
-            </configuration>
-         </plugin>
-         <plugin>
-            <!-- Javadoc -->
-            <!-- Generates the javadocs -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-               <sourceFileExcludes>
-                  <!-- Excludes generated code -->
-                  <exclude>**/generated/**/*</exclude>
-               </sourceFileExcludes>
             </configuration>
          </plugin>
          <plugin>
             <!-- PMD -->
-            <!-- Checks that the code complies with a series of code quality rules -->
+            <!-- Checks that the code complies with a series of code quality 
+               rules -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-pmd-plugin</artifactId>
             <configuration>
@@ -461,11 +464,14 @@
                   <!-- The customized rules file -->
                   <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
                </rulesets>
-               <excludes>
-                  <!-- Excludes generated code -->
-                  <exclude>**/generated/**/*</exclude>
-               </excludes>
             </configuration>
+         </plugin>
+         <plugin>
+            <!-- Maven Invoker -->
+            <!-- IT tests report -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-invoker-plugin</artifactId>
+            <version>${plugin.invoker.version}</version>
          </plugin>
       </plugins>
    </reporting>

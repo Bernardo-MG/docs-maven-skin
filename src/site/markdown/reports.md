@@ -1,5 +1,11 @@
 # Reports
 
+## Tests
+
+|Report|Description|
+|---|---|
+|[Invoker IT][invoker]|Results and times from runnin the integration tests with the Maven Invoker.|
+
 ## Dependencies
 
 |Report|Description|
@@ -20,3 +26,4 @@
 [dependency-analysis]: ./dependency-analysis.html
 [plugins]: ./plugins.html
 [plugins-manage]: ./plugin-management.html
+[invoker]: ./invoker-report.html

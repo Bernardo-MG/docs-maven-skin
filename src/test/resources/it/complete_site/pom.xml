@@ -175,7 +175,6 @@
             <!-- It is set to also validate the changes log file -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-changes-plugin</artifactId>
-            <version>${plugin.changes.version}</version>
             <executions>
                <!-- Changes plugin is bound to the pre-site phase -->
                <execution>
@@ -198,18 +197,6 @@
             </executions>
          </plugin>
          <plugin>
-            <!-- Failsafe -->
-            <!-- Runs integration tests -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <configuration>
-               <suiteXmlFiles>
-                  <!-- Path to the integration tests suite file -->
-                  <suiteXmlFile>${project.build.testOutputDirectory}/tests_maven_integration_suite.xml</suiteXmlFile>
-               </suiteXmlFiles>
-            </configuration>
-         </plugin>
-         <plugin>
             <!-- Site -->
             <!-- Generates the Maven Site -->
             <groupId>org.apache.maven.plugins</groupId>
@@ -223,18 +210,6 @@
                </dependency>
             </dependencies>
          </plugin>
-         <plugin>
-            <!-- Surefire -->
-            <!-- Runs unit tests -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-               <suiteXmlFiles>
-                  <!-- Path to the unit tests suite file -->
-                  <suiteXmlFile>${project.build.testOutputDirectory}/tests_maven_unit_suite.xml</suiteXmlFile>
-               </suiteXmlFiles>
-            </configuration>
-         </plugin>
       </plugins>
    </build>
 
@@ -245,16 +220,6 @@
    <reporting>
       <plugins>
          <plugin>
-            <!-- FindBugs -->
-            <!-- Checks for patterns which are prone to errors -->
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-            <configuration>
-               <!-- Exclusion patterns -->
-               <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>
-            </configuration>
-         </plugin>
-         <plugin>
             <!-- Checkstyle -->
             <!-- Checks that the source files comply with style standards -->
             <!-- It is using a customized rules file -->
@@ -263,18 +228,6 @@
             <configuration>
                <!-- The customized rules file -->
                <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>
-               <!-- Excludes generated code -->
-               <excludes>**/generated/**/*</excludes>
-            </configuration>
-         </plugin>
-         <plugin>
-            <!-- Javadoc -->
-            <!-- Generates the javadocs -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-               <!-- Excludes generated code -->
-               <excludePackageNames>*.generated.*</excludePackageNames>
             </configuration>
          </plugin>
          <plugin>
@@ -287,10 +240,6 @@
                   <!-- The customized rules file -->
                   <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
                </rulesets>
-               <excludes>
-                  <!-- Excludes generated code -->
-                  <exclude>**/generated/**/*</exclude>
-               </excludes>
             </configuration>
          </plugin>
       </plugins>

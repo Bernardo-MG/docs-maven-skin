@@ -24,23 +24,16 @@
 #*--------------------------------------------------*#
 #*--------------------------------------------------*###
 #**
- * Creates the version information in the header.
- *
- *#
-#*--------------------------------------------------*#
-#macro( navBarVersion )
-            <small class="navbar-text">${project.version} (#publishDate())</small>
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
  * Renders the copyright year and organization.
  *
- * This will show the copyright logo, followed by the year and the organization data.
+ * Makes use of the following variables:
+ *        currentDate: global variable with the current date
+ *        project.inceptionYear: inception year, from the POM
+ *        project.organization: organization info, from the POM
+ *        project.licenses: project licenses, from the POM
+ *
+ * This will show the copyright logo, followed by the year and the organization data
+ * and licenses.
  * 
  * If the inception year is the current year, this will be the shown year. Otherwise
  * the inception year followed by the current year will be used, separating
@@ -48,7 +41,10 @@
  *
  * If there is no inception year then the current year will be shown.
  *
- * For the organization, its name and URL will be used to create a link.
+ * If the organization has an URL defined it will be used to generate a link, otherwise
+ * only the name will be shown. If there is no organization info nothing will be shown.
+ *
+ * All the project licenses will be shown, each of them as a link to the license page.
  *
  *#
 #*--------------------------------------------------*#
@@ -75,8 +71,10 @@ ${project.organization.name}
 #*        *##if( ${orgNameShown} )
 -
 #*        *##end
-<a href="$project.licenses[0].url">$project.licenses[0].name</a>
-#**#  #end
+#*        *##foreach( $license in $project.licenses )
+<a href="$license.url">$license.name</a> 
+#*        *##end
+#*    *##end
 #**##end
 #end
 #*
@@ -87,6 +85,11 @@ ${project.organization.name}
 #*--------------------------------------------------*###
 #**
  * Renders the publish date.
+ *
+ * Makes use of the following variables:
+ *        currentDate: global variable with the current date
+ *        dateFormat: global variable with the date formatter
+ * 
  *#
 #*--------------------------------------------------*#
 #macro( publishDate )
