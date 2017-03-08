@@ -73,6 +73,8 @@ Which would require the following menu to exist:
 </body>
 ```
 
+To allow this kind of configuration the menus won't be picked automatically for any menu. They have to be set explicitly.
+
 ### Facebook's Open Graph and Twitter Cards metadata
 
 The data contained in some of the elements will be used to generate the metadata on each page. For more information about this check the [metadata section][metadata].
@@ -92,52 +94,6 @@ Two additional menus will be generated from the project and repositories informa
 #### Code column
 
 The code column will add a link for the SCM, CI and issues services being used. The data for these is taken automatically from the POM.
-
-#### Releases column
-
-For each entry in the *releaseRepositories* node a repository link will be added to the column.
-
-Each of them should be a entry like the following:
-
-```xml
-<custom>
-    <skinConfig>
-        ...
-        <releaseRepository>
-            <name>Maven Central</name>
-            <url>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</url>
-        </releaseRepository>
-        ...
-    </skinConfig>
-</custom>
-```
-
-Which will create a link in the repositories column with the *name* as the text and pointing to the *url*.
-
-As Maven applies variables substitution on the site.xml file this information may be defined in the properties section of the POM, and be used like this:
-
-```xml
-<custom>
-    <skinConfig>
-        ...
-        <releaseRepository>
-            <name>Maven Central</name>
-            <url>${mavenURL}</url>
-        </releaseRepository>
-        ...
-    </skinConfig>
-</custom>
-```
-
-In this case the URL will be read from the *mavenURL* property:
-
-```xml
-<properties>
-    ...
-    <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
-    ...
-</properties>
-```
 
 
 [metadata]: ./metadata.html

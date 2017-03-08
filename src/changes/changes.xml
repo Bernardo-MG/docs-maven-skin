@@ -5,6 +5,11 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.6.0" date="2017-03-08" description="Eased configuration">
+         <action dev="bmg" type="remove">
+            Removed the releases auto-generated menu.
+         </action>
+      </release>
       <release version="0.5.4" date="2017-03-07" description="Fixed menu">
          <action dev="bmg" type="update">
             Tests now validate HTML 5.

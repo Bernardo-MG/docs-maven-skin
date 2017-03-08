@@ -73,35 +73,6 @@
 #*    *##filterByName( $decoration.body.menus, $config.bottomNav.children, $elements )
 #**##end
 #**##loadResourcesMenuList($elements)
-#**##loadReleasesMenuList($elements)
-#end
-#*
-
-
-
-*#
-#*--------------------------------------------------*###
-#**
- * Loads the menu items for the releases repositories into the received collection.
- *
- * Receives:
- *        elements: collection where the menu items will be stored
- *
- * Makes use of the following variables:
- *        config.releaseRepositories: list of repositories with the releases, from the site configuration file
- * 
- * A Doxia menu will be generated for each releases repository, and added to the collection.
- * 
- *#
-#*--------------------------------------------------*#
-#macro( loadReleasesMenuList $elements )
-#**##if( $config.releaseRepositories && $config.releaseRepositories.childCount > 0 )
-#*    *##set( $releasesMenu = $menuTool.menu("Releases") )
-#*    *##foreach( $releasesRepo in $config.releaseRepositories.children )
-#*        *##set( $releasesMenu = $menuTool.addLinkItem($releasesMenu, $releasesRepo.getChild('name').value, $releasesRepo.getChild('url').value) )
-#*    *##end
-#*    *##set( $bar = $elements.add($releasesMenu) )
-#**##end
 #end
 #*
 

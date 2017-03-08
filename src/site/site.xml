@@ -13,22 +13,13 @@
          <keywords>Maven Site, fix, HTML5</keywords>
          <descriptionUrl>Check the documentation for ${projectName}</descriptionUrl>
          <twitterSite>@Wandrell_BMG</twitterSite>
-         <releaseRepositories>
-            <releaseRepository>
-               <name>Bintray</name>
-               <url>${bintrayURL}</url>
-            </releaseRepository>
-            <releaseRepository>
-               <name>Maven Central</name>
-               <url>${mavenURL}</url>
-            </releaseRepository>
-         </releaseRepositories>
          <topNav>
             <menu>Documentation</menu>
             <menu>Info and reports</menu>
          </topNav>
          <bottomNav>
             <menu>General Info</menu>
+            <menu>Releases</menu>
          </bottomNav>
       </skinConfig>
    </custom>
@@ -50,6 +41,10 @@
       <menu name="Info and reports" inherit="bottom">
          <item name="Info" href="./info.html" />
          <item name="Reports" href="./reports.html" />
+      </menu>
+      <menu name="Releases" inherit="bottom">
+         <item name="Bintray" href="${bintrayURL}" />
+         <item name="Maven Central" href="${mavenURL}" />
       </menu>
    </body>
 

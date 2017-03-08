@@ -33,16 +33,6 @@ The site requires a correctly configured site.xml file to work. For more details
          <keywords>Maven Site, fix, HTML5</keywords>
          <descriptionUrl>Check the documentation for the Docs Maven Skin</descriptionUrl>
          <twitterSite>@wandrell</twitterSite>
-         <releaseRepositories>
-            <releaseRepository>
-               <name>Bintray</name>
-               <url>${bintrayURL}</url>
-            </releaseRepository>
-            <releaseRepository>
-               <name>Maven Central</name>
-               <url>${mavenURL}</url>
-            </releaseRepository>
-         </releaseRepositories>
          <topNav>
             <menu>Documentation</menu>
             <menu>Info and reports</menu>

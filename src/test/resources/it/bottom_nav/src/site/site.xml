@@ -22,6 +22,7 @@
          </releaseRepositories>
          <bottomNav>
             <menu>General Info</menu>
+            <menu>Releases</menu>
          </bottomNav>
       </skinConfig>
    </custom>
@@ -30,6 +31,10 @@
       <menu name="General Info" inherit="top">
          <item name="Acquire" href="./acquire.html" />
          <item name="Usage" href="./usage.html" />
+      </menu>
+      <menu name="Releases" inherit="bottom">
+         <item name="Bintray" href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" />
+         <item name="Maven Central" href="http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin" />
       </menu>
    </body>
 
