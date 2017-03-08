@@ -22,6 +22,7 @@
          </releaseRepositories>
          <bottomNav>
             <menu>General Info</menu>
+            <menu>Code</menu>
             <menu>Releases</menu>
          </bottomNav>
       </skinConfig>
@@ -31,6 +32,17 @@
       <menu name="General Info" inherit="top">
          <item name="Acquire" href="./acquire.html" />
          <item name="Usage" href="./usage.html" />
+      </menu>
+      <menu name="Code" inherit="bottom">
+         <item name="SCM" href="${project.scm.url}">
+            <description>GitHub</description>
+         </item>
+         <item name="CI" href="${project.ciManagement.url}">
+            <description>${project.ciManagement.system}</description>
+         </item>
+         <item name="Issues" href="${project.issueManagement.url}">
+            <description>${project.issueManagement.system}</description>
+         </item>
       </menu>
       <menu name="Releases" inherit="bottom">
          <item name="Bintray" href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" />

@@ -73,7 +73,9 @@ Which would require the following menu to exist:
 </body>
 ```
 
-To allow this kind of configuration the menus won't be picked automatically for any menu. They have to be set explicitly.
+If the top navigation menu is not defined like that, all the menus will be used to generate it.
+
+If the bottom navigation menu is not defined, it won't be generated at all.
 
 ### Facebook's Open Graph and Twitter Cards metadata
 
@@ -86,14 +88,6 @@ The top navigation is the dropdown menus in the navigation bar.
 ### Bottom navigation
 
 The bottom navigation are the columns containing links in the footer.
-
-### Bottom navigation auto-generated columns
-
-Two additional menus will be generated from the project and repositories information, the code and releases columns. These columns will be added after the ones defined by the user.
-
-#### Code column
-
-The code column will add a link for the SCM, CI and issues services being used. The data for these is taken automatically from the POM.
 
 
 [metadata]: ./metadata.html
