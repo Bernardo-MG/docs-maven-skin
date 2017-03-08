@@ -10,16 +10,6 @@
 
    <custom>
       <skinConfig>
-         <releaseRepositories>
-            <releaseRepository>
-               <name>Bintray</name>
-               <url>${bintrayURL}</url>
-            </releaseRepository>
-            <releaseRepository>
-               <name>Maven Central</name>
-               <url>${mavenURL}</url>
-            </releaseRepository>
-         </releaseRepositories>
          <bottomNav>
             <menu>General Info</menu>
             <menu>Code</menu>

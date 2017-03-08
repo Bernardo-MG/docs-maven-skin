@@ -13,16 +13,6 @@
          <keywords>Maven, Java, library</keywords>
          <descriptionUrl>Check the documentation for Basic Maven Project</descriptionUrl>
          <twitterSite>@bmg</twitterSite>
-         <releaseRepositories>
-            <releaseRepository>
-               <name>Bintray</name>
-               <url>${bintrayURL}</url>
-            </releaseRepository>
-            <releaseRepository>
-               <name>Maven Central</name>
-               <url>${mavenURL}</url>
-            </releaseRepository>
-         </releaseRepositories>
          <topNav>
             <menu>Documentation</menu>
             <menu>Info and reports</menu>

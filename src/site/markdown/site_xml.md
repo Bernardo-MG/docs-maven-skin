@@ -14,12 +14,6 @@ The general structure of this element will look like the following example:
         <keywords></keywords>
         <descriptionUrl></descriptionUrl>
         <twitterSite></twitterSite>
-        <releaseRepositories>
-            <releaseRepository>
-                <name></name>
-                <url></url>
-            </releaseRepository>
-        </releaseRepositories>
         <topNav>
             <menu></menu>
         </topNav>
@@ -37,7 +31,6 @@ The general structure of this element will look like the following example:
 |keywords|Value for the keywords HTML field|
 |descriptionUrl|Description of the page, used for Open Graph and Twitter Card|
 |twitterSite|The identifier (@tag) for Twitter Card|
-|releaseRepositories|The various releases repositories which contain the project. For example, Maven Central|
 |topNav|Menus for the top navigation menu|
 |bottomNav|Additional menus for the bottom navigation menu|
 
