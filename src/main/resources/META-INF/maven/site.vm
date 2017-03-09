@@ -118,7 +118,9 @@
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
                 <small class="navbar-text">${project.version} (#publishDate())</small>
                 <ul class="nav navbar-nav navbar-right">
-#iconsMenu()
+#set( $menuElements = [] )
+#loadIconNavMenuList( $menuElements )
+#iconsMenu( $menuElements )
 #set( $menuElements = [] )
 #loadTopNavMenuList( $menuElements )
 #dropdownMenu( $menuElements )

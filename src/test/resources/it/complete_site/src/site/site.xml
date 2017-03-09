@@ -22,6 +22,9 @@
             <menu>Code</menu>
             <menu>Releases</menu>
          </bottomNav>
+         <iconNav>
+            <menu>Icons</menu>
+         </iconNav>
       </skinConfig>
    </custom>
 
@@ -55,6 +58,9 @@
       <menu name="Releases" inherit="bottom">
          <item name="Bintray" href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" />
          <item name="Maven Central" href="http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin" />
+      </menu>
+      <menu name="Icons" inherit="bottom">
+         <item name="Github" img="github" href="${project.scm.url}" />
       </menu>
    </body>
 

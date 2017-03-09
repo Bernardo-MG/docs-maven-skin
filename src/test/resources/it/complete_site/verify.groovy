@@ -63,6 +63,10 @@ assert titles.size() == 3
 def dropdowns = body.select( '.dropdown-toggle' )
 assert dropdowns.size() == 2
 
+// Verifies the icon menus exist
+def iconMenu = body.select( 'li > ul.icons-list' )
+assert iconMenu.size() == 1
+
 // Verifies the favicon is included
 assert html.contains( '<link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />' )
 

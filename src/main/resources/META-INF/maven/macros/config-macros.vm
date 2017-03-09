@@ -78,3 +78,30 @@
 
 
 *#
+#*--------------------------------------------------*###
+#**
+ * Loads the icon navigation menu list.
+ *
+ * Receives:
+ *        elements: collection where the menu items will be stored
+ *
+ * Makes use of the following variables:
+ *        config.iconNav: list of menu items for the icon navigation, from the site configuration file
+ *        decoration.body.menus: list of menu items, from the site configuration file
+ *
+ * The menu list will be loaded from the decoration menus. Only those defined in the iconNav
+ * option, in the skin configuration, will be used. If this option is not set then all
+ * the menus will be loaded.
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( loadIconNavMenuList $elements )
+#**##if( $config.iconNav )
+#*    *##filterByName( $decoration.body.menus, $config.iconNav.children, $elements )
+#**##end
+#end
+#*
+
+
+
+*#

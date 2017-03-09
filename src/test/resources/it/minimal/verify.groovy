@@ -82,3 +82,7 @@ assert meta.get(5).attr( 'content' ).contains( 'Minimal page' )
 // Verifies that the main menus are not generated
 def dropdown = body.select( 'li.dropdown' )
 assert dropdown.size() == 0
+
+// Verifies that the icon menus are not generated
+def iconMenu = body.select( 'li > ul.icons-list' )
+assert dropdown.size() == 0
