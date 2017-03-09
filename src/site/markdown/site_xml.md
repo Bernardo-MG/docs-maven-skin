@@ -20,6 +20,9 @@ The general structure of this element will look like the following example:
         <bottomNav>
             <menu></menu>
         </bottomNav>
+        <iconNav>
+            <menu></menu>
+        </iconNav>
     </skinConfig>
 </custom>
 ```
@@ -32,9 +35,10 @@ The general structure of this element will look like the following example:
 |descriptionUrl|Description of the page, used for Open Graph and Twitter Card|
 |twitterSite|The identifier (@tag) for Twitter Card|
 |topNav|Menus for the top navigation menu|
-|bottomNav|Additional menus for the bottom navigation menu|
+|bottomNav|Menus for the bottom navigation menu|
+|iconNav|Menus for the icons navigation menu|
 
-#### Menus
+### Menus
 
 When menus are defined in one of the options these are taken from the site.xml file. The name set in the menu node should be the name of one of the defined menus.
 
@@ -70,6 +74,24 @@ If the top navigation menu is not defined like that, all the menus will be used 
 
 If the bottom navigation menu is not defined, it won't be generated at all.
 
+#### Aditional configuration
+
+In the bottom navigation menus, if any item contains a description it will be used to generate an underscript.
+
+A description is set like this:
+
+```xml
+<body>
+    ...
+      <menu name="Code" inherit="bottom">
+         <item name="SCM" href="${project.scm.url}">
+            <description>GitHub</description>
+         </item>
+      </menu>
+    ...
+</body>
+```
+
 ### Facebook's Open Graph and Twitter Cards metadata
 
 The data contained in some of the elements will be used to generate the metadata on each page. For more information about this check the [metadata section][metadata].
@@ -81,6 +103,10 @@ The top navigation is the dropdown menus in the navigation bar.
 ### Bottom navigation
 
 The bottom navigation are the columns containing links in the footer.
+
+### Icons navigation
+
+The icons navigation are the icons shown in the navigation bar.
 
 
 [metadata]: ./metadata.html
