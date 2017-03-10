@@ -117,12 +117,16 @@
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
                 <small class="navbar-text">${project.version} (#publishDate())</small>
+#set( $iconMenuElements = [] )
+#loadIconNavMenuList( $iconMenuElements )
+#set( $dropDownMenuElements = [] )
+#loadTopNavMenuList( $dropDownMenuElements )
+#**##if( $iconMenuElements.size() > 0 || $dropDownMenuElements.size() > 0 )
                 <ul class="nav navbar-nav navbar-right">
-#iconsMenu()
-#set( $menuElements = [] )
-#loadTopNavMenuList( $menuElements )
-#dropdownMenu( $menuElements )
+#iconsMenu( $iconMenuElements )
+#dropdownMenu( $dropDownMenuElements )
                 </ul>
+#end
             </div>
         </div>
     </nav>

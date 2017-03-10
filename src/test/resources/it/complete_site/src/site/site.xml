@@ -13,23 +13,18 @@
          <keywords>Maven, Java, library</keywords>
          <descriptionUrl>Check the documentation for Basic Maven Project</descriptionUrl>
          <twitterSite>@bmg</twitterSite>
-         <releaseRepositories>
-            <releaseRepository>
-               <name>Bintray</name>
-               <url>${bintrayURL}</url>
-            </releaseRepository>
-            <releaseRepository>
-               <name>Maven Central</name>
-               <url>${mavenURL}</url>
-            </releaseRepository>
-         </releaseRepositories>
          <topNav>
             <menu>Documentation</menu>
             <menu>Info and reports</menu>
          </topNav>
          <bottomNav>
             <menu>General Info</menu>
+            <menu>Code</menu>
+            <menu>Releases</menu>
          </bottomNav>
+         <iconNav>
+            <menu>Icons</menu>
+         </iconNav>
       </skinConfig>
    </custom>
 
@@ -48,6 +43,24 @@
          <item name="Info" href="./info.html" />
          <item name="Reports" href="./reports.html" />
          <item name="JavaDocs" href="./apidocs/" />
+      </menu>
+      <menu name="Code" inherit="bottom">
+         <item name="SCM" href="${project.scm.url}">
+            <description>GitHub</description>
+         </item>
+         <item name="CI" href="${project.ciManagement.url}">
+            <description>${project.ciManagement.system}</description>
+         </item>
+         <item name="Issues" href="${project.issueManagement.url}">
+            <description>${project.issueManagement.system}</description>
+         </item>
+      </menu>
+      <menu name="Releases" inherit="bottom">
+         <item name="Bintray" href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" />
+         <item name="Maven Central" href="http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin" />
+      </menu>
+      <menu name="Icons" inherit="bottom">
+         <item name="Github" img="github" href="${project.scm.url}" />
       </menu>
    </body>
 

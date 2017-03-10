@@ -56,16 +56,16 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( iconsMenu )
+#macro( iconsMenu $elements )
+#**##foreach( $element in $elements )
     <li>
         <ul class="list-unstyled icons-list">
-#**##if($project.scm)
-#*    *##if($project.scm.url.matches('.*github\.com.*'))
-        <li><a href="$project.scm.url" title="GitHub" aria-label="GitHub"><span class="navbar-icon fa fa-github" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> Github</span></a></li>
+#*    *##foreach( $item in $element.items )
+            <li><a href="$item.href" title="$item.name" aria-label="$item.name"><span class="navbar-icon fa fa-$item.img" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> $item.name</span></a></li>
 #*    *##end
-#**##end
         </ul>
     </li>
+#**##end
 #end
 #*
 
@@ -130,7 +130,7 @@
 #*    *##if( $item.description )
               <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
 #*    *##else
-               <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
+              <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
 #*    *##end
 #**##end
     </dl>

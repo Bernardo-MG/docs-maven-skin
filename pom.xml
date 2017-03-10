@@ -20,7 +20,7 @@
 
    <groupId>com.wandrell.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>0.5.4</version>
+   <version>0.6.0</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -290,38 +290,6 @@
             </configuration>
             <executions>
                <execution>
-                  <!-- Copies the complete site test results -->
-                  <id>copy-complete_site</id>
-                  <phase>site</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <resources>
-                        <resource>
-                           <directory>${project.build.directory}/it/complete_site/target/site/</directory>
-                        </resource>
-                     </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/complete_site/</outputDirectory>
-                  </configuration>
-               </execution>
-               <execution>
-                  <!-- Copies the minimal site test results -->
-                  <id>copy-minimal</id>
-                  <phase>site</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <resources>
-                        <resource>
-                           <directory>${project.build.directory}/it/minimal/target/site/</directory>
-                        </resource>
-                     </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/minimal/</outputDirectory>
-                  </configuration>
-               </execution>
-               <execution>
                   <!-- Copies the bottom navigation site test results -->
                   <id>copy-bottom_nav</id>
                   <phase>site</phase>
@@ -338,9 +306,8 @@
                   </configuration>
                </execution>
                <execution>
-                  <!-- Copies the bottom navigation without generated sections 
-                     site test results -->
-                  <id>copy-bottom_nav_no_auto</id>
+                  <!-- Copies the complete site test results -->
+                  <id>copy-complete_site</id>
                   <phase>site</phase>
                   <goals>
                      <goal>copy-resources</goal>
@@ -348,10 +315,42 @@
                   <configuration>
                      <resources>
                         <resource>
-                           <directory>${project.build.directory}/it/bottom_nav_no_auto/target/site/</directory>
+                           <directory>${project.build.directory}/it/complete_site/target/site/</directory>
                         </resource>
                      </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/bottom_nav_no_auto/</outputDirectory>
+                     <outputDirectory>${project.build.directory}/site/examples/complete_site/</outputDirectory>
+                  </configuration>
+               </execution>
+               <execution>
+                  <!-- Copies the menu test results -->
+                  <id>copy-menu</id>
+                  <phase>site</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <resources>
+                        <resource>
+                           <directory>${project.build.directory}/it/menu/target/site/</directory>
+                        </resource>
+                     </resources>
+                     <outputDirectory>${project.build.directory}/site/examples/menu/</outputDirectory>
+                  </configuration>
+               </execution>
+               <execution>
+                  <!-- Copies the minimal site test results -->
+                  <id>copy-minimal</id>
+                  <phase>site</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <resources>
+                        <resource>
+                           <directory>${project.build.directory}/it/minimal/target/site/</directory>
+                        </resource>
+                     </resources>
+                     <outputDirectory>${project.build.directory}/site/examples/minimal/</outputDirectory>
                   </configuration>
                </execution>
             </executions>
