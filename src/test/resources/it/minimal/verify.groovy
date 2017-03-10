@@ -86,3 +86,7 @@ assert dropdown.size() == 0
 // Verifies that the icon menus are not generated
 def iconMenu = body.select( 'li > ul.icons-list' )
 assert dropdown.size() == 0
+
+// Verifies that the right navigation bar was not generated
+def rightNavBar = body.select( '.navbar-right' )
+assert rightNavBar.size() == 0

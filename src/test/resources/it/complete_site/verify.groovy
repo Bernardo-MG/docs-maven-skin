@@ -67,6 +67,10 @@ assert dropdowns.size() == 2
 def iconMenu = body.select( 'li > ul.icons-list' )
 assert iconMenu.size() == 1
 
+// Verifies that the right navigation bar exists
+def rightNavBar = body.select( '.navbar-right' )
+assert rightNavBar.size() == 1
+
 // Verifies the favicon is included
 assert html.contains( '<link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />' )
 
