@@ -10,20 +10,20 @@ The general structure of this element will look like the following example:
 
 ```xml
 <custom>
-    <skinConfig>
-        <keywords></keywords>
-        <descriptionUrl></descriptionUrl>
-        <twitterSite></twitterSite>
-        <topNav>
-            <menu></menu>
-        </topNav>
-        <bottomNav>
-            <menu></menu>
-        </bottomNav>
-        <iconNav>
-            <menu></menu>
-        </iconNav>
-    </skinConfig>
+   <skinConfig>
+      <keywords></keywords>
+      <descriptionUrl></descriptionUrl>
+      <twitterSite></twitterSite>
+      <topNav>
+         <menu></menu>
+      </topNav>
+      <bottomNav>
+         <menu></menu>
+      </bottomNav>
+      <iconNav>
+         <menu></menu>
+      </iconNav>
+   </skinConfig>
 </custom>
 ```
 
@@ -46,13 +46,13 @@ So for example the following menu may be set:
 
 ```xml
 <custom>
-    <skinConfig>
-        ...
-        <topNav>
-            <menu>General Info</menu>
-        </topNav>
-        ...
-    </skinConfig>
+   <skinConfig>
+      ...
+      <topNav>
+         <menu>General Info</menu>
+      </topNav>
+      ...
+   </skinConfig>
 </custom>
 ```
 
@@ -60,13 +60,13 @@ Which would require the following menu to exist:
 
 ```xml
 <body>
-    ...
-    <menu name="General Info" inherit="top">
-        <item name="Acquire" href="./acquire.html" />
-        <item name="Usage" href="./usage.html" />
-        <item name="Changes Log" href="./changes-report.html" />
-    </menu>
-    ...
+   ...
+   <menu name="General Info" inherit="top">
+      <item name="Acquire" href="./acquire.html" />
+      <item name="Usage" href="./usage.html" />
+      <item name="Changes Log" href="./changes-report.html" />
+   </menu>
+   ...
 </body>
 ```
 
@@ -82,13 +82,13 @@ A description is set like this:
 
 ```xml
 <body>
-    ...
-      <menu name="Code" inherit="bottom">
-         <item name="SCM" href="${project.scm.url}">
-            <description>GitHub</description>
-         </item>
-      </menu>
-    ...
+   ...
+   <menu name="Code" inherit="bottom">
+      <item name="SCM" href="${project.scm.url}">
+         <description>GitHub</description>
+      </item>
+   </menu>
+   ...
 </body>
 ```
 
