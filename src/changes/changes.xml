@@ -5,9 +5,12 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
-      <release version="0.6.0" date="2017-03-08" description="Eased configuration">
+      <release version="0.6.0" date="2017-03-08" description="Removed auto generated menus">
+         <action dev="bmg" type="update">
+            Now all the menus are configurable.
+         </action>
          <action dev="bmg" type="remove">
-            Removed the releases auto-generated menu.
+            Removed auto generated menus.
          </action>
       </release>
       <release version="0.5.4" date="2017-03-07" description="Fixed menu">
