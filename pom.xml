@@ -187,7 +187,7 @@
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.9.2</jsoup.version>
-      <wandrell.siteFixer.version>0.6.1</wandrell.siteFixer.version>
+      <wandrell.siteFixer.version>0.6.2</wandrell.siteFixer.version>
       <!-- Plugins versions -->
       <plugin.invoker.version>2.0.0</plugin.invoker.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
