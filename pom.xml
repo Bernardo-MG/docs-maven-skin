@@ -369,6 +369,22 @@
                      <outputDirectory>${project.build.directory}/site/examples/minimal/</outputDirectory>
                   </configuration>
                </execution>
+               <execution>
+                  <!-- Copies the undefined menus test results -->
+                  <id>copy-not_existing_menus</id>
+                  <phase>site</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <resources>
+                        <resource>
+                           <directory>${project.build.directory}/it/minimal/target/site/</directory>
+                        </resource>
+                     </resources>
+                     <outputDirectory>${project.build.directory}/site/examples/not_existing_menus/</outputDirectory>
+                  </configuration>
+               </execution>
             </executions>
          </plugin>
          <plugin>

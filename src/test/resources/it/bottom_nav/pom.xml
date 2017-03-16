@@ -9,7 +9,7 @@
    <!-- ********************************************** -->
 
    <groupId>com.wandrell.maven.skins</groupId>
-   <artifactId>bottom-nav-site</artifactId>
+   <artifactId>bottom-nav</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
