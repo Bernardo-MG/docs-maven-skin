@@ -10,22 +10,15 @@
 
    <custom>
       <skinConfig>
-         <topNav>
-            <menu>Documentation</menu>
-            <menu>Not existing menu</menu>
-            <menu>Info and reports</menu>
-         </topNav>
+         <iconNav>
+            <menu>Icons</menu>
+         </iconNav>
       </skinConfig>
    </custom>
 
    <body>
-      <menu name="Documentation" inherit="bottom">
-         <item name="Acquire" href="./acquire.html" />
-         <item name="Usage" href="./usage.html" />
-      </menu>
-      <menu name="Info and reports" inherit="bottom">
-         <item name="Info" href="./info.html" />
-         <item name="Reports" href="./reports.html" />
+      <menu name="Icons" inherit="bottom">
+         <item name="Github" img="github" href="${project.scm.url}" />
       </menu>
    </body>
 

@@ -339,7 +339,7 @@
                </execution>
                <execution>
                   <!-- Copies the icon list test results -->
-                  <id>copy-icon_list</id>
+                  <id>copy-icons_list</id>
                   <phase>site</phase>
                   <goals>
                      <goal>copy-resources</goal>
@@ -347,10 +347,10 @@
                   <configuration>
                      <resources>
                         <resource>
-                           <directory>${project.build.directory}/it/icon_list/target/site/</directory>
+                           <directory>${project.build.directory}/it/icons_list/target/site/</directory>
                         </resource>
                      </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/icon_list/</outputDirectory>
+                     <outputDirectory>${project.build.directory}/site/examples/icons_list/</outputDirectory>
                   </configuration>
                </execution>
                <execution>
