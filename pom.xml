@@ -315,7 +315,7 @@
                   <configuration>
                      <resources>
                         <resource>
-                           <directory>${project.build.directory}/it/bottom_nav/target/site/</directory>
+                           <directory>${project.build.directory}/it/bottom_nav_max/target/site/</directory>
                         </resource>
                      </resources>
                      <outputDirectory>${project.build.directory}/site/examples/bottom_nav_max/</outputDirectory>
@@ -335,6 +335,22 @@
                         </resource>
                      </resources>
                      <outputDirectory>${project.build.directory}/site/examples/complete_site/</outputDirectory>
+                  </configuration>
+               </execution>
+               <execution>
+                  <!-- Copies the icon list test results -->
+                  <id>copy-icon_list</id>
+                  <phase>site</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <resources>
+                        <resource>
+                           <directory>${project.build.directory}/it/icon_list/target/site/</directory>
+                        </resource>
+                     </resources>
+                     <outputDirectory>${project.build.directory}/site/examples/icon_list/</outputDirectory>
                   </configuration>
                </execution>
                <execution>
@@ -379,7 +395,7 @@
                   <configuration>
                      <resources>
                         <resource>
-                           <directory>${project.build.directory}/it/minimal/target/site/</directory>
+                           <directory>${project.build.directory}/it/not_existing_menus/target/site/</directory>
                         </resource>
                      </resources>
                      <outputDirectory>${project.build.directory}/site/examples/not_existing_menus/</outputDirectory>
