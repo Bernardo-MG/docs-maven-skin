@@ -38,11 +38,11 @@ MatcherAssert.assertThat(
 def body = Jsoup.parse(html).body()
 
 // Verifies the icon menus exist
-def iconMenu = body.select( 'li > ul.icons-list' )
-assert iconMenu.size() == 1
-
-// Verifies the icon in the list
 def icons = body.select( 'ul.icons-list' )
 assert icons.size() == 1
+
+// Verifies the icon in the list
+def iconMenu = body.select( 'ul.icons-list > li' )
+assert iconMenu.size() == 1
 
 assert icons.get(0).html().equals('<a href="https://github.com/Bernardo-MG/docs-maven-skin" title="Github" aria-label="Github"><span class="navbar-icon fa fa-github" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> Github</span></a>')
