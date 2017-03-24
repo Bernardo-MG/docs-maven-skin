@@ -45,4 +45,4 @@ assert icons.size() == 1
 def iconMenu = body.select( 'ul.icons-list > li' )
 assert iconMenu.size() == 1
 
-assert icons.get(0).html().equals('<a href="https://github.com/Bernardo-MG/docs-maven-skin" title="Github" aria-label="Github"><span class="navbar-icon fa fa-github" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> Github</span></a>')
+assert icons.get(0).html().equals('<li><a href="https://github.com/Bernardo-MG/docs-maven-skin" title="Github" aria-label="Github"><span class="navbar-icon fa fa-github" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> Github</span></a></li>')
