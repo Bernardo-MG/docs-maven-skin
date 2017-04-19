@@ -47,11 +47,11 @@ assert metaKeywords.attr( 'content' ).equals( 'Maven, Java, library' )
 assert metaAuthor.attr( 'content' ).equals( 'Bernardo Martínez Garrido' )
 
 // Verifies the Facebook Open Graph metadata is generated
-def metaOgType = head.select( 'meta[name="og:type"]' )
-def metaOgUrl = head.select( 'meta[name="og:url"]' )
-def metaOgSite = head.select( 'meta[name="og:site"]' )
-def metaOgTitle = head.select( 'meta[name="og:title"]' )
-def metaOgDesc = head.select( 'meta[name="og:description"]' )
+def metaOgType = head.select( 'meta[name="og\3Atype"]' )
+def metaOgUrl = head.select( 'meta[name="og\3Aurl"]' )
+def metaOgSite = head.select( 'meta[name="og\3Asite"]' )
+def metaOgTitle = head.select( 'meta[name="og\3Atitle"]' )
+def metaOgDesc = head.select( 'meta[name="og\3Adescription"]' )
 
 assert metaOgType.attr( 'content' ).equals( 'website' )
 assert metaOgUrl.attr( 'content' ).equals( 'http://canonicallink' )
@@ -60,10 +60,10 @@ assert metaOgTitle.attr( 'content' ).equals( 'metadata-site &#x2013; Metadata pa
 assert metaOgDesc.attr( 'content' ).equals( 'Check the documentation for the example' )
 
 // Verifies the Twitter metadata is generated
-def metaTwCard = head.select( 'meta[name="twitter:card"]' )
-def metaTwSite = head.select( 'meta[name="twitter:site"]' )
-def metaTwTitle = head.select( 'meta[name="twitter:title"]' )
-def metaTwDesc = head.select( 'meta[name="twitter:description"]' )
+def metaTwCard = head.select( 'meta[name="twitter\3Acard"]' )
+def metaTwSite = head.select( 'meta[name="twitter\3Asite"]' )
+def metaTwTitle = head.select( 'meta[name="twitter\3Atitle"]' )
+def metaTwDesc = head.select( 'meta[name="twitter\3Adescription"]' )
 
 assert metaTwCard.attr( 'content' ).equals( 'summary' )
 assert metaTwSite.attr( 'content' ).equals( '@bmg' )
