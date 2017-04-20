@@ -55,8 +55,8 @@ def metaOgDesc = head.select( 'meta[property="og:description"]' )
 
 assert metaOgType.attr( 'content' ).equals( 'website' )
 assert metaOgUrl.attr( 'content' ).equals( 'http://canonicallink' )
-assert metaOgSite.attr( 'content' ).equals( 'metadata-site ? Metadata page' )
-assert metaOgTitle.attr( 'content' ).equals( 'metadata-site ? Metadata page' )
+assert metaOgSite.attr( 'content' ).equals( 'metadata-site - Metadata page' )
+assert metaOgTitle.attr( 'content' ).equals( 'metadata-site - Metadata page' )
 assert metaOgDesc.attr( 'content' ).equals( 'Check the documentation for the example' )
 
 // Verifies the Twitter metadata is generated
@@ -67,5 +67,5 @@ def metaTwDesc = head.select( 'meta[name="twitter:description"]' )
 
 assert metaTwCard.attr( 'content' ).equals( 'summary' )
 assert metaTwSite.attr( 'content' ).equals( '@bmg' )
-assert metaTwTitle.attr( 'content' ).equals( 'metadata-site &#x2013; Metadata page' )
+assert metaTwTitle.attr( 'content' ).equals( 'metadata-site - Metadata page' )
 assert metaTwDesc.attr( 'content' ).equals( 'Check the documentation for the example' )
