@@ -237,6 +237,11 @@
             </includes>
             <filtering>true</filtering>
          </resource>
+         <resource>
+            <!-- Filter test files -->
+            <directory>src/test/resources/</directory>
+            <filtering>true</filtering>
+         </resource>
       </resources>
       <plugins>
          <plugin>
