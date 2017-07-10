@@ -23,7 +23,7 @@
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
-   <name>Simple site example</name>
+   <name>Complete site example</name>
    <description>An example for a complete site</description>
    <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
    <inceptionYear>2015</inceptionYear>
