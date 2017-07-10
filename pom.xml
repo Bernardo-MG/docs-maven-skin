@@ -237,11 +237,6 @@
             </includes>
             <filtering>true</filtering>
          </resource>
-         <resource>
-            <!-- Filter test files -->
-            <directory>src/test/resources/</directory>
-            <filtering>true</filtering>
-         </resource>
       </resources>
       <plugins>
          <plugin>
@@ -334,8 +329,8 @@
             <version>${plugin.invoker.version}</version>
             <configuration>
                <debug>true</debug>
-               <streamLogs>false</streamLogs>
-               <projectsDirectory>${project.build.testOutputDirectory}/it</projectsDirectory>
+               <projectsDirectory>src/test/resources/it</projectsDirectory>
+               <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                <postBuildHookScript>verify</postBuildHookScript>
                <goals>
