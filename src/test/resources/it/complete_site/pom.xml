@@ -23,7 +23,7 @@
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
-   <name>Simple site example</name>
+   <name>Complete site example</name>
    <description>An example for a complete site</description>
    <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
    <inceptionYear>2015</inceptionYear>
@@ -232,7 +232,8 @@
          </plugin>
          <plugin>
             <!-- PMD -->
-            <!-- Checks that the code complies with a series of code quality rules -->
+            <!-- Checks that the code complies with a series of code quality 
+               rules -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-pmd-plugin</artifactId>
             <configuration>
@@ -240,6 +241,15 @@
                   <!-- The customized rules file -->
                   <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
                </rulesets>
+            </configuration>
+         </plugin>
+         <plugin>
+            <!-- OWASP Dependency Check -->
+            <!-- Checks for vulnerabilities in the dependencies. -->
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <configuration>
+               <skip>true</skip>
             </configuration>
          </plugin>
       </plugins>

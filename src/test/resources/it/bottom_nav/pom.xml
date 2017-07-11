@@ -9,7 +9,7 @@
    <!-- ********************************************** -->
 
    <groupId>com.wandrell.maven.skins</groupId>
-   <artifactId>bottom-nav-site</artifactId>
+   <artifactId>bottom-nav</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
@@ -35,31 +35,11 @@
       <notifiers />
    </ciManagement>
 
-   <distributionManagement>
-      <repository>
-         <uniqueVersion>false</uniqueVersion>
-         <id>releases</id>
-         <name>Releases Repository</name>
-         <url>https://api.bintray.com/maven/bernardo-mg/maven/docs-maven-skin</url>
-      </repository>
-      <snapshotRepository>
-         <uniqueVersion>false</uniqueVersion>
-         <id>snapshots</id>
-         <name>Snapshots Repository</name>
-         <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      </snapshotRepository>
-   </distributionManagement>
-
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->
    <!-- ********************************************** -->
 
    <properties>
-      <!-- Dependencies versions -->
-      <guava.version>20.0</guava.version>
-      <log4j.version>2.7</log4j.version>
-      <mockito.version>1.10.19</mockito.version>
-      <testng.version>6.10</testng.version>
       <!-- Plugins versions -->
       <plugin.site.version>3.6</plugin.site.version>
       <!-- Maven Site -->
@@ -67,50 +47,6 @@
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
    </properties>
-
-   <!-- ********************************************** -->
-   <!-- *************** DEPENDENCIES ***************** -->
-   <!-- ********************************************** -->
-
-   <dependencies>
-      <dependency>
-         <!-- Guava -->
-         <groupId>com.google.guava</groupId>
-         <artifactId>guava</artifactId>
-         <version>${guava.version}</version>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- Log4j core -->
-         <groupId>org.apache.logging.log4j</groupId>
-         <artifactId>log4j-core</artifactId>
-         <version>${log4j.version}</version>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <!-- Log4j SLF4J Bridge -->
-         <groupId>org.apache.logging.log4j</groupId>
-         <artifactId>log4j-slf4j-impl</artifactId>
-         <version>${log4j.version}</version>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <!-- Mockito -->
-         <groupId>org.mockito</groupId>
-         <artifactId>mockito-all</artifactId>
-         <version>${mockito.version}</version>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <!-- TestNG -->
-         <groupId>org.testng</groupId>
-         <artifactId>testng</artifactId>
-         <version>${testng.version}</version>
-         <scope>test</scope>
-      </dependency>
-   </dependencies>
 
    <!-- ********************************************** -->
    <!-- ******************* BUILD ******************** -->

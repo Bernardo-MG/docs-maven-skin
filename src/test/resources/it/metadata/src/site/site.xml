@@ -10,22 +10,11 @@
 
    <custom>
       <skinConfig>
-         <topNav>
-            <menu>Documentation</menu>
-            <menu>Not existing menu</menu>
-            <menu>Info and reports</menu>
-         </topNav>
+         <keywords>Maven, Java, library</keywords>
+         <descriptionUrl>Check the documentation for the example</descriptionUrl>
+         <twitterSite>@bmg</twitterSite>
+         <canonicalLink>http://canonicallink</canonicalLink>
       </skinConfig>
    </custom>
-
-   <body>
-      <menu name="Documentation" inherit="bottom">
-         <item name="Acquire" href="./acquire.html" />
-         <item name="Usage" href="./usage.html" />
-      </menu>
-      <menu name="Info and reports" inherit="bottom">
-         <item name="Info" href="./info.html" />
-      </menu>
-   </body>
 
 </project>

@@ -9,9 +9,17 @@
    <!-- ********************************************** -->
 
    <groupId>com.wandrell.maven.skins</groupId>
-   <artifactId>menu</artifactId>
+   <artifactId>multimodule</artifactId>
    <version>1.0.0</version>
-   <packaging>jar</packaging>
+   <packaging>pom</packaging>
+
+   <!-- ********************************************** -->
+   <!-- ****************** MODULES ******************* -->
+   <!-- ********************************************** -->
+
+   <modules>
+      <module>module</module>
+   </modules>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->
@@ -30,21 +38,31 @@
 
    <build>
       <defaultGoal>clean package install</defaultGoal>
+      <pluginManagement>
+         <plugins>
+            <plugin>
+               <!-- Site -->
+               <!-- Generates the Maven Site -->
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-site-plugin</artifactId>
+               <version>${plugin.site.version}</version>
+               <dependencies>
+                  <dependency>
+                     <!-- Docs Maven Skin -->
+                     <groupId>com.wandrell.maven.skins</groupId>
+                     <artifactId>docs-maven-skin</artifactId>
+                     <version>${site.skin.version}</version>
+                  </dependency>
+               </dependencies>
+            </plugin>
+         </plugins>
+      </pluginManagement>
       <plugins>
          <plugin>
             <!-- Site -->
             <!-- Generates the Maven Site -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
-            <version>${plugin.site.version}</version>
-            <dependencies>
-               <dependency>
-                  <!-- Docs Maven Skin -->
-                  <groupId>com.wandrell.maven.skins</groupId>
-                  <artifactId>docs-maven-skin</artifactId>
-                  <version>${site.skin.version}</version>
-               </dependency>
-            </dependencies>
          </plugin>
       </plugins>
    </build>

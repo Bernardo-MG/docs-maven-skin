@@ -9,9 +9,31 @@
    <!-- ********************************************** -->
 
    <groupId>com.wandrell.maven.skins</groupId>
-   <artifactId>menu</artifactId>
+   <artifactId>bottom-nav-max</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
+
+   <!-- ********************************************** -->
+   <!-- ********* INFRASTRUCTURE AND SERVICES ******** -->
+   <!-- ********************************************** -->
+
+   <scm>
+      <connection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</connection>
+      <developerConnection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</developerConnection>
+      <tag>head</tag>
+      <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
+   </scm>
+
+   <issueManagement>
+      <system>GitHub</system>
+      <url>https://www.github.com/bernardo-mg/docs-maven-skin/issues</url>
+   </issueManagement>
+
+   <ciManagement>
+      <system>Travis CI</system>
+      <url>https://travis-ci.org/Bernardo-MG/docs-maven-skin</url>
+      <notifiers />
+   </ciManagement>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->
@@ -22,6 +44,8 @@
       <plugin.site.version>3.6</plugin.site.version>
       <!-- Maven Site -->
       <site.skin.version>@project.version@</site.skin.version>
+      <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
+      <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
    </properties>
 
    <!-- ********************************************** -->

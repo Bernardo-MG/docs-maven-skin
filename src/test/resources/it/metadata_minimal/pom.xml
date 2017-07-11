@@ -9,7 +9,7 @@
    <!-- ********************************************** -->
 
    <groupId>com.wandrell.maven.skins</groupId>
-   <artifactId>menu</artifactId>
+   <artifactId>metadata-minimal-site</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
