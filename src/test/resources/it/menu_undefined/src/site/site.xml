@@ -10,22 +10,13 @@
 
    <custom>
       <skinConfig>
-         <topNav>
-            <menu>Documentation</menu>
+         <bottomNav>
             <menu>Not existing menu</menu>
-            <menu>Info and reports</menu>
+         </bottomNav>
+         <topNav>
+            <menu>Not existing menu</menu>
          </topNav>
       </skinConfig>
    </custom>
-
-   <body>
-      <menu name="Documentation" inherit="bottom">
-         <item name="Acquire" href="./acquire.html" />
-         <item name="Usage" href="./usage.html" />
-      </menu>
-      <menu name="Info and reports" inherit="bottom">
-         <item name="Info" href="./info.html" />
-      </menu>
-   </body>
 
 </project>

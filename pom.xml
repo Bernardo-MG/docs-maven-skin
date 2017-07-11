@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.wandrell.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.1.2</version>
+      <version>1.1.4</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +20,7 @@
 
    <groupId>com.wandrell.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>0.6.0</version>
+   <version>0.6.1</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -114,7 +114,7 @@
       <profile>
          <!-- Release site deployment profile -->
          <!-- Sets the site repository to point to the releases repo -->
-         <id>deploy-site-release</id>
+         <id>deployment-release</id>
          <activation>
             <!-- Active by default so the repository appears in the reports -->
             <activeByDefault>true</activeByDefault>
@@ -130,7 +130,7 @@
       <profile>
          <!-- Development site deployment profile -->
          <!-- Sets the site repository to point to the development repo -->
-         <id>deploy-site-development</id>
+         <id>deployment-development</id>
          <distributionManagement>
             <site>
                <id>site-development</id>
@@ -187,16 +187,17 @@
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.9.2</jsoup.version>
-      <wandrell.siteFixer.version>0.6.1</wandrell.siteFixer.version>
+      <wandrell.configTool.version>1.0.0</wandrell.configTool.version>
+      <wandrell.siteFixer.version>0.7.0</wandrell.siteFixer.version>
       <!-- Plugins versions -->
       <plugin.invoker.version>2.0.0</plugin.invoker.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
       <!-- Maven Site -->
-      <site.skin.version>0.5.3</site.skin.version>
+      <site.skin.version>0.6.0</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
       <!-- Integration tests -->
-      <basePom.version>1.1.1</basePom.version>
+      <basePom.version>1.1.3</basePom.version>
    </properties>
 
    <!-- ********************************************** -->
@@ -209,6 +210,12 @@
          <groupId>com.wandrell.velocity</groupId>
          <artifactId>maven-site-fixer</artifactId>
          <version>${wandrell.siteFixer.version}</version>
+      </dependency>
+      <dependency>
+         <!-- Velocity config tool -->
+         <groupId>com.wandrell.velocity</groupId>
+         <artifactId>velocity-config-tool</artifactId>
+         <version>${wandrell.configTool.version}</version>
       </dependency>
    </dependencies>
 
@@ -288,72 +295,6 @@
                   <delimiter>@</delimiter>
                </delimiters>
             </configuration>
-            <executions>
-               <execution>
-                  <!-- Copies the bottom navigation site test results -->
-                  <id>copy-bottom_nav</id>
-                  <phase>site</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <resources>
-                        <resource>
-                           <directory>${project.build.directory}/it/bottom_nav/target/site/</directory>
-                        </resource>
-                     </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/bottom_nav/</outputDirectory>
-                  </configuration>
-               </execution>
-               <execution>
-                  <!-- Copies the complete site test results -->
-                  <id>copy-complete_site</id>
-                  <phase>site</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <resources>
-                        <resource>
-                           <directory>${project.build.directory}/it/complete_site/target/site/</directory>
-                        </resource>
-                     </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/complete_site/</outputDirectory>
-                  </configuration>
-               </execution>
-               <execution>
-                  <!-- Copies the menu test results -->
-                  <id>copy-menu</id>
-                  <phase>site</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <resources>
-                        <resource>
-                           <directory>${project.build.directory}/it/menu/target/site/</directory>
-                        </resource>
-                     </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/menu/</outputDirectory>
-                  </configuration>
-               </execution>
-               <execution>
-                  <!-- Copies the minimal site test results -->
-                  <id>copy-minimal</id>
-                  <phase>site</phase>
-                  <goals>
-                     <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                     <resources>
-                        <resource>
-                           <directory>${project.build.directory}/it/minimal/target/site/</directory>
-                        </resource>
-                     </resources>
-                     <outputDirectory>${project.build.directory}/site/examples/minimal/</outputDirectory>
-                  </configuration>
-               </execution>
-            </executions>
          </plugin>
          <plugin>
             <!-- JSHint -->
@@ -388,8 +329,8 @@
             <version>${plugin.invoker.version}</version>
             <configuration>
                <debug>true</debug>
-               <streamLogs>false</streamLogs>
-               <projectsDirectory>${project.build.testOutputDirectory}/it</projectsDirectory>
+               <projectsDirectory>src/test/resources/it</projectsDirectory>
+               <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                <postBuildHookScript>verify</postBuildHookScript>
                <goals>

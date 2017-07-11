@@ -9,9 +9,20 @@
    <!-- ********************************************** -->
 
    <groupId>com.wandrell.maven.skins</groupId>
-   <artifactId>menu</artifactId>
+   <artifactId>icons_list</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
+
+   <!-- ********************************************** -->
+   <!-- ********* INFRASTRUCTURE AND SERVICES ******** -->
+   <!-- ********************************************** -->
+
+   <scm>
+      <connection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</connection>
+      <developerConnection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</developerConnection>
+      <tag>head</tag>
+      <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
+   </scm>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->

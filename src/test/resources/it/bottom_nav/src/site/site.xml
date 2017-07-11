@@ -13,6 +13,7 @@
          <bottomNav>
             <menu>General Info</menu>
             <menu>Code</menu>
+            <menu>Not existing menu</menu>
             <menu>Releases</menu>
          </bottomNav>
       </skinConfig>
