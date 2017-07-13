@@ -5,6 +5,8 @@
       <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
+      <release version="0.6.2" date="2017-07-13" description="Site generation fixes">
+      </release>
       <release version="0.6.1" date="2017-07-11" description="Removed auto generated menus">
          <action dev="bmg" type="update">
             Updated dependencies.
