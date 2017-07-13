@@ -225,15 +225,6 @@
 
    <build>
       <defaultGoal>clean package install</defaultGoal>
-      <extensions>
-         <extension>
-            <!-- Wagon SSH -->
-            <!-- Enables the use of SSH. -->
-            <groupId>org.apache.maven.wagon</groupId>
-            <artifactId>wagon-ssh</artifactId>
-            <version>${extension.wagon.version}</version>
-         </extension>
-      </extensions>
       <resources>
          <resource>
             <directory>src/main/resources/</directory>

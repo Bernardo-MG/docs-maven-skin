@@ -38,6 +38,6 @@ script:
   - recess ./src/main/resources/css/*
 after_success:
   # Documentation deployment script
-  - ~/.scripts/java/maven/deploy-site.sh $DO_DEPLOY_DOCS deployment
+  - echo yes | mvn -e site site:deploy -P "deployment" --settings ~/settings.xml
   # Code artifacts deployment script
   - ~/.scripts/java/maven/deploy.sh $DO_DEPLOY deployment
