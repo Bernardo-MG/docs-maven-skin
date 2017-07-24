@@ -41,7 +41,7 @@
 
    <properties>
       <!-- Plugins versions -->
-      <plugin.site.version>3.6</plugin.site.version>
+      <plugin.site.version>@plugin.site.version@</plugin.site.version>
       <!-- Maven Site -->
       <site.skin.version>@project.version@</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
