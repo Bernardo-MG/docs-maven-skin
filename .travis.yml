@@ -3,14 +3,9 @@
 
 # Using Java for the project
 language: java
-jdk:
-# JDK 8 is set to deploy the docs in the configuration matrix
-#  - oraclejdk8
-# JDK 7 is set to deploy the artifacts in the configuration matrix
-#  - oraclejdk7
-  - openjdk7
 matrix:
   include:
+    - jdk: openjdk7
     # Code artifacts deployed with JDK7
     - jdk: oraclejdk7
       env: DEPLOY=true
