@@ -180,23 +180,33 @@
    <!-- ********************************************** -->
 
    <properties>
-      <!-- Manifest data -->
+      <!-- ============================================== -->
+      <!-- =============== MANIFEST DATA ================ -->
+      <!-- ============================================== -->
       <manifest.name>com/wandrell/maven/skins/docs-maven-skin</manifest.name>
-      <!-- Dependencies versions -->
+      <!-- ============================================== -->
+      <!-- =========== DEPENDENCIES VERSIONS ============ -->
+      <!-- ============================================== -->
       <hamcrest.version>1.3</hamcrest.version>
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.9.2</jsoup.version>
       <wandrell.configTool.version>1.0.0</wandrell.configTool.version>
       <wandrell.siteFixer.version>0.7.0</wandrell.siteFixer.version>
-      <!-- Plugins versions -->
+      <!-- ============================================== -->
+      <!-- ============== PLUGINS VERSIONS ============== -->
+      <!-- ============================================== -->
       <plugin.invoker.version>2.0.0</plugin.invoker.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
-      <!-- Maven Site -->
+      <!-- ============================================== -->
+      <!-- ================= MAVEN SITE ================= -->
+      <!-- ============================================== -->
       <site.skin.version>0.6.1</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin</mavenURL>
-      <!-- Integration tests -->
+      <!-- ============================================== -->
+      <!-- ============== IT CONFIGURATION ============== -->
+      <!-- ============================================== -->
       <basePom.version>${project.parent.version}</basePom.version>
    </properties>
 
