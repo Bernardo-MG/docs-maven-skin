@@ -19,7 +19,7 @@
 
    <properties>
       <!-- Plugins versions -->
-      <plugin.site.version>3.6</plugin.site.version>
+      <plugin.site.version>@plugin.site.version@</plugin.site.version>
       <!-- Maven Site -->
       <site.skin.version>@project.version@</site.skin.version>
    </properties>
