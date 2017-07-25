@@ -41,7 +41,15 @@ def head = Jsoup.parse(html).head()
 // Verified the heading is set
 assert html.contains( '<header class="page-header">' )
 
-// Verifies the skin info is included
+// Verifies the title is included in the HTML head
+def title = head.select( 'title' )
+assert title.html().equals( 'minimal-site' )
+
+// Verifies the title is included in the header
+def titleHeader = body.select( '#navbar-main a.navbar-brand' )
+assert titleHeader.html().equals( 'minimal-site' )
+// Verifies the title includes a relative link to the index
+assert titleHeader.attr('href').equals( './index.html' )
 
 // Footer link
 def div = body.select( 'footer.footer div.row div' ).last()
@@ -59,8 +67,8 @@ assert html.contains( '<link href="./favicon.ico" rel="shortcut icon" type="imag
 assert html =~ /<small class="navbar-text">1\.0\.0 \([0-9]+-[0-9]+-[0-9]+\)<\/small>/
 
 // Verifies the footer menus were not generated
-def titles = body.select( 'dt' )
-assert titles.isEmpty()
+def footerTitles = body.select( 'dt' )
+assert footerTitles.isEmpty()
 
 // Verifies that the footer menus are not generated
 def navbarFooter = body.select( '#navbar-footer' )
