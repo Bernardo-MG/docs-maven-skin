@@ -47,10 +47,10 @@
     <!-- IE Compatibility tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-#if( !$config.fileId.equals('index') )
-    <title>$title</title>
-#else
+#if($config.fileId.equals('index'))
     <title>$project.name</title>
+#else
+    <title>$title</title>
 #end
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
