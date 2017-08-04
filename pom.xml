@@ -393,30 +393,6 @@
    <reporting>
       <plugins>
          <plugin>
-            <!-- Checkstyle -->
-            <!-- Checks that the source files comply with style standards -->
-            <!-- It is using a customized rules file -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <configuration>
-               <!-- The customized rules file -->
-               <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>
-            </configuration>
-         </plugin>
-         <plugin>
-            <!-- PMD -->
-            <!-- Checks that the code complies with a series of code quality 
-               rules -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-pmd-plugin</artifactId>
-            <configuration>
-               <rulesets>
-                  <!-- The customized rules file -->
-                  <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
-               </rulesets>
-            </configuration>
-         </plugin>
-         <plugin>
             <!-- Maven Invoker -->
             <!-- IT tests report -->
             <groupId>org.apache.maven.plugins</groupId>
