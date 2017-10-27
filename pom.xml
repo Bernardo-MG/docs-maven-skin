@@ -196,6 +196,9 @@
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
+      <plugin.frontend.node.version>v6.11.3</plugin.frontend.node.version>
+      <plugin.frontend.npm.version>5.4.2</plugin.frontend.npm.version>
+      <plugin.frontend.version>1.3</plugin.frontend.version>
       <plugin.invoker.version>2.0.0</plugin.invoker.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
       <!-- ============================================== -->
@@ -305,6 +308,25 @@
                   <delimiter>@</delimiter>
                </delimiters>
             </configuration>
+            <executions>
+               <execution>
+                  <!-- Frontend dependencies are acquired with npm and copied 
+                     to the libs folder -->
+                  <id>copy-site-dependencies</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <outputDirectory>${basedir}/target/classes/lib/</outputDirectory>
+                     <resources>
+                        <resource>
+                           <directory>node_modules</directory>
+                        </resource>
+                     </resources>
+                  </configuration>
+               </execution>
+            </executions>
          </plugin>
          <plugin>
             <!-- JSHint -->
@@ -380,6 +402,36 @@
                      <goal>install</goal>
                      <goal>run</goal>
                   </goals>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <!-- Frontend Plugin -->
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>${plugin.frontend.version}</version>
+            <configuration>
+               <installDirectory>target</installDirectory>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>node-npm-install</id>
+                  <goals>
+                     <goal>install-node-and-npm</goal>
+                  </goals>
+                  <configuration>
+                     <nodeVersion>${plugin.frontend.node.version}</nodeVersion>
+                     <npmVersion>${plugin.frontend.npm.version}</npmVersion>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>npm-install</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <configuration>
+                     <arguments>install</arguments>
+                  </configuration>
                </execution>
             </executions>
          </plugin>

@@ -58,3 +58,7 @@ Desktop.ini
 ._*
 .Spotlight-V100
 .Trashes
+
+# Node
+/node_modules/
+package-lock.json
