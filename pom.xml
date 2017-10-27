@@ -321,13 +321,17 @@
                      <outputDirectory>${basedir}/target/classes/lib/</outputDirectory>
                      <resources>
                         <resource>
-                           <directory>node_modules/bootswatch/readable/bootstrap.min.css</directory>
-                           <directory>node_modules/font-awesome/css/font-awesome.min.css</directory>
-                           <directory>node_modules/highlight/styles/default.css</directory>
-                           <directory>node_modules/html5shiv/dist/html5shiv.min.js</directory>
-                           <directory>node_modules/jquery/jquery.min.js</directory>
-                           <directory>node_modules/bootstrap/dist/js/bootstrap.min.js</directory>
-                           <directory>node_modules/highlight.js/lib/highlight.js</directory>
+                           <directory>node_modules/</directory>
+                           <includes>
+                              <include>bootstrap/dist/js/bootstrap.min.js</include>
+                              <include>bootswatch/readable/bootstrap.min.css</include>
+                              <include>font-awesome/css/font-awesome.min.css</include>
+                              <include>font-awesome/fonts/*.*</include>
+                              <include>highlight.js/lib/**/*.*</include>
+                              <include>highlight.js/styles/default.css</include>
+                              <include>html5shiv/dist/html5shiv.min.js</include>
+                              <include>jquery/dist/jquery.min.js</include>
+                           </includes>
                         </resource>
                      </resources>
                   </configuration>
