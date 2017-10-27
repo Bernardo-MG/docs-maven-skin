@@ -87,7 +87,7 @@
 #end
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/bootswatch/readable/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
@@ -157,7 +157,7 @@ $bodyContent
     </div>
 </footer>
 <script src="./lib/jquery/jquery.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./js/chevron-toggle.js"></script>
 <script src="./js/smooth-scroll.js"></script>
 <script src="./js/heading-numbering.js"></script>
