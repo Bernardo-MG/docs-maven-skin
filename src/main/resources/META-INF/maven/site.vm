@@ -91,7 +91,7 @@
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/highlight.js/styles/default.css">
     <!-- Docs Template style -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.min.css">
 
 #**##if( $decoration.body.head )
 #*  *#$render.eval( $decoration.body.head )
