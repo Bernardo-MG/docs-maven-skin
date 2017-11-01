@@ -477,7 +477,7 @@
                      <jsSourceExcludes>
                         <jsSourceExclude>initialize.js</jsSourceExclude>
                      </jsSourceExcludes>
-                     <jsFinalFile>utils.js</jsFinalFile>
+                     <jsFinalFile>scripts.js</jsFinalFile>
                   </configuration>
                   <goals>
                      <goal>minify</goal>
