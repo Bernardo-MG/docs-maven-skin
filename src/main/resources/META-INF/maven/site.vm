@@ -158,9 +158,7 @@ $bodyContent
 </footer>
 <script src="./lib/jquery/dist/jquery.min.js"></script>
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./js/chevron-toggle.js"></script>
-<script src="./js/smooth-scroll.js"></script>
-<script src="./js/heading-numbering.js"></script>
+<script src="./js/utils.js"></script>
 <script src="./lib/highlight.js/lib/highlight.js"></script>
 <script src="./js/initialize.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
