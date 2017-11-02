@@ -10,12 +10,10 @@
             First release of the project.
          </action>
       </release>
-      <release version="1.1.0" date="2017-07-24" description="First release">
+      <release version="1.1.0" date="2017-10-02" description="Frontend dependency management">
          <action dev="bmg" type="add">
             Added support for injecting HTML into the head (from the Maven site default options).
          </action>
-      </release>
-      <release version="1.2.0" date="2017-10-02" description="Frontend dependency management">
          <action dev="bmg" type="add">
             Frontend dependencies are now acquired with npm.
          </action>
