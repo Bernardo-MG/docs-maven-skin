@@ -10,5 +10,16 @@
             First release of the project.
          </action>
       </release>
+      <release version="1.1.0" date="2017-10-02" description="Frontend dependency management">
+         <action dev="bmg" type="add">
+            Added support for injecting HTML into the head (from the Maven site default options).
+         </action>
+         <action dev="bmg" type="add">
+            Frontend dependencies are now acquired with npm.
+         </action>
+         <action dev="bmg" type="add">
+            CSS and JS files are minimized.
+         </action>
+      </release>
    </body>
 </document>

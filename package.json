@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "bootswatch": "~3.3.5",
+    "font-awesome": "~4.7.0",
+    "highlight.js": "~8.6.0",
+    "html5shiv": "~3.7.3",
+    "jquery": "~1.12.4"
+  }
+}

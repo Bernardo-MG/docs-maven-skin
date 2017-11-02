@@ -47,10 +47,10 @@
     <!-- IE Compatibility tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-#if( !$config.fileId.equals('index') )
-    <title>$title</title>
-#else
+#if($config.fileId.equals('index'))
     <title>$project.name</title>
+#else
+    <title>$title</title>
 #end
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -87,15 +87,19 @@
 #end
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./lib/font-awesome-4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./lib/highlight/styles/default.css">
+    <link rel="stylesheet" href="./lib/bootswatch/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/highlight.js/styles/default.css">
     <!-- Docs Template style -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+
+#**##if( $decoration.body.head )
+#*  *#$render.eval( $decoration.body.head )
+#**##end
 
     <!-- HTML5 Shiv. For IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="./lib/html5shiv/html5shiv.min.js"></script>
+    <script src="./lib/html5shiv/dist/html5shiv.min.js"></script>
     <![endif]-->
 
 </head>
@@ -152,12 +156,10 @@ $bodyContent
         </div>
     </div>
 </footer>
-<script src="./lib/jquery/jquery-1.12.4.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="./js/chevron-toggle.js"></script>
-<script src="./js/smooth-scroll.js"></script>
-<script src="./js/heading-numbering.js"></script>
-<script src="./lib/highlight/highlight.pack.js"></script>
+<script src="./lib/jquery/dist/jquery.min.js"></script>
+<script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./js/scripts.min.js"></script>
+<script src="./lib/highlight.js/lib/highlight.js"></script>
 <script src="./js/initialize.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
