@@ -281,6 +281,22 @@
             </executions>
          </plugin>
          <plugin>
+            <!-- Clean -->
+            <!-- Deletes the Maven project generated files -->
+            <artifactId>maven-clean-plugin</artifactId>
+            <configuration>
+               <filesets>
+                  <fileset>
+                     <directory>/</directory>
+                     <includes>
+                        <include>node_modules/**/*</include>
+                     </includes>
+                     <followSymlinks>false</followSymlinks>
+                  </fileset>
+               </filesets>
+            </configuration>
+         </plugin>
+         <plugin>
             <!-- Site -->
             <!-- Generates the Maven Site -->
             <groupId>org.apache.maven.plugins</groupId>
