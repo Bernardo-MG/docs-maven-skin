@@ -33,3 +33,10 @@ MatcherAssert.assertThat(
     htmlResponse.warnings(),
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
+
+// Parses HTML
+def body = Jsoup.parse(html).body()
+
+// Verifies the code sections were created with the correct tags
+def codes = body.select( 'pre code' )
+assert !codes.isEmpty()
