@@ -344,8 +344,6 @@
                               <include>bootswatch/readable/bootstrap.min.css</include>
                               <include>font-awesome/css/font-awesome.min.css</include>
                               <include>font-awesome/fonts/*.*</include>
-                              <include>highlight.js/lib/**/*.*</include>
-                              <include>highlight.js/styles/default.css</include>
                               <include>html5shiv/dist/html5shiv.min.js</include>
                               <include>jquery/dist/jquery.min.js</include>
                            </includes>

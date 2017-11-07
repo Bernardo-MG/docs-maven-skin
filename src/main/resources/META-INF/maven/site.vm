@@ -89,7 +89,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./lib/bootswatch/readable/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./lib/highlight.js/styles/default.css">
+    <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.min.css">
 
@@ -159,7 +159,7 @@ $bodyContent
 <script src="./lib/jquery/dist/jquery.min.js"></script>
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./js/scripts.min.js"></script>
-<script src="./lib/highlight.js/lib/highlight.js"></script>
+<script src="./lib/highlight/highlight.pack.js"></script>
 <script src="./js/initialize.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>

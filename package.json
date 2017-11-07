@@ -3,7 +3,6 @@
     "bootstrap": "~3.3.7",
     "bootswatch": "~3.3.7",
     "font-awesome": "~4.7.0",
-    "highlight.js": "~9.12.0",
     "html5shiv": "~3.7.3",
     "jquery": "~3.2.1"
   }
