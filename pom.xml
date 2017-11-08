@@ -422,7 +422,7 @@
             </dependencies>
             <executions>
                <execution>
-                  <id>verify-js</id>
+                  <id>verify-sites</id>
                   <goals>
                      <goal>install</goal>
                      <goal>run</goal>
