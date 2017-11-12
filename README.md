@@ -8,7 +8,7 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 
 **Maven support:** *the skin only supports the Maven Site Plugin 3.6 onwards, due to changes to the way the velocity tools are loaded.*
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.wandrell.maven.skins/docs-maven-skin.svg)][maven-repo]
+[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.maven.skins/docs-maven-skin.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/docs-maven-skin/images/download.svg)][bintray-repo]
 
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
@@ -81,7 +81,7 @@ To use the Skin when generating a Maven Site just add the following to the site.
 
 ```xml
 <skin>
-    <groupId>com.wandrell.maven</groupId>
+    <groupId>com.bernardomg.maven</groupId>
     <artifactId>docs-maven-skin</artifactId>
     <version>[current version]</version>
 </skin>
@@ -124,7 +124,7 @@ The project has been released under the [MIT License][license].
 
 [reflow-skin]: https://github.com/andriusvelykis/reflow-maven-skin
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
-[maven-repo]: http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin
+[maven-repo]: http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
 [javadoc-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin/apidocs
 [javadoc-release]: http://docs.wandrell.com/maven/docs-maven-skin/apidocs
