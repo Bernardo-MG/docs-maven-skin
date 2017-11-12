@@ -9,7 +9,7 @@
    <!-- ********************************************** -->
 
    <parent>
-      <groupId>com.wandrell.maven.skins</groupId>
+      <groupId>com.bernardomg.maven.skins</groupId>
       <artifactId>multimodule</artifactId>
       <version>1.0.0</version>
    </parent>
