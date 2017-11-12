@@ -20,7 +20,7 @@
 
    <groupId>com.wandrell.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>1.1.2-SNAPSHOT</version>
+   <version>1.1.1-SNAPSHOT</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -58,9 +58,6 @@
    </ciManagement>
 
    <distributionManagement>
-      <relocation>
-         <groupId>com.wandrell.maven.skins</groupId>
-      </relocation>
       <repository>
          <uniqueVersion>false</uniqueVersion>
          <id>releases</id>
