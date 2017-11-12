@@ -20,7 +20,7 @@
 
    <groupId>com.wandrell.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>1.1.1</version>
+   <version>1.2.0</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -58,6 +58,9 @@
    </ciManagement>
 
    <distributionManagement>
+      <relocation>
+         <groupId>com.wandrell.maven.skins</groupId>
+      </relocation>
       <repository>
          <uniqueVersion>false</uniqueVersion>
          <id>releases</id>
@@ -205,7 +208,7 @@
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>1.1.0</site.skin.version>
+      <site.skin.version>1.1.1</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
       <!-- ============================================== -->
@@ -422,7 +425,7 @@
             </dependencies>
             <executions>
                <execution>
-                  <id>verify-js</id>
+                  <id>verify-sites</id>
                   <goals>
                      <goal>install</goal>
                      <goal>run</goal>
