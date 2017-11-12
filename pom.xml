@@ -18,9 +18,9 @@
    <!-- **************** PROJECT INFO **************** -->
    <!-- ********************************************** -->
 
-   <groupId>com.wandrell.maven.skins</groupId>
+   <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>1.1.1-SNAPSHOT</version>
+   <version>1.2.0-SNAPSHOT</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
