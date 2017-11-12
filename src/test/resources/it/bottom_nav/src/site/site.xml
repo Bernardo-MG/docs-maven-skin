@@ -3,7 +3,7 @@
    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0 http://maven.apache.org/xsd/decoration-1.6.0.xsd">
 
    <skin>
-      <groupId>com.wandrell.maven.skins</groupId>
+      <groupId>com.bernardomg.maven.skins</groupId>
       <artifactId>docs-maven-skin</artifactId>
       <version>${site.skin.version}</version>
    </skin>
@@ -37,7 +37,7 @@
       </menu>
       <menu name="Releases" inherit="bottom">
          <item name="Bintray" href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" />
-         <item name="Maven Central" href="http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin" />
+         <item name="Maven Central" href="http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin" />
       </menu>
    </body>
 

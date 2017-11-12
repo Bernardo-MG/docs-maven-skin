@@ -66,4 +66,4 @@ assert rows.get(4).html().equals('<a href="https://www.github.com/bernardo-mg/do
 
 // Third column
 assert rows.get(5).html().equals('<a href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" title="Bintray">Bintray</a>')
-assert rows.get(6).html().equals('<a href="http://mvnrepository.com/artifact/com.wandrell.maven.skins/docs-maven-skin" title="Maven Central">Maven Central</a>')
+assert rows.get(6).html().equals('<a href="http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin" title="Maven Central">Maven Central</a>')

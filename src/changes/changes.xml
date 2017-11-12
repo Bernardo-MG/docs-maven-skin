@@ -29,5 +29,10 @@
             Updated dependencies.
          </action>
       </release>
+      <release version="1.2.0" date="2017-11-12" description="Changed coordinates">
+         <action dev="bmg" type="update">
+            Changed project coordinates.
+         </action>
+      </release>
    </body>
 </document>
