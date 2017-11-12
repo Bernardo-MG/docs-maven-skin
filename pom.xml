@@ -304,7 +304,7 @@
             <dependencies>
                <dependency>
                   <!-- Docs Maven Skin -->
-                  <groupId>com.wandrell.maven.skins</groupId>
+                  <groupId>com.bernardomg.maven.skins</groupId>
                   <artifactId>docs-maven-skin</artifactId>
                   <version>${site.skin.version}</version>
                </dependency>
