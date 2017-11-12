@@ -6,6 +6,8 @@ It is easy to use, just remember to check [the documentation][site-release] to f
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
+**Maven support:** *the skin only supports the Maven Site Plugin 3.6 onwards, due to changes to the way the velocity tools are loaded.*
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.wandrell.maven.skins/docs-maven-skin.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/docs-maven-skin/images/download.svg)][bintray-repo]
 
@@ -60,7 +62,7 @@ It also requires Maven to be used, being set up as a Maven Skin for the Maven Si
 As a Maven Skin, the project requirements are very specific:
 
 - Maven
-- Maven Site plugin
+- Maven Site plugin (>=3.6)
 - Maven Site enabled
 
 ### Installing
