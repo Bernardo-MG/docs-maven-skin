@@ -87,7 +87,7 @@ To use the Skin when generating a Maven Site just add the following to the site.
 </skin>
 ```
 
-More detailed information can be found in the documentation (check the links in the documentation section earlier in this file).
+More detailed information can be found in [the docs][site-release].
 
 ### Running tests
 
