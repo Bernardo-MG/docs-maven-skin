@@ -32,12 +32,10 @@ To check the Docs Maven Skin at work take a look at the documentation, linked be
 Documentation is always generated for the latest release, kept in the 'master' branch:
 
 - The [latest release documentation page][site-release].
-- The [the latest release Javadoc site][javadoc-release].
 
 Documentation is also generated from the latest snapshot, taken from the 'develop' branch:
 
 - The [the latest snapshot documentation page][site-develop].
-- The [the latest snapshot Javadoc site][javadoc-develop].
 
 The documentation site sources come along the source code (as it is a Maven site), so it is always possible to generate them using the following Maven command:
 
@@ -126,8 +124,6 @@ The project has been released under the [MIT License][license].
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
-[javadoc-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin/apidocs
-[javadoc-release]: http://docs.wandrell.com/maven/docs-maven-skin/apidocs
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
 [site-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin
