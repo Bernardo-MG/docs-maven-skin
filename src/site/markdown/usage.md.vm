@@ -6,7 +6,7 @@ ${symbol_pound} Usage
 
 ```xml
 <skin>
-   <groupId>com.wandrell.maven</groupId>
+   <groupId>com.bernardomg.maven</groupId>
    <artifactId>docs-maven-skin</artifactId>
    <version>${project.version}</version>
 </skin>
@@ -32,7 +32,7 @@ The site requires a correctly configured site.xml file to work. For more details
       <skinConfig>
          <keywords>Maven Site, fix, HTML5</keywords>
          <descriptionUrl>Check the documentation for the Docs Maven Skin</descriptionUrl>
-         <twitterSite>@wandrell</twitterSite>
+         <twitterSite>@bmg</twitterSite>
          <topNav>
             <menu>Documentation</menu>
             <menu>Info and reports</menu>
