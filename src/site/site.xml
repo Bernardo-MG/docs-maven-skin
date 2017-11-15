@@ -12,7 +12,7 @@
       <skinConfig>
          <keywords>Maven Site, fix, HTML5</keywords>
          <descriptionUrl>Check the documentation for ${projectName}</descriptionUrl>
-         <twitterSite>@Wandrell_BMG</twitterSite>
+         <twitterSite>@BernardoMartG</twitterSite>
          <topNav>
             <menu>Documentation</menu>
             <menu>Info and reports</menu>
