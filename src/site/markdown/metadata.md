@@ -69,7 +69,7 @@ The generated Twitter Card metadata will be similar to this:
 ```html
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:site" content="@Wandrell_BMG"/>
+<meta name="twitter:site" content="@bernardomg_BMG"/>
 <meta name="twitter:title" content="Docs Maven Skin &#x2013; Preparing the site.xml file"/>
 <meta name="twitter:description" content="Documentation for the Docs Maven Skin"/>
 ```
@@ -81,7 +81,7 @@ This data is taken from the following elements in the site.xml file:
     <skinConfig>
         ...
         <descriptionUrl>Documentation for the Docs Maven Skin</descriptionUrl>
-        <twitterSite>@Wandrell_BMG</twitterSite>
+        <twitterSite>@bernardomg_BMG</twitterSite>
         ...
     </skinConfig>
 </custom>

@@ -126,8 +126,8 @@ The project has been released under the [MIT License][license].
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
-[site-develop]: http://docs.wandrell.com/development/maven/docs-maven-skin
-[site-release]: http://docs.wandrell.com/maven/docs-maven-skin
+[site-develop]: http://docs.bernardomg.com/development/maven/docs-maven-skin
+[site-release]: http://docs.bernardomg.com/maven/docs-maven-skin
 
 [maven-invoker]: http://maven.apache.org/plugins/maven-invoker-plugin/
 
