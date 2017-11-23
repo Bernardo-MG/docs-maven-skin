@@ -34,5 +34,10 @@
             Changed project coordinates.
          </action>
       </release>
+      <release version="1.2.1" date="2017-11-23" description="Updated scripts">
+         <action dev="bmg" type="update">
+            Updated scripts.
+         </action>
+      </release>
    </body>
 </document>
