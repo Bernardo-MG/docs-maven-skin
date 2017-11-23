@@ -2,7 +2,7 @@
    xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
    <properties>
       <title>Project Changes</title>
-      <author email="programming@wandrell.com">Bernardo Martínez Garrido</author>
+      <author email="programming@bernardomg.com">Bernardo Martínez Garrido</author>
    </properties>
    <body>
       <release version="1.0.0" date="2017-07-24" description="First release">
@@ -32,6 +32,11 @@
       <release version="1.2.0" date="2017-11-12" description="Changed coordinates">
          <action dev="bmg" type="update">
             Changed project coordinates.
+         </action>
+      </release>
+      <release version="1.2.1" date="2017-11-23" description="Updated scripts">
+         <action dev="bmg" type="update">
+            Updated scripts.
          </action>
       </release>
    </body>

@@ -9,9 +9,9 @@
    <!-- ********************************************** -->
 
    <parent>
-      <groupId>com.wandrell.maven</groupId>
+      <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.1.6</version>
+      <version>1.2.0</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>1.2.0</version>
+   <version>1.2.1</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -78,40 +78,6 @@
 
    <profiles>
       <profile>
-         <!-- Profile for the Eclipse Maven plugin -->
-         <!-- Sets the POM so this plugin does not give the usual unregistered 
-            goals errors -->
-         <!-- It will be activated automatically on Eclipse if this has the 
-            m2e plugin, by detecting the version property -->
-         <id>eclipse</id>
-         <activation>
-            <property>
-               <name>m2e.version</name>
-            </property>
-         </activation>
-         <build>
-            <pluginManagement>
-               <plugins>
-                  <plugin>
-                     <!-- m2e lifecycle mapping -->
-                     <!-- This is used to configure the Maven plugin for 
-                        Eclipse. -->
-                     <!-- Among other things, it allows registering goals, 
-                        which Eclipse would otherwise reject. -->
-                     <!-- It has no real effect on Maven. -->
-                     <groupId>org.eclipse.m2e</groupId>
-                     <artifactId>lifecycle-mapping</artifactId>
-                     <version>${plugin.lifecycle.version}</version>
-                     <configuration>
-                        <downloadSources>true</downloadSources>
-                        <downloadJavadocs>true</downloadJavadocs>
-                     </configuration>
-                  </plugin>
-               </plugins>
-            </pluginManagement>
-         </build>
-      </profile>
-      <profile>
          <!-- Release site deployment profile -->
          <!-- Sets the site repository to point to the releases repo -->
          <id>deployment-release</id>
@@ -123,7 +89,8 @@
             <site>
                <id>site</id>
                <name>Project Documentation Site</name>
-               <url>scp://docs.wandrell.com:2222/home1/duenco/www/maven/docs-maven-skin</url>
+               <!-- The URL should be set externally -->
+               <url>${site.release.url}</url>
             </site>
          </distributionManagement>
       </profile>
@@ -135,7 +102,8 @@
             <site>
                <id>site-development</id>
                <name>Project Development Documentation Site</name>
-               <url>scp://docs.wandrell.com:2222/home1/duenco/www/development/maven/docs-maven-skin</url>
+               <!-- The URL should be set externally -->
+               <url>${site.develop.url}</url>
             </site>
          </distributionManagement>
       </profile>
@@ -163,7 +131,7 @@
       <developer>
          <id>bmg</id>
          <name>Bernardo Martínez Garrido</name>
-         <email>programming@wandrell.com</email>
+         <email>programming@bernardomg.com</email>
          <url>https://github.com/Bernardo-MG</url>
          <organization>Bernardo Martínez Garrido</organization>
          <organizationUrl>https://github.com/Bernardo-MG</organizationUrl>
@@ -191,8 +159,8 @@
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.9.2</jsoup.version>
-      <velocity.configTool.version>1.0.0</velocity.configTool.version>
-      <velocity.siteFixer.version>1.0.0</velocity.siteFixer.version>
+      <velocity.configTool.version>1.1.0</velocity.configTool.version>
+      <velocity.siteFixer.version>1.1.0</velocity.siteFixer.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
@@ -221,13 +189,13 @@
    <dependencies>
       <dependency>
          <!-- Maven Site Fixer -->
-         <groupId>com.wandrell.velocity</groupId>
+         <groupId>com.bernardomg.velocity</groupId>
          <artifactId>maven-site-fixer</artifactId>
          <version>${velocity.siteFixer.version}</version>
       </dependency>
       <dependency>
          <!-- Velocity config tool -->
-         <groupId>com.wandrell.velocity</groupId>
+         <groupId>com.bernardomg.velocity</groupId>
          <artifactId>velocity-config-tool</artifactId>
          <version>${velocity.configTool.version}</version>
       </dependency>
