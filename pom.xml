@@ -220,6 +220,45 @@
             <filtering>true</filtering>
          </resource>
       </resources>
+      <pluginManagement>
+         <plugins>
+            <plugin>
+               <!-- JSHint -->
+               <!-- Validates the JS files -->
+               <groupId>com.cj.jshintmojo</groupId>
+               <artifactId>jshint-maven-plugin</artifactId>
+               <version>${plugin.jshint.version}</version>
+            </plugin>
+            <plugin>
+               <!-- Maven Invoker -->
+               <!-- Runs the IT test -->
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-invoker-plugin</artifactId>
+               <version>${plugin.invoker.version}</version>
+            </plugin>
+            <plugin>
+               <!-- Frontend Plugin -->
+               <!-- Manages frontend dependencies -->
+               <groupId>com.github.eirslett</groupId>
+               <artifactId>frontend-maven-plugin</artifactId>
+               <version>${plugin.frontend.version}</version>
+            </plugin>
+            <plugin>
+               <!-- Minify -->
+               <!-- Minifies files. -->
+               <groupId>com.samaxes.maven</groupId>
+               <artifactId>minify-maven-plugin</artifactId>
+               <version>${plugin.minify.version}</version>
+            </plugin>
+            <plugin>
+               <!-- Maven Invoker -->
+               <!-- IT tests report -->
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-invoker-plugin</artifactId>
+               <version>${plugin.invoker.version}</version>
+            </plugin>
+         </plugins>
+      </pluginManagement>
       <plugins>
          <plugin>
             <!-- Changes -->
@@ -326,7 +365,6 @@
             <!-- Validates the JS files -->
             <groupId>com.cj.jshintmojo</groupId>
             <artifactId>jshint-maven-plugin</artifactId>
-            <version>${plugin.jshint.version}</version>
             <executions>
                <execution>
                   <id>jshint</id>
@@ -351,7 +389,6 @@
             <!-- Runs the IT test -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-invoker-plugin</artifactId>
-            <version>${plugin.invoker.version}</version>
             <configuration>
                <debug>true</debug>
                <projectsDirectory>src/test/resources/it</projectsDirectory>
@@ -403,7 +440,6 @@
             <!-- Manages frontend dependencies -->
             <groupId>com.github.eirslett</groupId>
             <artifactId>frontend-maven-plugin</artifactId>
-            <version>${plugin.frontend.version}</version>
             <configuration>
                <installDirectory>target</installDirectory>
             </configuration>
@@ -430,9 +466,10 @@
             </executions>
          </plugin>
          <plugin>
+            <!-- Minify -->
+            <!-- Minifies files. -->
             <groupId>com.samaxes.maven</groupId>
             <artifactId>minify-maven-plugin</artifactId>
-            <version>${plugin.minify.version}</version>
             <executions>
                <execution>
                   <id>minify-css</id>
@@ -481,7 +518,6 @@
             <!-- IT tests report -->
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-invoker-plugin</artifactId>
-            <version>${plugin.invoker.version}</version>
          </plugin>
       </plugins>
    </reporting>
