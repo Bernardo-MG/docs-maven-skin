@@ -47,7 +47,7 @@ def titleHeader = body.select( '#navbar-main a.navbar-brand' )
 // assert titleHeader.html().equals( 'Overriden' )
 
 // Verifies the title is included in the metadata
-def metaOgSite = head.select( 'meta[property="og:site"]' )
+def metaOgSite = head.select( 'meta[property="og:site_name"]' )
 def metaOgTitle = head.select( 'meta[property="og:title"]' )
 assert metaOgSite.attr( 'content' ).equals( 'Overriden – Title override' )
 assert metaOgTitle.attr( 'content' ).equals( 'Overriden – Title override' )

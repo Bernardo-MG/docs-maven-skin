@@ -58,7 +58,7 @@ assert metaAuthor.isEmpty()
 // Verifies the Facebook Open Graph metadata is generated
 def metaOgType = head.select( 'meta[property="og:type"]' )
 def metaOgUrl = head.select( 'meta[property="og:url"]' )
-def metaOgSite = head.select( 'meta[property="og:site"]' )
+def metaOgSite = head.select( 'meta[property="og:site_name"]' )
 def metaOgTitle = head.select( 'meta[property="og:title"]' )
 def metaOgDesc = head.select( 'meta[property="og:description"]' )
 

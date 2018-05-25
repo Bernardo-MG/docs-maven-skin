@@ -70,7 +70,7 @@
 #if($config.canonicalLink)
     <meta property="og:url" content="$config.canonicalLink.getValue()"/>
 #end
-    <meta property="og:site" content="$title"/>
+    <meta property="og:site_name" content="$title"/>
     <meta property="og:title" content="$title"/>
 #if($config.descriptionUrl)
     <meta property="og:description" content="$config.descriptionUrl.getValue()"/>

@@ -41,7 +41,7 @@ The generated Open Graph metadata will be similar to this:
 ```html
 <!-- Facebook Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:site" content="Docs Maven Skin &#x2013; Maven Site as a documentation site"/>
+<meta property="og:site_name" content="Docs Maven Skin &#x2013; Maven Site as a documentation site"/>
 <meta property="og:title" content="Docs Maven Skin &#x2013; Maven Site as a documentation site"/>
 <meta property="og:description" content="Documentation for the Docs Maven Skin"/>
 ```
