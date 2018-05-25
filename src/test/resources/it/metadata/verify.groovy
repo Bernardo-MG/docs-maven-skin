@@ -70,7 +70,7 @@ assert metaOgDesc.attr( 'content' ).equals( 'Check the documentation for the exa
 
 // Verifies the Twitter metadata is generated
 def metaTwCard = head.select( 'meta[name="twitter:card"]' )
-def metaTwSite = head.select( 'meta[name="twitter:site"]' )
+def metaTwSite = head.select( 'meta[name="twitter:creator"]' )
 def metaTwTitle = head.select( 'meta[name="twitter:title"]' )
 def metaTwDesc = head.select( 'meta[name="twitter:description"]' )
 

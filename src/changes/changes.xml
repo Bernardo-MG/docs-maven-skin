@@ -38,6 +38,9 @@
          <action dev="bmg" type="fix">
             Corrected Open Graph site name property name.
          </action>
+         <action dev="bmg" type="fix">
+            Corrected Twitter Card author property name.
+         </action>
          <action dev="bmg" type="update">
             Updated scripts.
          </action>
