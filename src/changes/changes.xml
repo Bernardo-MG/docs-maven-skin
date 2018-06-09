@@ -34,15 +34,17 @@
             Changed project coordinates.
          </action>
       </release>
-      <release version="1.2.1" date="2017-11-23" description="Small fixes">
+      <release version="1.2.1" date="2017-11-23" description="Updated scripts">
+         <action dev="bmg" type="update">
+            Updated scripts.
+         </action>
+      </release>
+      <release version="1.2.2" date="2017-11-23" description="Small fixes">
          <action dev="bmg" type="fix">
             Corrected Open Graph site name property name.
          </action>
          <action dev="bmg" type="fix">
             Corrected Twitter Card author property name.
-         </action>
-         <action dev="bmg" type="update">
-            Updated scripts.
          </action>
       </release>
    </body>
