@@ -37,6 +37,8 @@
 #**
  * Updates code sections.
  *#
+#**##set( $empty = $htmlTool.wrap( $bodyContentParsed, 'pre.source', '<div class="source">' ) )
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'pre.source', 'source' ) )
 #**##set( $empty = $htmlTool.retag( $bodyContentParsed, 'div.source', 'code' ) )
 #**##set( $empty = $htmlTool.unwrap( $bodyContentParsed, 'code > code' ) )
 #**##set( $empty = $htmlTool.swapTagWithParent( $bodyContentParsed, 'code > pre' ) )
