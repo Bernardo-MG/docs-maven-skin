@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.2.2</version>
+      <version>1.2.0</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -158,7 +158,7 @@
       <hamcrest.version>1.3</hamcrest.version>
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
-      <jsoup.version>1.11.3</jsoup.version>
+      <jsoup.version>1.9.2</jsoup.version>
       <velocity.configTool.version>1.1.0</velocity.configTool.version>
       <velocity.siteFixer.version>1.1.0</velocity.siteFixer.version>
       <!-- ============================================== -->
@@ -167,7 +167,7 @@
       <plugin.frontend.node.version>v6.11.3</plugin.frontend.node.version>
       <plugin.frontend.npm.version>5.4.2</plugin.frontend.npm.version>
       <plugin.frontend.version>1.6</plugin.frontend.version>
-      <plugin.invoker.version>3.1.0</plugin.invoker.version>
+      <plugin.invoker.version>3.0.1</plugin.invoker.version>
       <plugin.jshint.version>1.6.0</plugin.jshint.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
@@ -230,13 +230,6 @@
                <version>${plugin.jshint.version}</version>
             </plugin>
             <plugin>
-               <!-- Maven Invoker -->
-               <!-- Runs the IT test -->
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-invoker-plugin</artifactId>
-               <version>${plugin.invoker.version}</version>
-            </plugin>
-            <plugin>
                <!-- Frontend Plugin -->
                <!-- Manages frontend dependencies -->
                <groupId>com.github.eirslett</groupId>
@@ -244,18 +237,18 @@
                <version>${plugin.frontend.version}</version>
             </plugin>
             <plugin>
+               <!-- Maven Invoker -->
+               <!-- Runs the IT test -->
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-invoker-plugin</artifactId>
+               <version>${plugin.invoker.version}</version>
+            </plugin>
+            <plugin>
                <!-- Minify -->
                <!-- Minifies files. -->
                <groupId>com.samaxes.maven</groupId>
                <artifactId>minify-maven-plugin</artifactId>
                <version>${plugin.minify.version}</version>
-            </plugin>
-            <plugin>
-               <!-- Maven Invoker -->
-               <!-- IT tests report -->
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-invoker-plugin</artifactId>
-               <version>${plugin.invoker.version}</version>
             </plugin>
          </plugins>
       </pluginManagement>
