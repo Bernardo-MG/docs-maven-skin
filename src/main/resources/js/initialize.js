@@ -13,15 +13,15 @@
 /**
  * Initializes scripts when the document loads.
  */
-$(document).ready(function () {
+$(document).ready(function() {
 
-    // Sets up chevron toggling
-    initChevronToggle();
+   // Sets up chevron toggling
+   initChevronToggle();
 
-    // Numbers headings
-    numberHeadings();
+   // Numbers headings
+   numberHeadings();
 
-    // Sets up smooth scroll
-    initSmoothScroll();
+   // Sets up smooth scroll
+   initSmoothScroll();
 
 });
