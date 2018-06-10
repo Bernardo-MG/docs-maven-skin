@@ -7,7 +7,9 @@ import org.jsoup.Jsoup
 
 // Verifies that all the files were created
 [
-    'target/site/index.html'
+    'target/site/index.html',
+    'target/site/favicon.ico',
+    'target/site/robots.txt'
 ].each {
     def file = new File(basedir, it)
     if (!file.exists()) {
