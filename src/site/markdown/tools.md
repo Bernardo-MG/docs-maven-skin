@@ -6,7 +6,7 @@ The [Maven Site Fixer][maven-site-fixer] is a set of Velocity tools created to e
 
 As the Maven Site Fixer is set to be autodetected, a feature of Velocity tools projects, it requires no configuration. Just by adding it as a dependency it can be used in the Velocity templates.
 
-## Frontend libraries
+## Frontend Libraries
 
 These are CSS and Javascript libraries used to build the UI looks.
 
@@ -17,7 +17,7 @@ These are CSS and Javascript libraries used to build the UI looks.
 
 To this a few custom Javascript files have been added.
 
-## Basic template
+## Basic Template
 
 A basic template, the [Docs Bootstrap Template][docs-template], is used to direct the development of the skin, serving as a template which should be transformed into the actual Maven Site.
 

@@ -2,7 +2,7 @@
 
 [highligh.js][highlight] is being used for the code sections. As it is a big library it may require customization, and these are some tips to achieve that.
 
-## Overriding Initialization
+## Overriding Initialisation
 
 The library is loaded through the initializeHighlight.js file, located at js/initializeHighlight.js in the site. This can't be changed, but Maven Site allows overriding files.
 

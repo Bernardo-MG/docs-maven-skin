@@ -2,7 +2,7 @@
 
 The Skin includes some metadata blocks in each of the pages, allowing it to be shared and automatically identified. The information used for these blocks is contained in the POM and also configured in the [metadata elements of the site.xml][site-xml-metadata].
 
-## General metadata
+## General Metadata
 
 Some general metadata is added to the header of each page, creating a block like this:
 
@@ -30,7 +30,7 @@ The other data is taken from the following elements in the site.xml file:
 
 If any of these elements is missing then the corresponding field won't be added.
 
-## Social networks metadata
+## Social Networks Metadata
 
 Each page will include a bit of data for both Facebook's [Open Graph][open-graph] and [Twitter Cards][twitter-cards].
 

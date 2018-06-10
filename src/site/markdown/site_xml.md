@@ -2,7 +2,7 @@
 
 For the skin to work properly, a few things have to be prepared on the site.xml file, which is known as the [Maven Site Descriptor][maven-site-descriptor].
 
-## Skin config
+## Skin Config
 
 The Skin requires a custom configuration element, named *skinConfig*, which will contain most of the required information.
 
@@ -27,7 +27,7 @@ The general structure of this element will look like the following example:
 </custom>
 ```
 
-### Configuration elements
+### Configuration Elements
 
 |Element|Use|
 |---|---|
@@ -74,7 +74,7 @@ If the top navigation menu is not defined like that, all the menus will be used 
 
 If the bottom navigation menu is not defined, it won't be generated at all.
 
-#### Aditional configuration
+#### Aditional Configuration
 
 In the bottom navigation menus, if any item contains a description it will be used to generate an underscript.
 
@@ -92,19 +92,19 @@ A description is set like this:
 </body>
 ```
 
-### Facebook's Open Graph and Twitter Cards metadata
+### Facebook's Open Graph and Twitter Cards Metadata
 
 The data contained in some of the elements will be used to generate the metadata on each page. For more information about this check the [metadata section][metadata].
 
-### Top navigation
+### Top Navigation
 
 The top navigation is the dropdown menus in the navigation bar.
 
-### Bottom navigation
+### Bottom Navigation
 
 The bottom navigation are the columns containing links in the footer.
 
-### Icons navigation
+### Icons Navigation
 
 The icons navigation are the icons shown in the navigation bar.
 
