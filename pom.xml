@@ -168,7 +168,6 @@
       <plugin.frontend.npm.version>5.4.2</plugin.frontend.npm.version>
       <plugin.frontend.version>1.6</plugin.frontend.version>
       <plugin.invoker.version>3.0.1</plugin.invoker.version>
-      <plugin.jshint.version>1.6.0</plugin.jshint.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
@@ -222,13 +221,6 @@
       </resources>
       <pluginManagement>
          <plugins>
-            <plugin>
-               <!-- JSHint -->
-               <!-- Validates the JS files -->
-               <groupId>com.cj.jshintmojo</groupId>
-               <artifactId>jshint-maven-plugin</artifactId>
-               <version>${plugin.jshint.version}</version>
-            </plugin>
             <plugin>
                <!-- Frontend Plugin -->
                <!-- Manages frontend dependencies -->
@@ -354,30 +346,6 @@
             </executions>
          </plugin>
          <plugin>
-            <!-- JSHint -->
-            <!-- Validates the JS files -->
-            <groupId>com.cj.jshintmojo</groupId>
-            <artifactId>jshint-maven-plugin</artifactId>
-            <executions>
-               <execution>
-                  <id>jshint</id>
-                  <phase>test</phase>
-                  <goals>
-                     <goal>lint</goal>
-                  </goals>
-               </execution>
-            </executions>
-            <configuration>
-               <options>maxdepth:3,latedef,nonew,jquery</options>
-               <directories>
-                  <directory>src/main/resources/js</directory>
-               </directories>
-               <reporter>checkstyle</reporter>
-               <reportFile>target/jshint.xml</reportFile>
-               <failOnError>true</failOnError>
-            </configuration>
-         </plugin>
-         <plugin>
             <!-- Maven Invoker -->
             <!-- Runs the IT test -->
             <groupId>org.apache.maven.plugins</groupId>
@@ -438,7 +406,9 @@
             </configuration>
             <executions>
                <execution>
-                  <id>node-npm-install</id>
+                  <!-- Installs the frontend frameworks -->
+                  <!-- Installs Node and npm -->
+                  <id>frontend-framework</id>
                   <goals>
                      <goal>install-node-and-npm</goal>
                   </goals>
@@ -448,12 +418,25 @@
                   </configuration>
                </execution>
                <execution>
-                  <id>npm-install</id>
+                  <!-- Installs the frontend dependencies -->
+                  <!-- Installs npm dependencies -->
+                  <id>frontend-dependencies</id>
                   <goals>
                      <goal>npm</goal>
                   </goals>
                   <configuration>
                      <arguments>install</arguments>
+                  </configuration>
+               </execution>
+               <execution>
+                  <!-- Validate Javascript -->
+                  <id>validate-js</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>test</phase>
+                  <configuration>
+                     <arguments>run validate-js</arguments>
                   </configuration>
                </execution>
             </executions>
