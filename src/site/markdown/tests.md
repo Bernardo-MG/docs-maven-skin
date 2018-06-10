@@ -4,7 +4,7 @@ The project includes various tests run with the [Maven Invoker][maven-invoker] p
 
 Adding a new test just requires including a new project in its own folder inside the path *src\test\resources\it*. The Invoker plugin will build all those projects and generate a report with the results.
 
-## Validations applied
+## Validations Applied
 
 Each test consists on two parts. First the site is built, and then the verify.groovy script, contained in each testing project root, is run, verifying that certain conditions are met.
 

@@ -58,7 +58,7 @@ assert metaAuthor.isEmpty()
 // Verifies the Facebook Open Graph metadata is generated
 def metaOgType = head.select( 'meta[property="og:type"]' )
 def metaOgUrl = head.select( 'meta[property="og:url"]' )
-def metaOgSite = head.select( 'meta[property="og:site"]' )
+def metaOgSite = head.select( 'meta[property="og:site_name"]' )
 def metaOgTitle = head.select( 'meta[property="og:title"]' )
 def metaOgDesc = head.select( 'meta[property="og:description"]' )
 
@@ -70,7 +70,7 @@ assert metaOgDesc.isEmpty()
 
 // Verifies the Twitter metadata is generated
 def metaTwCard = head.select( 'meta[name="twitter:card"]' )
-def metaTwSite = head.select( 'meta[name="twitter:site"]' )
+def metaTwSite = head.select( 'meta[name="twitter:creator"]' )
 def metaTwTitle = head.select( 'meta[name="twitter:title"]' )
 def metaTwDesc = head.select( 'meta[name="twitter:description"]' )
 

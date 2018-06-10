@@ -2,7 +2,7 @@
 
 Additional information and reports can be found here.
 
-## Project reports
+## Project Reports
 
 |Report|Description|
 |---|---|

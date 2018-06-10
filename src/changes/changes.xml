@@ -39,5 +39,25 @@
             Updated scripts.
          </action>
       </release>
+      <release version="1.3.0" date="2017-11-23" description="Small fixes">
+         <action dev="bmg" type="fix">
+            Corrected Open Graph site name property name.
+         </action>
+         <action dev="bmg" type="fix">
+            Corrected Twitter Card author property name.
+         </action>
+         <action dev="bmg" type="fix">
+            Corrected failure case when correcting code sections structure.
+         </action>
+         <action dev="bmg" type="add">
+            Moved highlight.js initialization to its own file, to allow overriding.
+         </action>
+         <action dev="bmg" type="add">
+            Added robots.txt file.
+         </action>
+         <action dev="bmg" type="update">
+            Updated dependencies.
+         </action>
+      </release>
    </body>
 </document>

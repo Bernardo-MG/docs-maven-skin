@@ -70,7 +70,7 @@
 #if($config.canonicalLink)
     <meta property="og:url" content="$config.canonicalLink.getValue()"/>
 #end
-    <meta property="og:site" content="$title"/>
+    <meta property="og:site_name" content="$title"/>
     <meta property="og:title" content="$title"/>
 #if($config.descriptionUrl)
     <meta property="og:description" content="$config.descriptionUrl.getValue()"/>
@@ -79,7 +79,7 @@
 #if($config.twitterSite)
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:site" content="$config.twitterSite.getValue()"/>
+    <meta name="twitter:creator" content="$config.twitterSite.getValue()"/>
     <meta name="twitter:title" content="$title"/>
 #**##if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
@@ -161,6 +161,6 @@ $bodyContent
 <script src="./js/scripts.min.js"></script>
 <script src="./lib/highlight/highlight.pack.js"></script>
 <script src="./js/initialize.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="./js/initializeHighlight.js"></script>
 </body>
 </html>

@@ -86,7 +86,7 @@ The site requires a correctly configured site.xml file to work. For more details
 </project>
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound} Variables substitution
+${symbol_pound}${symbol_pound}${symbol_pound} Variables Substitution
 
 It is recommended using Maven's variable substitution to make the file easier to mantain. For example by setting the *site.skin.version* property in the POM the skin configuration ends looking like this:
 
