@@ -43,10 +43,12 @@ assert html.contains( '<header class="page-header">' )
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )
-assert title.html().equals( 'i18n-site' )
+assert title.html().equals( 'i18n-site – Página internacionalizada' )
+
 // Verifies the title is included in the header
 def titleHeader = body.select( '#navbar-main a.navbar-brand' )
 assert titleHeader.html().equals( 'i18n-site' )
+
 // Verifies the project version and date are included
 def versionHeader = body.select( '#navbar-main small.navbar-text' )
 assert versionHeader.html() =~ /1\.0\.0 \([0-9]+-[0-9]+-[0-9]+\)/

@@ -47,11 +47,7 @@
     <!-- IE Compatibility tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-#if($config.fileId.equals('index'))
-    <title>$project.name</title>
-#else
     <title>$title</title>
-#end
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Metadata -->
@@ -76,14 +72,14 @@
     <meta property="og:description" content="$config.descriptionUrl.getValue()"/>
 #end
 
-#if($config.twitterSite)
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary"/>
+#if($config.twitterSite)
     <meta name="twitter:creator" content="$config.twitterSite.getValue()"/>
+#end
     <meta name="twitter:title" content="$title"/>
-#**##if($config.descriptionUrl)
+#if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
-#**##end
 #end
 
     <!-- CSS -->

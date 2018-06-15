@@ -45,8 +45,20 @@ assert html.contains( '<header class="page-header">' )
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )
-assert title.html().equals( 'Project with description' )
+assert title.html().equals( 'Project with description – With description' )
 
 // Verifies the title is included in the header
 def titleHeader = body.select( '#navbar-main a.navbar-brand' )
 assert titleHeader.html().equals( 'Project with description' )
+
+// Verifies the title is included in the metadata
+def metaOgSite = head.select( 'meta[property="og:site_name"]' )
+def metaOgTitle = head.select( 'meta[property="og:title"]' )
+
+assert metaOgSite.attr( 'content' ).equals( 'Project with description – With description' )
+assert metaOgTitle.attr( 'content' ).equals( 'Project with description – With description' )
+
+// Verifies the Twitter metadata is generated
+def metaTwTitle = head.select( 'meta[name="twitter:title"]' )
+
+assert metaTwTitle.attr( 'content' ).equals( 'Project with description – With description' )
