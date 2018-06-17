@@ -9,7 +9,9 @@ import org.jsoup.Jsoup
 [
     'target/site/index.html',
     'target/site/favicon.ico',
-    'target/site/robots.txt'
+    'target/site/robots.txt',
+    'target/site/css/style.min.css',
+    'target/site/js/scripts.min.js'
 ].each {
     def file = new File(basedir, it)
     if (!file.exists()) {

@@ -88,6 +88,11 @@
     <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.min.css">
+    
+#if( $config.customScript )
+    <!-- Custom style -->
+    <link rel="stylesheet" href="$config.customStyle"></script>
+#end
 
 #**##if( $decoration.body.head )
 #*  *#$render.eval( $decoration.body.head )
@@ -158,5 +163,8 @@ $bodyContent
 <script src="./lib/highlight/highlight.pack.js"></script>
 <script src="./js/initialize.js"></script>
 <script src="./js/initializeHighlight.js"></script>
+#if( $config.customScript )
+<script src="$config.customScript"></script>
+#end
 </body>
 </html>
