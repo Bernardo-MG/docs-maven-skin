@@ -64,6 +64,9 @@
             Added support for custom scripts.
          </action>
          <action dev="bmg" type="add">
+            Added support for links list.
+         </action>
+         <action dev="bmg" type="add">
             Added support for custom style.
          </action>
          <action dev="bmg" type="fix">
