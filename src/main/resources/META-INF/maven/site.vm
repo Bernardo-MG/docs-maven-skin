@@ -126,10 +126,16 @@
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
 #loadTopNavMenuList( $dropDownMenuElements )
-#**##if( $iconMenuElements.size() > 0 || $dropDownMenuElements.size() > 0 )
+#if( $decoration.body.links )
+#**##set( $linkMenuElements = $decoration.body.links )
+#else
+#**##set( $linkMenuElements = [] )
+#end
+#if( $iconMenuElements.size() > 0 || $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
                 <ul class="nav navbar-nav navbar-right">
-#iconsMenu( $iconMenuElements )
-#dropdownMenu( $dropDownMenuElements )
+#**##iconsMenu( $iconMenuElements )
+#**##linksMenu( $linkMenuElements )
+#**##dropdownMenu( $dropDownMenuElements )
                 </ul>
 #end
             </div>
