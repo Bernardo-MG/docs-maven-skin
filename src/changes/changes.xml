@@ -67,6 +67,9 @@
             Added support for links list.
          </action>
          <action dev="bmg" type="add">
+            Added support for custom footer content.
+         </action>
+         <action dev="bmg" type="add">
             Added support for custom style.
          </action>
          <action dev="bmg" type="fix">

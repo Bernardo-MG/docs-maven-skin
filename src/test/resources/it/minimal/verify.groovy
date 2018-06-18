@@ -75,9 +75,13 @@ assert html.contains( '<link href="./favicon.ico" rel="shortcut icon" type="imag
 def footerTitles = body.select( 'dt' )
 assert footerTitles.isEmpty()
 
-// Verifies that the footer menus are not generated
+// Verifies that the footer navbar is empty
 def navbarFooter = body.select( '#navbar-footer' )
 assert navbarFooter.isEmpty()
+
+// Verifies that the footer custom content was not generated
+def customFooter = body.select( '#footer-custom-content' )
+assert customFooter.isEmpty()
 
 def dlNav = body.select( '.dl-nav' )
 assert dlNav.isEmpty()
