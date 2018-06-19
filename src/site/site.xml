@@ -42,6 +42,7 @@
          <item name="HTML Metadata" href="./metadata.html" />
          <item name="highlight.js" href="./highlight.html" />
          <item name="Custom Style and Scripts" href="./custom_style_scripts.html" />
+         <item name="Site Descriptor Support" href="./site_descriptor.html" />
          <item name="Tests" href="./tests.html" />
       </menu>
       <menu name="Info and reports" inherit="bottom">
