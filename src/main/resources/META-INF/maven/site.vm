@@ -160,7 +160,7 @@ $bodyContent
 	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
 	            <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
 #if( $decoration.body.footer )
-               <div id="footer-custom-content">$decoration.body.footer</div>
+               <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
 #end
            </div>
         </div>
