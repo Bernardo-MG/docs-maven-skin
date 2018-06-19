@@ -23,7 +23,6 @@
 
 [changes]: ./changes-report.html
 [dependencies]: ./dependencies.html
-[dependencies-check]: ./dependency-check-report.html
 [dependency-analysis]: ./dependency-analysis.html
 [plugins]: ./plugins.html
 [plugins-manage]: ./plugin-management.html
