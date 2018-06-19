@@ -9,7 +9,7 @@
    <!-- ********************************************** -->
 
    <groupId>com.bernardomg.maven.skins</groupId>
-   <artifactId>override-highlight</artifactId>
+   <artifactId>custom-script</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
 

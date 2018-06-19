@@ -9,7 +9,9 @@ import org.jsoup.Jsoup
 [
     'target/site/index.html',
     'target/site/favicon.ico',
-    'target/site/robots.txt'
+    'target/site/robots.txt',
+    'target/site/css/style.min.css',
+    'target/site/js/scripts.min.js'
 ].each {
     def file = new File(basedir, it)
     if (!file.exists()) {
@@ -45,7 +47,7 @@ assert html.contains( '<header class="page-header">' )
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )
-assert title.html().equals( 'minimal-site' )
+assert title.html().equals( 'minimal-site – Minimal page' )
 
 // Verifies the title is included in the header
 def titleHeader = body.select( '#navbar-main a.navbar-brand' )
@@ -73,9 +75,13 @@ assert html.contains( '<link href="./favicon.ico" rel="shortcut icon" type="imag
 def footerTitles = body.select( 'dt' )
 assert footerTitles.isEmpty()
 
-// Verifies that the footer menus are not generated
+// Verifies that the footer navbar is empty
 def navbarFooter = body.select( '#navbar-footer' )
 assert navbarFooter.isEmpty()
+
+// Verifies that the footer custom content was not generated
+def customFooter = body.select( '#footer-custom-content' )
+assert customFooter.isEmpty()
 
 def dlNav = body.select( '.dl-nav' )
 assert dlNav.isEmpty()

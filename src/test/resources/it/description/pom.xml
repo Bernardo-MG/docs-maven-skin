@@ -9,9 +9,12 @@
    <!-- ********************************************** -->
 
    <groupId>com.bernardomg.maven.skins</groupId>
-   <artifactId>override-highlight</artifactId>
+   <artifactId>description-site</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
+
+   <name>Project with description</name>
+   <description>A project with description and name</description>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->

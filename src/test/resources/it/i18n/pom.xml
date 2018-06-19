@@ -9,7 +9,7 @@
    <!-- ********************************************** -->
 
    <groupId>com.bernardomg.maven.skins</groupId>
-   <artifactId>override-highlight</artifactId>
+   <artifactId>i18n-site</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
@@ -45,6 +45,9 @@
                   <version>${site.skin.version}</version>
                </dependency>
             </dependencies>
+            <configuration>
+               <locales>en,es</locales>
+            </configuration>
          </plugin>
       </plugins>
    </build>

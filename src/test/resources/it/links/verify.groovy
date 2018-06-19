@@ -36,24 +36,13 @@ MatcherAssert.assertThat(
 
 // Parses HTML
 def body = Jsoup.parse(html).body()
-def head = Jsoup.parse(html).head()
 
-// Verifies the title is included in the HTML head
-def title = head.select( 'title' )
-assert title.html().equals( 'Overriden – Title override' )
+// Verifies the menus exist
+def dropdowns = body.select( '.dropdown-toggle' )
+assert dropdowns.size() == 1
 
-// Verifies the title is included in the header
-def titleHeader = body.select( '#navbar-main a.navbar-brand' )
-assert titleHeader.html().equals( 'title_override' )
+assert dropdowns.get(0).html().equals( 'Links <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span>' );
 
-// Verifies the title is included in the metadata
-def metaOgSite = head.select( 'meta[property="og:site_name"]' )
-def metaOgTitle = head.select( 'meta[property="og:title"]' )
-
-assert metaOgSite.attr( 'content' ).equals( 'Overriden – Title override' )
-assert metaOgTitle.attr( 'content' ).equals( 'Overriden – Title override' )
-
-// Verifies the Twitter metadata is generated
-def metaTwTitle = head.select( 'meta[name="twitter:title"]' )
-
-assert metaTwTitle.attr( 'content' ).equals( 'Overriden – Title override' )
+// Verifies the menu links exist
+assert html.contains( '<li><a href="http://www.apache.org" title="Apache">Apache</a></li>' )
+assert html.contains( '<li><a href="https://maven.apache.org" title="Maven">Maven</a></li>' )

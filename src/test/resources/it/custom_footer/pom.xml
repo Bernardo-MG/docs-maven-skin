@@ -9,7 +9,6 @@
    <!-- ********************************************** -->
 
    <groupId>com.bernardomg.maven.skins</groupId>
-   <artifactId>override-highlight</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
@@ -49,4 +48,5 @@
       </plugins>
    </build>
 
+   <artifactId>custom-footer</artifactId>
 </project>

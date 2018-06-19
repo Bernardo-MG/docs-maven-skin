@@ -47,11 +47,7 @@
     <!-- IE Compatibility tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-#if($config.fileId.equals('index'))
-    <title>$project.name</title>
-#else
     <title>$title</title>
-#end
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Metadata -->
@@ -76,14 +72,14 @@
     <meta property="og:description" content="$config.descriptionUrl.getValue()"/>
 #end
 
-#if($config.twitterSite)
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary"/>
+#if($config.twitterSite)
     <meta name="twitter:creator" content="$config.twitterSite.getValue()"/>
+#end
     <meta name="twitter:title" content="$title"/>
-#**##if($config.descriptionUrl)
+#if($config.descriptionUrl)
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
-#**##end
 #end
 
     <!-- CSS -->
@@ -92,6 +88,11 @@
     <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.min.css">
+    
+#if( $config.customScript )
+    <!-- Custom style -->
+    <link rel="stylesheet" href="$config.customStyle"></script>
+#end
 
 #**##if( $decoration.body.head )
 #*  *#$render.eval( $decoration.body.head )
@@ -125,10 +126,16 @@
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
 #loadTopNavMenuList( $dropDownMenuElements )
-#**##if( $iconMenuElements.size() > 0 || $dropDownMenuElements.size() > 0 )
+#if( $decoration.body.links )
+#**##set( $linkMenuElements = $decoration.body.links )
+#else
+#**##set( $linkMenuElements = [] )
+#end
+#if( $iconMenuElements.size() > 0 || $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
                 <ul class="nav navbar-nav navbar-right">
-#iconsMenu( $iconMenuElements )
-#dropdownMenu( $dropDownMenuElements )
+#**##iconsMenu( $iconMenuElements )
+#**##linksMenu( $linkMenuElements )
+#**##dropdownMenu( $dropDownMenuElements )
                 </ul>
 #end
             </div>
@@ -152,7 +159,10 @@ $bodyContent
 	        <div class="row">
 	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
 	            <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
-	        </div>
+#if( $decoration.body.footer )
+               <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
+#end
+           </div>
         </div>
     </div>
 </footer>
@@ -162,5 +172,8 @@ $bodyContent
 <script src="./lib/highlight/highlight.pack.js"></script>
 <script src="./js/initialize.js"></script>
 <script src="./js/initializeHighlight.js"></script>
+#if( $config.customScript )
+<script src="$config.customScript"></script>
+#end
 </body>
 </html>
