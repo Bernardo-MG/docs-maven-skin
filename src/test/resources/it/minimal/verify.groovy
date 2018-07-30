@@ -97,3 +97,7 @@ assert iconMenu.isEmpty()
 // Verifies that the right navigation bar was not generated
 def rightNavBar = body.select( '.navbar-right' )
 assert rightNavBar.isEmpty()
+
+// Verifies the edition link was not created
+def edit = head.select( 'a > span.fa-edit' )
+assert edit.isEmpty()
