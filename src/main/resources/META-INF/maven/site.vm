@@ -122,6 +122,13 @@
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
                 <small class="navbar-text">${project.version} (#publishDate())</small>
+ #**##if( $decoration.edit && $docRenderingContext.editable )
+                <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
+#**##end
+
+#**
+ * Prepares edition button if content is editable.
+ *#
 #set( $iconMenuElements = [] )
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
