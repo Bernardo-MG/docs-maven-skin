@@ -84,11 +84,12 @@
 #**##set( $empty = $siteTool.fixAnchorLinks($bodyContentParsed) )
 
 #**##set( $empty = $htmlTool.wrap($bodyContentParsed, 'h1:first-of-type', '<header class="page-header"></header>') )
- 
+
 #**
  * Recovers body content.
  *#
 #**##set( $bodyContent = $bodyContentParsed.html() )
+
 #end
 #*
 

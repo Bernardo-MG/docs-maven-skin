@@ -92,8 +92,12 @@ assert dropdown.isEmpty()
 
 // Verifies that the icon menus are not generated
 def iconMenu = body.select( 'li > ul.icons-list' )
-assert dropdown.isEmpty()
+assert iconMenu.isEmpty()
 
 // Verifies that the right navigation bar was not generated
 def rightNavBar = body.select( '.navbar-right' )
 assert rightNavBar.isEmpty()
+
+// Verifies the edition link was not created
+def edit = head.select( 'a > span.fa-edit' )
+assert edit.isEmpty()
