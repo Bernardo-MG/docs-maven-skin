@@ -79,7 +79,7 @@ To use the Skin when generating a Maven Site just add the following to the site.
 
 ```xml
 <skin>
-    <groupId>com.bernardomg.maven</groupId>
+    <groupId>com.bernardomg.maven.skins</groupId>
     <artifactId>docs-maven-skin</artifactId>
     <version>[current version]</version>
 </skin>
