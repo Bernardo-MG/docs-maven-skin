@@ -94,7 +94,7 @@ It is recommended using Maven's variable substitution to make the file easier to
 <skin>
    <groupId>${project.groupId}</groupId>
    <artifactId>${project.artifactId}</artifactId>
-   <version>${symbol_dollar}{project.version}</version>
+   <version>${symbol_dollar}{site.skin.version}</version>
 </skin>
 ```
 
