@@ -22,9 +22,27 @@
  * SOFTWARE.
  *#
 #*--------------------------------------------------*#
-#parse( "macros/config-macros.vm" )
-#parse( "macros/info-macros.vm" )
-#parse( "macros/list-macros.vm" )
-#parse( "macros/menu-macros.vm" )
-#parse( "macros/script-macros.vm" )
-#parse( "macros/setup-macros.vm" )
+#*--------------------------------------------------*###
+#**
+ * Renders a dropdown menu with the received menus as the selection options.
+ *
+ * Receives:
+ *        elements: Doxia decoration menus collection
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( googleAnalytics $id )
+<script>
+   // Global site tag (gtag.js) - Google Analytics
+
+   window.dataLayer = window.dataLayer || [];
+
+   function gtag() {
+      dataLayer.push(arguments);
+   }
+
+   gtag('js', new Date());
+
+   gtag('config', '$id');
+</script>
+#end

@@ -101,3 +101,6 @@ assert rightNavBar.isEmpty()
 // Verifies the edition link was not created
 def edit = head.select( 'a > span.fa-edit' )
 assert edit.isEmpty()
+
+// Verifies Google Analytics was not set up
+assert !html.contains( 'Google Analytics' )

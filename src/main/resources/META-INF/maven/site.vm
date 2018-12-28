@@ -182,5 +182,9 @@ $bodyContent
 #if( $config.customScript )
 <script src="$config.customScript"></script>
 #end
+#if( $decoration.googleAnalyticsAccountId )
+<script async src="https://www.googletagmanager.com/gtag/js?id=$decoration.googleAnalyticsAccountId"></script>
+#googleAnalytics( $decoration.googleAnalyticsAccountId )
+#end
 </body>
 </html>
