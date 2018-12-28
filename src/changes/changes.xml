@@ -81,5 +81,10 @@
             Added edit icon.
          </action>
       </release>
+      <release version="1.4.0" date="2018-12-28" description="More features">
+         <action dev="bmg" type="add">
+            Added support for Google Analytics.
+         </action>
+      </release>
    </body>
 </document>
