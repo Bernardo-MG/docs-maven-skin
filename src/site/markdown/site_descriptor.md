@@ -10,6 +10,8 @@ The following [site descriptor][site_descriptor] options are supported.
 </project>
 ```
 
+Will be used to override the project name for the site.
+
 ## Links
 
 ```

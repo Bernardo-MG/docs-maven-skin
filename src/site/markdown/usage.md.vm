@@ -14,7 +14,7 @@ ${symbol_pound} Usage
 
 ${symbol_pound}${symbol_pound} Sample site.xml
 
-The site requires a correctly configured site.xml file to work. For more details check the [site.xml page][site_xml], but the following shows an example of how it should look:
+The site requires a correctly configured site.xml file to work. For more details check the [custom site descriptors page][custom_site_descriptor], but the following shows an example of how it should look:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -99,4 +99,4 @@ It is recommended using Maven's variable substitution to make the file easier to
 ```
 
 [acquire]: ./acquire.html
-[site_xml]: ./site_xml.html
+[custom_site_descriptor]: ./custom_site_descriptor.html

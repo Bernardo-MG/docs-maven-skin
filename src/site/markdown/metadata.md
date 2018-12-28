@@ -94,7 +94,7 @@ If the *twitterSite* element is missing then the metadata block won't be added t
 The title shown in these blocks is the same one that is generated automatically for each Maven Site page, and so will change from page to page.
 
 
-[site-xml-metadata]: ./site_xml.html#twitterandfacebookmetada
+[site-xml-metadata]: ./custom_site_descriptor.html#twitterandfacebookmetada
 
 [open-graph]: http://ogp.me/
 [twitter-cards]: https://dev.twitter.com/cards/overview

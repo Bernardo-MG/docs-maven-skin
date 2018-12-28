@@ -1,12 +1,10 @@
-#Preparing the site.xml file
+# Custom Site Descriptors
 
-For the skin to work properly, a few things have to be prepared on the site.xml file, which is known as the [Maven Site Descriptor][maven-site-descriptor].
+Most of the common [site descriptors][site_descriptors] are supported, along a few custom options. Knowing these will allow taking full advantage of the skin.
 
 ## Skin Config
 
-The Skin requires a custom configuration element, named *skinConfig*, which will contain most of the required information.
-
-The general structure of this element will look like the following example:
+All the descriptors specific for the skin are stored inside the *skinConfig* element, which has a structure similar to:
 
 ```xml
 <custom>
@@ -27,9 +25,11 @@ The general structure of this element will look like the following example:
 </custom>
 ```
 
-### Configuration Elements
+These descriptors are option, and the skin will adapt to having or missing any of them.
 
-|Element|Use|
+### Configuration Options
+
+|Options|Usage|
 |---|---|
 |keywords|Value for the keywords HTML field|
 |descriptionUrl|Description of the page, used for Open Graph and Twitter Card|
@@ -40,9 +40,15 @@ The general structure of this element will look like the following example:
 
 ### Menus
 
-When menus are defined in one of the options these are taken from the site.xml file. The name set in the menu node should be the name of one of the defined menus.
+|Options|Usage|
+|---|---|
+|topNav|Dropdown navigation bar at the top of the page|
+|iconNav|Icons bar at the top of the page|
+|bottomNav|Navigation bar with links at the bottom of the page|
 
-So for example the following menu may be set:
+These expect a collection of menus, each referring one of the menus defined in the site.xml file.
+
+So for example the following menu can be used for the top navigation:
 
 ```xml
 <custom>
@@ -70,15 +76,13 @@ Which would require the following menu to exist:
 </body>
 ```
 
-If the top navigation menu is not defined like that, all the menus will be used to generate it.
+Each item will become an option inside a dropdown menu.
 
-If the bottom navigation menu is not defined, it won't be generated at all.
+Any menu not defined won't be rendered.
 
-#### Aditional Configuration
+#### Descriptions for the Bottom Nav
 
-In the bottom navigation menus, if any item contains a description it will be used to generate an underscript.
-
-A description is set like this:
+The bottom navigation menu allows giving a description for each link. These will be added as an underscript next to the link name.
 
 ```xml
 <body>
@@ -96,19 +100,6 @@ A description is set like this:
 
 The data contained in some of the elements will be used to generate the metadata on each page. For more information about this check the [metadata section][metadata].
 
-### Top Navigation
-
-The top navigation is the dropdown menus in the navigation bar.
-
-### Bottom Navigation
-
-The bottom navigation are the columns containing links in the footer.
-
-### Icons Navigation
-
-The icons navigation are the icons shown in the navigation bar.
-
-
 [metadata]: ./metadata.html
 
-[maven-site-descriptor]: http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html
+[site_descriptors]: ./site_descriptor.html
