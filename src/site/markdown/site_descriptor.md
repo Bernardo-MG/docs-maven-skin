@@ -4,17 +4,19 @@ The following [site descriptor][site_descriptor] options are supported.
 
 ## Title
 
-```
+Will be used to override the project name for the site.
+
+```xml
 <project name="Overriden Title">
 
 </project>
 ```
 
-Will be used to override the project name for the site.
-
 ## Links
 
-```
+These will be added between the icons menu and the dropdown menu.
+
+```xml
 <project>
 
    <body>
@@ -27,11 +29,11 @@ Will be used to override the project name for the site.
 </project>
 ```
 
-These will be added between the icons menu and the dropdown menu.
-
 ## Head Content
 
-```
+It will be added after the metadata and styles.
+
+```xml
 <project>
 
    <body>
@@ -41,11 +43,11 @@ These will be added between the icons menu and the dropdown menu.
 </project>
 ```
 
-It will be added after the metadata and styles.
-
 ## Footer Content
 
-```
+It will be added after the default footer content.
+
+```xml
 <project>
 
    <body>
@@ -55,11 +57,11 @@ It will be added after the metadata and styles.
 </project>
 ```
 
-It will be added after the default footer content.
-
 ## Google Analytics
 
-```
+This id will be used to set up [Google Analytics][google_analytics] tracking.
+
+```xml
 <project>
 
    <googleAnalyticsAccountId>accountId</googleAnalyticsAccountId>
@@ -67,7 +69,17 @@ It will be added after the default footer content.
 </project>
 ```
 
-This id will be used to set up [Google Analytics][google_analytics] tracking.
+## Doxia Edition Button
+
+This will set the URL for the Doxia edition button.
+
+```xml
+<project>
+
+   <edit>${project.scm.url}</edit>
+
+</project>
+```
 
 [site_descriptor]: https://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html
 

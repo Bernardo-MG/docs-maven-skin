@@ -21,6 +21,8 @@ All the descriptors specific for the skin are stored inside the *skinConfig* ele
       <iconNav>
          <menu></menu>
       </iconNav>
+      <customScript></customScript>
+      <customStyle></customStyle>
    </skinConfig>
 </custom>
 ```
@@ -85,6 +87,10 @@ The bottom navigation menu allows giving a description for each link. These will
 </body>
 ```
 
+### Custom Scripts and Style
+
+These options are detailed in the [Custom Style and Scripts][custom-style-scripts] page.
+
 ### Metadata
 
 |Options|Usage|
@@ -95,6 +101,7 @@ The bottom navigation menu allows giving a description for each link. These will
 
 The data contained in these elements will be used to generate the page's metadata. For more information about this check the [metadata section][metadata].
 
+[custom-style-scripts]: ./custom_style_scripts.html
 [metadata]: ./metadata.html
 
 [site_descriptors]: ./site_descriptor.html
