@@ -38,6 +38,9 @@ MatcherAssert.assertThat(
     Matchers.describedAs(htmlResponse.toString(), Matchers.hasSize(0))
 )
 
+// Parses HTML
+def body = Jsoup.parse(html).body()
+
 // Verifies Google Analytics was set up
 assert html.contains( 'Google Analytics' )
 
