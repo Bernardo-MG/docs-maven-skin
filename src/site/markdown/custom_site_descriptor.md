@@ -27,17 +27,6 @@ All the descriptors specific for the skin are stored inside the *skinConfig* ele
 
 These descriptors are option, and the skin will adapt to having or missing any of them.
 
-### Configuration Options
-
-|Options|Usage|
-|---|---|
-|keywords|Value for the keywords HTML field|
-|descriptionUrl|Description of the page, used for Open Graph and Twitter Card|
-|twitterSite|The identifier (@tag) for Twitter Card|
-|topNav|Menus for the top navigation menu|
-|bottomNav|Menus for the bottom navigation menu|
-|iconNav|Menus for the icons navigation menu|
-
 ### Menus
 
 |Options|Usage|
@@ -96,9 +85,15 @@ The bottom navigation menu allows giving a description for each link. These will
 </body>
 ```
 
-### Facebook's Open Graph and Twitter Cards Metadata
+### Metadata
 
-The data contained in some of the elements will be used to generate the metadata on each page. For more information about this check the [metadata section][metadata].
+|Options|Usage|
+|---|---|
+|keywords|Value for the keywords HTML field|
+|descriptionUrl|Description of the page, used for Open Graph and Twitter Card|
+|twitterSite|The identifier (@tag) for Twitter Card|
+
+The data contained in these elements will be used to generate the page's metadata. For more information about this check the [metadata section][metadata].
 
 [metadata]: ./metadata.html
 

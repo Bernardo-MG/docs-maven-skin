@@ -1,10 +1,10 @@
 # Metadata
 
-The Skin includes some metadata blocks in each of the pages, allowing it to be shared and automatically identified. The information used for these blocks is contained in the POM and also configured in the [metadata elements of the site.xml][site-xml-metadata].
+Some metadata blocks will be added to each page. The information used for these blocks is taken from the POM, but also configured in the [metadata elements of the site.xml][site-xml-metadata].
 
-## General Metadata
+## Site Description Metadata
 
-Some general metadata is added to the header of each page, creating a block like this:
+This will be added to each page:
 
 ```html
 <!-- Metadata -->
@@ -32,11 +32,11 @@ If any of these elements is missing then the corresponding field won't be added.
 
 ## Social Networks Metadata
 
-Each page will include a bit of data for both Facebook's [Open Graph][open-graph] and [Twitter Cards][twitter-cards].
+Tags for Facebook's [Open Graph][open-graph] and [Twitter Cards][twitter-cards] will be added if the required information is provided.
 
 ### Facebook's Open Graph
 
-The generated Open Graph metadata will be similar to this:
+Open Graph metadata will be similar to this:
 
 ```html
 <!-- Facebook Open Graph -->
@@ -46,7 +46,7 @@ The generated Open Graph metadata will be similar to this:
 <meta property="og:description" content="Documentation for the Docs Maven Skin"/>
 ```
 
-This data is taken from the following elements in the site.xml file:
+This information is taken from the following elements in the site.xml file:
 
 ```xml
 <custom>
@@ -64,7 +64,7 @@ If any of these elements is missing then the corresponding field won't be added.
 
 ### Twitter Cards
 
-The generated Twitter Card metadata will be similar to this:
+Twitter Card metadata will be similar to this:
 
 ```html
 <!-- Twitter Card -->
@@ -74,7 +74,7 @@ The generated Twitter Card metadata will be similar to this:
 <meta name="twitter:description" content="Documentation for the Docs Maven Skin"/>
 ```
 
-This data is taken from the following elements in the site.xml file:
+This information is taken from the following elements in the site.xml file:
 
 ```xml
 <custom>
