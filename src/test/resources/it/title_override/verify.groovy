@@ -5,18 +5,6 @@ import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 import org.jsoup.Jsoup
 
-// Verifies that all the files were created
-[
-    'target/site/index.html'
-].each {
-    def file = new File(basedir, it)
-    if (!file.exists()) {
-        throw new IllegalStateException(
-            "file ${file} doesn't exist"
-        )
-    }
-}
-
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
 
@@ -35,8 +23,9 @@ MatcherAssert.assertThat(
 )
 
 // Parses HTML
-def body = Jsoup.parse(html).body()
-def head = Jsoup.parse(html).head()
+def parsed = Jsoup.parse(html)
+def body = parsed.body()
+def head = parsed.head()
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )

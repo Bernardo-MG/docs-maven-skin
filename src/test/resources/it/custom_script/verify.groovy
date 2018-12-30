@@ -5,24 +5,13 @@ import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 import org.jsoup.Jsoup
 
-// Verifies that all the files were created
-[
-    'target/site/js/initializeHighlight.js'
-].each {
-    def file = new File(basedir, it)
-    if (!file.exists()) {
-        throw new IllegalStateException(
-            "file ${file} doesn't exist"
-        )
-    }
-}
-
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
 
 // Parses HTML
-def body = Jsoup.parse(html).body()
-def head = Jsoup.parse(html).head()
+def parsed = Jsoup.parse(html)
+def body = parsed.body()
+def head = parsed.head()
 
 // Verifies that the custom style file is linked
 def customStyle = head.select( 'link[href="./css/custom.css"]' )

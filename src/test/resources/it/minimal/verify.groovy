@@ -39,8 +39,9 @@ MatcherAssert.assertThat(
 )
 
 // Parses HTML
-def body = Jsoup.parse(html).body()
-def head = Jsoup.parse(html).head()
+def parsed = Jsoup.parse(html)
+def body = parsed.body()
+def head = parsed.head()
 
 // Verified the heading is set
 assert html.contains( '<header class="page-header">' )

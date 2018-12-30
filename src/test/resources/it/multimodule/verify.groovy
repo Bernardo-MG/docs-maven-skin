@@ -49,8 +49,9 @@ MatcherAssert.assertThat(
 )
 
 // Parses HTML
-def body = Jsoup.parse(html).body()
-def head = Jsoup.parse(html).head()
+def parsed = Jsoup.parse(html)
+def body = parsed.body()
+def head = parsed.head()
 
 // Verifies the skin info is included
 
