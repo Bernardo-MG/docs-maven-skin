@@ -85,6 +85,9 @@
          <action dev="bmg" type="add">
             Added support for Google Analytics.
          </action>
+         <action dev="bmg" type="add">
+            The site publish date can be hid.
+         </action>
       </release>
    </body>
 </document>
