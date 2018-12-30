@@ -57,6 +57,18 @@ It will be added after the default footer content.
 </project>
 ```
 
+## Disable Publish Date
+
+By default the page will show the site creation date next to the version. This can be disabled, hiding the date:
+
+```xml
+<project>
+
+   <publishDate position="none" />
+
+</project>
+```
+
 ## Google Analytics
 
 This id will be used to set up [Google Analytics][google_analytics] tracking.

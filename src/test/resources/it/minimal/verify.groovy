@@ -54,9 +54,14 @@ def titleHeader = body.select( '#navbar-main a.navbar-brand' )
 assert titleHeader.html().equals( 'minimal-site' )
 // Verifies the title includes a relative link to the index
 assert titleHeader.attr('href').equals( './index.html' )
-// Verifies the project version and date are included
-def versionHeader = body.select( '#navbar-main small.navbar-text' )
-assert versionHeader.html() =~ /1\.0\.0 \([0-9]+-[0-9]+-[0-9]+\)/
+
+// Verifies the project version is included
+def versionHeader = body.select( '#navbar-version' )
+assert versionHeader.html() =~ /1\.0\.0/
+
+// Verifies the project date is included
+def dateHeader = body.select( '#navbar-date' )
+assert dateHeader.html() =~ /\([0-9]+-[0-9]+-[0-9]+\)/
 
 // Footer link
 def div = body.select( 'footer.footer div.row div' ).last()
