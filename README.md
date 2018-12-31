@@ -103,7 +103,7 @@ You won't need to add the skin as a dependency to your project, just to the Mave
 
 ### Setting Up the Skin
 
-To use the Skin when generating a Maven Site just add the following to the site.xml file:
+Before creating the site register the skin into the site.xml file:
 
 ```xml
 <skin>
