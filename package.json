@@ -1,8 +1,8 @@
 {
    "scripts": {
       "validate-js": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc",
-      "minify-css": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc",
-      "minify-js": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css"
+      "minify-css": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css",
+      "minify-js": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc"
    },
    "dependencies": {
       "bootstrap": "~3.3.7",
