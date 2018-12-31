@@ -25,7 +25,7 @@ All these are libraries include minified versions, which are copied into the pro
 
 ### Additional Libraries
 
-A few custom javascript utilities are contained in the project. These will be minified when building the project, and stored into the scripts.min.js file.
+A few custom javascript utilities are contained inside the project. These will be minified when building the project, and stored into the scripts.min.js file.
 
 ## Basic Template
 

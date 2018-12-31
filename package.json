@@ -1,6 +1,7 @@
 {
    "scripts": {
-      "validate-js": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc"
+      "validate-js": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc",
+      "minify-js": "./node_modules/.bin/uglifyjs ./src/main/resources/js/chevron-toggle.js ./src/main/resources/js/heading-numbering.js ./src/main/resources/js/smooth-scroll.js -o ./target/classes/js/scripts.min.js"
    },
    "dependencies": {
       "bootstrap": "~3.3.7",
@@ -8,6 +9,7 @@
       "font-awesome": "~4.7.0",
       "html5shiv": "~3.7.3",
       "jquery": "~3.2.1",
-      "jshint": "~2.9.5"
+      "jshint": "~2.9.5",
+      "uglify-js": "~3.4.9"
    }
 }

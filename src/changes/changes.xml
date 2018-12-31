@@ -88,6 +88,12 @@
          <action dev="bmg" type="add">
             The site publish date can be hid.
          </action>
+         <action dev="bmg" type="update">
+            Using npm for minifying.
+         </action>
+         <action dev="bmg" type="fix">
+            Initialization scripts were minified, this has been corrected.
+         </action>
       </release>
    </body>
 </document>

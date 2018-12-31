@@ -439,6 +439,17 @@
                      <arguments>run validate-js</arguments>
                   </configuration>
                </execution>
+               <execution>
+                  <!-- Minify Javascript -->
+                  <id>minify-js</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>process-resources</phase>
+                  <configuration>
+                     <arguments>run minify-js</arguments>
+                  </configuration>
+               </execution>
             </executions>
          </plugin>
          <plugin>
@@ -456,23 +467,6 @@
                         <cssSourceInclude>**</cssSourceInclude>
                      </cssSourceIncludes>
                      <cssFinalFile>style.css</cssFinalFile>
-                  </configuration>
-                  <goals>
-                     <goal>minify</goal>
-                  </goals>
-               </execution>
-               <execution>
-                  <id>minify-js</id>
-                  <configuration>
-                     <webappSourceDir>${basedir}/src/main/resources/</webappSourceDir>
-                     <webappTargetDir>${basedir}/target/classes/</webappTargetDir>
-                     <jsSourceIncludes>
-                        <jsSourceInclude>**</jsSourceInclude>
-                     </jsSourceIncludes>
-                     <jsSourceExcludes>
-                        <jsSourceExclude>initialize.js</jsSourceExclude>
-                     </jsSourceExcludes>
-                     <jsFinalFile>scripts.js</jsFinalFile>
                   </configuration>
                   <goals>
                      <goal>minify</goal>
