@@ -17,6 +17,16 @@ These are CSS and Javascript libraries used to build the UI looks.
 
 To this a few custom Javascript files have been added.
 
+### Loading Libraries
+
+Most frontend dependencies are handled through npm, and defined inside the package.json file. Only highligh.js is included as a static library, because it needs additional configuration.
+
+All these are libraries include minimised versions, which are copied into the project, ready to be used.
+
+### Additional Libraries
+
+A few custom javascript utilities are contained in the project. These will be minimised when building the project, and stored into the scripts.min.js file.
+
 ## Basic Template
 
 A basic template, the [Docs Bootstrap Template][docs-template], is used to direct the development of the skin, serving as a template which should be transformed into the actual Maven Site.
