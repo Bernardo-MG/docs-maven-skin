@@ -37,9 +37,9 @@ These descriptors are option, and the skin will adapt to having or missing any o
 |iconNav|Icons bar at the top of the page|
 |bottomNav|Navigation bar with links at the bottom of the page|
 
-These expect a collection of menus, each referring one of the menus defined in the site.xml file.
+Each expects a collection of menus, which are references to the ones defined in the site.xml file.
 
-So for example the following menu can be used for the top navigation:
+For example the following menu can be used for the top navigation:
 
 ```xml
 <custom>
@@ -67,9 +67,25 @@ Which would require the following menu to exist:
 </body>
 ```
 
-Each item will become an option inside a dropdown menu.
+The skin will create a dropdown meny for each menu defined in topNav, while the ones in bottomNav will become a column with links.
 
-Any menu not defined won't be rendered.
+#### Icons
+
+The iconNav option does not work like the others, as it will be used to render a list of icons, using Font Awesome to pick them.
+
+For this to work you just need to add an image to the menu item:
+
+```xml
+<body>
+   ...
+   <menu name="Icons" inherit="bottom">
+      <item name="Github" img="github" href="${project.scm.url}" />
+   </menu>
+   ...
+</body>
+```
+
+This image should be an existing Font Awesome icon, without the fa- prefix, as this will be added automatically. In this case the icon picked will be fa-github.
 
 #### Descriptions for the Bottom Nav
 

@@ -37,7 +37,7 @@
       <menu name="Documentation" inherit="bottom">
          <item name="Acquire" href="./acquire.html" />
          <item name="Usage" href="./usage.html" />
-         <item name="Used Tools" href="./tools.html" />
+         <item name="Tools Used" href="./tools.html" />
          <item name="Site Descriptor Support" href="./site_descriptor.html" />
          <item name="Custom Site Descriptors" href="./custom_site_descriptor.html" />
          <item name="Custom Style and Scripts" href="./custom_style_scripts.html" />
