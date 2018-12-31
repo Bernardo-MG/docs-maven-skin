@@ -73,7 +73,35 @@ If for some reason manual installation is necessary, just use the following Mave
 $ mvn install
 ```
 
-### Setting up the skin
+### Reducing the Dependency Scope
+
+You won't need to add the skin as a dependency to your project, just to the Maven site plugin:
+
+```xml
+<build>
+    <plugins>
+        ...
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <dependencies>
+                ...
+                <dependency>
+                    <!-- Docs Maven Skin -->
+                    <groupId>com.bernardomg.maven.skins</groupId>
+                    <artifactId>docs-maven-skin</artifactId>
+                    <version>${site.skin.version}</version>
+                </dependency>
+                ...
+            </dependencies>
+            ...
+        </plugin>
+        ...
+    </plugins>
+</build>
+```
+
+### Setting Up the Skin
 
 To use the Skin when generating a Maven Site just add the following to the site.xml file:
 
@@ -87,7 +115,7 @@ To use the Skin when generating a Maven Site just add the following to the site.
 
 More detailed information can be found in [the docs][site-release].
 
-### Running tests
+### Running Tests
 
 Several integration tests are included in the project, verifying various configurations. These can be run by using the usual Maven command:
 
@@ -108,11 +136,11 @@ Any kind of help with the project will be well received, and there are two main 
 - Reporting errors and asking for extensions through the issues management
 - or forking the repository and extending the project
 
-### Issues management
+### Issues Management
 
 Issues are managed at the GitHub [project issues tracker][issues], where any Github user may report bugs or ask for new features.
 
-### Getting the code
+### Getting the Code
 
 If you wish to fork or modify the code, visit the [GitHub project page][scm], where the latest versions are always kept. Check the 'master' branch for the latest release, and the 'develop' for the current, and stable, development version.
 
