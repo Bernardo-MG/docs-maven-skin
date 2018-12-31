@@ -2,11 +2,17 @@
 
 [highligh.js][highlight] is being used for the code sections, but as it is a big library it may require customization.
 
+## Overriding Configuration
+
+The site will load the library located at /lib/highlight/highlight.pack.js.
+
+To override the default file place your own highlight.pack.js file at src/site/resources/lib/highlight/highlight.pack.js, along any resources it may need.
+
 ## Overriding Initialisation
 
-The library is loaded through the initializeHighlight.js file, located at js/initializeHighlight.js in the site. This can't be changed, but Maven Site allows overriding files.
+The library is loaded through the file located at js/initializeHighlight.js. 
 
-To do this just add your own file at src/site/resources/js/initializeHighlight.js in your project. That way your file will take the place of the default one.
+To override this file add your own at src/site/resources/js/initializeHighlight.js inside your project.
 
 This new initialization file would look similar to this, but adapted to your needs:
 
