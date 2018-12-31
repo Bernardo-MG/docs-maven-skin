@@ -235,13 +235,6 @@
                <artifactId>maven-invoker-plugin</artifactId>
                <version>${plugin.invoker.version}</version>
             </plugin>
-            <plugin>
-               <!-- Minify -->
-               <!-- Minifies files. -->
-               <groupId>com.samaxes.maven</groupId>
-               <artifactId>minify-maven-plugin</artifactId>
-               <version>${plugin.minify.version}</version>
-            </plugin>
          </plugins>
       </pluginManagement>
       <plugins>
@@ -440,6 +433,17 @@
                   </configuration>
                </execution>
                <execution>
+                  <!-- Minify CSS -->
+                  <id>minify-css</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>process-resources</phase>
+                  <configuration>
+                     <arguments>run minify-css</arguments>
+                  </configuration>
+               </execution>
+               <execution>
                   <!-- Minify Javascript -->
                   <id>minify-js</id>
                   <goals>
@@ -449,28 +453,6 @@
                   <configuration>
                      <arguments>run minify-js</arguments>
                   </configuration>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
-            <!-- Minify -->
-            <!-- Minifies files. -->
-            <groupId>com.samaxes.maven</groupId>
-            <artifactId>minify-maven-plugin</artifactId>
-            <executions>
-               <execution>
-                  <id>minify-css</id>
-                  <configuration>
-                     <webappSourceDir>${basedir}/src/main/resources/</webappSourceDir>
-                     <webappTargetDir>${basedir}/target/classes/</webappTargetDir>
-                     <cssSourceIncludes>
-                        <cssSourceInclude>**</cssSourceInclude>
-                     </cssSourceIncludes>
-                     <cssFinalFile>style.css</cssFinalFile>
-                  </configuration>
-                  <goals>
-                     <goal>minify</goal>
-                  </goals>
                </execution>
             </executions>
          </plugin>

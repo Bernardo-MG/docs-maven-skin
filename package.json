@@ -1,11 +1,13 @@
 {
    "scripts": {
       "validate-js": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc",
-      "minify-js": "./node_modules/.bin/uglifyjs ./src/main/resources/js/chevron-toggle.js ./src/main/resources/js/heading-numbering.js ./src/main/resources/js/smooth-scroll.js -o ./target/classes/js/scripts.min.js"
+      "minify-css": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc",
+      "minify-js": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css"
    },
    "dependencies": {
       "bootstrap": "~3.3.7",
       "bootswatch": "~3.3.7",
+      "clean-css-cli": "~4.2.1",
       "font-awesome": "~4.7.0",
       "html5shiv": "~3.7.3",
       "jquery": "~3.2.1",
