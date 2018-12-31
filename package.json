@@ -2,7 +2,7 @@
    "scripts": {
       "validate-js": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc",
       "minify-css": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css",
-      "minify-js": "./node_modules/.bin/uglifyjs ./src/main/resources/js/chevron-toggle.js ./src/main/resources/js/heading-numbering.js ./src/main/resources/js/smooth-scroll.js -o ./target/classes/js/scripts.min.js"
+      "minify-js": "./node_modules/.bin/uglifyjs ./src/main/resources/js/utils/*.js -o ./target/classes/js/scripts.min.js"
    },
    "dependencies": {
       "bootstrap": "~3.3.7",
