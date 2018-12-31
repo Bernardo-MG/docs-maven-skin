@@ -1,10 +1,10 @@
 # Metadata
 
-Some metadata blocks will be added to each page. The information used for these blocks is taken from the POM, but also configured in the [metadata elements of the site.xml][site-xml-metadata].
+Metadata blocks will be added to every page in the site, created mostly with information taken from the POM, but also with a bit of it configured in the [metadata elements of the site.xml][site-xml-metadata].
 
 ## Site Description Metadata
 
-This will be added to each page:
+The skin always tries to add the following elements to the page head:
 
 ```html
 <!-- Metadata -->
@@ -13,9 +13,7 @@ This will be added to each page:
 <meta name="author" content="Bernardo Martínez Garrido" />
 ```
 
-The author is taken from the list of authors in the POM, and one entry will be created for each of them.
-
-The other data is taken from the following elements in the site.xml file:
+One author will be added for each author in the POM, while the keywords and description are taken from the site configuration:
 
 ```xml
 <custom>
@@ -28,43 +26,39 @@ The other data is taken from the following elements in the site.xml file:
 </custom>
 ```
 
-If any of these elements is missing then the corresponding field won't be added.
-
 ## Social Networks Metadata
 
-Tags for Facebook's [Open Graph][open-graph] and [Twitter Cards][twitter-cards] will be added if the required information is provided.
+If enough information is available then [Open Graph][open-graph] and [Twitter Cards][twitter-cards] elements will be added too.
 
 ### Facebook's Open Graph
 
-Open Graph metadata will be similar to this:
+The Open Graph metadata looks similar to this:
 
 ```html
 <!-- Facebook Open Graph -->
 <meta property="og:type" content="website"/>
+<meta property="og:url" content="http://www.somewhere.com"/>
 <meta property="og:site_name" content="Docs Maven Skin &#x2013; Maven Site as a documentation site"/>
 <meta property="og:title" content="Docs Maven Skin &#x2013; Maven Site as a documentation site"/>
 <meta property="og:description" content="Documentation for the Docs Maven Skin"/>
 ```
 
-This information is taken from the following elements in the site.xml file:
+Most of this information is always available, except for the description and the URL, which should be defined in the site configuration:
 
 ```xml
 <custom>
     <skinConfig>
         ...
         <descriptionUrl>Documentation for the Docs Maven Skin</descriptionUrl>
+        <canonicalLink>http://www.somewhere.com</canonicalLink>
         ...
     </skinConfig>
 </custom>
 ```
 
-Additionally, if a *canonicalLink* element is included in the site.xml configuration, containing the absolute link to the page, then a field tagged *og:url* will be added to the metadata block.
-
-If any of these elements is missing then the corresponding field won't be added.
-
 ### Twitter Cards
 
-Twitter Card metadata will be similar to this:
+The Twitter Card metadata looks similar to this:
 
 ```html
 <!-- Twitter Card -->
@@ -74,7 +68,7 @@ Twitter Card metadata will be similar to this:
 <meta name="twitter:description" content="Documentation for the Docs Maven Skin"/>
 ```
 
-This information is taken from the following elements in the site.xml file:
+Again, some information should be defined in the site configuration, this time it's the description and Twitter id:
 
 ```xml
 <custom>
@@ -87,11 +81,9 @@ This information is taken from the following elements in the site.xml file:
 </custom>
 ```
 
-If the *twitterSite* element is missing then the metadata block won't be added to the page. If any other element is missing then the corresponding field won't be added.
-
 ### Titles
 
-The title shown in these blocks is the same one that is generated automatically for each Maven Site page, and so will change from page to page.
+The social network metadata requires a title. This will be the one generated automatically for each Maven Site page, and will change from page to page.
 
 
 [site-xml-metadata]: ./custom_site_descriptor.html#metadata
