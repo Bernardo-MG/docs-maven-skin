@@ -1,6 +1,6 @@
 # Custom Site Descriptors
 
-Most of the common [site descriptors][site_descriptors] are supported, along a few custom options. Knowing these will allow taking full advantage of the skin.
+Most of the common [site descriptors][site_descriptors] are supported, but there are also a few custom options. Knowing these will allow taking full advantage of the skin.
 
 ## Skin Config
 
@@ -27,9 +27,9 @@ All the descriptors specific for the skin are stored inside the *skinConfig* ele
 </custom>
 ```
 
-These descriptors are option, and the skin will adapt to having or missing any of them.
+These descriptors are optional, and not required.
 
-### Menus
+### Navigation Bars
 
 |Options|Usage|
 |---|---|
@@ -67,13 +67,13 @@ Which would require the following menu to exist:
 </body>
 ```
 
-The skin will create a dropdown meny for each menu defined in topNav, while the ones in bottomNav will become a column with links.
+The skin will create a dropdown menu for each menu defined in topNav, while the ones in bottomNav will become each a column with links.
 
 #### Icons
 
-The iconNav option does not work like the others, as it will be used to render a list of icons, using Font Awesome to pick them.
+The iconNav option will be used to render a list of icons, with the help of Font Awesome.
 
-For this to work you just need to add an image to the menu item:
+For this to work you just need to add an image attribute to the menu item:
 
 ```xml
 <body>
@@ -85,7 +85,7 @@ For this to work you just need to add an image to the menu item:
 </body>
 ```
 
-This image should be an existing Font Awesome icon, without the fa- prefix, as this will be added automatically. In this case the icon picked will be fa-github.
+This image is a reference to an existing Font Awesome icon, without the fa- prefix, as this will be added automatically. In this case the icon picked will be fa-github.
 
 #### Descriptions for the Bottom Nav
 

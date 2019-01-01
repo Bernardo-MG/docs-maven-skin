@@ -21,9 +21,9 @@ Only highlight.js is included as a static dependency, as it requires additional 
 
 ### Additional Libraries
 
-Along these libraries few custom javascript utilities are contained inside the project. They will be minified when building the project, and stored into the scripts.min.js file.
+A few custom javascript utilities are contained inside the project. They will be minified when building the project, and stored into the scripts.min.js file.
 
-Any javascript file added to src/main/resources/js/utils will be included into this file.
+These are stored inside the folder src/main/resources/js/utils.
 
 ## Basic Template
 

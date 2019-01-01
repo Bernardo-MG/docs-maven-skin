@@ -12,11 +12,11 @@
 
 ## Sample site.xml
 
-The sking supports several standard descriptors, along a bunch of exclusive options.
+The skin makes use of several standard descriptors, and a few exclusive ones.
 
-For more details check the [suported site descriptors][site_descriptor] and the [custom site descriptors][custom_site_descriptor].
+For more details check the [supported site descriptors][site_descriptor] and the [custom site descriptors][custom_site_descriptor].
 
-The following shows a sample site.xml file useful as a base for most sites:
+The following example for a site.xml file will be useful for most sites:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -16,6 +16,15 @@ The skin always tries to add the following elements to the page head:
 One author will be added for each author in the POM, while the keywords and description are taken from the site configuration:
 
 ```xml
+<developers>
+   <developer>
+      <id>bmg</id>
+      <name>Bernardo Martínez Garrido</name>
+   </developer>
+</developers>
+```
+
+```xml
 <custom>
     <skinConfig>
         ...
@@ -28,11 +37,9 @@ One author will be added for each author in the POM, while the keywords and desc
 
 ## Social Networks Metadata
 
-If enough information is available then [Open Graph][open-graph] and [Twitter Cards][twitter-cards] elements will be added too.
-
 ### Facebook's Open Graph
 
-The Open Graph metadata looks similar to this:
+The [Open Graph][open-graph] metadata looks similar to this:
 
 ```html
 <!-- Facebook Open Graph -->
@@ -58,7 +65,7 @@ Most of this information is always available, except for the description and the
 
 ### Twitter Cards
 
-The Twitter Card metadata looks similar to this:
+The [Twitter Cards][twitter-cards] metadata looks similar to this:
 
 ```html
 <!-- Twitter Card -->
