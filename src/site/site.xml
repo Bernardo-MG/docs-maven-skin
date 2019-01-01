@@ -37,12 +37,12 @@
       <menu name="Documentation" inherit="bottom">
          <item name="Acquire" href="./acquire.html" />
          <item name="Usage" href="./usage.html" />
-         <item name="Used Tools" href="./tools.html" />
-         <item name="Preparing the site.xml File" href="./site_xml.html" />
+         <item name="Tools Used" href="./tools.html" />
+         <item name="Site Descriptor Support" href="./site_descriptor.html" />
+         <item name="Custom Site Descriptors" href="./custom_site_descriptor.html" />
+         <item name="Custom Style and Scripts" href="./custom_style_scripts.html" />
          <item name="HTML Metadata" href="./metadata.html" />
          <item name="highlight.js" href="./highlight.html" />
-         <item name="Custom Style and Scripts" href="./custom_style_scripts.html" />
-         <item name="Site Descriptor Support" href="./site_descriptor.html" />
          <item name="Tests" href="./tests.html" />
       </menu>
       <menu name="Info and reports" inherit="bottom">

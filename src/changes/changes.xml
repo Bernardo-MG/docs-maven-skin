@@ -81,5 +81,19 @@
             Added edit icon.
          </action>
       </release>
+      <release version="1.4.0" date="2019-01-01" description="More features">
+         <action dev="bmg" type="add">
+            Added support for Google Analytics.
+         </action>
+         <action dev="bmg" type="add">
+            The site publish date can be hid.
+         </action>
+         <action dev="bmg" type="update">
+            Using npm for minifying JS and CSS.
+         </action>
+         <action dev="bmg" type="fix">
+            Initialization scripts were minified, this has been corrected.
+         </action>
+      </release>
    </body>
 </document>

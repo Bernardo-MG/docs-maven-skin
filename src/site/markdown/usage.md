@@ -1,20 +1,22 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-${symbol_pound} Usage
+# Usage
 
-[Once the dependencies have been set][acquire], the skin can be used by adding the following element to the site.xml file:
+[Once the dependencies have been set][acquire], and you have read the [Maven Site Plugin docs][maven-site], register the skin into the site.xml file:
 
 ```xml
 <skin>
-   <groupId>com.bernardomg.maven</groupId>
+   <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
    <version>${project.version}</version>
 </skin>
 ```
 
-${symbol_pound}${symbol_pound} Sample site.xml
+## Sample site.xml
 
-The site requires a correctly configured site.xml file to work. For more details check the [site.xml page][site_xml], but the following shows an example of how it should look:
+The skin makes use of several standard descriptors, and a few exclusive ones.
+
+For more details check the [supported site descriptors][site_descriptor] and the [custom site descriptors][custom_site_descriptor].
+
+The following example for a site.xml file will be useful for most sites:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -23,9 +25,9 @@ The site requires a correctly configured site.xml file to work. For more details
    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
 
    <skin>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>${project.artifactId}</artifactId>
-      <version>${project.version}</version>
+      <groupId>com.bernardomg.maven.skins</groupId>
+      <artifactId>docs-maven-skin</artifactId>
+   <version>${symbol_dollar}{site.skin.version}</version>
    </skin>
 
    <custom>
@@ -86,17 +88,8 @@ The site requires a correctly configured site.xml file to work. For more details
 </project>
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound} Variables Substitution
-
-It is recommended using Maven's variable substitution to make the file easier to mantain. For example by setting the *site.skin.version* property in the POM the skin configuration ends looking like this:
-
-```xml
-<skin>
-   <groupId>${project.groupId}</groupId>
-   <artifactId>${project.artifactId}</artifactId>
-   <version>${symbol_dollar}{project.version}</version>
-</skin>
-```
+[maven-site]: https://maven.apache.org/plugins/maven-site-plugin/
 
 [acquire]: ./acquire.html
-[site_xml]: ./site_xml.html
+[site_descriptor]: ./site_descriptor.html
+[custom_site_descriptor]: ./custom_site_descriptor.html

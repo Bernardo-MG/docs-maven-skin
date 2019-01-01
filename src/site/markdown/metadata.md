@@ -1,10 +1,10 @@
 # Metadata
 
-The Skin includes some metadata blocks in each of the pages, allowing it to be shared and automatically identified. The information used for these blocks is contained in the POM and also configured in the [metadata elements of the site.xml][site-xml-metadata].
+Metadata blocks will be added to every page in the site, created mostly with information taken from the POM, but also with a bit of it configured in the [metadata elements of the site.xml][site-xml-metadata].
 
-## General Metadata
+## Site Description Metadata
 
-Some general metadata is added to the header of each page, creating a block like this:
+The skin always tries to add the following elements to the page head:
 
 ```html
 <!-- Metadata -->
@@ -13,9 +13,16 @@ Some general metadata is added to the header of each page, creating a block like
 <meta name="author" content="Bernardo Martínez Garrido" />
 ```
 
-The author is taken from the list of authors in the POM, and one entry will be created for each of them.
+One author will be added for each author in the POM, while the keywords and description are taken from the site configuration:
 
-The other data is taken from the following elements in the site.xml file:
+```xml
+<developers>
+   <developer>
+      <id>bmg</id>
+      <name>Bernardo Martínez Garrido</name>
+   </developer>
+</developers>
+```
 
 ```xml
 <custom>
@@ -28,43 +35,37 @@ The other data is taken from the following elements in the site.xml file:
 </custom>
 ```
 
-If any of these elements is missing then the corresponding field won't be added.
-
 ## Social Networks Metadata
-
-Each page will include a bit of data for both Facebook's [Open Graph][open-graph] and [Twitter Cards][twitter-cards].
 
 ### Facebook's Open Graph
 
-The generated Open Graph metadata will be similar to this:
+The [Open Graph][open-graph] metadata looks similar to this:
 
 ```html
 <!-- Facebook Open Graph -->
 <meta property="og:type" content="website"/>
+<meta property="og:url" content="http://www.somewhere.com"/>
 <meta property="og:site_name" content="Docs Maven Skin &#x2013; Maven Site as a documentation site"/>
 <meta property="og:title" content="Docs Maven Skin &#x2013; Maven Site as a documentation site"/>
 <meta property="og:description" content="Documentation for the Docs Maven Skin"/>
 ```
 
-This data is taken from the following elements in the site.xml file:
+Most of this information is always available, except for the description and the URL, which should be defined in the site configuration:
 
 ```xml
 <custom>
     <skinConfig>
         ...
         <descriptionUrl>Documentation for the Docs Maven Skin</descriptionUrl>
+        <canonicalLink>http://www.somewhere.com</canonicalLink>
         ...
     </skinConfig>
 </custom>
 ```
 
-Additionally, if a *canonicalLink* element is included in the site.xml configuration, containing the absolute link to the page, then a field tagged *og:url* will be added to the metadata block.
-
-If any of these elements is missing then the corresponding field won't be added.
-
 ### Twitter Cards
 
-The generated Twitter Card metadata will be similar to this:
+The [Twitter Cards][twitter-cards] metadata looks similar to this:
 
 ```html
 <!-- Twitter Card -->
@@ -74,7 +75,7 @@ The generated Twitter Card metadata will be similar to this:
 <meta name="twitter:description" content="Documentation for the Docs Maven Skin"/>
 ```
 
-This data is taken from the following elements in the site.xml file:
+Again, some information should be defined in the site configuration, this time it's the description and Twitter id:
 
 ```xml
 <custom>
@@ -87,14 +88,12 @@ This data is taken from the following elements in the site.xml file:
 </custom>
 ```
 
-If the *twitterSite* element is missing then the metadata block won't be added to the page. If any other element is missing then the corresponding field won't be added.
-
 ### Titles
 
-The title shown in these blocks is the same one that is generated automatically for each Maven Site page, and so will change from page to page.
+The social network metadata requires a title. This will be the one generated automatically for each Maven Site page, and will change from page to page.
 
 
-[site-xml-metadata]: ./site_xml.html#twitterandfacebookmetada
+[site-xml-metadata]: ./custom_site_descriptor.html#metadata
 
 [open-graph]: http://ogp.me/
 [twitter-cards]: https://dev.twitter.com/cards/overview

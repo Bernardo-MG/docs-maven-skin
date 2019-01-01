@@ -4,7 +4,9 @@ The following [site descriptor][site_descriptor] options are supported.
 
 ## Title
 
-```
+Will be used to override the project name for the site.
+
+```xml
 <project name="Overriden Title">
 
 </project>
@@ -12,7 +14,9 @@ The following [site descriptor][site_descriptor] options are supported.
 
 ## Links
 
-```
+These will be added between the icons menu and the dropdown menu.
+
+```xml
 <project>
 
    <body>
@@ -25,11 +29,11 @@ The following [site descriptor][site_descriptor] options are supported.
 </project>
 ```
 
-These will be added between the icons menu and the dropdown menu.
-
 ## Head Content
 
-```
+It will be added after the metadata and styles.
+
+```xml
 <project>
 
    <body>
@@ -39,11 +43,11 @@ These will be added between the icons menu and the dropdown menu.
 </project>
 ```
 
-It will be added after the metadata and styles.
-
 ## Footer Content
 
-```
+It will be added after the default footer content.
+
+```xml
 <project>
 
    <body>
@@ -53,6 +57,42 @@ It will be added after the metadata and styles.
 </project>
 ```
 
-It will be added after the default footer content.
+## Disable Publish Date
+
+By default the page will show the site creation date next to the version. This can be disabled, hiding the date:
+
+```xml
+<project>
+
+   <publishDate position="none" />
+
+</project>
+```
+
+## Google Analytics
+
+This id will be used to set up [Google Analytics][google_analytics] tracking.
+
+```xml
+<project>
+
+   <googleAnalyticsAccountId>accountId</googleAnalyticsAccountId>
+
+</project>
+```
+
+## Doxia Edition Button
+
+This will set the URL for the Doxia edition button.
+
+```xml
+<project>
+
+   <edit>${project.scm.url}</edit>
+
+</project>
+```
 
 [site_descriptor]: https://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html
+
+[google_analytics]: https://analytics.google.com/analytics/web/

@@ -1,8 +1,8 @@
 # Docs Maven Skin
 
-A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
+A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to create documentation sites with Maven.
 
-It is easy to use, just remember to check [the documentation][site-release] to find out how to set it up, and to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin and shows how it is configured.
+It is easy to use, just remember to check [the project documentation][site-release] to find out how to set it up, and also to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, takes advantage of this skin and shows how to set it up.
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
@@ -25,7 +25,7 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 
 ## Demo
 
-To check the Docs Maven Skin at work take a look at the documentation, linked below this section, which is a Maven Site making use of this skin.
+The project documentation makes use of the skin, it is always built with the latest release available. You can check the links just below this section.
 
 ## Documentation
 
@@ -51,9 +51,7 @@ The project started as a fork of the [Reflow Maven Skin][reflow-skin], but it qu
 
 ## Usage
 
-The project is coded in Velocity Template Language, using Maven to manage the project.
-
-It also requires Maven to be used, being set up as a Maven Skin for the Maven Site of any other Maven-based project.
+As any Maven Skin it is handled through the Maven Plugin. Check the docs for more concrete information.
 
 ### Prerequisites
 
@@ -73,9 +71,37 @@ If for some reason manual installation is necessary, just use the following Mave
 $ mvn install
 ```
 
-### Setting up the skin
+### Reducing the Dependency Scope
 
-To use the Skin when generating a Maven Site just add the following to the site.xml file:
+Actually you won't need to add the skin as a dependency to your project, just to the Maven site plugin:
+
+```xml
+<build>
+    <plugins>
+        ...
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <dependencies>
+                ...
+                <dependency>
+                    <!-- Docs Maven Skin -->
+                    <groupId>com.bernardomg.maven.skins</groupId>
+                    <artifactId>docs-maven-skin</artifactId>
+                    <version>${site.skin.version}</version>
+                </dependency>
+                ...
+            </dependencies>
+            ...
+        </plugin>
+        ...
+    </plugins>
+</build>
+```
+
+### Setting Up the Skin
+
+Before creating the site register the skin into the site.xml file:
 
 ```xml
 <skin>
@@ -85,9 +111,9 @@ To use the Skin when generating a Maven Site just add the following to the site.
 </skin>
 ```
 
-More detailed information can be found in [the docs][site-release].
+More detailed information can be found in the documentation.
 
-### Running tests
+### Running Tests
 
 Several integration tests are included in the project, verifying various configurations. These can be run by using the usual Maven command:
 
@@ -108,11 +134,11 @@ Any kind of help with the project will be well received, and there are two main 
 - Reporting errors and asking for extensions through the issues management
 - or forking the repository and extending the project
 
-### Issues management
+### Issues Management
 
 Issues are managed at the GitHub [project issues tracker][issues], where any Github user may report bugs or ask for new features.
 
-### Getting the code
+### Getting the Code
 
 If you wish to fork or modify the code, visit the [GitHub project page][scm], where the latest versions are always kept. Check the 'master' branch for the latest release, and the 'develop' for the current, and stable, development version.
 

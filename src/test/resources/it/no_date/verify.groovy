@@ -25,6 +25,10 @@ MatcherAssert.assertThat(
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies that the footer custom content was generated
-def customFooter = body.select( '#footer-custom-content' )
-assert customFooter.html().equals( 'Custom footer content' )
+// Verifies the project version is included
+def versionHeader = body.select( '#navbar-version' )
+assert versionHeader.html() =~ /1\.0\.0/
+
+// Verifies the project date is included
+def dateHeader = body.select( '#navbar-date' )
+assert dateHeader.isEmpty()

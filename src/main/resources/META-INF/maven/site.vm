@@ -121,14 +121,16 @@
             </div>
 
             <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
-                <small class="navbar-text">${project.version} (#publishDate())</small>
- #**##if( $decoration.edit && $docRenderingContext.editable )
+#**##if( $decoration.publishDate.position != "none" )
+                <small class="navbar-text"><span id="navbar-version">${project.version}</span> <span id="navbar-date">(#publishDate())</span></small>
+#**##else
+                <small class="navbar-text"><span id="navbar-version">${project.version}</span></small>
+#**##end
+#**##if( $decoration.edit && $docRenderingContext.editable )
+#**##* Doxia edition button. *#
                 <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
 #**##end
 
-#**
- * Prepares edition button if content is editable.
- *#
 #set( $iconMenuElements = [] )
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
@@ -181,6 +183,10 @@ $bodyContent
 <script src="./js/initializeHighlight.js"></script>
 #if( $config.customScript )
 <script src="$config.customScript"></script>
+#end
+#if( $decoration.googleAnalyticsAccountId )
+<script async src="https://www.googletagmanager.com/gtag/js?id=$decoration.googleAnalyticsAccountId"></script>
+#googleAnalytics( $decoration.googleAnalyticsAccountId )
 #end
 </body>
 </html>

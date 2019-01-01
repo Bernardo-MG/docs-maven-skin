@@ -1,4 +1,4 @@
-// This script verifies that a minimal site contains only the barebones of a site.
+// This script verifies that the Google options are applied correctly.
 
 import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
@@ -25,6 +25,8 @@ MatcherAssert.assertThat(
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies that the footer custom content was generated
-def customFooter = body.select( '#footer-custom-content' )
-assert customFooter.html().equals( 'Custom footer content' )
+// Verifies Google Analytics was set up
+assert html.contains( 'Google Analytics' )
+
+def googleAnalyticsScript = body.select( 'script[src="https://www.googletagmanager.com/gtag/js?id=abcd"]' )
+assert googleAnalyticsScript != null

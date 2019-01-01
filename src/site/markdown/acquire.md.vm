@@ -1,13 +1,13 @@
 #set( $symbol_pound = '#' )
-${symbol_pound} Acquiring the project
+${symbol_pound} Acquiring the Project
 
 The project files are hosted on a [Bintray repository][bintray-repo], and have been replicated on JCenter and OSS Sonatype, which also replicates into the [Maven Central Repository][maven-repo]. While this means that it should be possible to download the Archetype from any of those repositories, and that most dependency systems will be able to acquire the library without additional configuration, if for some reason one should be picked the recommended one is Bintray.
 
 All the info required to set up the dependency can be found at the [dependency information](./dependency-info.html) section, or the repositories information pages.
 
-${symbol_pound}${symbol_pound} Reducing the dependency scope
+${symbol_pound}${symbol_pound} Reducing the Dependency Scope
 
-As the skin is used by the site plugin, the best way to use it is by adding it as a dependency to said plugin, which will also reduce the scope of the dependency. For that use the following configuration:
+You won't need to add the skin as a dependency to your project, just to the Maven site plugin:
 
 ```xml
 <build>
@@ -32,8 +32,6 @@ As the skin is used by the site plugin, the best way to use it is by adding it a
     </plugins>
 </build>
 ```
-
-Versions are meant to be kept in the properties section of the POM.
 
 ${symbol_pound}${symbol_pound} Snapshots
 

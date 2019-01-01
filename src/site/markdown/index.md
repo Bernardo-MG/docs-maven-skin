@@ -1,18 +1,14 @@
 # Maven Site as a documentation site
 
-Maven handles not only dependencies, but also several project-related resources, such as reports or general project information, which can be integrated into a single web page: the Maven Site.
+One of the less know features of Maven is generating a site for your project. With documentation, general information and reports. Sadly it depends on old Doxia plugins, and requires from Maven skins if you want your site to be minimally good lookin. And building a Maven Skin can be a pain.
 
-This small customizable webpage can be created automatically by Maven, and is meant to be a centralized reference for any Maven project, but sadly is not as easy and simple to use as it is meant to, due to it's dependency on old Doxia plugins and the small range of Maven Site Skins available.
+## Why Using This Library?
 
-## Why This Library?
+Because you want a modern and simple skin for your Maven site. Because you want to include documentation which can be generated along your Maven project.
 
-Using the Maven Site as a documentation site sounds attractive, but is rarely done due to several problems, the first of them all being that most of the available skins are outdated and ugly.
+This isn't the only Maven Skin in existence, but most of them are outdated, many are no longer usable due to breaking changes in the required plugins, and most are no longer maintained.
 
-Even the best ones suffer from not adapting to current standards, or using obsolete libraries, as it happens to the [Reflow Maven Skin][reflow], the project which served as the foundation for this one. It makes use of an old version of Bootstrap and various design choices which are no longer recommended, and above all it had a bunch of additional and not at all needed complexities.
-
-A modern docs site is meant to be easy to use and, if needed, adapt. It should follow the HTML5 rules, and also make use of accessible libraries, such as Bootstrap and Font Awesome, for the UI, meaning that anybody can easily know how to work with it.
-
-An example of this is the project which was adapted into this skin, the [Docs Bootstrap Template][docs_template], a minimalistic and reactive template for documentation sites.
+So I offer you a minimalist Skin, which follows the HTML5 standard and makes use of well know libraries to build the views.
 
 ## Features
 
@@ -25,12 +21,21 @@ The main features offered by the skin are:
 - [highlight.js][highlight] for syntax highlighting
 - Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]
 
+## Template
+
+The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
+
 ## Examples
 
-This site is already an example of the skin, as it was created by using the Maven Site plugin and the Docs Maven Skin.
+This site you are reading right now is an example of the skin, as it was created by using the Maven Site plugin and the Docs Maven Skin.
+
+## Acknowledgement
+
+The project started as a fork of the [Reflow Maven Skin][reflow], but it quickly became its own thing. Still, it owes much to that project.
+
 
 [bootstrap]: http://getbootstrap.com/
-[docs_template]: https://github.com/Bernardo-MG/docs-bootstrap-template
+[docs-template]: https://github.com/Bernardo-MG/docs-bootstrap-template
 [font_awesome]: https://fortawesome.github.io/Font-Awesome/
 [highlight]: https://highlightjs.org/
 [reflow]: http://andriusvelykis.github.io/reflow-maven-skin/
