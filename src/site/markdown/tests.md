@@ -14,7 +14,7 @@ Usually the minimum validations applied are:
 * The index page conforms HTML5 rules
 * The expected elements are created
 
-the [jcabi W3C validator][jcabi-w3c] is used for testing the HTML 5 rules .
+The [jcabi W3C validator][jcabi-w3c] is used for testing the HTML 5 rules .
 
 HTML elements are validated with [jsoup][jsoup] and CSS selectors.
 
