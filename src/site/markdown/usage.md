@@ -1,6 +1,6 @@
 # Usage
 
-[Once the dependencies have been set][acquire] register the sking into the site.xml file:
+[Once the dependencies have been set][acquire], and you have read the [Maven Site Plugin docs][maven-site], register the skin into the site.xml file:
 
 ```xml
 <skin>
@@ -87,6 +87,8 @@ The following shows a sample site.xml file useful as a base for most sites:
    </body>
 </project>
 ```
+
+[maven-site]: https://maven.apache.org/plugins/maven-site-plugin/
 
 [acquire]: ./acquire.html
 [site_descriptor]: ./site_descriptor.html

@@ -1,8 +1,8 @@
 # Docs Maven Skin
 
-A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
+A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to create documentation sites with Maven.
 
-It is easy to use, just remember to check [the documentation][site-release] to find out how to set it up, and to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, makes use of this skin and shows how it is configured.
+It is easy to use, just remember to check [the project documentation][site-release] to find out how to set it up, and also to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, takes advantage of this skin and shows how to set it up.
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
@@ -25,7 +25,7 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 
 ## Demo
 
-To check the Docs Maven Skin at work take a look at the documentation, linked below this section, which is a Maven Site making use of this skin.
+The project documentation makes use of the skin, it is always built with the latest release available. You can check the links just below this section.
 
 ## Documentation
 
@@ -51,9 +51,7 @@ The project started as a fork of the [Reflow Maven Skin][reflow-skin], but it qu
 
 ## Usage
 
-The project is coded in Velocity Template Language, using Maven to manage the project.
-
-It also requires Maven to be used, being set up as a Maven Skin for the Maven Site of any other Maven-based project.
+As any Maven Skin it is handled through the Maven Plugin. Check the docs for more concrete information.
 
 ### Prerequisites
 
@@ -75,7 +73,7 @@ $ mvn install
 
 ### Reducing the Dependency Scope
 
-You won't need to add the skin as a dependency to your project, just to the Maven site plugin:
+Actually you won't need to add the skin as a dependency to your project, just to the Maven site plugin:
 
 ```xml
 <build>
@@ -113,7 +111,7 @@ Before creating the site register the skin into the site.xml file:
 </skin>
 ```
 
-More detailed information can be found in [the docs][site-release].
+More detailed information can be found in the documentation.
 
 ### Running Tests
 
