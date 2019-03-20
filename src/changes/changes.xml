@@ -95,5 +95,10 @@
             Initialization scripts were minified, this has been corrected.
          </action>
       </release>
+      <release version="1.4.1" date="2019-01-01" description="Updates and fixes">
+         <action dev="bmg" type="update">
+            Updated Bootstrap.
+         </action>
+      </release>
    </body>
 </document>
