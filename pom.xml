@@ -160,7 +160,7 @@
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.11.3</jsoup.version>
       <velocity.configTool.version>1.1.1</velocity.configTool.version>
-      <velocity.siteFixer.version>1.1.2</velocity.siteFixer.version>
+      <velocity.siteFixer.version>1.2.0-SNAPSHOT</velocity.siteFixer.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
