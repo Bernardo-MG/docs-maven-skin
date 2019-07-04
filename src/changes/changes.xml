@@ -103,5 +103,13 @@
             Fixed some reports.
          </action>
       </release>
+      <release version="1.4.2" date="2019-03-20" description="Responsive images">
+         <action dev="bmg" type="update">
+            Images are now responsive.
+         </action>
+         <action dev="bmg" type="fix">
+            Fixed CSS error which broke responsive image figures.
+         </action>
+      </release>
    </body>
 </document>
