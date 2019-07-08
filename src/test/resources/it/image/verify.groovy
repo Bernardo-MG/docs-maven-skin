@@ -43,7 +43,11 @@ def parsed = Jsoup.parse(html)
 def body = parsed.body()
 
 // Images
-def imgs = body.select( 'img' )
+def figs = body.select( 'figure' )
 
-def firstImg = imgs.first()
+def firstImg = body.select( 'img' ).first()
 assert firstImg.attr( 'alt' ).contains( 'Dice class diagram' )
+assert firstImg.attr( 'class' ).contains( 'img-responsive' )
+
+def firstCaption = body.select( 'figcaption' ).first()
+assert firstCaption.html().contains( 'Dice class diagram' )
