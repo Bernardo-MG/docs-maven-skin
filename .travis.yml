@@ -8,6 +8,7 @@ matrix:
     # Code artifacts and documentation deployed with JDK8
     - jdk: oraclejdk8
       env: DEPLOY=true DEPLOY_DOCS=true
+dist: trusty
 
 before_install:
   # Gets scripts
