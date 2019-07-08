@@ -10,10 +10,10 @@
 */
 
 pre {
-    padding: 0;
     overflow-x: auto;
-    -webkit-box-shadow: 0 0 5px #cccccc;
+    padding: 0;
     -moz-box-shadow: 0 0 5px #cccccc;
+    -webkit-box-shadow: 0 0 5px #cccccc;
     box-shadow: 0 0 5px #cccccc;
 }
 
@@ -22,8 +22,8 @@ pre {
 */
 
 pre code {
-    padding: 0;
     margin: 0;
-    white-space: pre;
     overflow-wrap: normal;
+    padding: 0;
+    white-space: pre;
 }

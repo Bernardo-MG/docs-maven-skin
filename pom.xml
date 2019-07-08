@@ -429,6 +429,17 @@
                   </configuration>
                </execution>
                <execution>
+                  <!-- Validate CSS -->
+                  <id>validate-css</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>test</phase>
+                  <configuration>
+                     <arguments>run validate-css</arguments>
+                  </configuration>
+               </execution>
+               <execution>
                   <!-- Minify CSS -->
                   <id>minify-css</id>
                   <goals>
