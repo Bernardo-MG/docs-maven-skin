@@ -4,7 +4,7 @@ This is an example for a Maven Site with images.
 
 ![Dice class diagram][dice-class_diagram]
 
-A big image:
+## Big Image
 
 ![Big image][big-image]
 

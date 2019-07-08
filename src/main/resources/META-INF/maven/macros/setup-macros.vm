@@ -61,12 +61,12 @@
  * Removes external links.
  *#
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'a.externalLink', 'externalLink' ) )
- 
+
 #**
  * Removes links without href.
  *#
 #**##set( $empty = $htmlTool.unwrap( $bodyContentParsed, 'a:not([href])' ) )
- 
+
 #**
  * Updates tables.
  *#
@@ -79,9 +79,14 @@
 #**##set( $empty = $siteTool.transformTables( $bodyContentParsed ) )
 #**##set( $empty = $siteTool.fixReport($bodyContentParsed, $config.fileId) )
 #**##set( $empty = $siteTool.transformIcons( $bodyContentParsed ) )
-#**##set( $empty = $siteTool.transformImagesToFigures( $bodyContentParsed ) )
 #**##set( $empty = $siteTool.fixHeadingIds($bodyContentParsed) )
 #**##set( $empty = $siteTool.fixAnchorLinks($bodyContentParsed) )
+
+#**
+ * Updates images.
+ *#
+#**##set( $empty = $siteTool.transformImagesToFigures( $bodyContentParsed ) )
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure > img', 'img-responsive' ) )
 
 #**##set( $empty = $htmlTool.wrap($bodyContentParsed, 'h1:first-of-type', '<header class="page-header"></header>') )
 

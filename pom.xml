@@ -159,8 +159,8 @@
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.11.3</jsoup.version>
-      <velocity.configTool.version>1.1.1</velocity.configTool.version>
-      <velocity.siteFixer.version>1.2.0</velocity.siteFixer.version>
+      <siteFixer.version>1.2.1</siteFixer.version>
+      <velocity.configTool.version>1.2.0</velocity.configTool.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
@@ -186,7 +186,7 @@
          <!-- Maven Site Fixer -->
          <groupId>com.bernardomg.velocity</groupId>
          <artifactId>maven-site-fixer</artifactId>
-         <version>${velocity.siteFixer.version}</version>
+         <version>${siteFixer.version}</version>
       </dependency>
       <dependency>
          <!-- Velocity config tool -->
