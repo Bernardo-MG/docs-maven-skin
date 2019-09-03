@@ -20,10 +20,10 @@ a[name]:before,
 section[id]:before,
 article[id]:before,
 article[id]:before {
+    content: "";
     display: block;
     height: 3em;
     margin-top: -3em;
-    content: "";
     visibility: hidden;
 }
 

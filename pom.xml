@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>1.4.2</version>
+   <version>1.4.3</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -158,21 +158,21 @@
       <hamcrest.version>1.3</hamcrest.version>
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
-      <jsoup.version>1.11.3</jsoup.version>
-      <siteFixer.version>1.2.1</siteFixer.version>
+      <jsoup.version>1.12.1</jsoup.version>
+      <siteFixer.version>1.2.3</siteFixer.version>
       <velocity.configTool.version>1.2.0</velocity.configTool.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
-      <plugin.frontend.node.version>v6.11.3</plugin.frontend.node.version>
-      <plugin.frontend.npm.version>5.4.2</plugin.frontend.npm.version>
-      <plugin.frontend.version>1.7.5</plugin.frontend.version>
+      <plugin.frontend.node.version>v12.3.1</plugin.frontend.node.version>
+      <plugin.frontend.npm.version>6.9.0</plugin.frontend.npm.version>
+      <plugin.frontend.version>1.7.6</plugin.frontend.version>
       <plugin.invoker.version>3.2.0</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>1.4.1</site.skin.version>
+      <site.skin.version>1.4.2</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
    </properties>
@@ -426,6 +426,17 @@
                   <phase>test</phase>
                   <configuration>
                      <arguments>run validate-js</arguments>
+                  </configuration>
+               </execution>
+               <execution>
+                  <!-- Validate CSS -->
+                  <id>validate-css</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>test</phase>
+                  <configuration>
+                     <arguments>run validate-css</arguments>
                   </configuration>
                </execution>
                <execution>

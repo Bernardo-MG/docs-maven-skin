@@ -111,5 +111,10 @@
             Fixed CSS error which broke responsive image figures.
          </action>
       </release>
+      <release version="1.4.3" date="2019-09-03" description="Changed anchor id format">
+         <action dev="bmg" type="update">
+            Changed how the anchor ids are formatted.
+         </action>
+      </release>
    </body>
 </document>

@@ -31,7 +31,7 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
     .navbar-main .icons-list > li > a {
-        padding: 0.6em 1em 0.6em 1em;
         margin: 0 0.1em 0 0.2em;
+        padding: 0.6em 1em 0.6em 1em;
     }
 }

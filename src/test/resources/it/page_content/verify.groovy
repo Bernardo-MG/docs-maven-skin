@@ -45,7 +45,7 @@ def body = parsed.body()
 // Verifies the heading uses the correct text
 def titleHeading = body.select( 'h1' )
 assert titleHeading.html().contains( 'Page Content' )
-assert titleHeading.attr( 'id' ).contains( 'pagecontent' )
+assert titleHeading.attr( 'id' ).contains( 'page-content' )
 
 def subHeadings = body.select( 'h2' )
 
@@ -57,14 +57,14 @@ assert firstSubHeading.attr( 'id' ).contains( 'subsection' )
 // Verifies the second subsection uses the correct text
 def secondSubHeading = subHeadings.get(1)
 assert secondSubHeading.html().contains( 'Second Subsection' )
-assert secondSubHeading.attr( 'id' ).contains( 'secondsubsection' )
+assert secondSubHeading.attr( 'id' ).contains( 'second-subsection' )
 
 def subSubHeadings = body.select( 'h3' )
 
 // Verifies the first subsection uses the correct text
 def firstSubSubHeading = subSubHeadings.first()
 assert firstSubSubHeading.html().contains( 'Smaller subsection' )
-assert firstSubSubHeading.attr( 'id' ).contains( 'smallersubsection' )
+assert firstSubSubHeading.attr( 'id' ).contains( 'smaller-subsection' )
 
 // Verifies the number of sections is correct
 def mainSections = body.select( '> section' )

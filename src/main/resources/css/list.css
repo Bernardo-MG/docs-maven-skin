@@ -16,14 +16,14 @@ dt:after {
 */
 
 .dl-nav {
-    width: 12em;
     margin-bottom: 0.5em;
     text-align: center;
+    width: 12em;
 }
 
 .dl-nav dt {
-    font-size: 19px;
     border-bottom: 1px solid #e6e6e6;
+    font-size: 19px;
 }
 
 .dl-nav dt:after {

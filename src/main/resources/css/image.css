@@ -11,8 +11,8 @@
 
 img {
     margin-bottom: 1em;
-    -webkit-box-shadow: 0 0 5px #cccccc;
     -moz-box-shadow: 0 0 5px #cccccc;
+    -webkit-box-shadow: 0 0 5px #cccccc;
     box-shadow: 0 0 5px #cccccc;
 }
 
@@ -21,20 +21,19 @@ img {
 */
 
 figure {
-    display: table;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    text-align: center;
     background-color: white;
-    -webkit-box-shadow: 0 0 5px #cccccc;
+    display: table;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    text-align: center;
     -moz-box-shadow: 0 0 5px #cccccc;
+    -webkit-box-shadow: 0 0 5px #cccccc;
     box-shadow: 0 0 5px #cccccc;
 }
 
 figure img {
-    display: table-row;
-    margin-bottom: 0.5em;
     border: 1px solid;
+    display: table-row;
     -webkit-box-shadow: 0 0 0 0;
     -moz-box-shadow: 0 0 0 0;
     box-shadow: 0 0 0 0;
