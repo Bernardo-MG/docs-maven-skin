@@ -116,5 +116,10 @@
             Changed how the anchor ids are formatted.
          </action>
       </release>
+      <release version="1.4.4" date="2019-11-11" description="Changed anchor id format">
+         <action dev="bmg" type="update">
+            Changed how the anchor ids are formatted.
+         </action>
+      </release>
    </body>
 </document>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
    <modelVersion>4.0.0</modelVersion>
@@ -11,7 +12,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.2.4</version>
+      <version>1.3.0</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +21,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>1.4.3</version>
+   <version>1.4.4</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -93,6 +94,10 @@
                <url>${site.release.url}</url>
             </site>
          </distributionManagement>
+         <properties>
+            <!-- Tests are skipped -->
+            <skipTests>true</skipTests>
+         </properties>
       </profile>
       <profile>
          <!-- Development site deployment profile -->
@@ -106,6 +111,10 @@
                <url>${site.develop.url}</url>
             </site>
          </distributionManagement>
+         <properties>
+            <!-- Tests are skipped -->
+            <skipTests>true</skipTests>
+         </properties>
       </profile>
       <profile>
          <!-- Deployment profile -->
@@ -114,6 +123,7 @@
          <properties>
             <!-- Tests are skipped -->
             <maven.test.skip>true</maven.test.skip>
+            <skipTests>true</skipTests>
          </properties>
       </profile>
    </profiles>
@@ -159,7 +169,7 @@
       <jcabi.matchers.version>1.4</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.12.1</jsoup.version>
-      <siteFixer.version>1.2.3</siteFixer.version>
+      <siteFixer.version>1.2.4</siteFixer.version>
       <velocity.configTool.version>1.2.0</velocity.configTool.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
