@@ -42,7 +42,7 @@
 <head>
     <meta charset="${outputEncoding}">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- IE Compatibility tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -105,32 +105,26 @@
 
 </head>
 <body class="d-flex flex-column">
-<header class="header">
-    <nav id="navbar-main" class="navbar navbar-main navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#navbar-main-body"
-                        aria-expanded="false" aria-controls="navbar-main">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./index.html">$project.name</a>
-            </div>
-
-            <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
+<header>
+    <nav id="navbar-main" class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">$project.name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-body" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbar-main-menu">
 #**##if( $decoration.publishDate.position != "none" )
-                <small class="navbar-text"><span id="navbar-version">${project.version}</span> <span id="navbar-date">(#publishDate())</span></small>
+            <small class="navbar-text"><span id="navbar-version">${project.version}</span> <span id="navbar-date">(#publishDate())</span></small>
 #**##else
-                <small class="navbar-text"><span id="navbar-version">${project.version}</span></small>
+            <small class="navbar-text"><span id="navbar-version">${project.version}</span></small>
 #**##end
 #**##if( $decoration.edit && $docRenderingContext.editable )
 #**##* Doxia edition button. *#
-                <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
+            <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
 #**##end
-
+            <div class="ml-auto d-flex align-items-center">
+                <a href="https://github.com/Bernardo-MG/docs-bootstrap-template" title="GitHub" aria-label="GitHub"><span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span><span class="d-none d-sm-block d-md-none">
+                    Github</span></a>
 #set( $iconMenuElements = [] )
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
@@ -165,9 +159,9 @@ $bodyContent
 #**##bottomNav( $menuElements 12 )
             </div>
 #end
-	        <div class="row">
-	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
-	            <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
+                <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
 #if( $decoration.body.footer )
                <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
 #end
