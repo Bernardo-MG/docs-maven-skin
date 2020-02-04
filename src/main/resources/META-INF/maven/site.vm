@@ -145,25 +145,25 @@
         </div>
     </nav>
 </header>
-<section id="main-section" class="container">
+<section id="main-section" class="container flex-grow-1">
 $bodyContent
     <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
 <footer class="footer w-100 pt-2 border-top bg-light">
-    <div class="footer-content">
-        <div class="container-fluid">
+    <div id="footer-nav" class="bg-light container">
+        <div id="navbar-footer" class="row">
 #set( $menuElements = [] )
 #loadBottomNavMenuList( $menuElements )
 #if($menuElements.size() > 0)
-            <div id="navbar-footer" class="row">
+            <div class="col">
 #**##bottomNav( $menuElements 12 )
             </div>
 #end
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
-                <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
+            <div id="footer-info" class="bg-light pl-2 pb-1 w-100">
+                <div>#copyright()</div>
+                <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
 #if( $decoration.body.footer )
-               <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
+                <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
 #end
            </div>
         </div>
