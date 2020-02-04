@@ -158,14 +158,14 @@ $bodyContent
 #**##bottomNav( $menuElements 12 )
             </div>
 #end
-            <div id="footer-info" class="bg-light pl-2 pb-1 w-100">
-                <div>#copyright()</div>
-                <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
-#if( $decoration.body.footer )
-                <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
-#end
-           </div>
         </div>
+    </div>
+    <div id="footer-info" class="bg-light pl-2 pb-1 w-100">
+        <div>#copyright()</div>
+        <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
+#if( $decoration.body.footer )
+        <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
+#end
     </div>
 </footer>
 <script src="./lib/jquery/dist/jquery.min.js"></script>
