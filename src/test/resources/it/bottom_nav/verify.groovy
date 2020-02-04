@@ -28,7 +28,7 @@ def body = Jsoup.parse(html).body()
 // Verifies the skin info is included
 
 // Footer link
-def div = body.select( 'footer.footer div.row div' ).last()
+def div = body.select( 'footer #footer-info div' ).last()
 assert div.html().contains( 'Rendered using' )
 
 // Verifies the footer columns exist
