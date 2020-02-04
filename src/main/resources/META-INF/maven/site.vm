@@ -40,9 +40,9 @@
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"#if( $locale ) lang="$locale.language"#end>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=${outputEncoding}"/>
+    <meta charset="${outputEncoding}">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- IE Compatibility tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -104,7 +104,7 @@
     <![endif]-->
 
 </head>
-<body>
+<body class="d-flex flex-column">
 <header class="header">
     <nav id="navbar-main" class="navbar navbar-main navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -155,7 +155,7 @@
 $bodyContent
     <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
-<footer class="footer">
+<footer class="footer w-100 pt-2 border-top bg-light">
     <div class="footer-content">
         <div class="container-fluid">
 #set( $menuElements = [] )
