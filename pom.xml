@@ -428,17 +428,6 @@
                   </configuration>
                </execution>
                <execution>
-                  <!-- Validate Javascript -->
-                  <id>validate-js</id>
-                  <goals>
-                     <goal>npm</goal>
-                  </goals>
-                  <phase>test</phase>
-                  <configuration>
-                     <arguments>run validate-js</arguments>
-                  </configuration>
-               </execution>
-               <execution>
                   <!-- Validate CSS -->
                   <id>validate-css</id>
                   <goals>
@@ -458,17 +447,6 @@
                   <phase>process-resources</phase>
                   <configuration>
                      <arguments>run minify-css</arguments>
-                  </configuration>
-               </execution>
-               <execution>
-                  <!-- Minify Javascript -->
-                  <id>minify-js</id>
-                  <goals>
-                     <goal>npm</goal>
-                  </goals>
-                  <phase>process-resources</phase>
-                  <configuration>
-                     <arguments>run minify-js</arguments>
                   </configuration>
                </execution>
             </executions>
