@@ -150,13 +150,13 @@ $bodyContent
 </section>
 <footer class="footer w-100 pt-2 border-top bg-light">
     <div id="footer-nav" class="bg-light container">
-        <div id="navbar-footer" class="row">
 #set( $menuElements = [] )
 #loadBottomNavMenuList( $menuElements )
 #if($menuElements.size() > 0)
+        <div id="navbar-footer" class="row">
 #**##bottomNav( $menuElements )
-#end
         </div>
+#end
     </div>
     <div id="footer-info" class="bg-light pl-2 pb-1 w-100">
         <div>#copyright()</div>
