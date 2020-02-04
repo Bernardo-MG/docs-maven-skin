@@ -83,7 +83,7 @@
 #end
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./lib/bootswatch/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/bootswatch/dist/litera/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
