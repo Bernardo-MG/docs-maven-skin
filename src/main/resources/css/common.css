@@ -5,59 +5,6 @@
  * General-use styles, meant to be applied to all the pages on the site.
  */
 
-html {
-    min-height: 100%;
-    position: relative;
-}
-
-/**
-* Colors changed to improve contrast against the background.
-*/
-
-a {
-    color: #1552bc;
-}
-
-table a {
-    color: #0050aa;
-}
-
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small,
-.h1 small,
-.h2 small,
-.h3 small,
-.h4 small,
-.h5 small,
-.h6 small,
-h1 .small,
-h2 .small,
-h3 .small,
-h4 .small,
-h5 .small,
-h6 .small,
-.h1 .small,
-.h2 .small,
-.h3 .small,
-.h4 .small,
-.h5 .small,
-.h6 .small {
-    color: #595959;
-}
-
-/**
-* Internal links.
-*
-* These are links pointing to the same page, and are shown this way: "[link]".
-*/
-.internal-link:before {
-    content: "[";
-}
-
-.internal-link:after {
-    content: "]";
+body {
+  min-height: 100vh; 
 }
