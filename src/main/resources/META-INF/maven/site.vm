@@ -147,7 +147,6 @@
 </header>
 <section id="main-section" class="container flex-grow-1">
 $bodyContent
-    <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
 <footer class="footer w-100 pt-2 border-top bg-light">
     <div id="footer-nav" class="bg-light container">
