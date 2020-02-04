@@ -106,27 +106,12 @@
  *        maxColSize: the maximum size for the columns
  *#
 #*--------------------------------------------------*#
-#macro( bottomNav $elements $maxColSize )
-#**##set( $elementsCount = $elements.size() )
-#**##if( $elementsCount > 0 )
-#*  *##set( $navSpan = $maxColSize / $elementsCount )
-#**##else
-#*  *##set( $navSpan = 0 )
-#**##end
-#**##if( $navSpan <= 0 )
-#*    *##set( $navSpan = 1 )
-#**##end
-#**##set( $lastNavSpan = $maxColSize - ($navSpan * ($elementsCount - 1)) )
-#**##set( $navColIndex = 0 )
+#macro( bottomNav $elements )
 #**##foreach( $element in $elements )
-#*    *##if( $navColIndex == $elementsCount - 1 )
-#*        *##set( $navSpan = $lastNavSpan )
-#*    *##end
 #*    *##if( $element.items )
-                       <div class="col-md-$navSpan col-sm-12 col-xs-12">
+            <div class="col">
 #*        *##linksDictionaryMenu( $element )
-                       </div>
-#*        *##set( $navColIndex = $navColIndex + 1 )
+            </div>
 #*    *##end
 #**##end
 #end
@@ -147,9 +132,9 @@
  *#
 #*--------------------------------------------------*#
 #macro( linksDictionaryMenu $element )
-    <dl class="dl-nav">
+    <dl class="text-center mb-1">
 #**##if( $element.name )
-    <dt>$element.name</dt>
+    <dt class="border-bottom">$element.name</dt>
 #**##end
 #**##foreach( $item in $element.items )
 #*    *##if( $item.description )

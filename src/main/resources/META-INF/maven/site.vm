@@ -154,9 +154,7 @@ $bodyContent
 #set( $menuElements = [] )
 #loadBottomNavMenuList( $menuElements )
 #if($menuElements.size() > 0)
-            <div class="col">
-#**##bottomNav( $menuElements 12 )
-            </div>
+#**##bottomNav( $menuElements )
 #end
         </div>
     </div>
