@@ -29,7 +29,7 @@ def body = Jsoup.parse(html).body()
 def dropdowns = body.select( '.dropdown-toggle' )
 assert dropdowns.size() == 1
 
-assert dropdowns.get(0).html().equals( 'Links <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span>' );
+assert dropdowns.get(0).html().equals( '<a href="#" class="nav-link dropdown-toggle" id="links_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links</a>' );
 
 // Verifies the menu links exist
 assert html.contains( '<li><a href="http://www.apache.org" title="Apache">Apache</a></li>' )
