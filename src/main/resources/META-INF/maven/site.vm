@@ -114,7 +114,7 @@
         
         <div class="collapse navbar-collapse" id="navbar-main-menu">
 #**##if( $decoration.publishDate.position != "none" )
-            <small class="navbar-text"><span id="navbar-version">${project.version}</span> <span id="navbar-date">(#publishDate())</span></small>
+            <small class="navbar-text"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">#publishDate()</time>)</small>
 #**##else
             <small class="navbar-text"><span id="navbar-version">${project.version}</span></small>
 #**##end
@@ -123,8 +123,6 @@
             <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
 #**##end
             <div class="ml-auto d-flex align-items-center">
-                <a href="https://github.com/Bernardo-MG/docs-bootstrap-template" title="GitHub" aria-label="GitHub"><span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span><span class="d-none d-sm-block d-md-none">
-                    Github</span></a>
 #set( $iconMenuElements = [] )
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
@@ -134,9 +132,11 @@
 #else
 #**##set( $linkMenuElements = [] )
 #end
-#if( $iconMenuElements.size() > 0 || $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
-                <ul class="nav navbar-nav navbar-right">
+#if( $iconMenuElements.size() > 0 )
 #**##iconsMenu( $iconMenuElements )
+#end
+#if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
+                <ul class="navbar-nav">
 #**##linksMenu( $linkMenuElements )
 #**##dropdownMenu( $dropDownMenuElements )
                 </ul>
