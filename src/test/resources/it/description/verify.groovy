@@ -27,25 +27,26 @@ def parsed = Jsoup.parse(html)
 def body = parsed.body()
 def head = parsed.head()
 
-// Verified the heading is set
-assert html.contains( '<header class="page-header">' )
+// The heading is set
+def heading = body.select( '#main-section header' )
+assert heading.html().equals( '<h1 id="with-description">With description</h1>' )
 
-// Verifies the title is included in the HTML head
+// The title is included in the HTML head
 def title = head.select( 'title' )
 assert title.html().equals( 'Project with description – With description' )
 
-// Verifies the title is included in the header
+// The title is included in the header
 def titleHeader = body.select( '#navbar-main a.navbar-brand' )
-assert titleHeader.html().equals( 'Project with description' )
+assert titleHeader.outerHtml().equals( '<a class="navbar-brand" href="./index.html">Project with description</a>' )
 
-// Verifies the title is included in the metadata
+// The title is included in the metadata
 def metaOgSite = head.select( 'meta[property="og:site_name"]' )
 def metaOgTitle = head.select( 'meta[property="og:title"]' )
 
 assert metaOgSite.attr( 'content' ).equals( 'Project with description – With description' )
 assert metaOgTitle.attr( 'content' ).equals( 'Project with description – With description' )
 
-// Verifies the Twitter metadata is generated
+// The Twitter metadata is generated
 def metaTwTitle = head.select( 'meta[name="twitter:title"]' )
 
 assert metaTwTitle.attr( 'content' ).equals( 'Project with description – With description' )

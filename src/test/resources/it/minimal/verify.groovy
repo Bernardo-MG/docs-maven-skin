@@ -88,6 +88,14 @@ assert navbarFooter.isEmpty()
 def customFooter = body.select( '#footer-custom-content' )
 assert customFooter.isEmpty()
 
+// The custom style file was not generated
+def customStyle = head.select( 'link[href="./css/custom.css"]' )
+assert customStyle.isEmpty()
+
+// The custom script file was not generated
+def customScript = body.select( 'script[src="./js/custom.js"]' )
+assert customScript.isEmpty()
+
 def dlNav = body.select( '.dl-nav' )
 assert dlNav.isEmpty()
 
