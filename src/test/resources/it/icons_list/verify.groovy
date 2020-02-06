@@ -30,7 +30,7 @@ def rightNavBar = body.select( '.navbar-right' )
 assert rightNavBar.size() == 0
 
 // Verifies the icon in the navbar
-def icons = body.select( '#navbar-main-menu > a' )
+def icons = body.select( '#navbar-main-menu a' )
 assert icons.size() == 1
 
-assert icons.get(0).html().equals('<a href="https://github.com/Bernardo-MG/docs-maven-skin" title="Github" aria-label="Github"><span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> Github</span></a>')
+assert icons.first().outerHtml().equals('<a href="https://github.com/Bernardo-MG/docs-maven-skin" title="Github" aria-label="Github"><span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> Github</span></a>')
