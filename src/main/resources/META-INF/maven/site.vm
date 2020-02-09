@@ -91,7 +91,7 @@
     
 #if( $config.customScript )
     <!-- Custom style -->
-    <link rel="stylesheet" href="$config.customStyle"></script>
+    <link rel="stylesheet" href="$config.customStyle.getValue()">
 #end
 
 #**##if( $decoration.body.head )
@@ -171,7 +171,7 @@ $bodyContent
 <script src="./lib/highlight/highlight.pack.js"></script>
 <script src="./js/initializeHighlight.js"></script>
 #if( $config.customScript )
-<script src="$config.customScript"></script>
+<script src="$config.customScript.getValue()"></script>
 #end
 #if( $decoration.googleAnalyticsAccountId )
 <script async src="https://www.googletagmanager.com/gtag/js?id=$decoration.googleAnalyticsAccountId"></script>

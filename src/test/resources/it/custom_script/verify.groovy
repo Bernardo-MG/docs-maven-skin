@@ -29,8 +29,8 @@ def head = parsed.head()
 
 // The custom style file is linked
 def customStyle = head.select( 'link[href="./css/custom.css"]' )
-assert customStyle != null
+assert customStyle.outerHtml().equals('<link rel="stylesheet" href="./css/custom.css">')
 
 // The custom script file is linked
 def customScript = body.select( 'script[src="./js/custom.js"]' )
-assert customScript != null
+assert customScript.outerHtml().equals('<script src="./js/custom.js"></script>')
