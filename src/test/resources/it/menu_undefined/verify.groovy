@@ -27,25 +27,14 @@ def parsed = Jsoup.parse(html)
 def body = parsed.body()
 def head = parsed.head()
 
-// Verifies the footer menus were not generated
-def titles = body.select( 'dt' )
-assert titles.isEmpty()
-
 // Verifies that the footer menus are not generated
 def navbarFooter = body.select( '#navbar-footer' )
 assert navbarFooter.isEmpty()
 
-def dlNav = body.select( '.dl-nav' )
-assert dlNav.isEmpty()
-
-// Verifies that the main menus are not generated
-def dropdown = body.select( 'li.dropdown' )
-assert dropdown.isEmpty()
-
 // Verifies that the icon menus are not generated
-def iconMenu = body.select( 'li > ul.icons-list' )
-assert dropdown.isEmpty()
+def iconMenu = body.select( '#navbar-main-menu a' )
+assert iconMenu.isEmpty()
 
 // Verifies that the right navigation bar was not generated
-def rightNavBar = body.select( '.navbar-right' )
+def rightNavBar = body.select( '#navbar-main-menu .dropdown-toggle' )
 assert rightNavBar.isEmpty()

@@ -5,19 +5,6 @@ import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 import org.jsoup.Jsoup
 
-// Verifies that all the files were created
-[
-    'target/site/index.html',
-    'module/target/site/index.html'
-].each {
-    def file = new File(basedir, it)
-    if (!file.exists()) {
-        throw new IllegalStateException(
-            "file ${file} doesn't exist"
-        )
-    }
-}
-
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
 def htmlModule = new File(basedir, 'module/target/site/index.html').text
@@ -56,7 +43,7 @@ def head = parsed.head()
 // Verifies the skin info is included
 
 // Footer link
-def div = body.select( 'footer.footer div.row div' ).last()
+def div = body.select( 'footer #footer-info div' ).last()
 assert div.html().contains( 'Rendered using' )
 
 // Comments before the head

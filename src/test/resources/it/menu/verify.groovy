@@ -26,12 +26,12 @@ MatcherAssert.assertThat(
 def body = Jsoup.parse(html).body()
 
 // Verifies the menus exist
-def dropdowns = body.select( '.dropdown-toggle' )
+def dropdowns = body.select( '#navbar-main-menu .dropdown-toggle' )
 assert dropdowns.size() == 2
 
-assert dropdowns.get(0).html().equals( 'Documentation <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span>' );
-assert dropdowns.get(1).html().equals( 'Info and reports <span class="chevron_toggleable fa fa-chevron-up" aria-hidden="true"></span>' );
+assert dropdowns.get(0).outerHtml().equals( '<a href="#" class="nav-link dropdown-toggle" id="Documentation_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation</a>' );
+assert dropdowns.get(1).outerHtml().equals( '<a href="#" class="nav-link dropdown-toggle" id="Info_and_reports_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info and reports</a>' );
 
 // Verifies the menu links exist
-assert html.contains( '<li><a href="./acquire.html" title="Acquire">Acquire</a></li>' )
-assert html.contains( '<li><a href="./info.html" title="Info">Info</a></li>' )
+assert html.contains( '<a class="dropdown-item" href="./acquire.html" title="Acquire">Acquire</a>' )
+assert html.contains( '<a class="dropdown-item" href="./usage.html" title="Usage">Usage</a>' )

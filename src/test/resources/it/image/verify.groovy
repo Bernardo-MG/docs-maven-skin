@@ -5,22 +5,6 @@ import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 import org.jsoup.Jsoup
 
-// Verifies that all the files were created
-[
-    'target/site/index.html',
-    'target/site/favicon.ico',
-    'target/site/robots.txt',
-    'target/site/css/style.min.css',
-    'target/site/js/scripts.min.js'
-].each {
-    def file = new File(basedir, it)
-    if (!file.exists()) {
-        throw new IllegalStateException(
-            "file ${file} doesn't exist"
-        )
-    }
-}
-
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
 

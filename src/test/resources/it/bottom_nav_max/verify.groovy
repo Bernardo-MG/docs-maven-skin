@@ -25,6 +25,15 @@ MatcherAssert.assertThat(
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies the footer columns exist
-def titles = body.select( 'dt' )
+// The footer columns exist
+def titles = body.select( 'footer dl dt' )
 assert titles.size() == 12
+
+// The footer columns data exists
+def rows = body.select( 'footer dl dd' )
+
+rows = body.select( 'footer dl' )
+
+// First column
+def row = rows.first().select( 'dd' )
+assert row.size() == 10

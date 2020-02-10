@@ -10,9 +10,5 @@
 /**
  * Initializes highlight.js when the document loads.
  */
-$(document).ready(function() {
-
-   // Uses the default initialization
-   hljs.initHighlightingOnLoad();
-
-});
+// Uses the default initialization
+hljs.initHighlightingOnLoad();

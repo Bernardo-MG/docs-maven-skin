@@ -26,12 +26,12 @@ MatcherAssert.assertThat(
 def head = Jsoup.parse(html).head()
 
 // Verifies the basic metadata is generated
-def metaContentType = head.select( 'meta[http-equiv="Content-Type"]' )
+def metaContentType = head.select( 'meta[charset="utf-8"]' )
 def metaViewport = head.select( 'meta[name="viewport"]' )
 def metaCompatible = head.select( 'meta[http-equiv="X-UA-Compatible"]' )
 
-assert metaContentType.attr( 'content' ).equals( 'text/html; charset=UTF-8' )
-assert metaViewport.attr( 'content' ).equals( 'width=device-width, initial-scale=1.0' )
+assert metaContentType != null
+assert metaViewport.attr( 'content' ).equals( 'width=device-width, initial-scale=1, shrink-to-fit=no' )
 assert metaCompatible.attr( 'content' ).equals( 'IE=edge' )
 
 // Verifies the general information metadata is generated
