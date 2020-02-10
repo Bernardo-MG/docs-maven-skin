@@ -43,6 +43,9 @@
 #**##set( $empty = $htmlTool.unwrap( $bodyContentParsed, 'code > code' ) )
 #**##set( $empty = $htmlTool.swapTagWithParent( $bodyContentParsed, 'code > pre' ) )
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'code.source', 'source' ) )
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'border' ) )
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'shadow' ) )
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'rounded' ) )
 
 #**
  * Updates section divs.
