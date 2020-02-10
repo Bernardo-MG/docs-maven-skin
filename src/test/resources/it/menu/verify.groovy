@@ -26,7 +26,7 @@ MatcherAssert.assertThat(
 def body = Jsoup.parse(html).body()
 
 // Verifies the menus exist
-def dropdowns = body.select( '.dropdown-toggle' )
+def dropdowns = body.select( '#navbar-main-menu .dropdown-toggle' )
 assert dropdowns.size() == 2
 
 assert dropdowns.get(0).outerHtml().equals( '<a href="#" class="nav-link dropdown-toggle" id="Documentation_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation</a>' );

@@ -25,10 +25,6 @@ MatcherAssert.assertThat(
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies that the right navigation bar does not exists
-def rightNavBar = body.select( '.navbar-right' )
-assert rightNavBar.size() == 0
-
 // Verifies the icon in the navbar
 def icons = body.select( '#navbar-main-menu a' )
 assert icons.size() == 1
