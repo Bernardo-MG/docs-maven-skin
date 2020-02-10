@@ -41,6 +41,21 @@ assert dropdown.html().equals('Documentation')
 assert dropdown.hasClass( 'nav-link' )
 assert dropdown.hasClass( 'dropdown-toggle' )
 
+// Verifies the menu links exist
+def items = dropdown.select( '.dropdown-item' )
+
+def item = items.get(0)
+assert item.attr( 'href' ).equals('./acquire.html')
+assert item.attr( 'title' ).equals('Acquire')
+assert item.html().equals('Acquire')
+assert item.hasClass( 'dropdown-item' )
+
+item = items.get(1)
+assert item.attr( 'href' ).equals('./usage.html')
+assert item.attr( 'title' ).equals('Usage')
+assert item.html().equals('Usage')
+assert item.hasClass( 'dropdown-item' )
+
 dropdown = dropdowns.get(1)
 assert dropdown.tag().normalName().equals('a')
 assert dropdown.id().equals('Info_and_reports_menu')
@@ -54,16 +69,10 @@ assert dropdown.hasClass( 'nav-link' )
 assert dropdown.hasClass( 'dropdown-toggle' )
 
 // Verifies the menu links exist
-def items = body.select( '#navbar-main-menu .dropdown-item' )
+items = dropdown.select( '.dropdown-item' )
 
-def item = items.get(0)
-assert dropdown.attr( 'href' ).equals('./acquire.html')
-assert dropdown.attr( 'title' ).equals('Acquire')
-assert dropdown.html().equals('Acquire')
-assert dropdown.hasClass( 'dropdown-item' )
-
-item = items.get(1)
-assert dropdown.attr( 'href' ).equals('./usage.html')
-assert dropdown.attr( 'title' ).equals('Usage')
-assert dropdown.html().equals('Usage')
-assert dropdown.hasClass( 'dropdown-item' )
+item = items.get(0)
+assert item.attr( 'href' ).equals('./info.html')
+assert item.attr( 'title' ).equals('Info')
+assert item.html().equals('Info')
+assert item.hasClass( 'dropdown-item' )
