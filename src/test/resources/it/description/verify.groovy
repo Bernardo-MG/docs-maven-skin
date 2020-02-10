@@ -36,8 +36,11 @@ def title = head.select( 'title' )
 assert title.html().equals( 'Project with description – With description' )
 
 // The title is included in the header
-def titleHeader = body.select( '#navbar-main a.navbar-brand' )
-assert titleHeader.outerHtml().equals( '<a class="navbar-brand" href="./index.html">Project with description</a>' )
+def titleHeader = body.select( '#navbar-main a.navbar-brand' ).first()
+assert titleHeader.tag().normalName().equals('a')
+assert titleHeader.attr( 'href' ).equals('./index.html')
+assert titleHeader.hasClass( 'navbar-brand' )
+assert titleHeader.html().equals( 'Project with description' )
 
 // The title is included in the metadata
 def metaOgSite = head.select( 'meta[property="og:site_name"]' )

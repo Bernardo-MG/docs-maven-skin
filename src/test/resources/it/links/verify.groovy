@@ -26,11 +26,32 @@ MatcherAssert.assertThat(
 def body = Jsoup.parse(html).body()
 
 // Verifies the menus exist
-def dropdowns = body.select( '.dropdown-toggle' )
+def dropdowns = body.select( '#navbar-main-menu .dropdown-toggle' )
 assert dropdowns.size() == 1
 
-assert dropdowns.first().outerHtml().equals( '<a href="#" class="nav-link dropdown-toggle" id="links_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links</a>' );
+def dropdown = dropdowns.first()
+assert dropdown.tag().normalName().equals('a')
+assert dropdown.id().equals('links_menu')
+assert dropdown.attr( 'href' ).equals('#')
+assert dropdown.attr( 'data-toggle' ).equals('dropdown')
+assert dropdown.attr( 'role' ).equals('button')
+assert dropdown.attr( 'aria-haspopup' ).equals('true')
+assert dropdown.attr( 'aria-expanded' ).equals('false')
+assert dropdown.html().equals('Links')
+assert dropdown.hasClass( 'nav-link' )
+assert dropdown.hasClass( 'dropdown-toggle' )
 
 // Verifies the menu links exist
-assert html.contains( '<a class="dropdown-item" href="http://www.apache.org" title="Apache">Apache</a>' )
-assert html.contains( '<a class="dropdown-item" href="https://maven.apache.org" title="Maven">Maven</a>' )
+def items = body.select( '#navbar-main-menu .dropdown-item' )
+
+def item = items.get(0)
+assert dropdown.attr( 'href' ).equals('http://www.apache.org')
+assert dropdown.attr( 'title' ).equals('Apache')
+assert dropdown.html().equals('Apache')
+assert dropdown.hasClass( 'dropdown-item' )
+
+item = items.get(1)
+assert dropdown.attr( 'href' ).equals('https://maven.apache.org')
+assert dropdown.attr( 'title' ).equals('Maven')
+assert dropdown.html().equals('Maven')
+assert dropdown.hasClass( 'dropdown-item' )

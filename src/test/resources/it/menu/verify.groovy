@@ -29,9 +29,41 @@ def body = Jsoup.parse(html).body()
 def dropdowns = body.select( '#navbar-main-menu .dropdown-toggle' )
 assert dropdowns.size() == 2
 
-assert dropdowns.get(0).outerHtml().equals( '<a href="#" class="nav-link dropdown-toggle" id="Documentation_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation</a>' );
-assert dropdowns.get(1).outerHtml().equals( '<a href="#" class="nav-link dropdown-toggle" id="Info_and_reports_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info and reports</a>' );
+def dropdown = dropdowns.get(0)
+assert dropdown.tag().normalName().equals('a')
+assert dropdown.id().equals('Documentation_menu')
+assert dropdown.attr( 'href' ).equals('#')
+assert dropdown.attr( 'data-toggle' ).equals('dropdown')
+assert dropdown.attr( 'role' ).equals('button')
+assert dropdown.attr( 'aria-haspopup' ).equals('true')
+assert dropdown.attr( 'aria-expanded' ).equals('false')
+assert dropdown.html().equals('Documentation')
+assert dropdown.hasClass( 'nav-link' )
+assert dropdown.hasClass( 'dropdown-toggle' )
+
+dropdown = dropdowns.get(1)
+assert dropdown.tag().normalName().equals('a')
+assert dropdown.id().equals('Info_and_reports_menu')
+assert dropdown.attr( 'href' ).equals('#')
+assert dropdown.attr( 'data-toggle' ).equals('dropdown')
+assert dropdown.attr( 'role' ).equals('button')
+assert dropdown.attr( 'aria-haspopup' ).equals('true')
+assert dropdown.attr( 'aria-expanded' ).equals('false')
+assert dropdown.html().equals('Info and reports')
+assert dropdown.hasClass( 'nav-link' )
+assert dropdown.hasClass( 'dropdown-toggle' )
 
 // Verifies the menu links exist
-assert html.contains( '<a class="dropdown-item" href="./acquire.html" title="Acquire">Acquire</a>' )
-assert html.contains( '<a class="dropdown-item" href="./usage.html" title="Usage">Usage</a>' )
+def items = body.select( '#navbar-main-menu .dropdown-item' )
+
+def item = items.get(0)
+assert dropdown.attr( 'href' ).equals('./acquire.html')
+assert dropdown.attr( 'title' ).equals('Acquire')
+assert dropdown.html().equals('Acquire')
+assert dropdown.hasClass( 'dropdown-item' )
+
+item = items.get(1)
+assert dropdown.attr( 'href' ).equals('./usage.html')
+assert dropdown.attr( 'title' ).equals('Usage')
+assert dropdown.html().equals('Usage')
+assert dropdown.hasClass( 'dropdown-item' )

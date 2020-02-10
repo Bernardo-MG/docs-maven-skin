@@ -29,4 +29,9 @@ def body = Jsoup.parse(html).body()
 def icons = body.select( '#navbar-main-menu a' )
 assert icons.size() == 1
 
-assert icons.first().outerHtml().equals('<a href="https://github.com/Bernardo-MG/docs-maven-skin" title="Github" aria-label="Github"><span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> Github</span></a>')
+def icon = icons.first()
+assert icon.tag().normalName().equals('a')
+assert icon.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin')
+assert icon.attr( 'title' ).equals('Github')
+assert icon.attr( 'aria-label' ).equals('Usage')
+assert icon.html().equals('<span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> Github</span>')

@@ -32,7 +32,7 @@ def fig = body.select( 'figure' ).first()
 def firstImg = fig.select( 'img' ).first()
 assert firstImg.attr( 'src' ).contains( './images/example_class_diagram.png' )
 assert firstImg.attr( 'alt' ).contains( 'Dice class diagram' )
-assert firstImg.attr( 'class' ).contains( 'img-fluid' )
+assert firstImg.hasClass( 'img-fluid' )
 
 def firstCaption = fig.select( 'figcaption' ).first()
 assert firstCaption.html().contains( 'Dice class diagram' )
