@@ -21,7 +21,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>1.4.4</version>
+   <version>2.0.0</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -176,13 +176,13 @@
       <!-- ============================================== -->
       <plugin.frontend.node.version>v12.3.1</plugin.frontend.node.version>
       <plugin.frontend.npm.version>6.9.0</plugin.frontend.npm.version>
-      <plugin.frontend.version>1.7.6</plugin.frontend.version>
-      <plugin.invoker.version>3.2.0</plugin.invoker.version>
+      <plugin.frontend.version>1.8.0</plugin.frontend.version>
+      <plugin.invoker.version>3.2.1</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>1.4.2</site.skin.version>
+      <site.skin.version>1.4.4</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
    </properties>
@@ -332,7 +332,7 @@
                            <directory>node_modules/</directory>
                            <includes>
                               <include>bootstrap/dist/js/bootstrap.min.js</include>
-                              <include>bootswatch/readable/bootstrap.min.css</include>
+                              <include>bootswatch/dist/litera/bootstrap.min.css</include>
                               <include>font-awesome/css/font-awesome.min.css</include>
                               <include>font-awesome/fonts/*.*</include>
                               <include>html5shiv/dist/html5shiv.min.js</include>
@@ -428,17 +428,6 @@
                   </configuration>
                </execution>
                <execution>
-                  <!-- Validate Javascript -->
-                  <id>validate-js</id>
-                  <goals>
-                     <goal>npm</goal>
-                  </goals>
-                  <phase>test</phase>
-                  <configuration>
-                     <arguments>run validate-js</arguments>
-                  </configuration>
-               </execution>
-               <execution>
                   <!-- Validate CSS -->
                   <id>validate-css</id>
                   <goals>
@@ -458,17 +447,6 @@
                   <phase>process-resources</phase>
                   <configuration>
                      <arguments>run minify-css</arguments>
-                  </configuration>
-               </execution>
-               <execution>
-                  <!-- Minify Javascript -->
-                  <id>minify-js</id>
-                  <goals>
-                     <goal>npm</goal>
-                  </goals>
-                  <phase>process-resources</phase>
-                  <configuration>
-                     <arguments>run minify-js</arguments>
                   </configuration>
                </execution>
             </executions>

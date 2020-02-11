@@ -40,9 +40,9 @@
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"#if( $locale ) lang="$locale.language"#end>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=${outputEncoding}"/>
+    <meta charset="${outputEncoding}">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- IE Compatibility tag -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,7 +83,7 @@
 #end
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./lib/bootswatch/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/bootswatch/dist/litera/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/highlight/styles/default.css">
     <!-- Docs Template style -->
@@ -91,7 +91,7 @@
     
 #if( $config.customScript )
     <!-- Custom style -->
-    <link rel="stylesheet" href="$config.customStyle"></script>
+    <link rel="stylesheet" href="$config.customStyle.getValue()">
 #end
 
 #**##if( $decoration.body.head )
@@ -104,33 +104,25 @@
     <![endif]-->
 
 </head>
-<body>
-<header class="header">
-    <nav id="navbar-main" class="navbar navbar-main navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#navbar-main-body"
-                        aria-expanded="false" aria-controls="navbar-main">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./index.html">$project.name</a>
-            </div>
-
-            <div id="navbar-main-body" class="navbar-body navbar-collapse collapse">
+<body class="d-flex flex-column">
+<header>
+    <nav id="navbar-main" class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">$project.name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-body" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbar-main-menu">
 #**##if( $decoration.publishDate.position != "none" )
-                <small class="navbar-text"><span id="navbar-version">${project.version}</span> <span id="navbar-date">(#publishDate())</span></small>
+            <small class="navbar-text"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">#publishDate()</time>)</small>
 #**##else
-                <small class="navbar-text"><span id="navbar-version">${project.version}</span></small>
+            <small class="navbar-text"><span id="navbar-version">${project.version}</span></small>
 #**##end
 #**##if( $decoration.edit && $docRenderingContext.editable )
 #**##* Doxia edition button. *#
-                <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
+            <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
 #**##end
-
+            <div class="ml-auto d-flex align-items-center">
 #set( $iconMenuElements = [] )
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
@@ -140,9 +132,11 @@
 #else
 #**##set( $linkMenuElements = [] )
 #end
-#if( $iconMenuElements.size() > 0 || $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
-                <ul class="nav navbar-nav navbar-right">
+#if( $iconMenuElements.size() > 0 )
 #**##iconsMenu( $iconMenuElements )
+#end
+#if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
+                <ul class="navbar-nav">
 #**##linksMenu( $linkMenuElements )
 #**##dropdownMenu( $dropDownMenuElements )
                 </ul>
@@ -151,38 +145,33 @@
         </div>
     </nav>
 </header>
-<section id="main-section" class="container">
+<section id="main-section" class="container flex-grow-1">
 $bodyContent
-    <p class="pull-right internal-link"><a href="#main-section">Back to top</a></p>
 </section>
-<footer class="footer">
-    <div class="footer-content">
-        <div class="container-fluid">
+<footer class="footer w-100 pt-2 border-top bg-light">
+    <div id="footer-nav" class="bg-light container">
 #set( $menuElements = [] )
 #loadBottomNavMenuList( $menuElements )
 #if($menuElements.size() > 0)
-            <div id="navbar-footer" class="row">
-#**##bottomNav( $menuElements 12 )
-            </div>
-#end
-	        <div class="row">
-	            <div class="col-md-12 col-sm-12 col-xs-12">#copyright()</div>
-	            <div class="col-md-12 col-sm-12 col-xs-12">Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
-#if( $decoration.body.footer )
-               <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
-#end
-           </div>
+        <div id="navbar-footer" class="row">
+#**##bottomNav( $menuElements )
         </div>
+#end
+    </div>
+    <div id="footer-info" class="bg-light pl-2 pb-1 w-100">
+#if( $decoration.body.footer )
+        <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
+#end
+        <div>#copyright()</div>
+        <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
     </div>
 </footer>
 <script src="./lib/jquery/dist/jquery.min.js"></script>
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./js/scripts.min.js"></script>
 <script src="./lib/highlight/highlight.pack.js"></script>
-<script src="./js/initialize.js"></script>
 <script src="./js/initializeHighlight.js"></script>
 #if( $config.customScript )
-<script src="$config.customScript"></script>
+<script src="$config.customScript.getValue()"></script>
 #end
 #if( $decoration.googleAnalyticsAccountId )
 <script async src="https://www.googletagmanager.com/gtag/js?id=$decoration.googleAnalyticsAccountId"></script>

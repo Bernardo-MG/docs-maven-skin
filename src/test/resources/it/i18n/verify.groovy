@@ -44,10 +44,10 @@ assert versionHeader.html() =~ /1\.0\.0/
 
 // Verifies the project date is included
 def dateHeader = body.select( '#navbar-date' )
-assert dateHeader.html() =~ /\([0-9]+-[0-9]+-[0-9]+\)/
+assert dateHeader.html() =~ /[0-9]+-[0-9]+-[0-9]+/
 
 // Footer link
-def div = body.select( 'footer.footer div.row div' ).last()
+def div = body.select( 'footer #footer-info div' ).last()
 assert div.html().contains( 'Rendered using' )
 assert html.contains( 'Rendered using <a href="https://github.com/Bernardo-MG/docs-maven-skin">Docs Maven Skin</a>' )
 

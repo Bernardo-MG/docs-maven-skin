@@ -18,7 +18,7 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 
 - Minimalist and reactive look
 - HTML5
-- [Bootstrap 3][bootstrap]
+- [Bootstrap 4][bootstrap]
 - [Font Awesome][font_awesome] icons
 - [highlight.js][highlight] for syntax highlighting
 - Prepared for [Facebook's Open Graph][open-graph] and [Twitter Cards][twitter-cards]

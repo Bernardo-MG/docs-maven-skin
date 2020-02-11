@@ -25,16 +25,13 @@ MatcherAssert.assertThat(
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies that the right navigation bar exists
-def rightNavBar = body.select( '.navbar-right' )
-assert rightNavBar.size() == 1
-
-// Verifies the icon menus exist
-def icons = body.select( 'ul.icons-list' )
+// Verifies the icon in the navbar
+def icons = body.select( '#navbar-main-menu a' )
 assert icons.size() == 1
 
-// Verifies the icon in the list
-def iconMenu = body.select( 'ul.icons-list > li' )
-assert iconMenu.size() == 1
-
-assert icons.get(0).html().equals('<li><a href="https://github.com/Bernardo-MG/docs-maven-skin" title="Github" aria-label="Github"><span class="navbar-icon fa fa-github" aria-hidden="true"></span> <span class="hidden-md hidden-lg"> Github</span></a></li>')
+def icon = icons.first()
+assert icon.tag().normalName().equals('a')
+assert icon.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin')
+assert icon.attr( 'title' ).equals('Github')
+assert icon.attr( 'aria-label' ).equals('Github')
+assert icon.html().equals('<span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> Github</span>')

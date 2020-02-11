@@ -25,6 +25,25 @@ MatcherAssert.assertThat(
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies the code sections were created with the correct tags
-def codes = body.select( 'pre code' )
-assert !codes.isEmpty()
+// The code sections were created with the correct tags
+def codes = body.select( 'pre' )
+assert codes.size() == 3
+
+def code = codes.get(0)
+assert code.hasClass( 'border' )
+assert code.hasClass( 'shadow' )
+assert code.hasClass( 'rounded' )
+
+code = codes.get(1)
+assert code.hasClass( 'border' )
+assert code.hasClass( 'shadow' )
+assert code.hasClass( 'rounded' )
+
+code = codes.get(2)
+assert code.hasClass( 'border' )
+assert code.hasClass( 'shadow' )
+assert code.hasClass( 'rounded' )
+
+// The code sections were created with the correct tags
+codes = body.select( 'pre > code' )
+assert codes.size() == 3

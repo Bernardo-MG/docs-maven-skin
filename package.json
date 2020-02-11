@@ -1,19 +1,15 @@
 {
    "scripts": {
-      "validate-js": "./node_modules/.bin/jshint ./src/main/resources/js/ --config .jshintrc",
       "validate-css": "./node_modules/.bin/csslint ./src/main/resources/css/",
-      "minify-css": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css",
-      "minify-js": "./node_modules/.bin/uglifyjs ./src/main/resources/js/utils/*.js -o ./target/classes/js/scripts.min.js"
+      "minify-css": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css"
    },
    "dependencies": {
-      "bootstrap": "~3.4.1",
-      "bootswatch": "~3.4.1",
+      "bootstrap": "~4.4.1",
+      "bootswatch": "~4.4.1",
       "clean-css-cli": "~4.2.1",
       "csslint": "~1.0.5",
       "font-awesome": "~4.7.0",
       "html5shiv": "~3.7.3",
-      "jquery": "~3.4.1",
-      "jshint": "~2.10.2",
-      "uglify-js": "~3.4.9"
+      "jquery": "~3.4.1"
    }
 }

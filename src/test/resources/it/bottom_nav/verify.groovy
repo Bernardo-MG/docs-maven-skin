@@ -28,30 +28,91 @@ def body = Jsoup.parse(html).body()
 // Verifies the skin info is included
 
 // Footer link
-def div = body.select( 'footer.footer div.row div' ).last()
+def div = body.select( 'footer #footer-info div' ).last()
 assert div.html().contains( 'Rendered using' )
 
-// Verifies the footer columns exist
-def titles = body.select( 'dt' )
+// The footer columns exist
+def titles = body.select( 'footer dl dt' )
 assert titles.size() == 3
 
-// Verifies the footer columns contains the expected titles
+// The footer columns contains the expected titles
 assert titles.get(0).html().equals('General Info')
 assert titles.get(1).html().equals('Code')
 assert titles.get(2).html().equals('Releases')
 
-// Verifies the footer columns data
-def rows = body.select( 'dd' )
+// The footer columns data exists
+def rows = body.select( 'footer dl dd' )
+assert rows.size() == 7
+
+rows = body.select( 'footer dl' )
 
 // First column
-assert rows.get(0).html().equals('<a href="./acquire.html" title="Acquire">Acquire</a>')
-assert rows.get(1).html().equals('<a href="./usage.html" title="Usage">Usage</a>')
+def row = rows.get(0).select( 'dd' )
+assert row.size() == 2
+
+def link = row.get(0)
+assert link.tag().normalName().equals('dd')
+link = link.children().first()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('./acquire.html')
+assert link.attr( 'title' ).equals('Acquire')
+assert link.html().equals('Acquire')
+
+link = row.get(1)
+assert link.tag().normalName().equals('dd')
+link = link.children().first()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('./usage.html')
+assert link.attr( 'title' ).equals('Usage')
+assert link.html().equals('Usage')
 
 // Second column
-assert rows.get(2).html().equals('<a href="https://github.com/Bernardo-MG/docs-maven-skin" title="SCM" class="link-noted">SCM <span class="note">GitHub</span></a>')
-assert rows.get(3).html().equals('<a href="https://travis-ci.org/Bernardo-MG/docs-maven-skin" title="CI" class="link-noted">CI <span class="note">Travis CI</span></a>')
-assert rows.get(4).html().equals('<a href="https://www.github.com/bernardo-mg/docs-maven-skin/issues" title="Issues" class="link-noted">Issues <span class="note">GitHub</span></a>')
+row = rows.get(1).select( 'dd' )
+assert row.size() == 3
+
+link = row.get(0)
+assert link.tag().normalName().equals('dd')
+link = link.children().first()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin')
+assert link.attr( 'title' ).equals('SCM')
+assert link.html().equals('SCM <span class="note">GitHub</span>')
+assert link.hasClass( 'link-noted' )
+
+link = row.get(1)
+assert link.tag().normalName().equals('dd')
+link = link.children().first()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('https://travis-ci.org/Bernardo-MG/docs-maven-skin')
+assert link.attr( 'title' ).equals('CI')
+assert link.html().equals('CI <span class="note">Travis CI</span>')
+assert link.hasClass( 'link-noted' )
+
+link = row.get(2)
+assert link.tag().normalName().equals('dd')
+link = link.children().first()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('https://www.github.com/bernardo-mg/docs-maven-skin/issues')
+assert link.attr( 'title' ).equals('Issues')
+assert link.html().equals('Issues <span class="note">GitHub</span>')
+assert link.hasClass( 'link-noted' )
 
 // Third column
-assert rows.get(5).html().equals('<a href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" title="Bintray">Bintray</a>')
-assert rows.get(6).html().equals('<a href="http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin" title="Maven Central">Maven Central</a>')
+row = rows.get(2).select( 'dd' )
+assert row.size() == 2
+
+link = row.get(0)
+assert link.tag().normalName().equals('dd')
+link = link.children().first()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('https://bintray.com/bernardo-mg/maven/docs-maven-skin/view')
+assert link.attr( 'title' ).equals('Bintray')
+assert link.html().equals('Bintray')
+
+link = row.get(1)
+assert link.tag().normalName().equals('dd')
+link = link.children().first()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin')
+assert link.attr( 'title' ).equals('Maven Central')
+assert link.html().equals('Maven Central')

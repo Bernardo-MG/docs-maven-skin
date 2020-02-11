@@ -5,22 +5,6 @@ import org.hamcrest.MatcherAssert
 import org.hamcrest.Matchers
 import org.jsoup.Jsoup
 
-// Verifies that all the files were created
-[
-    'target/site/index.html',
-    'target/site/favicon.ico',
-    'target/site/robots.txt',
-    'target/site/css/style.min.css',
-    'target/site/js/scripts.min.js'
-].each {
-    def file = new File(basedir, it)
-    if (!file.exists()) {
-        throw new IllegalStateException(
-            "file ${file} doesn't exist"
-        )
-    }
-}
-
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
 
@@ -43,28 +27,28 @@ def parsed = Jsoup.parse(html)
 def body = parsed.body()
 
 // Verifies the heading uses the correct text
-def titleHeading = body.select( 'h1' )
+def titleHeading = body.select( 'h1' ).first()
 assert titleHeading.html().contains( 'Page Content' )
-assert titleHeading.attr( 'id' ).contains( 'page-content' )
+assert titleHeading.id().equals( 'page-content' )
 
 def subHeadings = body.select( 'h2' )
 
 // Verifies the first subsection uses the correct text
-def firstSubHeading = subHeadings.first()
+def firstSubHeading = subHeadings.get(0)
 assert firstSubHeading.html().contains( 'Subsection' )
-assert firstSubHeading.attr( 'id' ).contains( 'subsection' )
+assert firstSubHeading.id().equals( 'subsection' )
 
 // Verifies the second subsection uses the correct text
 def secondSubHeading = subHeadings.get(1)
 assert secondSubHeading.html().contains( 'Second Subsection' )
-assert secondSubHeading.attr( 'id' ).contains( 'second-subsection' )
+assert secondSubHeading.id().equals( 'second-subsection' )
 
 def subSubHeadings = body.select( 'h3' )
 
 // Verifies the first subsection uses the correct text
 def firstSubSubHeading = subSubHeadings.first()
 assert firstSubSubHeading.html().contains( 'Smaller subsection' )
-assert firstSubSubHeading.attr( 'id' ).contains( 'smaller-subsection' )
+assert firstSubSubHeading.id().equals( 'smaller-subsection' )
 
 // Verifies the number of sections is correct
 def mainSections = body.select( '> section' )
