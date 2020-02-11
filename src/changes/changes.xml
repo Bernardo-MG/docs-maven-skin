@@ -121,12 +121,15 @@
             Changed how the anchor ids are formatted.
          </action>
       </release>
-      <release version="2.0.0" date="2019-11-11" description="">
+      <release version="2.0.0" date="2020-02-11" description="Moved to Bootstrap 4">
          <action dev="bmg" type="fix">
             Fixed custom scripts configuration.
          </action>
          <action dev="bmg" type="update">
             Changed to Bootstrap 4.
+         </action>
+         <action dev="bmg" type="update">
+            Reworked UI.
          </action>
          <action dev="bmg" type="remove">
             Removed custom CSS.
