@@ -124,6 +124,7 @@
             <!-- Tests are skipped -->
             <maven.test.skip>true</maven.test.skip>
             <skipTests>true</skipTests>
+            <invoker.skip>true</invoker.skip>
          </properties>
       </profile>
    </profiles>
