@@ -94,12 +94,6 @@
                <url>${site.release.url}</url>
             </site>
          </distributionManagement>
-         <properties>
-            <!-- Tests are skipped -->
-            <maven.test.skip>true</maven.test.skip>
-            <skipTests>true</skipTests>
-            <invoker.skip>true</invoker.skip>
-         </properties>
       </profile>
       <profile>
          <!-- Development site deployment profile -->
@@ -113,12 +107,6 @@
                <url>${site.develop.url}</url>
             </site>
          </distributionManagement>
-         <properties>
-            <!-- Tests are skipped -->
-            <maven.test.skip>true</maven.test.skip>
-            <skipTests>true</skipTests>
-            <invoker.skip>true</invoker.skip>
-         </properties>
       </profile>
       <profile>
          <!-- Deployment profile -->
