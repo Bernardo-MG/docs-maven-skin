@@ -96,7 +96,9 @@
          </distributionManagement>
          <properties>
             <!-- Tests are skipped -->
+            <maven.test.skip>true</maven.test.skip>
             <skipTests>true</skipTests>
+            <invoker.skip>true</invoker.skip>
          </properties>
       </profile>
       <profile>
@@ -113,7 +115,9 @@
          </distributionManagement>
          <properties>
             <!-- Tests are skipped -->
+            <maven.test.skip>true</maven.test.skip>
             <skipTests>true</skipTests>
+            <invoker.skip>true</invoker.skip>
          </properties>
       </profile>
       <profile>
