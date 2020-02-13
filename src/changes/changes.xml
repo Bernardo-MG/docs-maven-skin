@@ -148,6 +148,11 @@
             Fixed menu on mobile screens.
          </action>
       </release>
+      <release version="2.0.3" date="2020-02-13" description="Changed skin">
+         <action dev="bmg" type="update">
+            Using the latest skin version.
+         </action>
+      </release>
       <release version="2.1.0" date="2020-02-12" description="">
       </release>
    </body>
