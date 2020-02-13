@@ -143,5 +143,10 @@
             Using the latest skin version.
          </action>
       </release>
+      <release version="2.0.2" date="2020-02-12" description="">
+         <action dev="bmg" type="update">
+            Fixed menu on mobile screens.
+         </action>
+      </release>
    </body>
 </document>
