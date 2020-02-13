@@ -138,9 +138,9 @@
             Removed custom Javascript scripts.
          </action>
       </release>
-      <release version="2.0.1" date="2020-02-11" description="Updated skin">
+      <release version="2.0.1" date="2020-02-12" description="Changed skin">
          <action dev="bmg" type="update">
-            Updated skin.
+            Using the latest skin version.
          </action>
       </release>
       <release version="2.0.2" date="2020-02-12" description="">
