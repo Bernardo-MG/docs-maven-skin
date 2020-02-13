@@ -21,7 +21,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>2.0.0</version>
+   <version>2.0.1</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -94,10 +94,6 @@
                <url>${site.release.url}</url>
             </site>
          </distributionManagement>
-         <properties>
-            <!-- Tests are skipped -->
-            <skipTests>true</skipTests>
-         </properties>
       </profile>
       <profile>
          <!-- Development site deployment profile -->
@@ -111,10 +107,6 @@
                <url>${site.develop.url}</url>
             </site>
          </distributionManagement>
-         <properties>
-            <!-- Tests are skipped -->
-            <skipTests>true</skipTests>
-         </properties>
       </profile>
       <profile>
          <!-- Deployment profile -->

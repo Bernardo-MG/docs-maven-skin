@@ -78,8 +78,13 @@
 #**##set( $empty = $htmlTool.removeAttribute( $bodyContentParsed, 'table[border]', 'border' ) )
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.a', 'a' ) )
 #**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.b', 'b' ) )
- 
-#**##set( $empty = $siteTool.transformTables( $bodyContentParsed ) )
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table' ) )
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table-striped' ) )
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table-bordered' ) )
+
+#**
+ * Fixes reports.
+ *#
 #**##set( $empty = $siteTool.fixReport($bodyContentParsed, $config.fileId) )
 #**##set( $empty = $siteTool.transformIcons( $bodyContentParsed ) )
 #**##set( $empty = $siteTool.fixHeadingIds($bodyContentParsed) )
