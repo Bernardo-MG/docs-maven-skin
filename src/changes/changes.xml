@@ -144,7 +144,7 @@
          </action>
       </release>
       <release version="2.0.2" date="2020-02-12" description="Fixed menu on mobile">
-         <action dev="bmg" type="update">
+         <action dev="bmg" type="fix">
             Fixed menu on mobile screens.
          </action>
       </release>
@@ -153,7 +153,10 @@
             Using the latest skin version.
          </action>
       </release>
-      <release version="2.1.0" date="2020-02-12" description="">
+      <release version="2.0.4" date="2020-02-12" description="Corrected icon in navbar">
+         <action dev="bmg" type="fix">
+            Corrected icon in navbar.
+         </action>
       </release>
    </body>
 </document>
