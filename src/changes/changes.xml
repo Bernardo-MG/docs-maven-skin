@@ -158,7 +158,10 @@
             Corrected icon in navbar.
          </action>
       </release>
-      <release version="2.1.0" date="2020-02-17" description="">
+      <release version="2.0.4" date="2020-02-17" description="Changed skin">
+         <action dev="bmg" type="update">
+            Using the latest skin version.
+         </action>
       </release>
    </body>
 </document>
