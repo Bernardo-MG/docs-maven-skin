@@ -122,7 +122,7 @@
 #**##* Doxia edition button. *#
             <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="fa fa-edit" aria-hidden="true"></span></a></div>
 #**##end
-            <div class="ml-auto d-flex align-items-center">
+            <div class="ml-auto d-flex align-items-center row">
 #set( $iconMenuElements = [] )
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
@@ -133,13 +133,17 @@
 #**##set( $linkMenuElements = [] )
 #end
 #if( $iconMenuElements.size() > 0 )
+               <div class="col-sm">
 #**##iconsMenu( $iconMenuElements )
+               </div>
 #end
 #if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
-                <ul class="navbar-nav">
+               <div class="col-sm">
+                  <ul class="navbar-nav">
 #**##linksMenu( $linkMenuElements )
 #**##dropdownMenu( $dropDownMenuElements )
-                </ul>
+                  </ul>
+               </div>
 #end
             </div>
         </div>
