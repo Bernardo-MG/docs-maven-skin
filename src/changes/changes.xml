@@ -153,9 +153,14 @@
             Using the latest skin version.
          </action>
       </release>
-      <release version="2.0.4" date="2020-02-12" description="Corrected icon in navbar">
+      <release version="2.0.4" date="2020-02-17" description="Corrected icon in navbar">
          <action dev="bmg" type="fix">
             Corrected icon in navbar.
+         </action>
+      </release>
+      <release version="2.0.4" date="2020-02-17" description="Changed skin">
+         <action dev="bmg" type="update">
+            Using the latest skin version.
          </action>
       </release>
    </body>
