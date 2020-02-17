@@ -120,7 +120,7 @@
 #**##end
 #**##if( $decoration.edit && $docRenderingContext.editable )
 #**##* Doxia edition button. *#
-            <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="navbar-icon fa fa-edit" aria-hidden="true"></span></a></div>
+            <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="fa fa-edit" aria-hidden="true"></span></a></div>
 #**##end
             <div class="ml-auto d-flex align-items-center">
 #set( $iconMenuElements = [] )
