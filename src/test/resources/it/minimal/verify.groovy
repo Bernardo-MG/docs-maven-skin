@@ -43,7 +43,7 @@ def body = parsed.body()
 def head = parsed.head()
 
 // Verified the heading is set
-def header = body.select( 'body > header' ).first()
+def header = body.select( 'section > header' ).first()
 assert header.hasClass( 'pb-2' )
 assert header.hasClass( 'mt-4' )
 assert header.hasClass( 'mb-2' )
