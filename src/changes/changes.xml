@@ -163,5 +163,10 @@
             Using the latest skin version.
          </action>
       </release>
+      <release version="2.0.6" date="2020-02-18" description="Corrected headers">
+         <action dev="bmg" type="fix">
+            Corrected header classes.
+         </action>
+      </release>
    </body>
 </document>

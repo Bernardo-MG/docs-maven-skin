@@ -43,7 +43,11 @@ def body = parsed.body()
 def head = parsed.head()
 
 // Verified the heading is set
-assert html.contains( '<header class="page-header">' )
+def header = body.select( 'section > header' ).first()
+assert header.hasClass( 'pb-2' )
+assert header.hasClass( 'mt-4' )
+assert header.hasClass( 'mb-2' )
+assert header.hasClass( 'border-bottom' )
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )
