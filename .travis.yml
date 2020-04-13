@@ -9,7 +9,7 @@ jdk:
 matrix:
   include:
     # Deploys docs
-    - java: openjdk8
+    - jdk: openjdk8
       env: DEPLOY=true DEPLOY_DOCS=true
 
 before_install:
