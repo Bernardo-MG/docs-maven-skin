@@ -4,10 +4,13 @@
 # Using Java for the project
 language: java
 jdk:
-# OpenJDK 8 is set to deploy the docs and artifacts
-  - openjdk8
-env:
-  - DEPLOY=true DEPLOY_DOCS=true
+  - openjdk10
+  - openjdk11
+matrix:
+  include:
+    # Deploys docs
+    - jdk: openjdk8
+      env: DEPLOY=true DEPLOY_DOCS=true
 
 before_install:
   # Gets scripts

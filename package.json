@@ -4,12 +4,12 @@
       "minify-css": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css"
    },
    "dependencies": {
-      "bootstrap": "~4.4.1",
-      "bootswatch": "~4.4.1",
+      "bootstrap": "~4.5.0",
+      "bootswatch": "~4.5.0",
       "clean-css-cli": "~4.2.1",
       "csslint": "~1.0.5",
       "font-awesome": "~4.7.0",
       "html5shiv": "~3.7.3",
-      "jquery": "~3.4.1"
+      "jquery": "~3.5.1"
    }
 }
