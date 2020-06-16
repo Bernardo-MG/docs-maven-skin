@@ -168,5 +168,10 @@
             Corrected header classes.
          </action>
       </release>
+      <release version="2.0.7" date="2020-06-16" description="Updated dependencies">
+         <action dev="bmg" type="fix">
+            Updated dependencies.
+         </action>
+      </release>
    </body>
 </document>
