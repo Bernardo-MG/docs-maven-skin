@@ -137,12 +137,10 @@
 #end
 #if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
         <div class="collapse navbar-collapse" id="navbar-main-menu">
-            <div class="col-sm">
-                <ul class="nav navbar-nav ml-auto">
+            <ul class="nav navbar-nav ml-auto">
 #**##linksMenu( $linkMenuElements )
 #**##dropdownMenu( $dropDownMenuElements )
-                </ul>
-            </div>
+            </ul>
         </div>
 #end
     </nav>
