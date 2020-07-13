@@ -112,17 +112,15 @@
            <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse" id="navbar-main-menu">
 #**##if( $decoration.publishDate.position != "none" )
-            <small class="navbar-text"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">#publishDate()</time>)</small>
+        <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">#publishDate()</time>)</small>
 #**##else
-            <small class="navbar-text"><span id="navbar-version">${project.version}</span></small>
+        <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span></small>
 #**##end
 #**##if( $decoration.edit && $docRenderingContext.editable )
 #**##* Doxia edition button. *#
-            <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="fa fa-edit" aria-hidden="true"></span></a></div>
+        <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="fa fa-edit" aria-hidden="true"></span></a></div>
 #**##end
-            <div class="ml-auto d-flex align-items-center row">
 #set( $iconMenuElements = [] )
 #loadIconNavMenuList( $iconMenuElements )
 #set( $dropDownMenuElements = [] )
@@ -133,20 +131,20 @@
 #**##set( $linkMenuElements = [] )
 #end
 #if( $iconMenuElements.size() > 0 )
-               <div class="col-sm">
+        <div class="col-sm d-none d-md-block">
 #**##iconsMenu( $iconMenuElements )
-               </div>
+        </div>
 #end
 #if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
-               <div class="col-sm">
-                  <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbar-main-menu">
+            <div class="col-sm">
+                <ul class="nav navbar-nav ml-auto">
 #**##linksMenu( $linkMenuElements )
 #**##dropdownMenu( $dropDownMenuElements )
-                  </ul>
-               </div>
-#end
+                </ul>
             </div>
         </div>
+#end
     </nav>
 </header>
 <section id="main-section" class="container flex-grow-1">

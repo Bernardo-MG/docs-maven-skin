@@ -338,57 +338,6 @@
             </executions>
          </plugin>
          <plugin>
-            <!-- Maven Invoker -->
-            <!-- Runs the IT test -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-invoker-plugin</artifactId>
-            <configuration>
-               <debug>true</debug>
-               <projectsDirectory>src/test/resources/it</projectsDirectory>
-               <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
-               <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
-               <postBuildHookScript>verify</postBuildHookScript>
-               <goals>
-                  <goal>site</goal>
-               </goals>
-            </configuration>
-            <dependencies>
-               <dependency>
-                  <!-- Hamcrest -->
-                  <groupId>org.hamcrest</groupId>
-                  <artifactId>hamcrest-all</artifactId>
-                  <version>${hamcrest.version}</version>
-               </dependency>
-               <dependency>
-                  <!-- jcabi matchers -->
-                  <groupId>com.jcabi</groupId>
-                  <artifactId>jcabi-matchers</artifactId>
-                  <version>${jcabi.matchers.version}</version>
-               </dependency>
-               <dependency>
-                  <!-- jcabi W3C -->
-                  <groupId>com.jcabi</groupId>
-                  <artifactId>jcabi-w3c</artifactId>
-                  <version>${jcabi.w3c.version}</version>
-               </dependency>
-               <dependency>
-                  <!-- JSoup -->
-                  <groupId>org.jsoup</groupId>
-                  <artifactId>jsoup</artifactId>
-                  <version>${jsoup.version}</version>
-               </dependency>
-            </dependencies>
-            <executions>
-               <execution>
-                  <id>verify-sites</id>
-                  <goals>
-                     <goal>install</goal>
-                     <goal>run</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
             <!-- Frontend Plugin -->
             <!-- Manages frontend dependencies -->
             <groupId>com.github.eirslett</groupId>

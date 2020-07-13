@@ -26,7 +26,8 @@ MatcherAssert.assertThat(
 def body = Jsoup.parse(html).body()
 
 // Verifies the icon in the navbar
-def icons = body.select( '#navbar-main-menu a' )
+// def icons = body.select( '#navbar-main-menu a' )
+def icons = body.select( '.navbar-icon a' )
 assert icons.size() == 1
 
 def icon = icons.first()
