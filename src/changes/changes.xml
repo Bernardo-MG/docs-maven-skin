@@ -178,7 +178,10 @@
             Fixed upper menu display.
          </action>
       </release>
-      <release version="2.1.0" date="2020-07-14" description="">
+      <release version="2.0.9" date="2020-07-14" description="Updated skin">
+         <action dev="bmg" type="fix">
+            Updated to build site with latest skin.
+         </action>
       </release>
    </body>
 </document>
