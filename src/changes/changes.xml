@@ -173,7 +173,10 @@
             Updated dependencies.
          </action>
       </release>
-      <release version="2.1.0" date="2020-02-18" description="">
+      <release version="2.0.8" date="2020-07-14" description="Fixed menud">
+         <action dev="bmg" type="fix">
+            Fixed upper menu display.
+         </action>
       </release>
    </body>
 </document>
