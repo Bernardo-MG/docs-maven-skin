@@ -26,12 +26,13 @@ MatcherAssert.assertThat(
 def body = Jsoup.parse(html).body()
 
 // Verifies the icon in the navbar
-def icons = body.select( '#navbar-main-menu a' )
+// def icons = body.select( '#navbar-main-menu a' )
+def icons = body.select( '.navbar-icon' )
 assert icons.size() == 1
 
-def icon = icons.first()
-assert icon.tag().normalName().equals('a')
-assert icon.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin')
-assert icon.attr( 'title' ).equals('Github')
-assert icon.attr( 'aria-label' ).equals('Github')
-assert icon.html().equals('<span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> Github</span>')
+def link = icons.first().parent()
+assert link.tag().normalName().equals('a')
+assert link.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin')
+assert link.attr( 'title' ).equals('Github')
+assert link.attr( 'aria-label' ).equals('Github')
+assert link.html().equals('<span class="navbar-icon fa fa-github pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> Github</span>')
