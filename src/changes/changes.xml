@@ -183,5 +183,10 @@
             Updated to build site with latest skin.
          </action>
       </release>
+      <release version="2.0.10" date="2021-01-02" description="Updated dependencies">
+         <action dev="bmg" type="update">
+            Updated Bootstrap.
+         </action>
+      </release>
    </body>
 </document>
