@@ -169,7 +169,7 @@
       <!-- ============================================== -->
       <plugin.frontend.node.version>v12.3.1</plugin.frontend.node.version>
       <plugin.frontend.npm.version>6.9.0</plugin.frontend.npm.version>
-      <plugin.frontend.version>1.8.0</plugin.frontend.version>
+      <plugin.frontend.version>1.10.0</plugin.frontend.version>
       <plugin.invoker.version>3.2.1</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
