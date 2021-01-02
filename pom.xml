@@ -21,7 +21,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>2.0.9</version>
+   <version>2.0.10</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -169,7 +169,7 @@
       <!-- ============================================== -->
       <plugin.frontend.node.version>v12.3.1</plugin.frontend.node.version>
       <plugin.frontend.npm.version>6.9.0</plugin.frontend.npm.version>
-      <plugin.frontend.version>1.8.0</plugin.frontend.version>
+      <plugin.frontend.version>1.10.0</plugin.frontend.version>
       <plugin.invoker.version>3.2.1</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->

@@ -4,9 +4,9 @@
       "minify-css": "./node_modules/.bin/cleancss ./src/main/resources/css/*.css -o ./target/classes/css/style.min.css"
    },
    "dependencies": {
-      "bootstrap": "~4.5.0",
-      "bootswatch": "~4.5.0",
-      "clean-css-cli": "~4.2.1",
+      "bootstrap": "~4.5.3",
+      "bootswatch": "~4.5.3",
+      "clean-css-cli": "~4.3.0",
       "csslint": "~1.0.5",
       "font-awesome": "~4.7.0",
       "html5shiv": "~3.7.3",
