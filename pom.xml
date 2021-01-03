@@ -53,8 +53,8 @@
    </issueManagement>
 
    <ciManagement>
-      <system>Travis CI</system>
-      <url>https://travis-ci.org/Bernardo-MG/docs-maven-skin</url>
+      <system>Github workflow</system>
+      <url>https://github.com/Bernardo-MG/docs-maven-skin/actions</url>
       <notifiers />
    </ciManagement>
 
