@@ -314,7 +314,7 @@
                   <!-- Frontend dependencies are acquired with npm and copied 
                      to the libs folder -->
                   <id>copy-site-dependencies</id>
-                  <phase>generate-resources</phase>
+                  <phase>process-resources</phase>
                   <goals>
                      <goal>copy-resources</goal>
                   </goals>
