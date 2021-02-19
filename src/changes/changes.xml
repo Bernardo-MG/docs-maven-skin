@@ -188,5 +188,10 @@
             Updated Bootstrap.
          </action>
       </release>
+      <release version="2.0.1" date="2021-02-20" description="Fixed resources copy">
+         <action dev="bmg" type="update">
+            Fixed missing resources due to plugin execution order change.
+         </action>
+      </release>
    </body>
 </document>

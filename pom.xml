@@ -21,7 +21,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>2.0.10</version>
+   <version>2.0.11</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -53,8 +53,8 @@
    </issueManagement>
 
    <ciManagement>
-      <system>Travis CI</system>
-      <url>https://travis-ci.org/Bernardo-MG/docs-maven-skin</url>
+      <system>Github workflow</system>
+      <url>https://github.com/Bernardo-MG/docs-maven-skin/actions</url>
       <notifiers />
    </ciManagement>
 
@@ -175,7 +175,7 @@
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.0.8</site.skin.version>
+      <site.skin.version>2.0.10</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
    </properties>
@@ -314,7 +314,7 @@
                   <!-- Frontend dependencies are acquired with npm and copied 
                      to the libs folder -->
                   <id>copy-site-dependencies</id>
-                  <phase>generate-resources</phase>
+                  <phase>process-resources</phase>
                   <goals>
                      <goal>copy-resources</goal>
                   </goals>

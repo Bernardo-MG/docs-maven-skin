@@ -9,31 +9,9 @@
    <!-- ********************************************** -->
 
    <groupId>com.bernardomg.maven.skins</groupId>
-   <artifactId>bottom-nav</artifactId>
+   <artifactId>minimal-site</artifactId>
    <version>1.0.0</version>
    <packaging>jar</packaging>
-
-   <!-- ********************************************** -->
-   <!-- ********* INFRASTRUCTURE AND SERVICES ******** -->
-   <!-- ********************************************** -->
-
-   <scm>
-      <connection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</connection>
-      <developerConnection>scm:git:https://github.com/Bernardo-MG/docs-maven-skin.git</developerConnection>
-      <tag>head</tag>
-      <url>https://github.com/Bernardo-MG/docs-maven-skin</url>
-   </scm>
-
-   <issueManagement>
-      <system>GitHub</system>
-      <url>https://www.github.com/bernardo-mg/docs-maven-skin/issues</url>
-   </issueManagement>
-
-   <ciManagement>
-      <system>Github workflow</system>
-      <url>https://github.com/Bernardo-MG/docs-maven-skin/actions</url>
-      <notifiers />
-   </ciManagement>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->
@@ -44,8 +22,6 @@
       <plugin.site.version>@plugin.site.version@</plugin.site.version>
       <!-- Maven Site -->
       <site.skin.version>@project.version@</site.skin.version>
-      <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
-      <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin</mavenURL>
    </properties>
 
    <!-- ********************************************** -->

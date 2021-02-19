@@ -40,7 +40,7 @@ Documentation is also generated from the latest snapshot, taken from the 'develo
 The documentation site sources come along the source code (as it is a Maven site), so it is always possible to generate them using the following Maven command:
 
 ```
-$ mvn verify site
+mvn verify site
 ```
 
 The verify phase is required, as otherwise some of the reports won't be created.
@@ -68,7 +68,7 @@ The recommended way to install the project is by setting up your preferred depen
 If for some reason manual installation is necessary, just use the following Maven command:
 
 ```
-$ mvn install
+mvn install
 ```
 
 ### Reducing the Dependency Scope
@@ -118,7 +118,7 @@ More detailed information can be found in the documentation.
 Several integration tests are included in the project, verifying various configurations. These can be run by using the usual Maven command:
 
 ```
-$ mvn verify
+mvn verify
 ```
 
 They are run by using the [Maven Invoker Plugin][maven-invoker], and the configurations are included in the 'src/it' folder.
