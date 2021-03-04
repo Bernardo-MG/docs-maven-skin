@@ -24,8 +24,8 @@ MatcherAssert.assertThat(
 
 // Parses HTML
 def parsed = Jsoup.parse(html)
-def body = parsed.body()
+def head = parsed.head()
 
-// The custom script file is linked
-def customScript = body.select( 'script[src="./js/custom.js"]' )
-assert customScript.outerHtml().equals('<script src="./js/custom.js"></script>')
+// The custom style file is linked
+def customStyle = head.select( 'link[href="./css/custom.css"]' )
+assert customStyle.outerHtml().equals('<link rel="stylesheet" href="./css/custom.css">')

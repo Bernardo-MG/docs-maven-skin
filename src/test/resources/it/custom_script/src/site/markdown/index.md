@@ -1,3 +1,3 @@
-# Custom Scripts
+# Custom Script
 
-This is an example for a Maven Site adding custom scripts.
+This is an example for a Maven Site adding a custom script.

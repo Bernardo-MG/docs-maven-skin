@@ -10,7 +10,7 @@
 
    <custom>
       <skinConfig>
-         <customScript>./js/custom.js</customScript>
+         <customStyle>./css/custom.css</customStyle>
       </skinConfig>
    </custom>
 
