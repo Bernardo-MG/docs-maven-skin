@@ -145,6 +145,20 @@
          <properties />
       </developer>
    </developers>
+  <contributors>
+     <contributor>
+        <name>Collin Doyle Brooks</name>
+        <email>collin.brooks@gmail.com</email>
+        <url>https://github.com/cobhimself</url>
+        <organization>Collin Doyle Brooks</organization>
+        <organizationUrl>https://github.com/cobhimself</organizationUrl>
+        <roles>
+           <role>Developer</role>
+        </roles>
+        <timezone>-6</timezone>
+        <properties />
+     </contributor>
+  </contributors>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->
