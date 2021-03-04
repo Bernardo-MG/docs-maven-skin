@@ -193,6 +193,11 @@
             Fixed missing resources due to plugin execution order change.
          </action>
       </release>
+      <release version="2.0.12" date="2021-03-04" description="Fixed custom style">
+         <action dev="cobhimself" type="fix">
+            Fixed custom styles when no custom script was included.
+         </action>
+      </release>
       <release version="2.1.0" date="2021-02-20" description="">
       </release>
    </body>
