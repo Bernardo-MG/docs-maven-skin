@@ -89,7 +89,7 @@
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.min.css">
     
-#if( $config.customScript )
+#if( $config.customStyle )
     <!-- Custom style -->
     <link rel="stylesheet" href="$config.customStyle.getValue()">
 #end
