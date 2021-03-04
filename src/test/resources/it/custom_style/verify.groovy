@@ -1,4 +1,4 @@
-// This script verifies that a the highlight.js initialization file can be overriden.
+// This script verifies a custom style can be provided
 
 import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
