@@ -85,7 +85,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./lib/bootswatch/dist/litera/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./lib/highlight/styles/default.css">
+#if ( $config.customHighlightStyle )
+  #set( $customHighlightStyle = $config.customHighlightStyle.getValue() )
+#else
+  #set( $customHighlightStyle = "default" )
+#end
+    <link rel="stylesheet" href="./lib/highlight/styles/${customHighlightStyle}.css">
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.min.css">
     
