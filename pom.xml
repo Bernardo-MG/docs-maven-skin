@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
    <modelVersion>4.0.0</modelVersion>
@@ -145,20 +144,21 @@
          <properties />
       </developer>
    </developers>
-  <contributors>
-     <contributor>
-        <name>Collin Doyle Brooks</name>
-        <email>collin.brooks@gmail.com</email>
-        <url>https://github.com/cobhimself</url>
-        <organization>Collin Doyle Brooks</organization>
-        <organizationUrl>https://github.com/cobhimself</organizationUrl>
-        <roles>
-           <role>Developer</role>
-        </roles>
-        <timezone>-6</timezone>
-        <properties />
-     </contributor>
-  </contributors>
+
+   <contributors>
+      <contributor>
+         <name>Collin Doyle Brooks</name>
+         <email>collin.brooks@gmail.com</email>
+         <url>https://github.com/cobhimself</url>
+         <organization>Collin Doyle Brooks</organization>
+         <organizationUrl>https://github.com/cobhimself</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>-6</timezone>
+         <properties />
+      </contributor>
+   </contributors>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->
@@ -316,8 +316,7 @@
             <configuration>
                <!-- Variables to to override will be delimited with a @. -->
                <!-- This avoids collisions with Velocity variables. -->
-               <!-- So instead of replacing ${project.name} Maven will replace 
-                  @project.name@. -->
+               <!-- So instead of replacing ${project.name} Maven will replace @project.name@. -->
                <useDefaultDelimiters>false</useDefaultDelimiters>
                <delimiters>
                   <delimiter>@</delimiter>
@@ -325,8 +324,7 @@
             </configuration>
             <executions>
                <execution>
-                  <!-- Frontend dependencies are acquired with npm and copied 
-                     to the libs folder -->
+                  <!-- Frontend dependencies are acquired with npm and copied to the libs folder -->
                   <id>copy-site-dependencies</id>
                   <phase>process-resources</phase>
                   <goals>
