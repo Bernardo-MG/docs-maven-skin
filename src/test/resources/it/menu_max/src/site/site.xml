@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+
+   <skin>
+      <groupId>com.bernardomg.maven.skins</groupId>
+      <artifactId>docs-maven-skin</artifactId>
+      <version>${site.skin.version}</version>
+   </skin>
+
+   <custom>
+      <skinConfig>
+         <topNav>
+            <menu>Big menu 1</menu>
+            <menu>Big menu 2</menu>
+            <menu>Big menu 3</menu>
+            <menu>Big menu 4</menu>
+            <menu>Big menu 5</menu>
+            <menu>Big menu 6</menu>
+            <menu>Big menu 7</menu>
+            <menu>Big menu 8</menu>
+            <menu>Big menu 9</menu>
+            <menu>Big menu 10</menu>
+            <menu>Big menu 11</menu>
+            <menu>Big menu 12</menu>
+         </topNav>
+      </skinConfig>
+   </custom>
+
+   <body>
+      <menu name="Big menu 1" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 2" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 3" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 4" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 5" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 6" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 7" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 8" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 9" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 10" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 11" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+      <menu name="Big menu 12" inherit="top">
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+         <item name="Acquire" href="./acquire.html" />
+      </menu>
+   </body>
+
+</project>
