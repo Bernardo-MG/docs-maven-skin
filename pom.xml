@@ -173,9 +173,9 @@
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
       <hamcrest.version>1.3</hamcrest.version>
-      <jcabi.matchers.version>1.4</jcabi.matchers.version>
+      <jcabi.matchers.version>1.5.3</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
-      <jsoup.version>1.12.1</jsoup.version>
+      <jsoup.version>1.13.1</jsoup.version>
       <siteFixer.version>1.2.6</siteFixer.version>
       <velocity.configTool.version>1.2.2</velocity.configTool.version>
       <!-- ============================================== -->
@@ -189,7 +189,7 @@
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.0.11</site.skin.version>
+      <site.skin.version>2.0.12</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
    </properties>
