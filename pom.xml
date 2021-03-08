@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
    <modelVersion>4.0.0</modelVersion>
@@ -21,7 +20,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>2.0.12</version>
+   <version>2.1.0</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -146,6 +145,21 @@
       </developer>
    </developers>
 
+   <contributors>
+      <contributor>
+         <name>Collin Doyle Brooks</name>
+         <email>collin.brooks@gmail.com</email>
+         <url>https://github.com/cobhimself</url>
+         <organization>Collin Doyle Brooks</organization>
+         <organizationUrl>https://github.com/cobhimself</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>-6</timezone>
+         <properties />
+      </contributor>
+   </contributors>
+
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->
    <!-- ********************************************** -->
@@ -159,23 +173,23 @@
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
       <hamcrest.version>1.3</hamcrest.version>
-      <jcabi.matchers.version>1.4</jcabi.matchers.version>
+      <jcabi.matchers.version>1.5.3</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
-      <jsoup.version>1.12.1</jsoup.version>
-      <siteFixer.version>1.2.4</siteFixer.version>
-      <velocity.configTool.version>1.2.0</velocity.configTool.version>
+      <jsoup.version>1.13.1</jsoup.version>
+      <siteFixer.version>1.2.7</siteFixer.version>
+      <velocity.configTool.version>1.2.2</velocity.configTool.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
       <plugin.frontend.node.version>v12.3.1</plugin.frontend.node.version>
       <plugin.frontend.npm.version>6.9.0</plugin.frontend.npm.version>
-      <plugin.frontend.version>1.10.0</plugin.frontend.version>
-      <plugin.invoker.version>3.2.1</plugin.invoker.version>
+      <plugin.frontend.version>1.11.2</plugin.frontend.version>
+      <plugin.invoker.version>3.2.2</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.0.11</site.skin.version>
+      <site.skin.version>2.0.12</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
    </properties>
@@ -302,8 +316,7 @@
             <configuration>
                <!-- Variables to to override will be delimited with a @. -->
                <!-- This avoids collisions with Velocity variables. -->
-               <!-- So instead of replacing ${project.name} Maven will replace 
-                  @project.name@. -->
+               <!-- So instead of replacing ${project.name} Maven will replace @project.name@. -->
                <useDefaultDelimiters>false</useDefaultDelimiters>
                <delimiters>
                   <delimiter>@</delimiter>
@@ -311,8 +324,7 @@
             </configuration>
             <executions>
                <execution>
-                  <!-- Frontend dependencies are acquired with npm and copied 
-                     to the libs folder -->
+                  <!-- Frontend dependencies are acquired with npm and copied to the libs folder -->
                   <id>copy-site-dependencies</id>
                   <phase>process-resources</phase>
                   <goals>
@@ -325,7 +337,7 @@
                            <directory>node_modules/</directory>
                            <includes>
                               <include>bootstrap/dist/js/bootstrap.min.js</include>
-                              <include>bootswatch/dist/litera/bootstrap.min.css</include>
+                              <include>bootswatch/dist/*/bootstrap.min.css</include>
                               <include>font-awesome/css/font-awesome.min.css</include>
                               <include>font-awesome/fonts/*.*</include>
                               <include>html5shiv/dist/html5shiv.min.js</include>
@@ -343,11 +355,11 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-invoker-plugin</artifactId>
             <configuration>
-               <debug>true</debug>
                <projectsDirectory>src/test/resources/it</projectsDirectory>
                <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                <postBuildHookScript>verify</postBuildHookScript>
+               <parallelThreads>1.5C</parallelThreads>
                <goals>
                   <goal>site</goal>
                </goals>

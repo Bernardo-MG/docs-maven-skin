@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+
+   <skin>
+      <groupId>com.bernardomg.maven.skins</groupId>
+      <artifactId>docs-maven-skin</artifactId>
+      <version>${site.skin.version}</version>
+   </skin>
+
+   <custom>
+      <skinConfig>
+        <customHighlightStyle>solarized-dark</customHighlightStyle>
+      </skinConfig>
+   </custom>
+
+</project>

@@ -1,0 +1,29 @@
+#set( $symbol_pound = '#' )
+${symbol_pound} Setting up the dependencies
+
+The project files are hosted on a [Bintray repository][bintray-repo], and have been replicated on JCenter and OSS Sonatype, which also replicates into the [Maven Central Repository][maven-repo].
+
+This means that most Maven setups will be able to acquire the dependency without any additional configuration. Still, if the repository should be registered it is recommended using the Bintray one.
+
+For any additional information about how to set up the dependency check the [dependency information section](./dependency-info.html).
+
+${symbol_pound}${symbol_pound} Snapshots
+
+Snapshot artifacts are stored on OSS Sonatype. They can be accessed by adding the following lines to the configuration files:
+
+${symbol_pound}${symbol_pound}${symbol_pound} Maven
+
+```xml
+<repositories>
+    ...
+    <repository>
+        <id>oss-sonatype-snapshots</id>
+        <name>OSS Sonatype snapshots repository</name>
+        <url>https://oss.sonatype.org/content/groups/staging</url>
+    </repository>
+    ...
+</repositories>
+```
+
+[bintray-repo]: ${bintrayURL}
+[maven-repo]: ${mavenURL}

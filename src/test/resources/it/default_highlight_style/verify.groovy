@@ -1,4 +1,5 @@
-// This script verifies a custom style can be provided
+// This script verifies that the default highlight.js style is applied when no customHighlightStyle
+// is provided.
 
 import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
@@ -26,6 +27,6 @@ MatcherAssert.assertThat(
 def parsed = Jsoup.parse(html)
 def head = parsed.head()
 
-// The custom style file is linked
-def customStyle = head.select( 'link[href="./css/custom.css"]' )
-assert customStyle.outerHtml().equals('<link rel="stylesheet" href="./css/custom.css">')
+// The default highlight style is applied
+def customStyle = head.select( 'link[href="./lib/highlight/styles/default.css"]' )
+assert customStyle.outerHtml().equals('<link rel="stylesheet" href="./lib/highlight/styles/default.css">')

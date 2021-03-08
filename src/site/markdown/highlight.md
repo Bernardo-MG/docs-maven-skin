@@ -25,4 +25,22 @@ $(document).ready(function() {
 });
 ```
 
+## Overriding Style
+
+By default, *src/main/resources/lib/highlight/styles/default.css* is used to style code. To utilize
+one of the different styles provided by [highligh.js][highlight], you can specify a
+`customHighlightStyle` config option in your *site.xml* file. Style names should be provided without
+the `.css` extension.
+
+For example, in your *site.xml* file:
+
+```xml
+<custom>
+  <skinConfig>
+    <!-- use src/main/resources/lib/highlight/styles/solarized-dark.css -->
+    <customHighlightStyle>solarized-dark</customHighlightStyle>
+  </skinConfig>
+</custom>
+```
+
 [highlight]: https://highlightjs.org/

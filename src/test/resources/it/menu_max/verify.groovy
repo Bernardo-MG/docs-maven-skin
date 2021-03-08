@@ -1,4 +1,4 @@
-// This script verifies a custom style can be provided
+// This script verifies that a minimal site contains only the barebones of a site.
 
 import com.jcabi.w3c.ValidatorBuilder
 import org.hamcrest.MatcherAssert
@@ -23,9 +23,13 @@ MatcherAssert.assertThat(
 )
 
 // Parses HTML
-def parsed = Jsoup.parse(html)
-def head = parsed.head()
+def body = Jsoup.parse(html).body()
 
-// The custom style file is linked
-def customStyle = head.select( 'link[href="./css/custom.css"]' )
-assert customStyle.outerHtml().equals('<link rel="stylesheet" href="./css/custom.css">')
+// Verifies the menus exist
+def toggles = body.select( '#navbar-main-menu .dropdown-toggle' )
+assert toggles.size() == 12
+
+// Verifies the menu links exist
+def dropdowns = body.select( '#navbar-main-menu .dropdown' )
+def items = dropdowns.get(0).select( '.dropdown-item' )
+assert items.size() == 10
