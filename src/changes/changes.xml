@@ -199,8 +199,11 @@
          </action>
       </release>
       <release version="2.1.0" date="2021-03-04" description="Highlight customization">
-         <action dev="cobhimself" type="fix">
+         <action dev="cobhimself" type="add">
             Added the ability to specify the name of a highlight.js style css file.
+         </action>
+         <action dev="bmg" type="add">
+            Bootswatch style can be changed.
          </action>
       </release>
    </body>
