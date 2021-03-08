@@ -83,7 +83,12 @@
 #end
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./lib/bootswatch/dist/litera/bootstrap.min.css">
+#if ( $config.bootswatchStyle )
+  #set( $bootswatchStyle = $config.bootswatchStyle.getValue() )
+#else
+  #set( $bootswatchStyle = "litera" )
+#end
+    <link rel="stylesheet" href="./lib/bootswatch/dist/${bootswatchStyle}/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
 #if ( $config.customHighlightStyle )
   #set( $customHighlightStyle = $config.customHighlightStyle.getValue() )
