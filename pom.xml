@@ -158,6 +158,18 @@
          <timezone>-6</timezone>
          <properties />
       </contributor>
+      <contributor>
+         <name>Hunter Anderson</name>
+         <email>ghunteranderson@gmail.com</email>
+         <url>https://github.com/ghunteranderson</url>
+         <organization>Hunter Anderson</organization>
+         <organizationUrl>ghunteranderson@gmail.com</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>-6</timezone>
+         <properties />
+      </contributor>
    </contributors>
 
    <!-- ********************************************** -->
