@@ -339,6 +339,7 @@
                      <outputDirectory>${basedir}/target/classes/lib/</outputDirectory>
                      <resources>
                         <resource>
+                           <!-- Copies frontend libraries -->
                            <directory>node_modules/</directory>
                            <includes>
                               <include>bootstrap/dist/js/bootstrap.min.js</include>
@@ -348,6 +349,7 @@
                            </includes>
                         </resource>
                         <resource>
+                           <!-- Copies Font Awesome into a custom folder -->
                            <directory>node_modules/@fortawesome/fontawesome-free</directory>
                            <targetPath>font-awesome</targetPath>
                            <includes>
