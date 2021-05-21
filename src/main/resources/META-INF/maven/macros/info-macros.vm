@@ -52,10 +52,10 @@
 #**##if( $project )
 #*    *##set( $currentYear = ${currentDate.year} + 1900 )
 #*    *##if( ${project.inceptionYear} )
-#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa fa-copyright"></span>${project.inceptionYear}-${currentYear}
-#*        *##else <span class="fa fa-copyright"></span>${project.inceptionYear}
+#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fas fa-copyright"></span>${project.inceptionYear}-${currentYear}
+#*        *##else <span class="fas fa-copyright"></span>${project.inceptionYear}
 #*        *##end
-#*    *##else <span class="fa fa-copyright"></span>${currentYear}
+#*    *##else <span class="fas fa-copyright"></span>${currentYear}
 #*    *##end
 #*    *##if( ${project.organization} && ${project.organization.name} )
 #*        *##set( $orgNameShown = true )
