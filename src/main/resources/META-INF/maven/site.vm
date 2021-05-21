@@ -148,7 +148,7 @@
 #end
 #if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
             <div class="collapse navbar-collapse" id="navbar-main-menu">
-                <ul class="nav navbar-nav ml-auto">
+                <ul class="nav navbar-nav ms-auto">
 #**##linksMenu( $linkMenuElements )
 #**##dropdownMenu( $dropDownMenuElements )
                 </ul>
@@ -170,7 +170,7 @@ $bodyContent
         </div>
 #end
     </div>
-    <div id="footer-info" class="bg-light pl-2 pb-1 w-100">
+    <div id="footer-info" class="bg-light ps-2 pb-1 w-100">
 #if( $decoration.body.footer )
         <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
 #end
