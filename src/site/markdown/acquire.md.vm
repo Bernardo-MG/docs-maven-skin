@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 ${symbol_pound} Acquiring the Project
 
-The project files are hosted on a [Bintray repository][bintray-repo], and have been replicated on JCenter and OSS Sonatype, which also replicates into the [Maven Central Repository][maven-repo]. While this means that it should be possible to download the Archetype from any of those repositories, and that most dependency systems will be able to acquire the library without additional configuration, if for some reason one should be picked the recommended one is Bintray.
+The project files are hosted on OSS Sonatype, which also replicates into the [Maven Central Repository][maven-repo]. While this means that it should be possible to download the Archetype from any of those repositories, and that most dependency systems will be able to acquire the library without additional configuration.
 
 All the info required to set up the dependency can be found at the [dependency information](./dependency-info.html) section, or the repositories information pages.
 
@@ -49,5 +49,4 @@ Snapshot artifacts are stored on OSS Sonatype. They can be accessed by adding th
 </repositories>
 ```
 
-[bintray-repo]: ${bintrayURL}
 [maven-repo]: ${mavenURL}
