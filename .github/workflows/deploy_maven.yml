@@ -1,4 +1,4 @@
-name: Deployment
+name: Maven Central Repository Deployment
 
 on:
   push:
@@ -20,10 +20,5 @@ jobs:
         server-id: releases
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
-    - name: Set up Maven settings
-      uses: bernardo-mg/deployment-maven-settings-action@v1.1.2
-      env:
-        DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
-        DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
     - name: Deploy
-      run: mvn deploy -B -P deployment,deployment-release --settings settings.xml
+      run: mvn deploy -B -P deployment,deployment-release

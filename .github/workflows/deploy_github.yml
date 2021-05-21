@@ -1,0 +1,27 @@
+name: Github Repository Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      packages: write 
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+        server-id: releases
+    - name: Deploy
+      run: mvn deploy -B -P deployment,deployment-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
