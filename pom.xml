@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>2.1.0-SNAPSHOT</version>
+   <version>2.1.0</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -152,6 +152,18 @@
          <url>https://github.com/cobhimself</url>
          <organization>Collin Doyle Brooks</organization>
          <organizationUrl>https://github.com/cobhimself</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>-6</timezone>
+         <properties />
+      </contributor>
+      <contributor>
+         <name>Hunter Anderson</name>
+         <email>ghunteranderson@gmail.com</email>
+         <url>https://github.com/ghunteranderson</url>
+         <organization>Hunter Anderson</organization>
+         <organizationUrl>ghunteranderson@gmail.com</organizationUrl>
          <roles>
             <role>Developer</role>
          </roles>
@@ -338,10 +350,16 @@
                            <includes>
                               <include>bootstrap/dist/js/bootstrap.min.js</include>
                               <include>bootswatch/dist/*/bootstrap.min.css</include>
-                              <include>font-awesome/css/font-awesome.min.css</include>
-                              <include>font-awesome/fonts/*.*</include>
                               <include>html5shiv/dist/html5shiv.min.js</include>
                               <include>jquery/dist/jquery.min.js</include>
+                           </includes>
+                        </resource>
+                        <resource>
+                           <directory>node_modules/@fortawesome/fontawesome-free</directory>
+                           <targetPath>font-awesome</targetPath>
+                           <includes>
+                              <include>css/all.min.css</include>
+                              <include>webfonts/*.*</include>
                            </includes>
                         </resource>
                      </resources>

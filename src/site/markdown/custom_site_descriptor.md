@@ -79,13 +79,13 @@ For this to work you just need to add an image attribute to the menu item:
 <body>
    ...
    <menu name="Icons" inherit="bottom">
-      <item name="Github" img="github" href="${project.scm.url}" />
+      <item name="Github" img="fab fa-github" href="${project.scm.url}" />
    </menu>
    ...
 </body>
 ```
 
-This image is a reference to an existing Font Awesome icon, without the fa- prefix, as this will be added automatically. In this case the icon picked will be fa-github.
+This image is a reference to an existing Font Awesome 5 icon. For the [GitHub icon](https://fontawesome.com/icons/github), image is set to `fab fa-github`.
 
 #### Descriptions for the Bottom Nav
 
