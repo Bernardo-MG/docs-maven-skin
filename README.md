@@ -9,7 +9,6 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 **Maven support:** *the skin only supports the Maven Site Plugin 3.6 onwards, due to changes to the way the velocity tools are loaded.*
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.maven.skins/docs-maven-skin.svg)][maven-repo]
-[![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/docs-maven-skin/images/download.svg)][bintray-repo]
 
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
@@ -63,7 +62,7 @@ As a Maven Skin, the project requirements are very specific:
 
 ### Installing
 
-The recommended way to install the project is by setting up your preferred dependencies manager. To get the configuration information for this check the [Bintray repository][bintray-repo], or the [Maven Central Repository][maven-repo].
+The recommended way to install the project is by setting up your preferred dependencies manager. To get the configuration information for this check the [Maven Central Repository][maven-repo].
 
 If for some reason manual installation is necessary, just use the following Maven command:
 
@@ -147,7 +146,6 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 The project has been released under the [MIT License][license].
 
 [reflow-skin]: https://github.com/andriusvelykis/reflow-maven-skin
-[bintray-repo]: https://bintray.com/bernardo-mg/maven/docs-maven-skin/view
 [maven-repo]: http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
 [license]: http://www.opensource.org/licenses/mit-license.php

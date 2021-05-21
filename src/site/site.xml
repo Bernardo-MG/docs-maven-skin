@@ -62,7 +62,6 @@
          </item>
       </menu>
       <menu name="Releases" inherit="bottom">
-         <item name="Bintray" href="${bintrayURL}" />
          <item name="Maven Central" href="${mavenURL}" />
       </menu>
       <menu name="Icons" inherit="bottom">
