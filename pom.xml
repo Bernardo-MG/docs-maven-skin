@@ -59,17 +59,10 @@
 
    <distributionManagement>
       <repository>
-         <uniqueVersion>false</uniqueVersion>
-         <id>releases</id>
-         <name>Releases Repository</name>
-         <url>https://api.bintray.com/maven/bernardo-mg/maven/docs-maven-skin</url>
+         <id>ossrh</id>
+         <name>Central Repository OSSRH</name>
+         <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
       </repository>
-      <snapshotRepository>
-         <uniqueVersion>false</uniqueVersion>
-         <id>snapshots</id>
-         <name>Snapshots Repository</name>
-         <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      </snapshotRepository>
    </distributionManagement>
 
    <!-- ********************************************** -->
