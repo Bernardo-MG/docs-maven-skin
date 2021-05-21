@@ -206,5 +206,10 @@
             Bootswatch style can be changed.
          </action>
       </release>
+      <release version="2.2.0" date="2021-03-08" description="Dependencies update">
+         <action dev="ghunteranderson" type="update">
+            Moved to Font Awesome 5.
+         </action>
+      </release>
    </body>
 </document>
