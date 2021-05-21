@@ -5,11 +5,10 @@
    },
    "dependencies": {
       "@fortawesome/fontawesome-free": "~5.15.3",
-      "bootstrap": "~4.5.3",
-      "bootswatch": "~4.5.3",
+      "bootstrap": "~5.0.1",
+      "bootswatch": "~5.0.1",
       "clean-css-cli": "~4.3.0",
       "csslint": "~1.0.5",
-      "html5shiv": "~3.7.3",
-      "jquery": "~3.5.1"
+      "html5shiv": "~3.7.3"
    }
 }

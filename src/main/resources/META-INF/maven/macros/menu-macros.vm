@@ -34,12 +34,12 @@
 #macro( dropdownMenu $elements )
 #**##foreach( $element in $elements )
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="$element.name.replace(" ", "_")_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$element.name</a>
-                        <div class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="$element.name.replace(" ", "_")_menu">
+                        <a href="#" class="nav-link dropdown-toggle" id="$element.name.replace(" ", "_")_menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$element.name</a>
+                        <ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="$element.name.replace(" ", "_")_menu">
 #*    *##foreach( $item in $element.items )
-                            <a class="dropdown-item" href="$item.href" title="$item.name">$item.name</a>
+                            <li><a class="dropdown-item" href="$item.href" title="$item.name">$item.name</a></li>
 #*    *##end
-                        </div>
+                        </ul>
                     </li>
 #**##end
 #end
@@ -59,7 +59,7 @@
 #macro( iconsMenu $elements )
 #**##foreach( $element in $elements )
 #*    *##foreach( $item in $element.items )
-            <a href="$item.href" title="$item.name" aria-label="$item.name"><span class="navbar-icon $item.img pl-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
+            <a href="$item.href" title="$item.name" aria-label="$item.name"><span class="navbar-icon $item.img ps-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
 #*    *##end
 #**##end
 #end
@@ -79,12 +79,12 @@
 #macro( linksMenu $elements )
 #**##if( $elements.size() > 0 )
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="links_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links</a>
-                        <div class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="links_menu">
+                        <a href="#" class="nav-link dropdown-toggle" id="links_menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links</a>
+                        <ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="links_menu">
 #*    *##foreach( $item in $elements )
-                            <a class="dropdown-item" href="$item.href" title="$item.name">$item.name</a>
+                            <li><a class="dropdown-item" href="$item.href" title="$item.name">$item.name</a></li>
 #*    *##end
-                        </div>
+                        </ul>
                     </li>
 #**##end
 #end
