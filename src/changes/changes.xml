@@ -206,12 +206,13 @@
             Bootswatch style can be changed.
          </action>
       </release>
-      <release version="2.2.0" date="2021-05-21" description="Font Awesome 5">
+      <release version="2.2.0" date="2021-05-23" description="Font Awesome 5">
+         <action dev="bmg" type="update">
+            Updated to Bootstrap 5.
+         </action>
          <action dev="ghunteranderson" type="update">
             Moved to Font Awesome 5.
          </action>
-      </release>
-      <release version="2.3.0" date="2021-05-21" description="">
       </release>
    </body>
 </document>
