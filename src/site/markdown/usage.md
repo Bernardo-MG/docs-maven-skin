@@ -78,11 +78,10 @@ The following example for a site.xml file will be useful for most sites:
          </item>
       </menu>
       <menu name="Releases" inherit="bottom">
-         <item name="Bintray" href="${bintrayURL}" />
          <item name="Maven Central" href="${mavenURL}" />
       </menu>
       <menu name="Icons" inherit="bottom">
-         <item name="Github" img="github" href="${project.scm.url}" />
+         <item name="Github" img="fab fa-github" href="${project.scm.url}" />
       </menu>
    </body>
 </project>
