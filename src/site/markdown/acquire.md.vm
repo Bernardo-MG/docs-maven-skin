@@ -1,52 +1,10 @@
 #set( $symbol_pound = '#' )
-${symbol_pound} Acquiring the Project
+${symbol_pound} Setting up the dependencies
 
-The project files are hosted on OSS Sonatype, which also replicates into the [Maven Central Repository][maven-repo]. While this means that it should be possible to download the Archetype from any of those repositories, and that most dependency systems will be able to acquire the library without additional configuration.
+The project files are hosted in the the [Maven Central Repository][maven-repo], and the [Github Packages Repository][github-repo]. This means that most Maven setups will be able to acquire the dependency without any additional configuration.
 
-All the info required to set up the dependency can be found at the [dependency information](./dependency-info.html) section, or the repositories information pages.
+For any additional information about how to set up the dependency check the [dependency information section](./dependency-info.html).
 
-${symbol_pound}${symbol_pound} Reducing the Dependency Scope
-
-You won't need to add the skin as a dependency to your project, just to the Maven site plugin:
-
-```xml
-<build>
-    <plugins>
-        ...
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-site-plugin</artifactId>
-            <dependencies>
-                ...
-                <dependency>
-                    <!-- Docs Maven Skin -->
-                    <groupId>com.bernardomg.maven.skins</groupId>
-                    <artifactId>docs-maven-skin</artifactId>
-                    <version>${site.skin.version}</version>
-                </dependency>
-                ...
-            </dependencies>
-            ...
-        </plugin>
-        ...
-    </plugins>
-</build>
-```
-
-${symbol_pound}${symbol_pound} Snapshots
-
-Snapshot artifacts are stored on OSS Sonatype. They can be accessed by adding the following lines to the POM file:
-
-```xml
-<repositories>
-    ...
-    <repository>
-        <id>oss-sonatype-snapshots</id>
-        <name>OSS Sonatype snapshots repository</name>
-        <url>https://oss.sonatype.org/content/groups/staging</url>
-    </repository>
-    ...
-</repositories>
-```
 
 [maven-repo]: ${mavenURL}
+[github-repo]: ${githubArtifactURL}
