@@ -5,6 +5,5 @@ The project files are hosted in the the [Maven Central Repository][maven-repo], 
 
 For any additional information about how to set up the dependency check the [dependency information section](./dependency-info.html).
 
-
 [maven-repo]: ${mavenURL}
 [github-repo]: ${githubArtifactURL}
