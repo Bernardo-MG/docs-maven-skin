@@ -24,6 +24,42 @@
 #*--------------------------------------------------*#
 #*--------------------------------------------------*###
 #**
+ * Loads shine configuration.
+ *
+ * Receives:
+ *        shine: value where the CSS color shine will be stored
+ *        bgshine: value where the CSS color shine for the background will be stored
+ *
+ * Makes use of the following variables:
+ *        config.shine: value of the style color shine
+ *
+ * The shine will be generated from the skin configuration. If no configuration is set, then
+ * the shine will be "light".
+ *
+ *#
+#*--------------------------------------------------*#
+#macro( loadShineConfig $shine $bgshine )
+
+#**##if ( $config.shine )
+#*    *##if ( $config.shine.getValue() == "dark" )
+#*        *##set( $shine = $config.shine.getValue() )
+#*        *##set( $bgshine = "primary" )
+#*    *##else
+#*        *##set( $shine = $config.shine.getValue() )
+#*        *##set( $bgshine = $config.shine.getValue() )
+#*    *##end
+#**##else
+#*    *##set( $shine = "light" )
+#*    *##set( $bgshine = "light" )
+#**##end
+#end
+#*
+
+
+
+*#
+#*--------------------------------------------------*###
+#**
  * Loads the top navigation menu list.
  *
  * Receives:
