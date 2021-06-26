@@ -114,9 +114,21 @@
     <![endif]-->
 
 </head>
+#if ( $config.shine )
+  #if ( $config.shine.getValue() == "dark" )
+    #set( $shine = $config.shine.getValue() )
+    #set( $bgshine = "primary" )
+  #else
+    #set( $shine = $config.shine.getValue() )
+    #set( $bgshine = $config.shine.getValue() )
+  #end
+#else
+  #set( $shine = "light" )
+  #set( $bgshine = "light" )
+#end
 <body class="d-flex flex-column">
 <header>
-    <nav id="navbar-main" class="navbar navbar-expand-md navbar-light bg-light">
+    <nav id="navbar-main" class="navbar navbar-expand-md navbar-$shine bg-$bgshine">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">$project.name</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-main-menu" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
@@ -160,8 +172,8 @@
 <section id="main-section" class="container flex-grow-1">
 $bodyContent
 </section>
-<footer class="footer w-100 pt-2 border-top bg-light">
-    <div id="footer-nav" class="bg-light container">
+<footer class="footer w-100 pt-2 border-top bg-$shine">
+    <div id="footer-nav" class="bg-$shine container">
 #set( $menuElements = [] )
 #loadBottomNavMenuList( $menuElements )
 #if($menuElements.size() > 0)
@@ -170,7 +182,7 @@ $bodyContent
         </div>
 #end
     </div>
-    <div id="footer-info" class="bg-light ps-2 pb-1 w-100">
+    <div id="footer-info" class="bg-$shine ps-2 pb-1 w-100">
 #if( $decoration.body.footer )
         <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
 #end

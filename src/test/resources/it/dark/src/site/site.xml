@@ -17,6 +17,7 @@
             <menu>Releases</menu>
          </bottomNav>
          <bootswatchStyle>darkly</bootswatchStyle>
+         <shine>dark</shine>
       </skinConfig>
    </custom>
 
