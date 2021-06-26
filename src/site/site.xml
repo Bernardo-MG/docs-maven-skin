@@ -41,7 +41,7 @@
          <item name="Site Descriptor Support" href="./site_descriptor.html" />
          <item name="Custom Site Descriptors" href="./custom_site_descriptor.html" />
          <item name="Custom Style and Scripts" href="./custom_style_scripts.html" />
-         <item name="Customizing Bootswatch" href="./bootswatch.html" />
+         <item name="Theme Customization" href="./theme.html" />
          <item name="HTML Metadata" href="./metadata.html" />
          <item name="highlight.js" href="./highlight.html" />
          <item name="Tests" href="./tests.html" />

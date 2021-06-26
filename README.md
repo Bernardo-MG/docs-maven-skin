@@ -64,7 +64,7 @@ As a Maven Skin, the project requirements are very specific:
 
 The recommended way to install the project is by setting up your preferred dependencies manager. To get the configuration information for this check the [Maven Central Repository][maven-repo].
 
-If for some reason manual installation is necessary, just use the following Maven command:
+If for some reason manual installation is necessary, use the usual Maven installation command:
 
 ```
 mvn install
@@ -72,7 +72,7 @@ mvn install
 
 ### Reducing the Dependency Scope
 
-Actually you won't need to add the skin as a dependency to your project, just to the Maven site plugin:
+There is no need to add the skin as a dependency for the full project. Just add it to the Maven site plugin:
 
 ```xml
 <build>
@@ -100,7 +100,7 @@ Actually you won't need to add the skin as a dependency to your project, just to
 
 ### Setting Up the Skin
 
-Before creating the site register the skin into the site.xml file:
+Register the skin into the site.xml file:
 
 ```xml
 <skin>
@@ -110,11 +110,13 @@ Before creating the site register the skin into the site.xml file:
 </skin>
 ```
 
-More detailed information can be found in the documentation.
+Afterwards the skin will be used when generating the site.
+
+More detailed information can be found in the documentation. Including information for changing the theme.
 
 ### Running Tests
 
-Several integration tests are included in the project, verifying various configurations. These can be run by using the usual Maven command:
+Integration tests are included in the project to verify various configurations. These can be run by using the usual Maven command:
 
 ```
 mvn verify
