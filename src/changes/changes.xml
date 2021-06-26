@@ -214,7 +214,10 @@
             Moved to Font Awesome 5.
          </action>
       </release>
-      <release version="2.3.0" date="2021-05-23" description="">
+      <release version="2.2.1" date="2021-06-26" description="Dark theme support">
+         <action dev="bmg" type="fix">
+            Added shine configuration option to support dark themes.
+         </action>
       </release>
    </body>
 </document>
