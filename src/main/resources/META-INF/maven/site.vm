@@ -114,18 +114,9 @@
     <![endif]-->
 
 </head>
-#if ( $config.shine )
-  #if ( $config.shine.getValue() == "dark" )
-    #set( $shine = $config.shine.getValue() )
-    #set( $bgshine = "primary" )
-  #else
-    #set( $shine = $config.shine.getValue() )
-    #set( $bgshine = $config.shine.getValue() )
-  #end
-#else
-  #set( $shine = "light" )
-  #set( $bgshine = "light" )
-#end
+#set( $shine = "" )
+#set( $bgshine = "" )
+#loadShineConfig( $shine $bgshine )
 <body class="d-flex flex-column">
 <header>
     <nav id="navbar-main" class="navbar navbar-expand-md navbar-$shine bg-$bgshine">
