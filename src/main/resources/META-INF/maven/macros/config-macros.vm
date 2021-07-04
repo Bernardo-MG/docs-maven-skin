@@ -41,15 +41,19 @@
 #macro( loadShineConfig $shine $bgshine )
 
 #**##if ( $config.shine )
+#*    *##set( $shine = $config.shine.getValue() )
+#**##else
+#*    *##set( $shine = "light" )
+#**##end
+#**##if ( $config.bgshine )
+#*    *##set( $bgshine = $config.bgshine.getValue() )
+#**##elseif ( $config.shine )
 #*    *##if ( $config.shine.getValue() == "dark" )
-#*        *##set( $shine = $config.shine.getValue() )
 #*        *##set( $bgshine = "primary" )
 #*    *##else
-#*        *##set( $shine = $config.shine.getValue() )
 #*        *##set( $bgshine = $config.shine.getValue() )
 #*    *##end
 #**##else
-#*    *##set( $shine = "light" )
 #*    *##set( $bgshine = "light" )
 #**##end
 #end

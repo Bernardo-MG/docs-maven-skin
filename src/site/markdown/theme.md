@@ -33,4 +33,19 @@ For example, to set up the Darkly theme add this to your *site.xml* file:
 </custom>
 ```
 
+### Background shine
+
+By default dark menus will be set for the primary color. This can be overriden with the `bgshine` option.
+
+```xml
+<custom>
+  <skinConfig>
+    <!-- Use the sketchy style -->
+    <bootswatchStyle>darkly</bootswatchStyle>
+    <shine>dark</shine>
+    <bgshine>dark</bgshine>
+  </skinConfig>
+</custom>
+```
+
 [bootswatch]: https://bootswatch.com/
