@@ -8,7 +8,18 @@ def html = new File(basedir, 'target/site/index.html').text
 // Parses HTML
 def body = Jsoup.parse(html).body()
 
-// The dark style is applied
+// The default style is applied to the nav bar
 def nav = body.select( '#navbar-main-menu' )
 assert nav.hasClass( 'navbar-light' )
 assert nav.hasClass( 'bg-light' )
+
+// The default style is applied to the footer
+def footer = body.select( 'footer' )
+assert footer.hasClass( 'navbar-light' )
+assert footer.hasClass( 'bg-light' )
+
+def footernav = body.select( '#footer-nav' )
+assert footernav.hasClass( 'bg-light' )
+
+def footerinfo = body.select( '#footer-info' )
+assert footerinfo.hasClass( 'bg-light' )

@@ -163,8 +163,8 @@
 <section id="main-section" class="container flex-grow-1">
 $bodyContent
 </section>
-<footer class="footer w-100 pt-2 border-top bg-$shine">
-    <div id="footer-nav" class="bg-$shine container">
+<footer class="footer w-100 pt-2 border-top bg-$bgshine">
+    <div id="footer-nav" class="bg-$bgshine container">
 #set( $menuElements = [] )
 #loadBottomNavMenuList( $menuElements )
 #if($menuElements.size() > 0)
@@ -173,7 +173,7 @@ $bodyContent
         </div>
 #end
     </div>
-    <div id="footer-info" class="bg-$shine ps-2 pb-1 w-100">
+    <div id="footer-info" class="bg-$bgshine ps-2 pb-1 w-100">
 #if( $decoration.body.footer )
         <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
 #end
