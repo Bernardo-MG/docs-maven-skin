@@ -9,7 +9,7 @@ def html = new File(basedir, 'target/site/index.html').text
 def body = Jsoup.parse(html).body()
 
 // The dark style is applied to the nav bar
-def nav = body.select( '#navbar-main-menu' )
+def nav = body.select( '#navbar-main' )
 assert nav.hasClass( 'navbar-dark' )
 assert nav.hasClass( 'bg-dark' )
 

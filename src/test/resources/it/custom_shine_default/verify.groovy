@@ -9,7 +9,7 @@ def html = new File(basedir, 'target/site/index.html').text
 def body = Jsoup.parse(html).body()
 
 // The default style is applied to the nav bar
-def nav = body.select( '#navbar-main-menu' )
+def nav = body.select( '#navbar-main' )
 assert nav.hasClass( 'navbar-light' )
 assert nav.hasClass( 'bg-light' )
 
