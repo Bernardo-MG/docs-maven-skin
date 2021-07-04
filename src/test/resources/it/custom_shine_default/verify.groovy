@@ -15,7 +15,6 @@ assert nav.hasClass( 'bg-light' )
 
 // The default style is applied to the footer
 def footer = body.select( 'footer' )
-assert footer.hasClass( 'navbar-light' )
 assert footer.hasClass( 'bg-light' )
 
 def footernav = body.select( '#footer-nav' )
