@@ -190,25 +190,28 @@
          <name>Collin Doyle Brooks</name>
          <email>collin.brooks@gmail.com</email>
          <url>https://github.com/cobhimself</url>
-         <organization>Collin Doyle Brooks</organization>
-         <organizationUrl>https://github.com/cobhimself</organizationUrl>
          <roles>
             <role>Developer</role>
          </roles>
          <timezone>-6</timezone>
-         <properties />
       </contributor>
       <contributor>
          <name>Hunter Anderson</name>
          <email>ghunteranderson@gmail.com</email>
          <url>https://github.com/ghunteranderson</url>
-         <organization>Hunter Anderson</organization>
-         <organizationUrl>https://github.com/ghunteranderson</organizationUrl>
          <roles>
             <role>Developer</role>
          </roles>
          <timezone>-6</timezone>
-         <properties />
+      </contributor>
+      <contributor>
+         <name>Oscar Korz</name>
+         <email>okorz001@gmail.com</email>
+         <url>https://github.com/okorz001</url>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>-6</timezone>
       </contributor>
    </contributors>
 
