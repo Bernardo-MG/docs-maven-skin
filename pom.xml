@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>2.2.2</version>
+   <version>2.2.3</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -175,8 +175,6 @@
          <name>Bernardo Martínez Garrido</name>
          <email>programming@bernardomg.com</email>
          <url>https://github.com/Bernardo-MG</url>
-         <organization>Bernardo Martínez Garrido</organization>
-         <organizationUrl>https://github.com/Bernardo-MG</organizationUrl>
          <roles>
             <role>Developer</role>
          </roles>
@@ -190,25 +188,28 @@
          <name>Collin Doyle Brooks</name>
          <email>collin.brooks@gmail.com</email>
          <url>https://github.com/cobhimself</url>
-         <organization>Collin Doyle Brooks</organization>
-         <organizationUrl>https://github.com/cobhimself</organizationUrl>
          <roles>
             <role>Developer</role>
          </roles>
          <timezone>-6</timezone>
-         <properties />
       </contributor>
       <contributor>
          <name>Hunter Anderson</name>
          <email>ghunteranderson@gmail.com</email>
          <url>https://github.com/ghunteranderson</url>
-         <organization>Hunter Anderson</organization>
-         <organizationUrl>https://github.com/ghunteranderson</organizationUrl>
          <roles>
             <role>Developer</role>
          </roles>
          <timezone>-6</timezone>
-         <properties />
+      </contributor>
+      <contributor>
+         <name>Oscar Korz</name>
+         <email>okorz001@gmail.com</email>
+         <url>https://github.com/okorz001</url>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>-6</timezone>
       </contributor>
    </contributors>
 
@@ -241,7 +242,7 @@
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.2.0</site.skin.version>
+      <site.skin.version>2.2.2</site.skin.version>
       <mavenURL>https://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
       <githubArtifactURL><![CDATA[https://github.com/Bernardo-MG?tab=packages&amp;repo_name=docs-maven-skin]]></githubArtifactURL>
    </properties>

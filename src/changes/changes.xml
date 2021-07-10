@@ -224,5 +224,12 @@
             Added shine configuration option for backgrounds.
          </action>
       </release>
+      <release version="2.2.3" date="2021-07-10" description="Dark theme image support">
+         <action dev="okorz001" type="fix">
+            Corrected images on dark shine.
+         </action>
+      </release>
+      <release version="2.3.0" date="2021-07-04" description="">
+      </release>
    </body>
 </document>
