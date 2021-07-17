@@ -11,4 +11,4 @@ def body = parsed.body()
 
 // Images
 def fig = body.select( 'figure' ).first()
-assert fig.hasClass( 'bg-dark' )
+assert fig.hasClass( 'bg-white' )
