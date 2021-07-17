@@ -20,7 +20,6 @@ def firstImg = fig.select( 'img' ).first()
 assert firstImg.attr( 'src' ).contains( './images/example_class_diagram.png' )
 assert firstImg.attr( 'alt' ).contains( 'Dice class diagram' )
 assert firstImg.hasClass( 'img-fluid' )
-assert firstImg.hasClass( 'bg-dark' )
 
 def firstCaption = fig.select( 'figcaption' ).first()
 assert firstCaption.html().contains( 'Dice class diagram' )
