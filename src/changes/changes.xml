@@ -229,7 +229,10 @@
             Corrected images on dark shine.
          </action>
       </release>
-      <release version="2.3.0" date="2021-07-04" description="">
+      <release version="2.2.4" date="2021-07-17" description="Dark theme image support">
+         <action dev="bmg" type="fix">
+            Additional corretion to images on dark shine.
+         </action>
       </release>
    </body>
 </document>
