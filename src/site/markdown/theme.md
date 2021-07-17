@@ -35,7 +35,7 @@ For example, to set up the Darkly theme add this to your *site.xml* file:
 
 ### Background shine
 
-By default dark menus will be set for the primary color. This can be overriden with the `bgshine` option.
+By default dark menus will use the primary color. This can be overriden with the `bgshine` option.
 
 ```xml
 <custom>
@@ -44,6 +44,22 @@ By default dark menus will be set for the primary color. This can be overriden w
     <bootswatchStyle>darkly</bootswatchStyle>
     <shine>dark</shine>
     <bgshine>dark</bgshine>
+  </skinConfig>
+</custom>
+```
+
+### Figure shine
+
+By default images will receive the white background, or the dark one for dark themes. To change this use the `figshine` option.
+
+```xml
+<custom>
+  <skinConfig>
+    <!-- Use the sketchy style -->
+    <bootswatchStyle>darkly</bootswatchStyle>
+    <shine>dark</shine>
+    <bgshine>primary</bgshine>
+    <bgshine>white</bgshine>
   </skinConfig>
 </custom>
 ```

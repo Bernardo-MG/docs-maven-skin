@@ -29,6 +29,7 @@
  * Receives:
  *        shine: value where the CSS color shine will be stored
  *        bgshine: value where the CSS color shine for the background will be stored
+ *        figshine: value where the CSS color shine for the figures will be stored
  *
  * Makes use of the following variables:
  *        config.shine: value of the style color shine
@@ -38,7 +39,7 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadShineConfig $shine $bgshine )
+#macro( loadShineConfig $shine $bgshine $figshine )
 
 #**##if ( $config.shine )
 #*    *##set( $shine = $config.shine.getValue() )
@@ -55,6 +56,17 @@
 #*    *##end
 #**##else
 #*    *##set( $bgshine = "light" )
+#**##end
+#**##if ( $config.figshine )
+#*    *##set( $figshine = $config.figshine.getValue() )
+#**##elseif ( $config.shine )
+#*    *##if ( $config.shine.getValue() == "dark" )
+#*        *##set( $figshine = "dark" )
+#*    *##else
+#*        *##set( $figshine = $config.figshine.getValue() )
+#*    *##end
+#**##else
+#*    *##set( $figshine = "white" )
 #**##end
 #end
 #*
