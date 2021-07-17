@@ -1,6 +1,6 @@
-# Site With Images and Dark Theme
+# Site With Images and Invalid Dark Theme
 
-This is an example for a Maven Site with images and a dark theme.
+This is an example for a Maven Site with images and a dark theme which looks bad for images.
 
 ![Dice class diagram][dice-class_diagram]
 
