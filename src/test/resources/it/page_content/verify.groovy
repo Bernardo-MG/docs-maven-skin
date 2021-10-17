@@ -39,10 +39,18 @@ def firstSubHeading = subHeadings.get(0)
 assert firstSubHeading.html().contains( 'Subsection' )
 assert firstSubHeading.id().equals( 'subsection' )
 
+// Verifies subsection anchors
+def firstSubHeadingAnchor = firstSubHeading.select( 'a' ).first()
+assert firstSubHeadingAnchor.attr( 'name' ).equals( 'Subsection' )
+
 // Verifies the second subsection uses the correct text
 def secondSubHeading = subHeadings.get(1)
 assert secondSubHeading.html().contains( 'Second Subsection' )
 assert secondSubHeading.id().equals( 'second-subsection' )
+
+// Verifies subsection anchors
+def secondSubHeadingAnchor = secondSubHeading.select( 'a' ).first()
+assert secondSubHeadingAnchor.attr( 'name' ).equals( 'Second_Subsection' )
 
 def subSubHeadings = body.select( 'h3' )
 
@@ -50,6 +58,10 @@ def subSubHeadings = body.select( 'h3' )
 def firstSubSubHeading = subSubHeadings.first()
 assert firstSubSubHeading.html().contains( 'Smaller subsection' )
 assert firstSubSubHeading.id().equals( 'smaller-subsection' )
+
+// Verifies subsection anchors
+def firstSubSubHeadingAnchor = firstSubSubHeading.select( 'a' ).first()
+assert firstSubSubHeadingAnchor.attr( 'name' ).equals( 'Smaller_subsection' )
 
 // Verifies the number of sections is correct
 def mainSections = body.select( '> section' )
