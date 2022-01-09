@@ -1,0 +1,12 @@
+name: Artifact deployment
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  github:
+    name: Github
+    uses: Bernardo-MG/github-workflow/.github/workflows/maven_deploy_github.yml@v1
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}

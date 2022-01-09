@@ -1,0 +1,32 @@
+name: Tests and docs
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    name: Tests
+    uses: Bernardo-MG/github-workflow/.github/workflows/maven_testing.yml@v1
+
+  deploy_develop_docs:
+    name: Deploy development docs
+    needs: tests
+    uses: Bernardo-MG/github-workflow/.github/workflows/maven_deploy_site.yml@v1
+    with:
+      branch: develop
+      host: docs.bernardomg.com
+    secrets:
+      url: ${{ secrets.DEPLOY_DOCS_DEVELOP_SITE }}
+      username: ${{ secrets.DEPLOY_DOCS_DEVELOP_USER }}
+      password: ${{ secrets.DEPLOY_DOCS_DEVELOP_PASSWORD }}
+
+  deploy_docs:
+    name: Deploy docs
+    needs: tests
+    uses: Bernardo-MG/github-workflow/.github/workflows/maven_deploy_site.yml@v1
+    with:
+      branch: master
+      host: docs.bernardomg.com
+    secrets:
+      url: ${{ secrets.DEPLOY_DOCS_SITE }}
+      username: ${{ secrets.DEPLOY_DOCS_USER }}
+      password: ${{ secrets.DEPLOY_DOCS_PASSWORD }}
