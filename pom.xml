@@ -204,12 +204,13 @@
       <!-- ============================================== -->
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
+      <commons.beanUtils.version>1.9.4</commons.beanUtils.version>
       <hamcrest.version>1.3</hamcrest.version>
       <jcabi.matchers.version>1.5.3</jcabi.matchers.version>
       <jcabi.w3c.version>1.3</jcabi.w3c.version>
       <jsoup.version>1.13.1</jsoup.version>
-      <siteFixer.version>1.2.9</siteFixer.version>
-      <velocity.configTool.version>1.2.2</velocity.configTool.version>
+      <siteFixer.version>1.2.10</siteFixer.version>
+      <velocity.configTool.version>1.2.4</velocity.configTool.version>
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
@@ -242,6 +243,17 @@
          <groupId>com.bernardomg.velocity</groupId>
          <artifactId>velocity-config-tool</artifactId>
          <version>${velocity.configTool.version}</version>
+      </dependency>
+      <!-- ============================================== -->
+      <!-- ============ ENFORCED DEPENDENCIES =========== -->
+      <!-- ============================================== -->
+      <!-- Obsolete dependencies are overriden -->
+      <!-- Some of them have vulnerabilities issues, others just cause version collisions -->
+      <dependency>
+         <!-- Commons Bean Utils -->
+         <groupId>commons-beanutils</groupId>
+         <artifactId>commons-beanutils</artifactId>
+         <version>${commons.beanUtils.version}</version>
       </dependency>
    </dependencies>
 
