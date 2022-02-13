@@ -29,7 +29,7 @@ def head = parsed.head()
 
 // The heading is set
 def heading = body.select( '#main-section header' )
-assert heading.html().equals( '<h1 id="with-description">With description</h1>' )
+assert heading.html().equals( '<h1 id="With-description">With description</h1>' )
 
 // The title is included in the HTML head
 def title = head.select( 'title' )
