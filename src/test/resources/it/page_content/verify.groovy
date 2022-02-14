@@ -30,14 +30,14 @@ def body = parsed.body()
 // Verifies the heading uses the correct text
 def titleHeading = body.select( 'h1' ).first()
 assert titleHeading.html().contains( 'Page Content' )
-assert titleHeading.id().equals( 'page-content' )
+assert titleHeading.id().equals( 'Page-Content' )
 
 def subHeadings = body.select( 'h2' )
 
 // Verifies the first subsection uses the correct text
 def firstSubHeading = subHeadings.get(0)
 assert firstSubHeading.html().contains( 'Subsection' )
-assert firstSubHeading.id().equals( 'subsection' )
+assert firstSubHeading.id().equals( 'Subsection' )
 
 // Verifies subsection anchors
 def firstSubHeadingAnchor = firstSubHeading.select( 'a' ).first()
@@ -46,7 +46,7 @@ assert firstSubHeadingAnchor.attr( 'name' ).equals( 'Subsection' )
 // Verifies the second subsection uses the correct text
 def secondSubHeading = subHeadings.get(1)
 assert secondSubHeading.html().contains( 'Second Subsection' )
-assert secondSubHeading.id().equals( 'second-subsection' )
+assert secondSubHeading.id().equals( 'Second-Subsection' )
 
 // Verifies subsection anchors
 def secondSubHeadingAnchor = secondSubHeading.select( 'a' ).first()
@@ -57,7 +57,7 @@ def subSubHeadings = body.select( 'h3' )
 // Verifies the first subsection uses the correct text
 def firstSubSubHeading = subSubHeadings.first()
 assert firstSubSubHeading.html().contains( 'Smaller subsection' )
-assert firstSubSubHeading.id().equals( 'smaller-subsection' )
+assert firstSubSubHeading.id().equals( 'Smaller-subsection' )
 
 // Verifies subsection anchors
 def firstSubSubHeadingAnchor = firstSubSubHeading.select( 'a' ).first()

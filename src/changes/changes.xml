@@ -239,5 +239,10 @@
             Title anchors work again.
          </action>
       </release>
+      <release version="2.2.6" date="2022-02-13" description="Changed id generation">
+         <action dev="bmg" type="change">
+            Ids keep caps when processed.
+         </action>
+      </release>
    </body>
 </document>
