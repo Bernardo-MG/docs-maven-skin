@@ -49,17 +49,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- IE Compatibility tag -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>$title</title>
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Metadata -->
 #if($config.descriptionUrl)
-    <meta name="description" content="$config.descriptionUrl.getValue()">
+    <meta name="description" content="$config.descriptionUrl.getValue()" />
 #end
 #if($config.keywords)
-    <meta name="keywords" content="$config.keywords.getValue()">
+    <meta name="keywords" content="$config.keywords.getValue()" />
 #end
 #foreach( $author in $project.developers )
     <meta name="author" content="$author.name" />
