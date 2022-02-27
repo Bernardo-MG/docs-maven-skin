@@ -46,44 +46,44 @@
 <head>
     <meta charset="${outputEncoding}">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- IE Compatibility tag -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>$title</title>
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Metadata -->
 #if($config.descriptionUrl)
-    <meta name="description" content="$config.descriptionUrl.getValue()" />
+    <meta name="description" content="$config.descriptionUrl.getValue()">
 #end
 #if($config.keywords)
-    <meta name="keywords" content="$config.keywords.getValue()" />
+    <meta name="keywords" content="$config.keywords.getValue()">
 #end
 #foreach( $author in $project.developers )
-    <meta name="author" content="$author.name" />
+    <meta name="author" content="$author.name">
 #end
 
     <!-- Facebook Open Graph -->
-    <meta property="og:type" content="website"/>
+    <meta property="og:type" content="website">
 #if($config.canonicalLink)
-    <meta property="og:url" content="$config.canonicalLink.getValue()"/>
+    <meta property="og:url" content="$config.canonicalLink.getValue()">
 #end
-    <meta property="og:site_name" content="$title"/>
-    <meta property="og:title" content="$title"/>
+    <meta property="og:site_name" content="$title">
+    <meta property="og:title" content="$title">
 #if($config.descriptionUrl)
-    <meta property="og:description" content="$config.descriptionUrl.getValue()"/>
+    <meta property="og:description" content="$config.descriptionUrl.getValue()">
 #end
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary">
 #if($config.twitterSite)
-    <meta name="twitter:creator" content="$config.twitterSite.getValue()"/>
+    <meta name="twitter:creator" content="$config.twitterSite.getValue()">
 #end
-    <meta name="twitter:title" content="$title"/>
+    <meta name="twitter:title" content="$title">
 #if($config.descriptionUrl)
-    <meta name="twitter:description" content="$config.descriptionUrl.getValue()"/>
+    <meta name="twitter:description" content="$config.descriptionUrl.getValue()">
 #end
 
     <!-- CSS -->
