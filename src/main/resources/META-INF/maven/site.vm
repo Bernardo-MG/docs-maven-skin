@@ -52,7 +52,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>$title</title>
-    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <!-- Metadata -->
 #if($config.descriptionUrl)
