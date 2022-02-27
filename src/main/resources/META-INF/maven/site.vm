@@ -112,11 +112,6 @@
 #*  *#$render.eval( $decoration.body.head )
 #**##end
 
-    <!-- HTML5 Shiv. For IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="./lib/html5shiv/dist/html5shiv.min.js"></script>
-    <![endif]-->
-
 </head>
 <body class="d-flex flex-column">
 <header>

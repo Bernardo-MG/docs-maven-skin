@@ -371,7 +371,6 @@
                            <includes>
                               <include>bootstrap/dist/js/bootstrap.min.js</include>
                               <include>bootswatch/dist/*/bootstrap.min.css</include>
-                              <include>html5shiv/dist/html5shiv.min.js</include>
                            </includes>
                         </resource>
                         <resource>
