@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.4.4</version>
+      <version>1.5.1</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -198,6 +198,10 @@
 
    <properties>
       <!-- ============================================== -->
+      <!-- =============== MAVEN VERSION ================ -->
+      <!-- ============================================== -->
+      <maven.version>3.6.0</maven.version>
+      <!-- ============================================== -->
       <!-- =============== MANIFEST DATA ================ -->
       <!-- ============================================== -->
       <manifest.name>com/bernardomg/maven/skins/docs-maven-skin</manifest.name>
@@ -216,12 +220,12 @@
       <plugin.frontend.node.version>v16.14.0</plugin.frontend.node.version>
       <plugin.frontend.npm.version>8.3.1</plugin.frontend.npm.version>
       <plugin.frontend.version>1.12.0</plugin.frontend.version>
-      <plugin.invoker.version>3.2.2</plugin.invoker.version>
+      <plugin.invoker.version>3.3.0</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.2.5</site.skin.version>
+      <site.skin.version>2.2.6</site.skin.version>
       <mavenURL>https://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
       <githubArtifactURL><![CDATA[https://github.com/Bernardo-MG?tab=packages&amp;repo_name=docs-maven-skin]]></githubArtifactURL>
    </properties>
