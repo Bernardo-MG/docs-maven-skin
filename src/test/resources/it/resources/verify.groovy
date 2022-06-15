@@ -5,7 +5,6 @@
     'target/site/lib/bootstrap/dist/js/bootstrap.min.js',
     'target/site/lib/bootswatch/dist/litera/bootstrap.min.css',
     'target/site/lib/font-awesome/css/all.min.css',
-    'target/site/lib/html5shiv/dist/html5shiv.min.js',
     'target/site/lib/highlight/highlight.pack.js'
 ].each {
     def file = new File(basedir, it)
