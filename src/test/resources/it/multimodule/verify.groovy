@@ -7,17 +7,6 @@ import java.util.logging.Logger
 def html = new File(basedir, 'target/site/index.html').text
 def htmlModule = new File(basedir, 'module/target/site/index.html').text
 
-def htmlResponseModule = new ValidatorBuilder().html().validate(htmlModule)
-MatcherAssert.assertThat(
-    'There are errors',
-    htmlResponseModule.errors(),
-    Matchers.describedAs(htmlResponseModule.toString(), Matchers.hasSize(0))
-)
-
-htmlResponseModule.warnings().each{ value -> 
-	logger.warning( value.toString() )
-}
-
 // Parses HTML
 def parsed = Jsoup.parse(html)
 def body = parsed.body()
