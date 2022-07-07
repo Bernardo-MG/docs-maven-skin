@@ -59,7 +59,7 @@ By default images will receive the white background, or the dark one for dark th
     <bootswatchStyle>darkly</bootswatchStyle>
     <shine>dark</shine>
     <bgshine>primary</bgshine>
-    <bgshine>white</bgshine>
+    <figshine>white</figshine>
   </skinConfig>
 </custom>
 ```
