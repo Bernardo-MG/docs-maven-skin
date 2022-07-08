@@ -11,14 +11,10 @@ Each test consists on two parts. First the site is built, and then the verify.gr
 Usually the minimum validations applied are:
 
 * The expected HTML files are created
-* The index page conforms HTML5 rules
-* The expected elements are created
-
-The [jcabi W3C validator][jcabi-w3c] is used for testing the HTML 5 rules .
+* HTML file follow the expected structure
 
 HTML elements are validated with [jsoup][jsoup] and CSS selectors.
 
 [maven-invoker]: http://maven.apache.org/plugins/maven-invoker-plugin/
 
-[jcabi-w3c]: http://w3c.jcabi.com/
 [jsoup]: https://jsoup.org/
