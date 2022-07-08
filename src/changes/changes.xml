@@ -231,7 +231,7 @@
       </release>
       <release version="2.2.4" date="2021-07-17" description="Dark theme image support">
          <action dev="bmg" type="fix">
-            Additional corretion to images on dark shine.
+            Additional correction to images on dark shine.
          </action>
       </release>
       <release version="2.2.5" date="2021-10-17" description="Title anchors">
@@ -244,7 +244,16 @@
             Ids keep caps when processed.
          </action>
       </release>
-      <release version="2.3.0" date="2022-02-13" description="">
+      <release version="2.2.7" date="2022-07-08" description="Updated dependencies">
+         <action dev="bmg" type="update">
+            Updated dependencies.
+         </action>
+         <action dev="bmg" type="remove">
+            Removed html5shiv.
+         </action>
+         <action dev="bmg" type="fix">
+            Corrected self closing heading tag.
+         </action>
       </release>
    </body>
 </document>
