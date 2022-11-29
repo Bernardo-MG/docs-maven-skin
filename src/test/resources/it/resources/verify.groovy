@@ -2,7 +2,7 @@
 
 // Verifies that all the files were created
 [
-    'target/site/lib/@popperjs/core/dist/umd/popper.min.js',
+    'target/site/lib/popperjs/core/dist/umd/popper.min.js',
     'target/site/lib/bootstrap/dist/js/bootstrap.min.js',
     'target/site/lib/bootswatch/dist/litera/bootstrap.min.css',
     'target/site/lib/font-awesome/css/all.min.css',

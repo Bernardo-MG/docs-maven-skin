@@ -373,7 +373,6 @@
                            <includes>
                               <include>bootstrap/dist/js/bootstrap.min.js</include>
                               <include>bootswatch/dist/*/bootstrap.min.css</include>
-                              <include>@popperjs/core/dist/umd/popper.min.js</include>
                            </includes>
                         </resource>
                         <resource>
@@ -383,6 +382,14 @@
                            <includes>
                               <include>css/all.min.css</include>
                               <include>webfonts/*.*</include>
+                           </includes>
+                        </resource>
+                        <resource>
+                           <!-- Copies popperjs into a custom folder -->
+                           <directory>node_modules/@popperjs</directory>
+                           <targetPath>popperjs</targetPath>
+                           <includes>
+                              <include>core/dist/umd/popper.min.js</include>
                            </includes>
                         </resource>
                      </resources>
