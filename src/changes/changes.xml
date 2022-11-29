@@ -265,7 +265,10 @@
             Loads popper.js.
          </action>
       </release>
-      <release version="2.3.0" date="2022-11-29" description="">
+      <release version="2.3.0" date="2022-11-29" description="Velocity Tools 3">
+         <action dev="bmg" type="update">
+            Updated to Velocity Tools 3.
+         </action>
       </release>
    </body>
 </document>
