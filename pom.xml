@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.maven.skins</groupId>
    <artifactId>docs-maven-skin</artifactId>
-   <version>2.2.8</version>
+   <version>2.2.9</version>
 
    <name>Docs Maven Skin</name>
    <description>A Maven skin for using Maven Site as a documentation site</description>
@@ -215,8 +215,8 @@
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
-      <plugin.frontend.node.version>v16.14.0</plugin.frontend.node.version>
-      <plugin.frontend.npm.version>8.3.1</plugin.frontend.npm.version>
+      <plugin.frontend.node.version>v18.12.1</plugin.frontend.node.version>
+      <plugin.frontend.npm.version>8.19.2</plugin.frontend.npm.version>
       <plugin.frontend.version>1.12.1</plugin.frontend.version>
       <plugin.invoker.version>3.3.0</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
@@ -382,6 +382,14 @@
                            <includes>
                               <include>css/all.min.css</include>
                               <include>webfonts/*.*</include>
+                           </includes>
+                        </resource>
+                        <resource>
+                           <!-- Copies popperjs into a custom folder -->
+                           <directory>node_modules/@popperjs</directory>
+                           <targetPath>popperjs</targetPath>
+                           <includes>
+                              <include>core/dist/umd/popper.min.js</include>
                            </includes>
                         </resource>
                      </resources>

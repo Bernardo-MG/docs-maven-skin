@@ -260,5 +260,10 @@
             Updated dependencies.
          </action>
       </release>
+      <release version="2.2.9" date="2022-11-29" description="Fixed missing popper.js">
+         <action dev="bmg" type="fix">
+            Loads popper.js.
+         </action>
+      </release>
    </body>
 </document>
