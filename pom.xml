@@ -215,8 +215,8 @@
       <!-- ============================================== -->
       <!-- ============== PLUGINS VERSIONS ============== -->
       <!-- ============================================== -->
-      <plugin.frontend.node.version>v16.14.0</plugin.frontend.node.version>
-      <plugin.frontend.npm.version>8.3.1</plugin.frontend.npm.version>
+      <plugin.frontend.node.version>v18.12.1</plugin.frontend.node.version>
+      <plugin.frontend.npm.version>8.19.2</plugin.frontend.npm.version>
       <plugin.frontend.version>1.12.1</plugin.frontend.version>
       <plugin.invoker.version>3.3.0</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
