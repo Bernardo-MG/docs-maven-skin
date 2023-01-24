@@ -156,9 +156,11 @@
         </div>
     </nav>
 </header>
-<section id="main-section" class="container flex-grow-1">
+<main>
+    <section id="main-section" class="container flex-grow-1">
 $bodyContent
-</section>
+    </section>
+</main>
 <footer class="footer w-100 pt-2 border-top bg-$bgshine">
     <div id="footer-nav" class="bg-$bgshine container">
 #set( $menuElements = [] )
