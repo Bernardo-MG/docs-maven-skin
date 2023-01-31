@@ -73,7 +73,7 @@ assert link.tag().normalName().equals('a')
 assert link.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin/actions')
 assert link.attr( 'title' ).equals('CI')
 assert link.attr( 'aria-label' ).equals('CI')
-assert link.html().equals('CI <span class="note">Github workflow</span>')
+assert link.html().equals('CI <span class="note">GitHub workflow</span>')
 assert link.hasClass( 'link-noted' )
 
 link = row.get(2)
