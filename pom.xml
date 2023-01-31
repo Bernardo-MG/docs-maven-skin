@@ -52,7 +52,7 @@
    </issueManagement>
 
    <ciManagement>
-      <system>Github workflow</system>
+      <system>GitHub workflow</system>
       <url>https://github.com/Bernardo-MG/docs-maven-skin/actions</url>
       <notifiers />
    </ciManagement>
@@ -83,11 +83,11 @@
          </distributionManagement>
       </profile>
       <profile>
-         <!-- Github deployment profile. -->
+         <!-- GitHub deployment profile. -->
          <id>deployment-github</id>
          <distributionManagement>
             <repository>
-               <!-- Github repository -->
+               <!-- GitHub repository -->
                <id>github</id>
                <name>GitHub Packages</name>
                <url>https://maven.pkg.github.com/Bernardo-MG/docs-maven-skin</url>

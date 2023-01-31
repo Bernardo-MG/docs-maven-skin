@@ -137,7 +137,7 @@ Any kind of help with the project will be well received, and there are two main 
 
 ### Issues Management
 
-Issues are managed at the GitHub [project issues tracker][issues], where any Github user may report bugs or ask for new features.
+Issues are managed at the GitHub [project issues tracker][issues], where any GitHub user may report bugs or ask for new features.
 
 ### Getting the Code
 
