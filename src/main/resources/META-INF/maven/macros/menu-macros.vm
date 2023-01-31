@@ -82,7 +82,7 @@
                         <a href="#" class="nav-link dropdown-toggle" id="links_menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links</a>
                         <ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="links_menu">
 #*    *##foreach( $item in $elements )
-                            <li><a class="dropdown-item" href="$item.href" title="$item.name">$item.name</a></li>
+                            <li><a class="dropdown-item" href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></li>
 #*    *##end
                         </ul>
                     </li>
@@ -134,9 +134,9 @@
 #**##end
 #**##foreach( $item in $element.items )
 #*    *##if( $item.description )
-              <dd><a href="$item.href" title="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
+              <dd><a href="$item.href" title="$item.name" aria-label="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
 #*    *##else
-              <dd><a href="$item.href" title="$item.name">$item.name</a></dd>
+              <dd><a href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></dd>
 #*    *##end
 #**##end
     </dl>
