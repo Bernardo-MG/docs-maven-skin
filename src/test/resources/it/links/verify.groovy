@@ -1,4 +1,4 @@
-// This script verifies that a minimal site contains only the barebones of a site.
+// This script verifies that the custom links are generated correctly.
 
 import org.jsoup.Jsoup
 import java.util.logging.Logger
@@ -13,6 +13,7 @@ def body = Jsoup.parse(html).body()
 def dropdowns = body.select( '#navbar-main-menu .dropdown-toggle' )
 assert dropdowns.size() == 1
 
+// Verifies the dropdown toggle structure
 def dropdown = dropdowns.first()
 assert dropdown.tag().normalName().equals('a')
 assert dropdown.id().equals('links_menu')
@@ -28,14 +29,18 @@ assert dropdown.hasClass( 'dropdown-toggle' )
 // Verifies the menu links exist
 def items = body.select( '#navbar-main-menu .dropdown-item' )
 
+// Verifies the first link
 def item = items.get(0)
 assert item.attr( 'href' ).equals('http://www.apache.org')
 assert item.attr( 'title' ).equals('Apache')
+assert item.attr( 'aria-label' ).equals('Apache')
 assert item.html().equals('Apache')
 assert item.hasClass( 'dropdown-item' )
 
+// Verifies the second link
 item = items.get(1)
 assert item.attr( 'href' ).equals('https://maven.apache.org')
 assert item.attr( 'title' ).equals('Maven')
+assert item.attr( 'aria-label' ).equals('Maven')
 assert item.html().equals('Maven')
 assert item.hasClass( 'dropdown-item' )
