@@ -63,10 +63,10 @@
       </menu>
       <menu name="Releases" inherit="bottom">
          <item name="Maven Central" href="${mavenURL}" />
-         <item name="Github" href="${githubArtifactURL}" />
+         <item name="GitHub" href="${githubArtifactURL}" />
       </menu>
       <menu name="Icons" inherit="bottom">
-         <item name="Github" img="fab fa-github" href="${project.scm.url}" />
+         <item name="GitHub" img="fab fa-github" href="${project.scm.url}" />
       </menu>
    </body>
 
