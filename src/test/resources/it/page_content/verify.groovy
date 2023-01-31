@@ -47,7 +47,7 @@ def firstSubSubHeadingAnchor = firstSubSubHeading.select( 'a' ).first()
 assert firstSubSubHeadingAnchor.attr( 'name' ).equals( 'Smaller_subsection' )
 
 // Verifies the number of sections is correct
-def mainSections = body.select( '> section' )
+def mainSections = body.select( 'main > section' )
 assert mainSections.size() == 1
 
 // Verifies the number of subsections is correct
