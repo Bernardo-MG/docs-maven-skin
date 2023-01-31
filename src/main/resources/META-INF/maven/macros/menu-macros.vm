@@ -37,7 +37,7 @@
                         <a href="#" class="nav-link dropdown-toggle" id="$element.name.replace(" ", "_")_menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$element.name</a>
                         <ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="$element.name.replace(" ", "_")_menu">
 #*    *##foreach( $item in $element.items )
-                            <li><a class="dropdown-item" href="$item.href" title="$item.name">$item.name</a></li>
+                            <li><a class="dropdown-item" href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></li>
 #*    *##end
                         </ul>
                     </li>
