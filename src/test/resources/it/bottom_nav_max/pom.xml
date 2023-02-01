@@ -30,7 +30,7 @@
    </issueManagement>
 
    <ciManagement>
-      <system>Github workflow</system>
+      <system>GitHub workflow</system>
       <url>https://github.com/Bernardo-MG/docs-maven-skin/actions</url>
       <notifiers />
    </ciManagement>
@@ -44,8 +44,8 @@
       <plugin.site.version>@plugin.site.version@</plugin.site.version>
       <!-- Maven Site -->
       <site.skin.version>@project.version@</site.skin.version>
-      <bintrayURL>https://bintray.com/bernardo-mg/maven/docs-maven-skin/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin</mavenURL>
+      <githubArtifactURL><![CDATA[https://github.com/Bernardo-MG?tab=packages&amp;repo_name=docs-maven-skin]]></githubArtifactURL>
    </properties>
 
    <!-- ********************************************** -->

@@ -38,8 +38,8 @@
          </item>
       </menu>
       <menu name="Releases" inherit="bottom">
-         <item name="Bintray" href="https://bintray.com/bernardo-mg/maven/docs-maven-skin/view" />
-         <item name="Maven Central" href="http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin" />
+         <item name="Maven Central" href="${mavenURL}" />
+         <item name="GitHub" href="${githubArtifactURL}" />
       </menu>
    </body>
 

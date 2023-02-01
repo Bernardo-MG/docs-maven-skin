@@ -48,9 +48,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- IE Compatibility tag -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>$title</title>
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
 
@@ -156,9 +153,11 @@
         </div>
     </nav>
 </header>
-<section id="main-section" class="container flex-grow-1">
+<main>
+    <section id="main-section" class="container flex-grow-1">
 $bodyContent
-</section>
+    </section>
+</main>
 <footer class="footer w-100 pt-2 border-top bg-$bgshine">
     <div id="footer-nav" class="bg-$bgshine container">
 #set( $menuElements = [] )

@@ -13,6 +13,7 @@ def body = Jsoup.parse(html).body()
 def toggles = body.select( '#navbar-main-menu .dropdown-toggle' )
 assert toggles.size() == 2
 
+// Verifies the first menu
 def toggle = toggles.get(0)
 assert toggle.tag().normalName().equals('a')
 assert toggle.id().equals('Documentation_menu')
@@ -25,6 +26,7 @@ assert toggle.html().equals('Documentation')
 assert toggle.hasClass( 'nav-link' )
 assert toggle.hasClass( 'dropdown-toggle' )
 
+// Verifies the second menu
 toggle = toggles.get(1)
 assert toggle.tag().normalName().equals('a')
 assert toggle.id().equals('Info_and_reports_menu')
@@ -41,22 +43,28 @@ assert toggle.hasClass( 'dropdown-toggle' )
 def dropdowns = body.select( '#navbar-main-menu .dropdown' )
 def items = dropdowns.get(0).select( '.dropdown-item' )
 
+// Verifies the first menu link
 def item = items.get(0)
 assert item.attr( 'href' ).equals('./acquire.html')
 assert item.attr( 'title' ).equals('Acquire')
+assert item.attr( 'aria-label' ).equals('Acquire')
 assert item.html().equals('Acquire')
 assert item.hasClass( 'dropdown-item' )
 
+// Verifies the second menu link
 item = items.get(1)
 assert item.attr( 'href' ).equals('./usage.html')
 assert item.attr( 'title' ).equals('Usage')
+assert item.attr( 'aria-label' ).equals('Usage')
 assert item.html().equals('Usage')
 assert item.hasClass( 'dropdown-item' )
 
 items = dropdowns.get(1).select( '.dropdown-item' )
 
+// Verifies the first menu link
 item = items.get(0)
 assert item.attr( 'href' ).equals('./info.html')
 assert item.attr( 'title' ).equals('Info')
+assert item.attr( 'aria-label' ).equals('Info')
 assert item.html().equals('Info')
 assert item.hasClass( 'dropdown-item' )
