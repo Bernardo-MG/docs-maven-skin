@@ -4,10 +4,10 @@
       "minify-css": "cleancss -o ./target/classes/css/style.min.css ./src/main/resources/css/*.css"
    },
    "dependencies": {
-      "@fortawesome/fontawesome-free": "~6.2.1",
-      "bootstrap": "~5.2.2",
-      "bootswatch": "~5.2.2",
-      "clean-css-cli": "~5.6.1",
-      "csslint": "~1.0.5"
+      "@fortawesome/fontawesome-free": "~6.3.0",
+      "bootstrap": "~5.2.0",
+      "bootswatch": "~5.2.0",
+      "clean-css-cli": "~5.6.0",
+      "csslint": "~1.0.0"
    }
 }
