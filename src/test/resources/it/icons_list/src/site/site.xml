@@ -18,7 +18,7 @@
 
    <body>
       <menu name="Icons" inherit="bottom">
-         <item name="GitHub" img="fab fa-github" href="${project.scm.url}" />
+         <item name="GitHub" img="fa-brands fa-github" href="${project.scm.url}" />
       </menu>
    </body>
 
