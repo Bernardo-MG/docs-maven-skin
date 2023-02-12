@@ -218,7 +218,7 @@
       <plugin.frontend.node.version>v18.12.1</plugin.frontend.node.version>
       <plugin.frontend.npm.version>8.19.2</plugin.frontend.npm.version>
       <plugin.frontend.version>1.12.1</plugin.frontend.version>
-      <plugin.invoker.version>3.3.0</plugin.invoker.version>
+      <plugin.invoker.version>3.4.0</plugin.invoker.version>
       <plugin.minify.version>1.7.6</plugin.minify.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
