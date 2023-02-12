@@ -1,0 +1,30 @@
+name: Doc deployment
+
+on:
+  push:
+    branches:
+    - master
+    - develop
+
+jobs:
+  deploy_develop_docs:
+    name: Deploy docs for develop
+    uses: Bernardo-MG/github-workflow-maven/.github/workflows/deploy_site.yml@v1
+    with:
+      branch: develop
+      host: docs.bernardomg.com
+    secrets:
+      url: ${{ secrets.DEPLOY_DOCS_DEVELOP_SITE }}
+      username: ${{ secrets.DEPLOY_DOCS_DEVELOP_USER }}
+      password: ${{ secrets.DEPLOY_DOCS_DEVELOP_PASSWORD }}
+      
+  deploy_master_docs:
+    name: Deploy docs for master
+    uses: Bernardo-MG/github-workflow-maven/.github/workflows/deploy_site.yml@v1
+    with:
+      branch: master
+      host: docs.bernardomg.com
+    secrets:
+      url: ${{ secrets.DEPLOY_DOCS_SITE }}
+      username: ${{ secrets.DEPLOY_DOCS_USER }}
+      password: ${{ secrets.DEPLOY_DOCS_PASSWORD }}
