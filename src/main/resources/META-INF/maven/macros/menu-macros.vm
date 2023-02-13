@@ -57,11 +57,13 @@
  *#
 #*--------------------------------------------------*#
 #macro( iconsMenu $elements )
+         <div id="navbar-icons" class="col-sm d-none d-md-block">
 #**##foreach( $element in $elements )
 #*    *##foreach( $item in $element.items )
-            <a href="$item.href" title="$item.name" aria-label="$item.name"><span class="navbar-icon $item.img ps-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
+            <a href="$item.href" class="ps-2" title="$item.name" aria-label="$item.name"><span class="$item.img" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
 #*    *##end
 #**##end
+         </div>
 #end
 #*
 
