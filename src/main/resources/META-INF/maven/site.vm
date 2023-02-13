@@ -138,9 +138,7 @@
 #**##set( $linkMenuElements = [] )
 #end
 #if( $iconMenuElements.size() > 0 )
-            <div class="col-sm d-none d-md-block">
 #**##iconsMenu( $iconMenuElements )
-            </div>
 #end
 #if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
             <div class="collapse navbar-collapse" id="navbar-main-menu">
