@@ -51,10 +51,10 @@ assert fig.hasClass( 'rounded' )
 assert fig.hasClass( 'p-2' )
 
 img = fig.select( 'img' ).first()
-assert img.attr( 'src' ).contains( './images/example_class_diagram.png' )
-assert img.attr( 'alt' ).contains( 'Dice class diagram' )
+assert img.attr( 'src' ).contains( './images/missing.png' )
+assert img.attr( 'alt' ).contains( 'Missing image' )
 assert img.hasClass( 'img-fluid' )
 
 caption = fig.select( 'figcaption' ).first()
-assert caption.html().contains( 'Dice class diagram' )
+assert caption.html().contains( 'Missing image' )
 assert caption.hasClass( 'font-italic' )
