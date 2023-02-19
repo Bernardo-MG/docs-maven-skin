@@ -91,6 +91,7 @@
 #**
  * Updates images.
  *#
+#**##set( $empty = $htmlTool.removeAttribute( $bodyContentParsed, 'img[alt=""]', 'alt' ) )
 #**##set( $empty = $siteTool.transformImagesToFigures( $bodyContentParsed ) )
 #**##set( $empty = $htmlTool.wrap($bodyContentParsed, 'figure', '<div class="d-inline-flex"></div>') )
 #**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', 'shadow' ) )
