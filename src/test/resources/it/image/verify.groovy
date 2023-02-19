@@ -51,7 +51,7 @@ assert fig.hasClass( 'rounded' )
 assert fig.hasClass( 'p-2' )
 
 img = fig.select( 'img' ).first()
-assert img.attr( 'src' ).contains( './images/missing.png' )
+assert img.attr( 'src' ).contains( './images/missing.jpg' )
 assert img.attr( 'alt' ).contains( 'Missing image' )
 assert img.hasClass( 'img-fluid' )
 
