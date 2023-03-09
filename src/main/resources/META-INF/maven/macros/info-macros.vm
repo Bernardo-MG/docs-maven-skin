@@ -93,9 +93,9 @@ ${project.organization.name}
  *#
 #*--------------------------------------------------*#
 #macro( publishDate )
-#**##set( $format = "yyyy-MM-dd" )
-#**###$dateFormat.applyPattern( $format )
-#**##set( $dateValue = $dateFormat.format( $currentDate ) )
+#**##set( $format = "yyyy-MM-dd" )##
+#**###$dateFormat.applyPattern( $format )##
+#**##set( $dateValue = $dateFormat.format( $currentDate ) )##
 $dateValue#end
 #*
 
