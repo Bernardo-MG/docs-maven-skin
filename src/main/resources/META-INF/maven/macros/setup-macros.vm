@@ -35,82 +35,82 @@
 #**
  * Parses body content.
  *#
-#**##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )
-
+#**##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )##
+##
 #**
  * Updates code sections.
  *#
-#**##set( $empty = $htmlTool.wrap( $bodyContentParsed, 'pre.source', '<div class="source">' ) )
-#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'pre.source', 'source' ) )
-#**##set( $empty = $htmlTool.retag( $bodyContentParsed, 'div.source', 'code' ) )
-#**##set( $empty = $htmlTool.unwrap( $bodyContentParsed, 'code > code' ) )
-#**##set( $empty = $htmlTool.swapTagWithParent( $bodyContentParsed, 'code > pre' ) )
-#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'code.source', 'source' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'border' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'shadow' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'rounded' ) )
-
+#**##set( $empty = $htmlTool.wrap( $bodyContentParsed, 'pre.source', '<div class="source">' ) )##
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'pre.source', 'source' ) )##
+#**##set( $empty = $htmlTool.retag( $bodyContentParsed, 'div.source', 'code' ) )##
+#**##set( $empty = $htmlTool.unwrap( $bodyContentParsed, 'code > code' ) )##
+#**##set( $empty = $htmlTool.swapTagWithParent( $bodyContentParsed, 'code > pre' ) )##
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'code.source', 'source' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'border' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'shadow' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'pre', 'rounded' ) )##
+##
 #**
  * Updates section divs.
  *#
-#**##set( $empty = $htmlTool.retag( $bodyContentParsed, 'div.section', 'section' ) )
-#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'section.section', 'section' ) )
-
+#**##set( $empty = $htmlTool.retag( $bodyContentParsed, 'div.section', 'section' ) )##
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'section.section', 'section' ) )##
+##
 #**
  * Fixes internal links.
  *#
-#**##set( $empty = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[id]', 'id' ) )
-#**##set( $empty = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[href^=\"#\"]', 'href' ) )
-
-
+#**##set( $empty = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[id]', 'id' ) )##
+#**##set( $empty = $html5UpdateTool.removePointsFromAttr( $bodyContentParsed, '[href^=\"#\"]', 'href' ) )##
+##
+##
 #**
  * Removes external links.
  *#
-#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'a.externalLink', 'externalLink' ) )
-
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'a.externalLink', 'externalLink' ) )##
+##
 #**
  * Updates tables.
  *#
-#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'table.bodyTable', 'bodyTable' ) )
-#**##set( $empty = $html5UpdateTool.updateTableHeads( $bodyContentParsed ) )
-#**##set( $empty = $htmlTool.removeAttribute( $bodyContentParsed, 'table[border]', 'border' ) )
-#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.a', 'a' ) )
-#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.b', 'b' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table-striped' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table-bordered' ) )
-
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'table.bodyTable', 'bodyTable' ) )##
+#**##set( $empty = $html5UpdateTool.updateTableHeads( $bodyContentParsed ) )##
+#**##set( $empty = $htmlTool.removeAttribute( $bodyContentParsed, 'table[border]', 'border' ) )##
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.a', 'a' ) )##
+#**##set( $empty = $htmlTool.removeClass( $bodyContentParsed, 'tr.b', 'b' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table-striped' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'table', 'table-bordered' ) )##
+##
 #**
  * Fixes reports.
  *#
-#**##set( $empty = $siteTool.fixReport($bodyContentParsed, $config.fileId) )
-#**##set( $empty = $siteTool.transformIcons( $bodyContentParsed ) )
-#**##set( $empty = $siteTool.fixHeadingIds($bodyContentParsed) )
-#**##set( $empty = $siteTool.fixAnchorLinks($bodyContentParsed) )
-
+#**##set( $empty = $siteTool.fixReport($bodyContentParsed, $config.fileId) )##
+#**##set( $empty = $siteTool.transformIcons( $bodyContentParsed ) )##
+#**##set( $empty = $siteTool.fixHeadingIds($bodyContentParsed) )##
+#**##set( $empty = $siteTool.fixAnchorLinks($bodyContentParsed) )##
+##
 #**
  * Updates images.
  *#
-#**##set( $empty = $htmlTool.removeAttribute( $bodyContentParsed, 'img[alt=""]', 'alt' ) )
-#**##set( $empty = $siteTool.transformImagesToFigures( $bodyContentParsed ) )
-#**##set( $empty = $htmlTool.wrap($bodyContentParsed, 'figure', '<div class="d-inline-flex"></div>') )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', 'shadow' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', "bg-$figshine" ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', 'rounded' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', 'p-2' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure > img', 'img-fluid' ) )
-#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure > figcaption', 'font-italic' ) )
-
+#**##set( $empty = $htmlTool.removeAttribute( $bodyContentParsed, 'img[alt=""]', 'alt' ) )##
+#**##set( $empty = $siteTool.transformImagesToFigures( $bodyContentParsed ) )##
+#**##set( $empty = $htmlTool.wrap($bodyContentParsed, 'figure', '<div class="d-inline-flex"></div>') )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', 'shadow' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', "bg-$figshine" ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', 'rounded' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure', 'p-2' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure > img', 'img-fluid' ) )##
+#**##set( $empty = $htmlTool.addClass( $bodyContentParsed, 'figure > figcaption', 'font-italic' ) )##
+##
 #**
  * Updates header.
  *#
-#**##set( $empty = $htmlTool.wrap($bodyContentParsed, 'h1:first-of-type', '<header class="pb-2 mt-4 mb-2 border-bottom"></header>') )
-
+#**##set( $empty = $htmlTool.wrap($bodyContentParsed, 'h1:first-of-type', '<header class="pb-2 mt-4 mb-2 border-bottom"></header>') )##
+##
 #**
  * Recovers body content.
  *#
-#**##set( $bodyContent = $bodyContentParsed.html() )
-
+#**##set( $bodyContent = $bodyContentParsed.html() )##
+##
 #end
 #*
 

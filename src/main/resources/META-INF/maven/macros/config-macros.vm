@@ -39,36 +39,36 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadShineConfig $shine $bgshine $figshine )
+#macro( loadShineConfig $shine $bgshine $figshine )##
 
-#**##if ( $config.shine )
-#*    *##set( $shine = $config.shine.getValue() )
-#**##else
-#*    *##set( $shine = "light" )
-#**##end
-#**##if ( $config.bgshine )
-#*    *##set( $bgshine = $config.bgshine.getValue() )
-#**##elseif ( $config.shine )
-#*    *##if ( $config.shine.getValue() == "dark" )
-#*        *##set( $bgshine = "primary" )
-#*    *##else
-#*        *##set( $bgshine = $config.shine.getValue() )
-#*    *##end
-#**##else
-#*    *##set( $bgshine = "light" )
-#**##end
-#**##if ( $config.figshine )
-#*    *##set( $figshine = $config.figshine.getValue() )
-#**##elseif ( $config.shine )
-#*    *##if ( $config.shine.getValue() == "dark" )
-#*        *##set( $figshine = "dark" )
-#*    *##else
-#*        *##set( $figshine = $config.figshine.getValue() )
-#*    *##end
-#**##else
-#*    *##set( $figshine = "white" )
-#**##end
-#end
+#**##if ( $config.shine )##
+#*    *##set( $shine = $config.shine.getValue() )##
+#**##else##
+#*    *##set( $shine = "light" )##
+#**##end##
+#**##if ( $config.bgshine )##
+#*    *##set( $bgshine = $config.bgshine.getValue() )##
+#**##elseif ( $config.shine )##
+#*    *##if ( $config.shine.getValue() == "dark" )##
+#*        *##set( $bgshine = "primary" )##
+#*    *##else##
+#*        *##set( $bgshine = $config.shine.getValue() )##
+#*    *##end##
+#**##else##
+#*    *##set( $bgshine = "light" )##
+#**##end##
+#**##if ( $config.figshine )##
+#*    *##set( $figshine = $config.figshine.getValue() )##
+#**##elseif ( $config.shine )##
+#*    *##if ( $config.shine.getValue() == "dark" )##
+#*        *##set( $figshine = "dark" )##
+#*    *##else##
+#*        *##set( $figshine = $config.figshine.getValue() )##
+#*    *##end##
+#**##else##
+#*    *##set( $figshine = "white" )##
+#**##end##
+#end##
 #*
 
 
@@ -91,13 +91,13 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadTopNavMenuList $elements )
-#**##if( $config.topNav && $decoration.body.menus )
-#*    *##filterByName( $decoration.body.menus, $config.topNav.getChildren(), $elements )
-#**##elseif( $decoration.body.menus )
-#*    *##set( $elements = $decoration.body.menus )
-#**##end
-#end
+#macro( loadTopNavMenuList $elements )##
+#**##if( $config.topNav && $decoration.body.menus )##
+#*    *##filterByName( $decoration.body.menus, $config.topNav.getChildren(), $elements )##
+#**##elseif( $decoration.body.menus )##
+#*    *##set( $elements = $decoration.body.menus )##
+#**##end##
+#end##
 #*
 
 
@@ -120,11 +120,11 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadBottomNavMenuList $elements )
-#**##if( $config.bottomNav )
-#*    *##filterByName( $decoration.body.menus, $config.bottomNav.children, $elements )
-#**##end
-#end
+#macro( loadBottomNavMenuList $elements )##
+#**##if( $config.bottomNav )##
+#*    *##filterByName( $decoration.body.menus, $config.bottomNav.children, $elements )##
+#**##end##
+#end##
 #*
 
 
@@ -147,11 +147,11 @@
  *
  *#
 #*--------------------------------------------------*#
-#macro( loadIconNavMenuList $elements )
-#**##if( $config.iconNav )
-#*    *##filterByName( $decoration.body.menus, $config.iconNav.children, $elements )
-#**##end
-#end
+#macro( loadIconNavMenuList $elements )##
+#**##if( $config.iconNav )##
+#*    *##filterByName( $decoration.body.menus, $config.iconNav.children, $elements )##
+#**##end##
+#end##
 #*
 
 

@@ -34,16 +34,16 @@
  *#
 #*--------------------------------------------------*#
 #macro( filterByName $elements $names $result )
-#**##set( $namesList = [] )
-#**##foreach($name in $names)
-#*    *##set($bar = $namesList.add( $name.value ))
-#**##end
-#**##foreach($element in $elements)
-#*    *##if( $element.name && $namesList.contains( $element.name ) )
-#*        *##set($bar = $result.add( $element ))
-#*    *##end
-#**##end
-#end
+#**##set( $namesList = [] )##
+#**##foreach($name in $names)##
+#*    *##set($bar = $namesList.add( $name.value ))##
+#**##end##
+#**##foreach($element in $elements)##
+#*    *##if( $element.name && $namesList.contains( $element.name ) )##
+#*        *##set($bar = $result.add( $element ))##
+#*    *##end##
+#**##end##
+#end##
 #*
 
 

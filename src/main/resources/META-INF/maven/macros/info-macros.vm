@@ -49,34 +49,34 @@
  *#
 #*--------------------------------------------------*#
 #macro( copyright )
-#**##if( $project )
-#*    *##set( $currentYear = ${currentDate.year} + 1900 )
-#*    *##if( ${project.inceptionYear} )
-#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa-regular fa-copyright"></span>${project.inceptionYear}-${currentYear}
-#*        *##else <span class="fa-regular fa-copyright"></span>${project.inceptionYear}
-#*        *##end
-#*    *##else <span class="fa-regular fa-copyright"></span>${currentYear}
-#*    *##end
-#*    *##if( ${project.organization} && ${project.organization.name} )
-#*        *##set( $orgNameShown = true )
-#*        *##if( ${project.organization.url} )
-<a href="$project.organization.url">${project.organization.name}</a>
-#*        *##else
-${project.organization.name}
-#*        *##end
-#*    *##else
-#*        *##set( $orgNameShown = false )
-#*    *##end
-#*    *##if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )
-#*        *##if( ${orgNameShown} )
+#**##if( $project )##
+#*    *##set( $currentYear = ${currentDate.year} + 1900 )##
+#*    *##if( ${project.inceptionYear} )##
+#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa-regular fa-copyright"></span>${project.inceptionYear}-${currentYear}##
+#*        *##else <span class="fa-regular fa-copyright"></span>${project.inceptionYear}##
+#*        *##end##
+#*    *##else <span class="fa-regular fa-copyright"></span>${currentYear}##
+#*    *##end##
+#*    *##if( ${project.organization} && ${project.organization.name} )##
+#*        *##set( $orgNameShown = true )##
+#*        *##if( ${project.organization.url} )##
+<a href="$project.organization.url">${project.organization.name}</a>##
+#*        *##else##
+${project.organization.name}##
+#*        *##end##
+#*    *##else##
+#*        *##set( $orgNameShown = false )##
+#*    *##end##
+#*    *##if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )##
+#*        *##if( ${orgNameShown} )##
 -
-#*        *##end
-#*        *##foreach( $license in $project.licenses )
-<a href="$license.url">$license.name</a> 
-#*        *##end
-#*    *##end
-#**##end
-#end
+#*        *##end##
+#*        *##foreach( $license in $project.licenses )##
+<a href="$license.url">$license.name</a>
+#*        *##end##
+#*    *##end##
+#**##end##
+#end##
 #*
 
 
@@ -96,7 +96,8 @@ ${project.organization.name}
 #**##set( $format = "yyyy-MM-dd" )##
 #**###$dateFormat.applyPattern( $format )##
 #**##set( $dateValue = $dateFormat.format( $currentDate ) )##
-$dateValue#end
+$dateValue##
+#end##
 #*
 
 
