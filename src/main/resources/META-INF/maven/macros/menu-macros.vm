@@ -30,7 +30,7 @@
  *        elements: Doxia decoration menus collection
  *
  *###
-#*--------------------------------------------------*#
+#*--------------------------------------------------*###
 #macro( dropdownMenu $elements )
 #**##foreach( $element in $elements )##
                     <li class="nav-item dropdown">
@@ -102,7 +102,7 @@
  * Receives:
  *        elements: Doxia decoration menus collection
  *        maxColSize: the maximum size for the columns
- *#
+ *###
 #*--------------------------------------------------*###
 #macro( bottomNav $elements )
 #**##foreach( $element in $elements )##
@@ -127,7 +127,7 @@
  *
  * This will be a definitions list, where each definition is a link.
  *
- *#
+ *###
 #*--------------------------------------------------*###
 #macro( linksDictionaryMenu $element )
     <dl class="text-center mb-1">
