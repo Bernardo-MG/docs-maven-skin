@@ -20,8 +20,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #*--------------------------------------------------*###
 #**
  * Loads shine configuration.
@@ -37,8 +37,8 @@
  * The shine will be generated from the skin configuration. If no configuration is set, then
  * the shine will be "light".
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( loadShineConfig $shine $bgshine $figshine )##
 
 #**##if ( $config.shine )##
@@ -73,7 +73,7 @@
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Loads the top navigation menu list.
@@ -89,8 +89,8 @@
  * option, in the skin configuration, will be used. If this option is not set then all
  * the menus will be loaded.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( loadTopNavMenuList $elements )##
 #**##if( $config.topNav && $decoration.body.menus )##
 #*    *##filterByName( $decoration.body.menus, $config.topNav.getChildren(), $elements )##
@@ -102,7 +102,7 @@
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Loads the top navigation menu list.
@@ -118,8 +118,8 @@
  * option, in the skin configuration, will be used. If this option is not set then all
  * the menus will be loaded.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( loadBottomNavMenuList $elements )##
 #**##if( $config.bottomNav )##
 #*    *##filterByName( $decoration.body.menus, $config.bottomNav.children, $elements )##
@@ -129,7 +129,7 @@
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Loads the icon navigation menu list.
@@ -145,8 +145,8 @@
  * option, in the skin configuration, will be used. If this option is not set then all
  * the menus will be loaded.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( loadIconNavMenuList $elements )##
 #**##if( $config.iconNav )##
 #*    *##filterByName( $decoration.body.menus, $config.iconNav.children, $elements )##
@@ -156,4 +156,4 @@
 
 
 
-*#
+*###

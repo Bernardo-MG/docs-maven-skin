@@ -20,18 +20,18 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #**
  * The scripts are imported.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #parse( "site-macros.vm" )##
-#*--------------------------------------------------*#
+#*--------------------------------------------------*###
 #**
  * Body content is modified and edited by the various utilities.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #set( $shine = "" )##
 #set( $bgshine = "" )##
 #set( $figshine = "" )##
@@ -52,62 +52,62 @@
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <!-- Metadata -->
-#if($config.descriptionUrl)
+#if($config.descriptionUrl)##
     <meta name="description" content="$config.descriptionUrl.getValue()">
-#end
-#if($config.keywords)
+#end##
+#if($config.keywords)##
     <meta name="keywords" content="$config.keywords.getValue()">
-#end
-#foreach( $author in $project.developers )
+#end##
+#foreach( $author in $project.developers )##
     <meta name="author" content="$author.name">
-#end
+#end##
 
     <!-- Facebook Open Graph -->
     <meta property="og:type" content="website">
-#if($config.canonicalLink)
+#if($config.canonicalLink)##
     <meta property="og:url" content="$config.canonicalLink.getValue()">
-#end
+#end##
     <meta property="og:site_name" content="$title">
     <meta property="og:title" content="$title">
-#if($config.descriptionUrl)
+#if($config.descriptionUrl)##
     <meta property="og:description" content="$config.descriptionUrl.getValue()">
-#end
+#end##
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-#if($config.twitterSite)
+#if($config.twitterSite)##
     <meta name="twitter:creator" content="$config.twitterSite.getValue()">
-#end
+#end##
     <meta name="twitter:title" content="$title">
-#if($config.descriptionUrl)
+#if($config.descriptionUrl)##
     <meta name="twitter:description" content="$config.descriptionUrl.getValue()">
-#end
+#end##
 
     <!-- CSS -->
-#if ( $config.bootswatchStyle )
-  #set( $bootswatchStyle = $config.bootswatchStyle.getValue() )
-#else
-  #set( $bootswatchStyle = "litera" )
-#end
+#if ( $config.bootswatchStyle )##
+  #set( $bootswatchStyle = $config.bootswatchStyle.getValue() )##
+#else##
+  #set( $bootswatchStyle = "litera" )##
+#end##
     <link rel="stylesheet" href="./lib/bootswatch/dist/${bootswatchStyle}/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/all.min.css">
-#if ( $config.customHighlightStyle )
-  #set( $customHighlightStyle = $config.customHighlightStyle.getValue() )
-#else
-  #set( $customHighlightStyle = "default" )
-#end
+#if ( $config.customHighlightStyle )##
+  #set( $customHighlightStyle = $config.customHighlightStyle.getValue() )##
+#else##
+  #set( $customHighlightStyle = "default" )##
+#end##
     <link rel="stylesheet" href="./lib/highlight/styles/${customHighlightStyle}.css">
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.min.css">
-    
-#if( $config.customStyle )
+#if( $config.customStyle )##
+
     <!-- Custom style -->
     <link rel="stylesheet" href="$config.customStyle.getValue()">
-#end
+#end##
+#**##if( $decoration.body.head )##
 
-#**##if( $decoration.body.head )
-#*  *#$render.eval( $decoration.body.head )
-#**##end
+#*  *#$render.eval( $decoration.body.head )##
+#**##end##
 
 </head>
 <body class="d-flex flex-column">
@@ -119,35 +119,35 @@
                <span class="navbar-toggler-icon"></span>
             </button>
         
-#**##if( $decoration.publishDate.position != "none" )
+#**##if( $decoration.publishDate.position != "none" )##
             <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">#publishDate()</time>)</small>
-#**##else
+#**##else##
             <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span></small>
-#**##end
-#**##if( $decoration.edit && $docRenderingContext.editable )
-#**##* Doxia edition button. *#
+#**##end##
+#**##if( $decoration.edit && $docRenderingContext.editable )##
+#**##* Doxia edition button. *###
             <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="fa-solid fa-pen-to-square" aria-hidden="true"></span></a></div>
-#**##end
-#set( $iconMenuElements = [] )
-#loadIconNavMenuList( $iconMenuElements )
-#set( $dropDownMenuElements = [] )
-#loadTopNavMenuList( $dropDownMenuElements )
-#if( $decoration.body.links )
-#**##set( $linkMenuElements = $decoration.body.links )
-#else
-#**##set( $linkMenuElements = [] )
-#end
-#if( $iconMenuElements.size() > 0 )
-#**##iconsMenu( $iconMenuElements )
-#end
-#if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )
+#**##end##
+#set( $iconMenuElements = [] )##
+#loadIconNavMenuList( $iconMenuElements )##
+#set( $dropDownMenuElements = [] )##
+#loadTopNavMenuList( $dropDownMenuElements )##
+#if( $decoration.body.links )##
+#**##set( $linkMenuElements = $decoration.body.links )##
+#else##
+#**##set( $linkMenuElements = [] )##
+#end##
+#if( $iconMenuElements.size() > 0 )##
+#**##iconsMenu( $iconMenuElements )##
+#end##
+#if( $dropDownMenuElements.size() > 0 || $linkMenuElements.size() > 0 )##
             <div class="collapse navbar-collapse" id="navbar-main-menu">
                 <ul class="nav navbar-nav ms-auto">
-#**##linksMenu( $linkMenuElements )
-#**##dropdownMenu( $dropDownMenuElements )
+#**##linksMenu( $linkMenuElements )##
+#**##dropdownMenu( $dropDownMenuElements )##
                 </ul>
             </div>
-#end
+#end##
         </div>
     </nav>
 </header>
@@ -158,18 +158,18 @@ $bodyContent
 </main>
 <footer class="footer w-100 pt-2 border-top bg-$bgshine">
     <div id="footer-nav" class="bg-$bgshine container">
-#set( $menuElements = [] )
-#loadBottomNavMenuList( $menuElements )
-#if($menuElements.size() > 0)
+#set( $menuElements = [] )##
+#loadBottomNavMenuList( $menuElements )##
+#if($menuElements.size() > 0)##
         <div id="navbar-footer" class="row">
-#**##bottomNav( $menuElements )
+#**##bottomNav( $menuElements )##
         </div>
-#end
+#end##
     </div>
     <div id="footer-info" class="bg-$bgshine ps-2 pb-1 w-100">
-#if( $decoration.body.footer )
+#if( $decoration.body.footer )##
         <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
-#end
+#end##
         <div>#copyright()</div>
         <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
     </div>
@@ -178,12 +178,12 @@ $bodyContent
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./lib/highlight/highlight.pack.js"></script>
 <script src="./js/initializeHighlight.js"></script>
-#if( $config.customScript )
+#if( $config.customScript )##
 <script src="$config.customScript.getValue()"></script>
-#end
-#if( $decoration.googleAnalyticsAccountId )
+#end##
+#if( $decoration.googleAnalyticsAccountId )##
 <script async src="https://www.googletagmanager.com/gtag/js?id=$decoration.googleAnalyticsAccountId"></script>
-#googleAnalytics( $decoration.googleAnalyticsAccountId )
-#end
+#googleAnalytics( $decoration.googleAnalyticsAccountId )##
+#end##
 </body>
 </html>

@@ -20,8 +20,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #*--------------------------------------------------*###
 #**
  * Filters a collection, copying all the elements with the specified names into
@@ -31,8 +31,8 @@
  *        elements: Doxia decoration menus collection
  *        names: names of the menus to find
  *        result: collection where the results will be stored
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( filterByName $elements $names $result )
 #**##set( $namesList = [] )##
 #**##foreach($name in $names)##
@@ -48,4 +48,4 @@
 
 
 
-*#
+*###

@@ -20,8 +20,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #*--------------------------------------------------*###
 #**
  * Renders the copyright year and organization.
@@ -46,8 +46,8 @@
  *
  * All the project licenses will be shown, each of them as a link to the license page.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( copyright )
 #**##if( $project )##
 #*    *##set( $currentYear = ${currentDate.year} + 1900 )##
@@ -81,7 +81,7 @@ ${project.organization.name}##
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Renders the publish date.
@@ -90,8 +90,8 @@ ${project.organization.name}##
  *        currentDate: global variable with the current date
  *        dateFormat: global variable with the date formatter
  * 
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( publishDate )
 #**##set( $format = "yyyy-MM-dd" )##
 #**###$dateFormat.applyPattern( $format )##
@@ -102,4 +102,4 @@ $dateValue##
 
 
 
-*#
+*###
