@@ -20,11 +20,11 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
-#parse( "macros/config-macros.vm" )
-#parse( "macros/info-macros.vm" )
-#parse( "macros/list-macros.vm" )
-#parse( "macros/menu-macros.vm" )
-#parse( "macros/script-macros.vm" )
-#parse( "macros/setup-macros.vm" )
+ *###
+#*--------------------------------------------------*###
+#parse( "macros/config-macros.vm" )##
+#parse( "macros/info-macros.vm" )##
+#parse( "macros/list-macros.vm" )##
+#parse( "macros/menu-macros.vm" )##
+#parse( "macros/script-macros.vm" )##
+#parse( "macros/setup-macros.vm" )##
