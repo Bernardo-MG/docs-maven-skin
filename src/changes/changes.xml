@@ -275,7 +275,13 @@
             Accessibility corrections.
          </action>
       </release>
-      <release version="2.4.0" date="2023-01-01" description="">
+      <release version="2.3.2" date="2023-03-10" description="Cleaned up page generation">
+         <action dev="bmg" type="update">
+            Updated Font Awesome icons.
+         </action>
+         <action dev="bmg" type="fix">
+            Removed empty lines in generated HTML.
+         </action>
       </release>
    </body>
 </document>
