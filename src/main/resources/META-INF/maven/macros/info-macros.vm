@@ -20,8 +20,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #*--------------------------------------------------*###
 #**
  * Renders the copyright year and organization.
@@ -46,42 +46,42 @@
  *
  * All the project licenses will be shown, each of them as a link to the license page.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( copyright )
-#**##if( $project )
-#*    *##set( $currentYear = ${currentDate.year} + 1900 )
-#*    *##if( ${project.inceptionYear} )
-#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="far fa-copyright"></span>${project.inceptionYear}-${currentYear}
-#*        *##else <span class="far fa-copyright"></span>${project.inceptionYear}
-#*        *##end
-#*    *##else <span class="far fa-copyright"></span>${currentYear}
-#*    *##end
-#*    *##if( ${project.organization} && ${project.organization.name} )
-#*        *##set( $orgNameShown = true )
-#*        *##if( ${project.organization.url} )
-<a href="$project.organization.url">${project.organization.name}</a>
-#*        *##else
-${project.organization.name}
-#*        *##end
-#*    *##else
-#*        *##set( $orgNameShown = false )
-#*    *##end
-#*    *##if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )
-#*        *##if( ${orgNameShown} )
+#**##if( $project )##
+#*    *##set( $currentYear = ${currentDate.year} + 1900 )##
+#*    *##if( ${project.inceptionYear} )##
+#*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa-regular fa-copyright"></span>${project.inceptionYear}-${currentYear}##
+#*        *##else <span class="fa-regular fa-copyright"></span>${project.inceptionYear}##
+#*        *##end##
+#*    *##else <span class="fa-regular fa-copyright"></span>${currentYear}##
+#*    *##end##
+#*    *##if( ${project.organization} && ${project.organization.name} )##
+#*        *##set( $orgNameShown = true )##
+#*        *##if( ${project.organization.url} )##
+<a href="$project.organization.url">${project.organization.name}</a>##
+#*        *##else##
+${project.organization.name}##
+#*        *##end##
+#*    *##else##
+#*        *##set( $orgNameShown = false )##
+#*    *##end##
+#*    *##if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )##
+#*        *##if( ${orgNameShown} )##
 -
-#*        *##end
-#*        *##foreach( $license in $project.licenses )
-<a href="$license.url">$license.name</a> 
-#*        *##end
-#*    *##end
-#**##end
-#end
+#*        *##end##
+#*        *##foreach( $license in $project.licenses )##
+<a href="$license.url">$license.name</a>
+#*        *##end##
+#*    *##end##
+#**##end##
+#end##
 #*
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Renders the publish date.
@@ -90,15 +90,16 @@ ${project.organization.name}
  *        currentDate: global variable with the current date
  *        dateFormat: global variable with the date formatter
  * 
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( publishDate )
-#**##set( $format = "yyyy-MM-dd" )
-#**###$dateFormat.applyPattern( $format )
-#**##set( $dateValue = $dateFormat.format( $currentDate ) )
-$dateValue#end
+#**##set( $format = "yyyy-MM-dd" )##
+#**###$dateFormat.applyPattern( $format )##
+#**##set( $dateValue = $dateFormat.format( $currentDate ) )##
+$dateValue##
+#end##
 #*
 
 
 
-*#
+*###

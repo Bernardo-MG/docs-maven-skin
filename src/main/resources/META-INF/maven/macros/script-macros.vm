@@ -20,8 +20,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #*--------------------------------------------------*###
 #**
  * Renders a dropdown menu with the received menus as the selection options.
@@ -29,8 +29,8 @@
  * Receives:
  *        elements: Doxia decoration menus collection
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( googleAnalytics $id )
 <script>
    // Global site tag (gtag.js) - Google Analytics
@@ -45,4 +45,4 @@
 
    gtag('config', '$id');
 </script>
-#end
+#end##

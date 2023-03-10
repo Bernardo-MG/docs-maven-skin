@@ -1,32 +1,16 @@
-name: Tests and docs
+name: Tests
 
 on: [push, pull_request]
 
 jobs:
-  tests:
-    name: Tests
-    uses: Bernardo-MG/github-workflow/.github/workflows/maven_testing.yml@v1
-
-  deploy_develop_docs:
-    name: Deploy development docs
-    needs: tests
-    uses: Bernardo-MG/github-workflow/.github/workflows/maven_deploy_site.yml@v1
+  tests_11:
+    name: Tests with JDK 11
+    uses: Bernardo-MG/github-workflow-maven/.github/workflows/testing.yml@v1
     with:
-      branch: develop
-      host: docs.bernardomg.com
-    secrets:
-      url: ${{ secrets.DEPLOY_DOCS_DEVELOP_SITE }}
-      username: ${{ secrets.DEPLOY_DOCS_DEVELOP_USER }}
-      password: ${{ secrets.DEPLOY_DOCS_DEVELOP_PASSWORD }}
+      jdk: 11
 
-  deploy_docs:
-    name: Deploy docs
-    needs: tests
-    uses: Bernardo-MG/github-workflow/.github/workflows/maven_deploy_site.yml@v1
+  tests_17:
+    name: Tests with JDK 17
+    uses: Bernardo-MG/github-workflow-maven/.github/workflows/testing.yml@v1
     with:
-      branch: master
-      host: docs.bernardomg.com
-    secrets:
-      url: ${{ secrets.DEPLOY_DOCS_SITE }}
-      username: ${{ secrets.DEPLOY_DOCS_USER }}
-      password: ${{ secrets.DEPLOY_DOCS_PASSWORD }}
+      jdk: 17

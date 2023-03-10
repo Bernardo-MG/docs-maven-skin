@@ -20,8 +20,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #*--------------------------------------------------*###
 #**
  * Renders a dropdown menu with the received menus as the selection options.
@@ -29,70 +29,72 @@
  * Receives:
  *        elements: Doxia decoration menus collection
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( dropdownMenu $elements )
-#**##foreach( $element in $elements )
+#**##foreach( $element in $elements )##
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="$element.name.replace(" ", "_")_menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">$element.name</a>
                         <ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="$element.name.replace(" ", "_")_menu">
-#*    *##foreach( $item in $element.items )
+#*    *##foreach( $item in $element.items )##
                             <li><a class="dropdown-item" href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></li>
-#*    *##end
+#*    *##end##
                         </ul>
                     </li>
-#**##end
-#end
+#**##end##
+#end##
 #*
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Renders the icons menu.
  *
  * These are the icons shown in the upper navigation bar.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( iconsMenu $elements )
-#**##foreach( $element in $elements )
-#*    *##foreach( $item in $element.items )
-            <a href="$item.href" title="$item.name" aria-label="$item.name"><span class="navbar-icon $item.img ps-1" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
-#*    *##end
-#**##end
-#end
+         <div id="navbar-icons" class="col-sm d-none d-md-block">
+#**##foreach( $element in $elements )##
+#*    *##foreach( $item in $element.items )##
+            <a href="$item.href" class="ps-2" title="$item.name" aria-label="$item.name"><span class="$item.img" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
+#*    *##end##
+#**##end##
+         </div>
+#end##
 #*
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Renders the links menu.
  *
  * These are the links shown in the upper navigation bar.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( linksMenu $elements )
-#**##if( $elements.size() > 0 )
+#**##if( $elements.size() > 0 )##
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="links_menu" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links</a>
                         <ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="links_menu">
-#*    *##foreach( $item in $elements )
+#*    *##foreach( $item in $elements )##
                             <li><a class="dropdown-item" href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></li>
-#*    *##end
+#*    *##end##
                         </ul>
                     </li>
-#**##end
-#end
+#**##end##
+#end##
 #*
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Renders the bottom navigation.
@@ -100,22 +102,22 @@
  * Receives:
  *        elements: Doxia decoration menus collection
  *        maxColSize: the maximum size for the columns
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( bottomNav $elements )
-#**##foreach( $element in $elements )
-#*    *##if( $element.items )
+#**##foreach( $element in $elements )##
+#*    *##if( $element.items )##
             <div class="col">
-#*        *##linksDictionaryMenu( $element )
+#*        *##linksDictionaryMenu( $element )##
             </div>
-#*    *##end
-#**##end
-#end
+#*    *##end##
+#**##end##
+#end##
 #*
 
 
 
-*#
+*###
 #*--------------------------------------------------*###
 #**
  * Renders a menu with links.
@@ -125,24 +127,24 @@
  *
  * This will be a definitions list, where each definition is a link.
  *
- *#
-#*--------------------------------------------------*#
+ *###
+#*--------------------------------------------------*###
 #macro( linksDictionaryMenu $element )
     <dl class="text-center mb-1">
-#**##if( $element.name )
+#**##if( $element.name )##
     <dt class="border-bottom">$element.name</dt>
-#**##end
-#**##foreach( $item in $element.items )
-#*    *##if( $item.description )
+#**##end##
+#**##foreach( $item in $element.items )##
+#*    *##if( $item.description )##
               <dd><a href="$item.href" title="$item.name" aria-label="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
-#*    *##else
+#*    *##else##
               <dd><a href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></dd>
-#*    *##end
-#**##end
+#*    *##end##
+#**##end##
     </dl>
-#end
+#end##
 #*
 
 
 
-*#
+*###
