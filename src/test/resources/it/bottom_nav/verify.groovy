@@ -15,7 +15,7 @@ def body = Jsoup.parse(html).body()
 def footerInfo = body.select( '#footer-info' )
 
 def copyrightInfo = footerInfo.select( 'div' ).first()
-assert copyrightInfo.html().contains( 'Bernardo Martínez Garrido - Apache v2 License' )
+assert copyrightInfo.html().contains( 'Bernardo Martínez Garrido - MIT License' )
 
 def copyrightIcon = copyrightInfo.select( '.fa-copyright' )
 assert copyrightIcon.size() == 1
