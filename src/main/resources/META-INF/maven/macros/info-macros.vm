@@ -69,7 +69,7 @@ ${project.organization.name}##
 #*    *##end##
 #*    *##if( ( $project.licenses ) && ( $project.licenses.size() > 0 )  )##
 #*        *##if( ${orgNameShown} )##
--
+ -
 #*        *##end##
 #*        *##foreach( $license in $project.licenses )##
 <a href="$license.url">$license.name</a>
