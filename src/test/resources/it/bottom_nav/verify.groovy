@@ -11,9 +11,17 @@ def body = Jsoup.parse(html).body()
 
 // Verifies the skin info is included
 
-// Footer link
-def div = body.select( 'footer #footer-info div' ).last()
-assert div.html().contains( 'Rendered using' )
+// Footer info
+def footerInfo = body.select( '#footer-info' )
+
+def copyrightInfo = footerInfo.select( 'div' ).first()
+assert copyrightInfo.html().contains( 'Bernardo Martínez Garrido - Apache v2 License' )
+
+def copyrightIcon = copyrightInfo.select( '.fa-copyright' )
+assert copyrightIcon.size() == 1
+
+def renderedInfo = footerInfo.select( 'div' ).last()
+assert renderedInfo.html().contains( 'Rendered using Docs Maven Skin' )
 
 // The footer columns exist
 def titles = body.select( 'footer dl dt' )
