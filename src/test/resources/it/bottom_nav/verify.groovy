@@ -2,6 +2,7 @@
 
 import org.jsoup.Jsoup
 import java.util.logging.Logger
+import java.time.Year
 
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
@@ -15,7 +16,7 @@ def body = Jsoup.parse(html).body()
 def footerInfo = body.select( '#footer-info' )
 
 def copyrightInfo = footerInfo.select( 'div' ).first()
-assert copyrightInfo.text().contains( 'Bernardo Martínez Garrido - MIT License' )
+assert copyrightInfo.text().contains( Year.now().toString() + ' Bernardo Martinez Garrido - MIT License' )
 
 def copyrightIcon = copyrightInfo.select( '.fa-copyright' )
 assert copyrightIcon.size() == 1
