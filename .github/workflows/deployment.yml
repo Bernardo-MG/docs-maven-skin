@@ -6,16 +6,36 @@ on:
 
 jobs:
   github:
-    name: Github
-    uses: Bernardo-MG/github-workflow-maven/.github/workflows/deploy_github.yml@v1
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
+    name: Github deployment
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-github-${{ github.ref }}
+      cancel-in-progress: true
+    permissions: 
+      contents: read
+      packages: write
+
+    steps:
+    - name: Deploy to Github
+      uses: bernardo-mg/maven-github-deployment-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        jdk: 17
 
   ossrh:
-    name: OSSRH
-    uses: Bernardo-MG/github-workflow-maven/.github/workflows/deploy_signed.yml@v1
-    secrets:
-      username: ${{ secrets.OSSRH_USERNAME }}
-      password: ${{ secrets.OSSRH_TOKEN }}
-      gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-      gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+    name: OSSRH deployment
+    runs-on: ubuntu-latest
+    environment: deployment_ossrh
+    concurrency:
+      group: deploy-ossrh-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+    - name: Deploy
+      uses: bernardo-mg/maven-signed-deployment-action@v1
+      with:
+        username: ${{ secrets.OSSRH_USERNAME }}
+        password: ${{ secrets.OSSRH_TOKEN }}
+        gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+        gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+        jdk: 17

@@ -3,14 +3,24 @@ name: Tests
 on: [push, pull_request]
 
 jobs:
-  tests_11:
-    name: Tests with JDK 11
-    uses: Bernardo-MG/github-workflow-maven/.github/workflows/testing.yml@v1
-    with:
-      jdk: 11
+  tests:
+    name: Tests with JDK ${{ matrix.jdk }}
+    runs-on: ubuntu-latest
 
-  tests_17:
-    name: Tests with JDK 17
-    uses: Bernardo-MG/github-workflow-maven/.github/workflows/testing.yml@v1
-    with:
-      jdk: 17
+    strategy:
+      matrix:
+        jdk: [17, 21]
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+    - name: Set up JDK ${{ matrix.jdk }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ matrix.jdk }}
+        distribution: 'temurin'
+        cache: 'maven'
+    - name: Run up to integration tests
+      run: mvn verify -fae
