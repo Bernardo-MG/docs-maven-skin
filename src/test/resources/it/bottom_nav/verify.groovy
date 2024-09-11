@@ -21,7 +21,7 @@ def copyrightIcon = copyrightInfo.select( '.fa-copyright' )
 assert copyrightIcon.size() == 1
 
 def renderedInfo = footerInfo.select( 'div' ).last()
-assert renderedInfo.html().contains( 'Rendered using Docs Maven Skin' )
+assert renderedInfo.text().contains( 'Rendered using Docs Maven Skin' )
 
 // The footer columns exist
 def titles = body.select( 'footer dl dt' )
