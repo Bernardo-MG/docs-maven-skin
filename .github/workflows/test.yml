@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        jdk: [17, 21]
+        jdk: [17]
 
     steps:
     - name: Check-out
