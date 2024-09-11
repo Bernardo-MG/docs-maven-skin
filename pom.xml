@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.5.7</version>
+      <version>1.5.6</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -209,7 +209,7 @@
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
       <hamcrest.version>1.3</hamcrest.version>
-      <jsoup.version>1.15.3</jsoup.version>
+      <jsoup.version>1.18.1</jsoup.version>
       <siteFixer.version>1.3.1</siteFixer.version>
       <velocity.configTool.version>1.3.1</velocity.configTool.version>
       <!-- ============================================== -->
