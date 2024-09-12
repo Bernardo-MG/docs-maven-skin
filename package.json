@@ -1,6 +1,6 @@
 {
    "scripts": {
-      "validate-css": "csslint ./src/main/resources/css/",
+      "validate-css": "stylelint ./src/main/resources/css/",
       "minify-css": "cleancss -o ./target/classes/css/style.min.css ./src/main/resources/css/*.css"
    },
    "dependencies": {
@@ -8,6 +8,7 @@
       "bootstrap": "~5.3.0",
       "bootswatch": "~5.3.0",
       "clean-css-cli": "~5.6.0",
-      "csslint": "~1.0.0"
+	  "stylelint": "^16.9.0",
+	  "stylelint-config-standard": "^36.0.1"
    }
 }
