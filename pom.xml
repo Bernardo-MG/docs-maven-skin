@@ -384,6 +384,14 @@
                               <include>webfonts/*.*</include>
                            </includes>
                         </resource>
+                        <resource>
+                           <!-- Copies popperjs into a custom folder -->
+                           <directory>node_modules/@popperjs</directory>
+                           <targetPath>popperjs</targetPath>
+                           <includes>
+                              <include>core/dist/umd/popper.min.js</include>
+                           </includes>
+                        </resource>
                      </resources>
                   </configuration>
                </execution>
