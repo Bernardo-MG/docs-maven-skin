@@ -112,7 +112,7 @@
 </head>
 <body class="d-flex flex-column">
 <header>
-    <nav id="navbar-main" class="navbar navbar-expand-md bg-$bgshine" border-bottom>
+    <nav id="navbar-main" class="navbar navbar-expand-md bg-$bgshine" data-bs-theme="$bgshine" border-bottom>
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">$project.name</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-main-menu" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
@@ -156,7 +156,7 @@
 $bodyContent
     </section>
 </main>
-<footer class="footer pt-2 border-top bg-$bgshine">
+<footer class="footer pt-2 border-top bg-$bgshine" data-bs-theme="$bgshine">
     <div id="footer-nav" class="container">
 #set( $menuElements = [] )##
 #loadBottomNavMenuList( $menuElements )##
