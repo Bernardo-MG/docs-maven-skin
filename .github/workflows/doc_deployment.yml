@@ -1,0 +1,44 @@
+name: Doc deployment
+
+on:
+  push:
+    branches:
+    - master
+    - develop
+
+concurrency:
+  group: deploy-site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy_develop_docs:
+    name: Deploy docs for develop
+    environment: deployment_site
+    if: ${{ github.ref == format('refs/heads/{0}', 'develop') }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy site
+      uses: bernardo-mg/maven-site-deployment-action@v1
+      with:
+        host: docs.bernardomg.com
+        url: ${{ secrets.DEPLOY_DOCS_DEVELOP_SITE }}
+        username: ${{ secrets.DEPLOY_DOCS_DEVELOP_USER }}
+        password: ${{ secrets.DEPLOY_DOCS_DEVELOP_PASSWORD }}
+        jdk: 17
+
+  deploy_master_docs:
+    name: Deploy docs for master
+    environment: deployment_site
+    if: ${{ github.ref == format('refs/heads/{0}', 'master') }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy site
+      uses: bernardo-mg/maven-site-deployment-action@v1
+      with:
+        host: docs.bernardomg.com
+        url: ${{ secrets.DEPLOY_DOCS_SITE }}
+        username: ${{ secrets.DEPLOY_DOCS_USER }}
+        password: ${{ secrets.DEPLOY_DOCS_PASSWORD }}
+        jdk: 17
