@@ -2,6 +2,7 @@
 
 import org.jsoup.Jsoup
 import java.util.logging.Logger
+import java.time.Year
 
 // Acquires the sample HTML content
 def html = new File(basedir, 'target/site/index.html').text
@@ -11,9 +12,17 @@ def body = Jsoup.parse(html).body()
 
 // Verifies the skin info is included
 
-// Footer link
-def div = body.select( 'footer #footer-info div' ).last()
-assert div.html().contains( 'Rendered using' )
+// Footer info
+def footerInfo = body.select( '#footer-info' )
+
+def copyrightInfo = footerInfo.select( 'div' ).first()
+assert copyrightInfo.text().contains( Year.now().toString() + ' Bernardo Martinez Garrido - MIT License' )
+
+def copyrightIcon = copyrightInfo.select( '.fa-copyright' )
+assert copyrightIcon.size() == 1
+
+def renderedInfo = footerInfo.select( 'div' ).last()
+assert renderedInfo.text().contains( 'Rendered using Docs Maven Skin' )
 
 // The footer columns exist
 def titles = body.select( 'footer dl dt' )

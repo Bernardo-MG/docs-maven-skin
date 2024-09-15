@@ -13,6 +13,14 @@
    <version>1.0.0</version>
    <packaging>jar</packaging>
 
+   <licenses>
+      <license>
+         <name>MIT License</name>
+         <url>http://www.opensource.org/licenses/mit-license.php</url>
+         <distribution>repo</distribution>
+      </license>
+   </licenses>
+
    <!-- ********************************************** -->
    <!-- ********* INFRASTRUCTURE AND SERVICES ******** -->
    <!-- ********************************************** -->
@@ -34,6 +42,15 @@
       <url>https://github.com/Bernardo-MG/docs-maven-skin/actions</url>
       <notifiers />
    </ciManagement>
+
+   <!-- ********************************************** -->
+   <!-- *********** ORGANIZATION AND MEMBERS ********* -->
+   <!-- ********************************************** -->
+
+   <organization>
+      <name>Bernardo Martinez Garrido</name>
+      <url>https://github.com/Bernardo-MG</url>
+   </organization>
 
    <!-- ********************************************** -->
    <!-- **************** PROPERTIES ****************** -->

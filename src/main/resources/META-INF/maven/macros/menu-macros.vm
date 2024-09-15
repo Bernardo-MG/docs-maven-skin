@@ -130,18 +130,18 @@
  *###
 #*--------------------------------------------------*###
 #macro( linksDictionaryMenu $element )
-    <dl class="text-center mb-1">
+                <dl class="text-center mb-1">
 #**##if( $element.name )##
-    <dt class="border-bottom">$element.name</dt>
+                    <dt class="border-bottom">$element.name</dt>
 #**##end##
 #**##foreach( $item in $element.items )##
 #*    *##if( $item.description )##
-              <dd><a href="$item.href" title="$item.name" aria-label="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
+                        <dd><a href="$item.href" title="$item.name" aria-label="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
 #*    *##else##
-              <dd><a href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></dd>
+                        <dd><a href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></dd>
 #*    *##end##
 #**##end##
-    </dl>
+                </dl>
 #end##
 #*
 
