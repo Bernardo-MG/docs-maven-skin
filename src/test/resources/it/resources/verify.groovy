@@ -6,7 +6,7 @@
     'target/site/lib/bootstrap/dist/js/bootstrap.min.js',
     'target/site/lib/bootswatch/dist/litera/bootstrap.min.css',
     'target/site/lib/font-awesome/css/all.min.css',
-    'target/site/lib/highlight/highlight.pack.js'
+    'target/site/lib/highlight/highlight.min.js'
 ].each {
     def file = new File(basedir, it)
     if (!file.exists()) {
