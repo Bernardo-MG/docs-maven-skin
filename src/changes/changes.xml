@@ -283,7 +283,12 @@
             Removed empty lines in generated HTML.
          </action>
       </release>
-      <release version="2.4.0" date="2023-03-10" description="">
+      <release version="2.3.3" date="2024-09-15" description="Updated dependencies">
+         <action dev="bmg" type="update">
+            Updated to Bootstrap 5.3.
+         </action>
+      </release>
+      <release version="3.0.0" date="2024-09-15" description="">
       </release>
    </body>
 </document>

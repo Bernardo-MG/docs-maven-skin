@@ -4,9 +4,9 @@
 
 ## Overriding Configuration
 
-The site will load the library located at */lib/highlight/highlight.pack.js*.
+The site will load the library located at */lib/highlight/highlight.min.js*.
 
-To override the default file place your own highlight.pack.js file at *src/site/resources/lib/highlight/highlight.pack.js*, along any resources it may need.
+To override the default file place your own highlight.min.js file at *src/site/resources/lib/highlight/highlight.min.js*, along any resources it may need.
 
 ## Overriding Initialisation
 

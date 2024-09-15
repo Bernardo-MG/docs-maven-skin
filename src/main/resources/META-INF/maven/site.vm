@@ -112,7 +112,7 @@
 </head>
 <body class="d-flex flex-column">
 <header>
-    <nav id="navbar-main" class="navbar navbar-expand-md navbar-$shine bg-$bgshine">
+    <nav id="navbar-main" class="navbar navbar-expand-md border-bottom bg-$bgshine" data-bs-theme="$bgshine" border-bottom>
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">$project.name</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-main-menu" aria-controls="navbar-main" aria-expanded="false" aria-label="Toggle navigation">
@@ -151,13 +151,13 @@
         </div>
     </nav>
 </header>
-<main>
-    <section id="main-section" class="container flex-grow-1">
+<main class="flex-grow-1">
+    <section id="main-section" class="container">
 $bodyContent
     </section>
 </main>
-<footer class="footer w-100 pt-2 border-top bg-$bgshine">
-    <div id="footer-nav" class="bg-$bgshine container">
+<footer class="footer pt-2 border-top bg-$bgshine" data-bs-theme="$bgshine">
+    <div id="footer-nav" class="container">
 #set( $menuElements = [] )##
 #loadBottomNavMenuList( $menuElements )##
 #if($menuElements.size() > 0)##
@@ -176,7 +176,7 @@ $bodyContent
 </footer>
 <script src="./lib/popperjs/core/dist/umd/popper.min.js"></script>
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./lib/highlight/highlight.pack.js"></script>
+<script src="./lib/highlight/highlight.min.js"></script>
 <script src="./js/initializeHighlight.js"></script>
 #if( $config.customScript )##
 <script src="$config.customScript.getValue()"></script>
