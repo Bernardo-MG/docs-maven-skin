@@ -35,7 +35,7 @@ assert header.hasClass( 'border-bottom' )
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )
-assert title.html().equals( 'minimal-site – Minimal page' )
+assert title.html().equals( 'Minimal page – minimal-site' )
 
 // Verifies the title is included in the header
 def titleHeader = body.select( '#navbar-main a.navbar-brand' )

@@ -34,8 +34,8 @@ def metaOgDesc = head.select( 'meta[property="og:description"]' )
 
 assert metaOgType.attr( 'content' ).equals( 'website' )
 assert metaOgUrl.isEmpty()
-assert metaOgSite.attr( 'content' ).equals( 'metadata-minimal-site – Metadata minimal page' )
-assert metaOgTitle.attr( 'content' ).equals( 'metadata-minimal-site – Metadata minimal page' )
+assert metaOgSite.attr( 'content' ).equals( 'Metadata minimal page – metadata-minimal-site' )
+assert metaOgTitle.attr( 'content' ).equals( 'Metadata minimal page – metadata-minimal-site' )
 assert metaOgDesc.isEmpty()
 
 // Verifies the Twitter metadata is generated
@@ -46,5 +46,5 @@ def metaTwDesc = head.select( 'meta[name="twitter:description"]' )
 
 assert metaTwCard.attr( 'content' ).equals( 'summary' )
 assert metaTwSite.isEmpty()
-assert metaTwTitle.attr( 'content' ).equals( 'metadata-minimal-site – Metadata minimal page' )
+assert metaTwTitle.attr( 'content' ).equals( 'Metadata minimal page – metadata-minimal-site' )
 assert metaTwDesc.isEmpty()
