@@ -31,23 +31,7 @@
  *
  *###
 #*--------------------------------------------------*###
-#macro( setUp $figshine )
-#**
- * Parses body content.
- *###
-#**##if($bodyContent)
-#*    *##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )##
-#**##else
-#*    *##set($parsedContent = $htmlTool.parse("<p>No content available</p>"))
-#**##end
-#**##if(!$bodyContentParsed)
-#*    *##set($bodyContentParsed = $htmlTool.parse("<p>No content available</p>"))
-#**##end
-#*
-
-
-
-*###
+#macro( setUp $figshine $bodyContentParsed )
 #**
  * Updates code sections.
  *###
