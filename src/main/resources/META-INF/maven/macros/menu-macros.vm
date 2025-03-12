@@ -135,11 +135,7 @@
                     <dt class="border-bottom">$element.name</dt>
 #**##end##
 #**##foreach( $item in $element.items )##
-#*    *##if( $item.description )##
-                        <dd><a href="$item.href" title="$item.name" aria-label="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
-#*    *##else##
                         <dd><a href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></dd>
-#*    *##end##
 #**##end##
                 </dl>
 #end##

@@ -35,7 +35,14 @@
 #**
  * Parses body content.
  *###
-#**##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )##
+#**##if($bodyContent)
+#*    *##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )##
+#**##else
+#*    *##set($parsedContent = $htmlTool.parse("<p>No content available</p>"))
+#**##end
+#**##if(!$bodyContentParsed)
+#*    *##set($bodyContentParsed = $htmlTool.parse("<p>No content available</p>"))
+#**##end
 #*
 
 
