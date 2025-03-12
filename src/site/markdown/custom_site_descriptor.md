@@ -87,22 +87,6 @@ For this to work you just need to add an image attribute to the menu item:
 
 This image is a reference to an existing Font Awesome 5 icon. For the [GitHub icon](https://fontawesome.com/icons/github), image is set to `fa-brands fa-github`.
 
-#### Descriptions for the Bottom Nav
-
-The bottom navigation menu allows giving a description for each link. These will be added as an underscript next to the link name.
-
-```xml
-<body>
-   ...
-   <menu name="Code" inherit="bottom">
-      <item name="SCM" href="${project.scm.url}">
-         <description>GitHub</description>
-      </item>
-   </menu>
-   ...
-</body>
-```
-
 ### Custom Scripts and Style
 
 These options are detailed in the [Custom Style and Scripts][custom-style-scripts] page.
