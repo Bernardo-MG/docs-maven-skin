@@ -82,24 +82,3 @@ ${project.organization.name}##
 
 
 *###
-#*--------------------------------------------------*###
-#**
- * Renders the publish date.
- *
- * Makes use of the following variables:
- *        date: global variable with the current date
- *        dateFormat: global variable with the date formatter
- * 
- *###
-#*--------------------------------------------------*###
-#macro( publishDate )
-#**##set( $format = "yyyy-MM-dd" )##
-#**###$dateFormat.applyPattern( $format )##
-#**##set( $dateValue = $dateFormat.format( ${date} ) )##
-${dateValue}##
-#end##
-#*
-
-
-
-*###

@@ -119,7 +119,7 @@
             </button>
         
 #**##if( $decoration.publishDate.position != "none" )##
-            <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">#publishDate()</time>)</small>
+            <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">$date.get('yyyy-MM-dd')</time>)</small>
 #**##else##
             <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span></small>
 #**##end##
