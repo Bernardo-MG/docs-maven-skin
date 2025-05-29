@@ -131,7 +131,7 @@
 #**
  * Recovers body content.
  *###
-#**##set( $bodyContent = $bodyContentParsed.html() )##
+$bodyContentParsed.html()
 ##
 #end
 #*
