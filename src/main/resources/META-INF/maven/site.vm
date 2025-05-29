@@ -51,11 +51,11 @@
     <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <!-- Metadata -->
-#if($config.descriptionUrl)##
-    <meta name="description" content="$config.descriptionUrl.getValue()">
+#if( $site.getCustomValue( 'skinConfig.descriptionUrl' ) )##
+    <meta name="description" content="$site.getCustomValue( 'skinConfig.descriptionUrl' )">
 #end##
-#if($config.keywords)##
-    <meta name="keywords" content="$config.keywords.getValue()">
+#if( $site.getCustomValue( 'skinConfig.keywords' ) )##
+    <meta name="keywords" content="$site.getCustomValue( 'skinConfig.keywords' )">
 #end##
 #foreach( $author in $project.developers )##
     <meta name="author" content="$author.name">
@@ -63,45 +63,37 @@
 
     <!-- Facebook Open Graph -->
     <meta property="og:type" content="website">
-#if($config.canonicalLink)##
-    <meta property="og:url" content="$config.canonicalLink.getValue()">
+#if( $site.getCustomValue( 'skinConfig.canonicalLink' ) )##
+    <meta property="og:url" content="$site.getCustomValue( 'skinConfig.canonicalLink' )">
 #end##
     <meta property="og:site_name" content="$title">
     <meta property="og:title" content="$title">
-#if($config.descriptionUrl)##
-    <meta property="og:description" content="$config.descriptionUrl.getValue()">
+#if( $site.getCustomValue( 'skinConfig.descriptionUrl' ) )##
+    <meta property="og:description" content="$site.getCustomValue( 'skinConfig.descriptionUrl' )">
 #end##
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-#if($config.twitterSite)##
-    <meta name="twitter:creator" content="$config.twitterSite.getValue()">
+#if( $site.getCustomValue( 'skinConfig.twitterSite' ) )##
+    <meta name="twitter:creator" content="$site.getCustomValue( 'skinConfig.twitterSite' )">
 #end##
     <meta name="twitter:title" content="$title">
-#if($config.descriptionUrl)##
-    <meta name="twitter:description" content="$config.descriptionUrl.getValue()">
+#if( $site.getCustomValue( 'skinConfig.descriptionUrl' ) )##
+    <meta name="twitter:description" content="$site.getCustomValue( 'skinConfig.descriptionUrl' )">
 #end##
 
     <!-- CSS -->
-#if ( $config.bootswatchStyle )##
-  #set( $bootswatchStyle = $config.bootswatchStyle.getValue() )##
-#else##
-  #set( $bootswatchStyle = "litera" )##
-#end##
+#set( $bootswatchStyle = $site.getCustomValue( 'skinConfig.bootswatchStyle', 'litera' ) )##
     <link rel="stylesheet" href="./lib/bootswatch/dist/${bootswatchStyle}/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/font-awesome/css/all.min.css">
-#if ( $config.customHighlightStyle )##
-  #set( $customHighlightStyle = $config.customHighlightStyle.getValue() )##
-#else##
-  #set( $customHighlightStyle = "default" )##
-#end##
+#set( $customHighlightStyle = $site.getCustomValue( 'skinConfig.customHighlightStyle', "default" ) )##
     <link rel="stylesheet" href="./lib/highlight/styles/${customHighlightStyle}.css">
     <!-- Docs Template style -->
     <link rel="stylesheet" href="./css/style.min.css">
-#if( $config.customStyle )##
+#if( $site.getCustomValue( 'skinConfig.customStyle' ) )##
 
     <!-- Custom style -->
-    <link rel="stylesheet" href="$config.customStyle.getValue()">
+    <link rel="stylesheet" href="$site.getCustomValue( 'skinConfig.customStyle' )">
 #end##
 #**##if( $decoration.body.head )##
 
@@ -180,8 +172,8 @@
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./lib/highlight/highlight.min.js"></script>
 <script src="./js/initializeHighlight.js"></script>
-#if( $config.customScript )##
-<script src="$config.customScript.getValue()"></script>
+#if( $site.getCustomValue( 'skinConfig.customScript' ) )##
+<script src="$site.getCustomValue( 'skinConfig.customScript' )"></script>
 #end##
 #if( $decoration.googleAnalyticsAccountId )##
 <script async src="https://www.googletagmanager.com/gtag/js?id=$decoration.googleAnalyticsAccountId"></script>
