@@ -95,9 +95,9 @@
     <!-- Custom style -->
     <link rel="stylesheet" href="$site.getCustomValue( 'skinConfig.customStyle' )">
 #end##
-#**##if( $decoration.body.head )##
+#**##if( $site.body.head )##
 
-#*  *#$render.eval( $decoration.body.head )##
+#*  *#$render.eval( $site.body.head )##
 #**##end##
 
 </head>
@@ -110,21 +110,21 @@
                <span class="navbar-toggler-icon"></span>
             </button>
         
-#**##if( $decoration.publishDate.position != "none" )##
+#**##if( $site.publishDate.position != "none" )##
             <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span> (<time id="navbar-date">$date.get('yyyy-MM-dd')</time>)</small>
 #**##else##
             <small class="navbar-text d-none d-md-block"><span id="navbar-version">${project.version}</span></small>
 #**##end##
-#**##if( $decoration.edit && $docRenderingContext.editable )##
+#**##if( $site.edit && $docRenderingContext.editable )##
 #**##* Doxia edition button. *###
-            <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $decoration.edit )"><span class="fa-solid fa-pen-to-square" aria-hidden="true"></span></a></div>
+            <div class="navbar-text"><a href="$docRenderingContext.getDoxiaSourcePath( $site.edit )"><span class="fa-solid fa-pen-to-square" aria-hidden="true"></span></a></div>
 #**##end##
 #set( $iconMenuElements = [] )##
 #loadIconNavMenuList( $iconMenuElements )##
 #set( $dropDownMenuElements = [] )##
 #loadTopNavMenuList( $dropDownMenuElements )##
-#if( $decoration.body.links )##
-#**##set( $linkMenuElements = $decoration.body.links )##
+#if( $site.body.links )##
+#**##set( $linkMenuElements = $site.body.links )##
 #else##
 #**##set( $linkMenuElements = [] )##
 #end##
@@ -161,8 +161,8 @@
 #end##
     </div>
     <div id="footer-info" class="bg-$bgshine ps-2 pb-1 w-100">
-#if( $decoration.body.footer )##
-        <div id="footer-custom-content">$render.eval( $decoration.body.footer )</div>
+#if( $site.body.footer )##
+        <div id="footer-custom-content">$render.eval( $site.body.footer )</div>
 #end##
         <div>#copyright()</div>
         <div>Rendered using <a href="@project.url@">@project.name@</a> @project.version@</div>
@@ -175,9 +175,9 @@
 #if( $site.getCustomValue( 'skinConfig.customScript' ) )##
 <script src="$site.getCustomValue( 'skinConfig.customScript' )"></script>
 #end##
-#if( $decoration.googleAnalyticsAccountId )##
-<script async src="https://www.googletagmanager.com/gtag/js?id=$decoration.googleAnalyticsAccountId"></script>
-#googleAnalytics( $decoration.googleAnalyticsAccountId )##
+#if( $site.googleAnalyticsAccountId )##
+<script async src="https://www.googletagmanager.com/gtag/js?id=$site.googleAnalyticsAccountId"></script>
+#googleAnalytics( $site.googleAnalyticsAccountId )##
 #end##
 </body>
 </html>

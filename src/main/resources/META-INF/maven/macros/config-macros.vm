@@ -84,10 +84,10 @@
  *###
 #*--------------------------------------------------*###
 #macro( loadTopNavMenuList $elements )##
-#**##if( $site.getCustomValue( 'skinConfig.topNav' ) && $decoration.body.menus )##
-#*    *##filterByName( $decoration.body.menus, $site.getCustomChild( 'skinConfig.topNav' ).children(), $elements )##
-#**##elseif( $decoration.body.menus )##
-#*    *##set( $elements = $decoration.body.menus )##
+#**##if( $site.getCustomChild( 'skinConfig.topNav' ) && $site.body.menus )##
+#*    *##filterByName( $site.body.menus, $site.getCustomChild( 'skinConfig.topNav' ).getChildren(), $elements )##
+#**##elseif( $site.body.menus )##
+#*    *##set( $elements = $site.body.menus )##
 #**##end##
 #end##
 #*
@@ -113,8 +113,8 @@
  *###
 #*--------------------------------------------------*###
 #macro( loadBottomNavMenuList $elements )##
-#**##if( $site.getCustomValue( 'skinConfig.bottomNav' ) )##
-#*    *##filterByName( $decoration.body.menus, $site.getCustomChild( 'skinConfig.bottomNav' ).children, $elements )##
+#**##if( $site.getCustomChild( 'skinConfig.bottomNav' ) )##
+#*    *##filterByName( $site.body.menus, $site.getCustomChild( 'skinConfig.bottomNav' ).getChildren(), $elements )##
 #**##end##
 #end##
 #*
@@ -140,8 +140,8 @@
  *###
 #*--------------------------------------------------*###
 #macro( loadIconNavMenuList $elements )##
-#**##if( $site.getCustomValue( 'skinConfig.iconNav' ) )##
-#*    *##filterByName( $decoration.body.menus, $site.getCustomChild( 'skinConfig.iconNav' ).children, $elements )##
+#**##if( $site.getCustomChild( 'skinConfig.iconNav' ) )##
+#*    *##filterByName( $site.body.menus, $site.getCustomChild( 'skinConfig.iconNav' ).getChildren(), $elements )##
 #**##end##
 #end##
 #*
