@@ -175,9 +175,5 @@
 #if( $site.getCustomValue( 'skinConfig.customScript' ) )##
 <script src="$site.getCustomValue( 'skinConfig.customScript' )"></script>
 #end##
-#if( $site.googleAnalyticsAccountId )##
-<script async src="https://www.googletagmanager.com/gtag/js?id=$site.googleAnalyticsAccountId"></script>
-#googleAnalytics( $site.googleAnalyticsAccountId )##
-#end##
 </body>
 </html>
