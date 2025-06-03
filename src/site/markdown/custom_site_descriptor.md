@@ -79,7 +79,9 @@ For this to work you just need to add an image attribute to the menu item:
 <body>
    ...
    <menu name="Icons" inherit="bottom">
-      <item name="GitHub" img="fa-brands fa-github" href="${project.scm.url}" />
+      <item name="GitHub" href="${project.scm.url}">
+         <image style="fa-brands fa-github" src="icon" />
+      </item>
    </menu>
    ...
 </body>
