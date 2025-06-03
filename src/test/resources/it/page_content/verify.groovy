@@ -29,8 +29,8 @@ assert firstSubHeading.html().contains( 'Subsection' )
 assert firstSubHeading.id().equals( 'Subsection' )
 
 // Verifies subsection anchors
-def firstSubHeadingAnchor = anchors.get(1)
-assert firstSubHeadingAnchor.id().equals( 'Subsection' )
+def secondSubHeadingAnchor = anchors.get(1)
+assert secondSubHeadingAnchor.id().equals( 'Subsection' )
 
 // Verifies the second subsection uses the correct text
 def secondSubHeading = subHeadings.get(1)
@@ -38,8 +38,8 @@ assert secondSubHeading.html().contains( 'Second Subsection' )
 assert secondSubHeading.id().equals( 'Second-Subsection' )
 
 // Verifies subsection anchors
-def secondSubHeadingAnchor = anchors.get(2)
-assert secondSubHeadingAnchor.id().equals( 'Second_Subsection' )
+def thirdSubHeadingAnchor = anchors.get(2)
+assert thirdSubHeadingAnchor.id().equals( 'Second_Subsection' )
 
 def subSubHeadings = body.select( 'h3' )
 
