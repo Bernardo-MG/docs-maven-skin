@@ -16,6 +16,10 @@ def titleHeading = main.select( 'h1' ).first()
 assert titleHeading.html().contains( 'Page Content' )
 assert titleHeading.id().equals( 'Page-Content' )
 
+// Verifies heading anchor
+def firstSubHeadingAnchor = anchors.get(0)
+assert firstSubHeadingAnchor.id().equals( 'Page-Content' )
+
 def subHeadings = main.select( 'h2' )
 def anchors = main.select( 'a' )
 
@@ -25,8 +29,8 @@ assert firstSubHeading.html().contains( 'Subsection' )
 assert firstSubHeading.id().equals( 'Subsection' )
 
 // Verifies subsection anchors
-def firstSubHeadingAnchor = anchors.get(0)
-assert firstSubHeadingAnchor.attr( 'name' ).equals( 'Subsection' )
+def firstSubHeadingAnchor = anchors.get(1)
+assert firstSubHeadingAnchor.id().equals( 'Subsection' )
 
 // Verifies the second subsection uses the correct text
 def secondSubHeading = subHeadings.get(1)
@@ -34,8 +38,8 @@ assert secondSubHeading.html().contains( 'Second Subsection' )
 assert secondSubHeading.id().equals( 'Second-Subsection' )
 
 // Verifies subsection anchors
-def secondSubHeadingAnchor = anchors.get(1)
-assert secondSubHeadingAnchor.attr( 'name' ).equals( 'Second_Subsection' )
+def secondSubHeadingAnchor = anchors.get(2)
+assert secondSubHeadingAnchor.id().equals( 'Second_Subsection' )
 
 def subSubHeadings = body.select( 'h3' )
 
