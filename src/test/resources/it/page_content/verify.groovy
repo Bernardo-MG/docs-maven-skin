@@ -10,6 +10,7 @@ def html = new File(basedir, 'target/site/index.html').text
 def parsed = Jsoup.parse(html)
 def body = parsed.body()
 def main = body.select('main')
+def anchors = main.select( 'a' )
 
 // Verifies the heading uses the correct text
 def titleHeading = main.select( 'h1' ).first()
@@ -21,7 +22,6 @@ def firstSubHeadingAnchor = anchors.get(0)
 assert firstSubHeadingAnchor.id().equals( 'Page-Content' )
 
 def subHeadings = main.select( 'h2' )
-def anchors = main.select( 'a' )
 
 // Verifies the first subsection uses the correct text
 def firstSubHeading = subHeadings.get(0)
