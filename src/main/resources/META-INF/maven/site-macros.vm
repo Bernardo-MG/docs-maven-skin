@@ -26,5 +26,4 @@
 #parse( "macros/info-macros.vm" )##
 #parse( "macros/list-macros.vm" )##
 #parse( "macros/menu-macros.vm" )##
-#parse( "macros/script-macros.vm" )##
 #parse( "macros/setup-macros.vm" )##
