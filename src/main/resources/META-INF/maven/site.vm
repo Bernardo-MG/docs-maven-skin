@@ -88,8 +88,6 @@
     <link rel="stylesheet" href="./lib/font-awesome/css/all.min.css">
 #set( $customHighlightStyle = $site.getCustomValue( 'skinConfig.customHighlightStyle', "default" ) )##
     <link rel="stylesheet" href="./lib/highlight/styles/${customHighlightStyle}.css">
-    <!-- Docs Template style -->
-    <link rel="stylesheet" href="./css/style.min.css">
 #if( $site.getCustomValue( 'skinConfig.customStyle' ) )##
 
     <!-- Custom style -->

@@ -26,11 +26,11 @@
          <item name="Usage" href="./usage.html" />
       </menu>
       <menu name="Code" inherit="bottom">
-         <item name="GitHub" href="${project.scm.url}">
+         <item name="SCM" href="${project.scm.url}">
          </item>
-         <item name="${project.ciManagement.system}" href="${project.ciManagement.url}">
+         <item name="CI" href="${project.ciManagement.url}">
          </item>
-         <item name="${project.issueManagement.system}" href="${project.issueManagement.url}">
+         <item name="Issues" href="${project.issueManagement.url}">
          </item>
       </menu>
       <menu name="Releases" inherit="bottom">
