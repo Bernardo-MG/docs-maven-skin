@@ -9,13 +9,15 @@ def html = new File(basedir, 'target/site/index.html').text
 // Parses HTML
 def parsed = Jsoup.parse(html)
 def body = parsed.body()
+def main = body.select('main')
 
 // Verifies the heading uses the correct text
-def titleHeading = body.select( 'h1' ).first()
+def titleHeading = main.select( 'h1' ).first()
 assert titleHeading.html().contains( 'Page Content' )
 assert titleHeading.id().equals( 'Page-Content' )
 
-def subHeadings = body.select( 'h2' )
+def subHeadings = main.select( 'h2' )
+def anchors = main.select( 'a' )
 
 // Verifies the first subsection uses the correct text
 def firstSubHeading = subHeadings.get(0)
@@ -23,7 +25,7 @@ assert firstSubHeading.html().contains( 'Subsection' )
 assert firstSubHeading.id().equals( 'Subsection' )
 
 // Verifies subsection anchors
-def firstSubHeadingAnchor = firstSubHeading.select( 'a' ).first()
+def firstSubHeadingAnchor = anchors.get(0)
 assert firstSubHeadingAnchor.attr( 'name' ).equals( 'Subsection' )
 
 // Verifies the second subsection uses the correct text
@@ -32,7 +34,7 @@ assert secondSubHeading.html().contains( 'Second Subsection' )
 assert secondSubHeading.id().equals( 'Second-Subsection' )
 
 // Verifies subsection anchors
-def secondSubHeadingAnchor = secondSubHeading.select( 'a' ).first()
+def secondSubHeadingAnchor = anchors.get(1)
 assert secondSubHeadingAnchor.attr( 'name' ).equals( 'Second_Subsection' )
 
 def subSubHeadings = body.select( 'h3' )
