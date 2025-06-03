@@ -69,18 +69,6 @@ By default the page will show the site creation date next to the version. This c
 </project>
 ```
 
-## Google Analytics
-
-This id will be used to set up [Google Analytics][google_analytics] tracking.
-
-```xml
-<project>
-
-   <googleAnalyticsAccountId>accountId</googleAnalyticsAccountId>
-
-</project>
-```
-
 ## Doxia Edition Button
 
 This will set the URL for the Doxia edition button.
@@ -94,5 +82,3 @@ This will set the URL for the Doxia edition button.
 ```
 
 [site_descriptor]: https://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html
-
-[google_analytics]: https://analytics.google.com/analytics/web/
