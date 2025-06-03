@@ -2,8 +2,6 @@
 
 ## Custom Style
 
-The page style is minified and stored into the file located at */css/style.min.css*. This file should not be overriden.
-
 To add additional styles first create a new file in the site resources folder, in this example */src/site/resources/css/custom.css*, then add the following to the site.xml file:
 
 ```xml
