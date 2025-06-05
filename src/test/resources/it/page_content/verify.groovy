@@ -40,9 +40,12 @@ def mainSections = body.select( 'main > section' )
 assert mainSections.size() == 1
 
 // Verifies the number of subsections is correct
-assert mainSections.first().select( '> section' ).size() == 1
-assert subSections.get(0).select( '> section' ).size() == 1
-assert subSections.get(1).select( '> section' ).size() == 0
+def subSections = mainSections.first().select( '> section' )
+assert subSections.size() == 1
+def subSubSections = subSections.first().select( '> section' )
+assert subSubSections.size() == 2
+assert subSubSections.get(0).select( '> section' ).size() == 1
+assert subSubSections.get(1).select( '> section' ).size() == 0
 
 // Verifies subsection anchors
 def anchors = main.select( 'a' )
