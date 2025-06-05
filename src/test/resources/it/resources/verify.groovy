@@ -1,6 +1,6 @@
 // This script verifies that a minimal site contains only the barebones of a site.
 
-// Verifies that all the files were created
+// Verifies that all the files were copied
 [
     'target/site/lib/popperjs/core/dist/umd/popper.min.js',
     'target/site/lib/bootstrap/dist/js/bootstrap.min.js',

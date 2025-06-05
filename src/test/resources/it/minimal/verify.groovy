@@ -7,8 +7,7 @@ import java.util.logging.Logger
 [
     'target/site/index.html',
     'target/site/favicon.ico',
-    'target/site/robots.txt',
-    'target/site/css/style.min.css'
+    'target/site/robots.txt'
 ].each {
     def file = new File(basedir, it)
     if (!file.exists()) {
@@ -35,7 +34,7 @@ assert header.hasClass( 'border-bottom' )
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )
-assert title.html().equals( 'minimal-site – Minimal page' )
+assert title.html().equals( 'Minimal page – minimal-site' )
 
 // Verifies the title is included in the header
 def titleHeader = body.select( '#navbar-main a.navbar-brand' )
@@ -90,6 +89,3 @@ assert rightNavBar.isEmpty()
 // Verifies the edition link was not created
 def edit = head.select( 'a > span.fa-pen-to-square' )
 assert edit.isEmpty()
-
-// Verifies Google Analytics was not set up
-assert !html.contains( 'Google Analytics' )

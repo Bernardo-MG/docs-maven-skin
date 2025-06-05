@@ -31,16 +31,7 @@
  *
  *###
 #*--------------------------------------------------*###
-#macro( setUp $figshine )
-#**
- * Parses body content.
- *###
-#**##set( $bodyContentParsed = $htmlTool.parse( $bodyContent ) )##
-#*
-
-
-
-*###
+#macro( setUp $figshine $bodyContentParsed )
 #**
  * Updates code sections.
  *###
@@ -140,7 +131,7 @@
 #**
  * Recovers body content.
  *###
-#**##set( $bodyContent = $bodyContentParsed.html() )##
+$bodyContentParsed.html()
 ##
 #end
 #*

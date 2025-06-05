@@ -2,7 +2,7 @@
 
 import org.jsoup.Jsoup
 
-// Verifies that all the files were created
+// Verifies that the file was created
 [
     'target/site/js/initializeHighlight.js'
 ].each {

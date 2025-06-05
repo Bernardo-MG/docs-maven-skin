@@ -60,7 +60,7 @@
          <div id="navbar-icons" class="col-sm d-none d-md-block">
 #**##foreach( $element in $elements )##
 #*    *##foreach( $item in $element.items )##
-            <a href="$item.href" class="ps-2" title="$item.name" aria-label="$item.name"><span class="$item.img" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
+            <a href="$item.href" class="ps-2" title="$item.name" aria-label="$item.name"><span class="$item.image.style" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> $item.name</span></a>
 #*    *##end##
 #**##end##
          </div>
@@ -135,11 +135,7 @@
                     <dt class="border-bottom">$element.name</dt>
 #**##end##
 #**##foreach( $item in $element.items )##
-#*    *##if( $item.description )##
-                        <dd><a href="$item.href" title="$item.name" aria-label="$item.name" class="link-noted">$item.name <span class="note">$item.description</span></a></dd>
-#*    *##else##
                         <dd><a href="$item.href" title="$item.name" aria-label="$item.name">$item.name</a></dd>
-#*    *##end##
 #**##end##
                 </dl>
 #end##

@@ -18,7 +18,7 @@ assert header != null
 
 // Verifies the title is included in the HTML head
 def title = head.select( 'title' )
-assert title.html().equals( 'i18n-site – Página internacionalizada' )
+assert title.html().equals( 'P[á]gina internacionalizada – i18n-site' )
 
 // Verifies the title is included in the header
 def titleHeader = body.select( '#navbar-main a.navbar-brand' )

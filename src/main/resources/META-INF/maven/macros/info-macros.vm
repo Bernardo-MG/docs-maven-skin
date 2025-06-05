@@ -27,7 +27,7 @@
  * Renders the copyright year and organization.
  *
  * Makes use of the following variables:
- *        currentDate: global variable with the current date
+ *        date: global variable with the current date
  *        project.inceptionYear: inception year, from the POM
  *        project.organization: organization info, from the POM
  *        project.licenses: project licenses, from the POM
@@ -50,7 +50,7 @@
 #*--------------------------------------------------*###
 #macro( copyright )
 #**##if( $project )##
-#*    *##set( $currentYear = ${currentDate.year} + 1900 )##
+#*    *##set( $currentYear = (${date.year}) )##
 #*    *##if( ${project.inceptionYear} )##
 #*        *##if( ${project.inceptionYear} != ${currentYear.toString()} ) <span class="fa-regular fa-copyright"></span>${project.inceptionYear}-${currentYear}##
 #*        *##else <span class="fa-regular fa-copyright"></span>${project.inceptionYear}##
@@ -76,27 +76,6 @@ ${project.organization.name}##
 #*        *##end##
 #*    *##end##
 #**##end##
-#end##
-#*
-
-
-
-*###
-#*--------------------------------------------------*###
-#**
- * Renders the publish date.
- *
- * Makes use of the following variables:
- *        currentDate: global variable with the current date
- *        dateFormat: global variable with the date formatter
- * 
- *###
-#*--------------------------------------------------*###
-#macro( publishDate )
-#**##set( $format = "yyyy-MM-dd" )##
-#**###$dateFormat.applyPattern( $format )##
-#**##set( $dateValue = $dateFormat.format( $currentDate ) )##
-$dateValue##
 #end##
 #*
 

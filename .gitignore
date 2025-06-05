@@ -48,6 +48,10 @@ local.properties
 .idea
 *.iml
 
+# Visual Studio #
+.vscode/
+.factorypath
+
 # Windows files #
 Thumbs.db
 Desktop.ini

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd">
+<site xmlns="http://maven.apache.org/SITE/2.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd">
 
    <skin>
       <groupId>com.bernardomg.maven.skins</groupId>
@@ -26,13 +27,10 @@
       </menu>
       <menu name="Code" inherit="bottom">
          <item name="SCM" href="${project.scm.url}">
-            <description>GitHub</description>
          </item>
          <item name="CI" href="${project.ciManagement.url}">
-            <description>${project.ciManagement.system}</description>
          </item>
          <item name="Issues" href="${project.issueManagement.url}">
-            <description>${project.issueManagement.system}</description>
          </item>
       </menu>
       <menu name="Releases" inherit="bottom">
@@ -41,4 +39,4 @@
       </menu>
    </body>
 
-</project>
+</site>

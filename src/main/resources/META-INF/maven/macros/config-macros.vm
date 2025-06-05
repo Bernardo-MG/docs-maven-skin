@@ -41,32 +41,24 @@
 #*--------------------------------------------------*###
 #macro( loadShineConfig $shine $bgshine $figshine )##
 
-#**##if ( $config.shine )##
-#*    *##set( $shine = $config.shine.getValue() )##
-#**##else##
-#*    *##set( $shine = "light" )##
-#**##end##
-#**##if ( $config.bgshine )##
-#*    *##set( $bgshine = $config.bgshine.getValue() )##
-#**##elseif ( $config.shine )##
-#*    *##if ( $config.shine.getValue() == "dark" )##
-#*        *##set( $bgshine = "primary" )##
+#set( $shine = $site.getCustomValue( 'skinConfig.shine', 'light' ) )##
+#**##if (  $site.getCustomValue( 'skinConfig.bgshine' ) )##
+#*    *##set( $bgshine = $site.getCustomValue( 'skinConfig.bgshine' ) )##
+#**##elseif ( $site.getCustomValue( 'skinConfig.shine' ) )##
+#*    *##if ( $site.getCustomValue( 'skinConfig.shine' ) == 'dark' )##
+#*        *##set( $bgshine = 'primary' )##
 #*    *##else##
-#*        *##set( $bgshine = $config.shine.getValue() )##
+#*        *##set( $bgshine =$site.getCustomValue( 'skinConfig.shine' ) )##
 #*    *##end##
 #**##else##
-#*    *##set( $bgshine = "light" )##
+#*    *##set( $bgshine = 'light' )##
 #**##end##
-#**##if ( $config.figshine )##
-#*    *##set( $figshine = $config.figshine.getValue() )##
-#**##elseif ( $config.shine )##
-#*    *##if ( $config.shine.getValue() == "dark" )##
-#*        *##set( $figshine = "dark" )##
-#*    *##else##
-#*        *##set( $figshine = $config.figshine.getValue() )##
-#*    *##end##
+#**##if ( $site.getCustomValue( 'skinConfig.figshine' ) )##
+#*    *##set( $figshine = $site.getCustomValue( 'skinConfig.figshine' ) )##
+#**##elseif ( $site.getCustomValue( 'skinConfig.shine' ) )##
+#*    *##set( $figshine = $site.getCustomValue( 'skinConfig.shine' ) )##
 #**##else##
-#*    *##set( $figshine = "white" )##
+#*    *##set( $figshine = 'white' )##
 #**##end##
 #end##
 #*
@@ -92,10 +84,10 @@
  *###
 #*--------------------------------------------------*###
 #macro( loadTopNavMenuList $elements )##
-#**##if( $config.topNav && $decoration.body.menus )##
-#*    *##filterByName( $decoration.body.menus, $config.topNav.getChildren(), $elements )##
-#**##elseif( $decoration.body.menus )##
-#*    *##set( $elements = $decoration.body.menus )##
+#**##if( $site.getCustomChild( 'skinConfig.topNav' ) && $site.body.menus )##
+#*    *##filterByName( $site.body.menus, $site.getCustomChild( 'skinConfig.topNav' ).getChildren(), $elements )##
+#**##elseif( $site.body.menus )##
+#*    *##set( $elements = $site.body.menus )##
 #**##end##
 #end##
 #*
@@ -121,8 +113,8 @@
  *###
 #*--------------------------------------------------*###
 #macro( loadBottomNavMenuList $elements )##
-#**##if( $config.bottomNav )##
-#*    *##filterByName( $decoration.body.menus, $config.bottomNav.children, $elements )##
+#**##if( $site.getCustomChild( 'skinConfig.bottomNav' ) )##
+#*    *##filterByName( $site.body.menus, $site.getCustomChild( 'skinConfig.bottomNav' ).getChildren(), $elements )##
 #**##end##
 #end##
 #*
@@ -148,8 +140,8 @@
  *###
 #*--------------------------------------------------*###
 #macro( loadIconNavMenuList $elements )##
-#**##if( $config.iconNav )##
-#*    *##filterByName( $decoration.body.menus, $config.iconNav.children, $elements )##
+#**##if( $site.getCustomChild( 'skinConfig.iconNav' ) )##
+#*    *##filterByName( $site.body.menus, $site.getCustomChild( 'skinConfig.iconNav' ).getChildren(), $elements )##
 #**##end##
 #end##
 #*
