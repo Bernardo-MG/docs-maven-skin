@@ -1,23 +1,18 @@
 // This script verifies that a minimal site contains only the barebones of a site.
 
 import org.jsoup.Jsoup
-import java.util.logging.Logger
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/es/index.html').text
-
-// Parses HTML
 def parsed = Jsoup.parse(html)
-def body = parsed.body()
-def head = parsed.head()
 
-// Verified the heading is set
-// Verified the heading is set
-def header = body.select( 'section > header' ).first()
-assert header != null
+def body = parsed.body()
+
+// Verifies the heading is set
+assert body.select( 'section > header' ).first() != null
 
 // Verifies the title is included in the HTML head
-def title = head.select( 'title' )
+def title = parsed.head().select( 'title' )
 assert title.html().equals( 'P[á]gina internacionalizada – i18n-site' )
 
 // Verifies the title is included in the header

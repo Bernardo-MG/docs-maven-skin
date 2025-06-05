@@ -14,7 +14,7 @@ import org.jsoup.Jsoup
     }
 }
 
-// Acquires the sample HTML content
+// Get highlight content
 def highlightInit = new File(basedir, 'target/site/js/initializeHighlight.js').text
 
 // Verify the file content has been overriden

@@ -1,7 +1,6 @@
 // This script verifies that a minimal site contains only the barebones of a site.
 
 import org.jsoup.Jsoup
-import java.util.logging.Logger
 
 // Verifies that all the files were created
 [
@@ -17,11 +16,10 @@ import java.util.logging.Logger
     }
 }
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
 def parsed = Jsoup.parse(html)
+
 def body = parsed.body()
 def head = parsed.head()
 

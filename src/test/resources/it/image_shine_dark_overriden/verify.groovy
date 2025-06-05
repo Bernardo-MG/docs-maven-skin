@@ -2,13 +2,10 @@
 
 import org.jsoup.Jsoup
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
 def parsed = Jsoup.parse(html)
-def body = parsed.body()
 
 // Images
-def fig = body.select( 'figure' ).first()
+def fig = parsed.body().select( 'figure' ).first()
 assert fig.hasClass( 'bg-white' )

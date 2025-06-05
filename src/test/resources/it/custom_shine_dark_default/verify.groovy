@@ -2,10 +2,8 @@
 
 import org.jsoup.Jsoup
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
 def body = Jsoup.parse(html).body()
 
 // The dark style is applied to the nav bar

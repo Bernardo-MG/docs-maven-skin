@@ -1,12 +1,9 @@
 // This script verifies that the custom links are generated correctly.
 
 import org.jsoup.Jsoup
-import java.util.logging.Logger
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
 def body = Jsoup.parse(html).body()
 
 // Verifies the menus exist

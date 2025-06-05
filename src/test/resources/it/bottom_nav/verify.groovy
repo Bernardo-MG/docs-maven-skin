@@ -1,18 +1,13 @@
 // This script verifies that a site contains the bottom navigation.
 
 import org.jsoup.Jsoup
-import java.util.logging.Logger
 import java.time.Year
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies the skin info is included
-
-// Footer info
+// The footer info is unchanged by the menu
 def footerInfo = body.select( '#footer-info' )
 
 def copyrightInfo = footerInfo.select( 'div' ).first()
@@ -24,20 +19,20 @@ assert copyrightIcon.size() == 1
 def renderedInfo = footerInfo.select( 'div' ).last()
 assert renderedInfo.text().contains( 'Rendered using Docs Maven Skin' )
 
-// The footer columns exist
+// Check bottom nav columns
 def titles = body.select( 'footer dl dt' )
 assert titles.size() == 3
 
-// The footer columns contains the expected titles
+// Columns contains the expected titles
 assert titles.get(0).html().equals('General Info')
 assert titles.get(1).html().equals('Code')
 assert titles.get(2).html().equals('Releases')
 
-// The footer columns data exists
-def rows = body.select( 'footer dl dd' )
-assert rows.size() == 7
+// Check column rows
+def rowsData = body.select( 'footer dl dd' )
+assert rowsData.size() == 7
 
-rows = body.select( 'footer dl' )
+def rows = body.select( 'footer dl' )
 
 // First column
 def row = rows.get(0).select( 'dd' )

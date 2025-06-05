@@ -1,19 +1,15 @@
 // This script verifies that a site with only metadata set up contains the correct metadata.
 
 import org.jsoup.Jsoup
-import java.util.logging.Logger
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
 def head = Jsoup.parse(html).head()
 
 // Verifies the basic metadata is generated
-def metaContentType = head.select( 'meta[charset="utf-8"]' )
-def metaViewport = head.select( 'meta[name="viewport"]' )
+assert head.select( 'meta[charset="utf-8"]' ) != null
 
-assert metaContentType != null
+def metaViewport = head.select( 'meta[name="viewport"]' )
 assert metaViewport.attr( 'content' ).equals( 'width=device-width, initial-scale=1, shrink-to-fit=no' )
 
 // Verifies the general information metadata is generated
