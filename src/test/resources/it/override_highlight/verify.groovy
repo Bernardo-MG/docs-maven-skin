@@ -18,4 +18,4 @@ import org.jsoup.Jsoup
 def highlightInit = new File(basedir, 'target/site/js/initializeHighlight.js').text
 
 // Verify the file content has been overriden
-assert highlightInit.equals( 'overriden' )
+assert highlightInit.equals('overriden')

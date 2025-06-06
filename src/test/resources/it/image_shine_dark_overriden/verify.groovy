@@ -7,5 +7,5 @@ def html = new File(basedir, 'target/site/index.html').text
 def parsed = Jsoup.parse(html)
 
 // Images
-def fig = parsed.body().select( 'figure' ).first()
-assert fig.hasClass( 'bg-white' )
+def fig = parsed.body().select('figure').first()
+assert fig.hasClass('bg-white')

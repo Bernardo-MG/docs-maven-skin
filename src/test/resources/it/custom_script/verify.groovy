@@ -7,5 +7,5 @@ def html = new File(basedir, 'target/site/index.html').text
 def parsed = Jsoup.parse(html)
 
 // The custom script file is linked
-def customScript = parsed.body().select( 'script[src="./js/custom.js"]' )
+def customScript = parsed.body().select('script[src="./js/custom.js"]')
 assert customScript.outerHtml().equals('<script src="./js/custom.js"></script>')
