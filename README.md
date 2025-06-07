@@ -10,7 +10,7 @@ The skin has been adapted from the static template [Docs Bootstrap Template][doc
 
 Due to changes in the Maven Site plugin, the skin doesn't work with all versions of the plugin. Check the table to know which version of the skin is compatible.
 
-|| Maven site version | Skin version  |
+| Maven site version | Skin version  |
 |--------------------|---------------|
 | 3.21.x onwards     | 2.4.0 onwards |
 | 3.6.x up to 3.20.x | 2.3.x         |
