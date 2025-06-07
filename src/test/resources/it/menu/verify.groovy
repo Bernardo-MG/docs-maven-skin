@@ -55,3 +55,5 @@ dropdowns.eachWithIndex { dropdown, i ->
         assert item.hasClass('dropdown-item')
     }
 }
+
+assert true

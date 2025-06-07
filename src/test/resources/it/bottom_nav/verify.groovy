@@ -52,3 +52,5 @@ columns.eachWithIndex { col, i ->
         assert a.html() == exp.title
     }
 }
+
+assert true

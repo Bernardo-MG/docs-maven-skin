@@ -37,3 +37,5 @@ items.eachWithIndex { item, i ->
     assert item.html() == expected.html
     assert item.hasClass('dropdown-item')
 }
+
+assert true
