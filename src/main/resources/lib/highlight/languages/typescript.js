@@ -1,4 +1,4 @@
-/*! `javascript` grammar compiled for Highlight.js 11.11.1 */
+/*! `typescript` grammar compiled for Highlight.js 11.11.1 */
   (function(){
     var hljsGrammar = (function () {
   'use strict';
@@ -771,9 +771,153 @@
     };
   }
 
-  return javascript;
+  /*
+  Language: TypeScript
+  Author: Panu Horsmalahti <panu.horsmalahti@iki.fi>
+  Contributors: Ike Ku <dempfi@yahoo.com>
+  Description: TypeScript is a strict superset of JavaScript
+  Website: https://www.typescriptlang.org
+  Category: common, scripting
+  */
+
+
+  /** @type LanguageFn */
+  function typescript(hljs) {
+    const regex = hljs.regex;
+    const tsLanguage = javascript(hljs);
+
+    const IDENT_RE$1 = IDENT_RE;
+    const TYPES = [
+      "any",
+      "void",
+      "number",
+      "boolean",
+      "string",
+      "object",
+      "never",
+      "symbol",
+      "bigint",
+      "unknown"
+    ];
+    const NAMESPACE = {
+      begin: [
+        /namespace/,
+        /\s+/,
+        hljs.IDENT_RE
+      ],
+      beginScope: {
+        1: "keyword",
+        3: "title.class"
+      }
+    };
+    const INTERFACE = {
+      beginKeywords: 'interface',
+      end: /\{/,
+      excludeEnd: true,
+      keywords: {
+        keyword: 'interface extends',
+        built_in: TYPES
+      },
+      contains: [ tsLanguage.exports.CLASS_REFERENCE ]
+    };
+    const USE_STRICT = {
+      className: 'meta',
+      relevance: 10,
+      begin: /^\s*['"]use strict['"]/
+    };
+    const TS_SPECIFIC_KEYWORDS = [
+      "type",
+      // "namespace",
+      "interface",
+      "public",
+      "private",
+      "protected",
+      "implements",
+      "declare",
+      "abstract",
+      "readonly",
+      "enum",
+      "override",
+      "satisfies"
+    ];
+    /*
+      namespace is a TS keyword but it's fine to use it as a variable name too.
+      const message = 'foo';
+      const namespace = 'bar';
+    */
+    const KEYWORDS$1 = {
+      $pattern: IDENT_RE,
+      keyword: KEYWORDS.concat(TS_SPECIFIC_KEYWORDS),
+      literal: LITERALS,
+      built_in: BUILT_INS.concat(TYPES),
+      "variable.language": BUILT_IN_VARIABLES
+    };
+
+    const DECORATOR = {
+      className: 'meta',
+      begin: '@' + IDENT_RE$1,
+    };
+
+    const swapMode = (mode, label, replacement) => {
+      const indx = mode.contains.findIndex(m => m.label === label);
+      if (indx === -1) { throw new Error("can not find mode to replace"); }
+
+      mode.contains.splice(indx, 1, replacement);
+    };
+
+
+    // this should update anywhere keywords is used since
+    // it will be the same actual JS object
+    Object.assign(tsLanguage.keywords, KEYWORDS$1);
+
+    tsLanguage.exports.PARAMS_CONTAINS.push(DECORATOR);
+
+    // highlight the function params
+    const ATTRIBUTE_HIGHLIGHT = tsLanguage.contains.find(c => c.scope === "attr");
+
+    // take default attr rule and extend it to support optionals
+    const OPTIONAL_KEY_OR_ARGUMENT = Object.assign({},
+      ATTRIBUTE_HIGHLIGHT,
+      { match: regex.concat(IDENT_RE$1, regex.lookahead(/\s*\?:/)) }
+    );
+    tsLanguage.exports.PARAMS_CONTAINS.push([
+      tsLanguage.exports.CLASS_REFERENCE, // class reference for highlighting the params types
+      ATTRIBUTE_HIGHLIGHT, // highlight the params key
+      OPTIONAL_KEY_OR_ARGUMENT, // Added for optional property assignment highlighting
+    ]);
+
+    // Add the optional property assignment highlighting for objects or classes
+    tsLanguage.contains = tsLanguage.contains.concat([
+      DECORATOR,
+      NAMESPACE,
+      INTERFACE,
+      OPTIONAL_KEY_OR_ARGUMENT, // Added for optional property assignment highlighting
+    ]);
+
+    // TS gets a simpler shebang rule than JS
+    swapMode(tsLanguage, "shebang", hljs.SHEBANG());
+    // JS use strict rule purposely excludes `asm` which makes no sense
+    swapMode(tsLanguage, "use_strict", USE_STRICT);
+
+    const functionDeclaration = tsLanguage.contains.find(m => m.label === "func.def");
+    functionDeclaration.relevance = 0; // () => {} is more typical in TypeScript
+
+    Object.assign(tsLanguage, {
+      name: 'TypeScript',
+      aliases: [
+        'ts',
+        'tsx',
+        'mts',
+        'cts'
+      ]
+    });
+
+    return tsLanguage;
+  }
+
+  return typescript;
 
 })();
 
-    hljs.registerLanguage('javascript', hljsGrammar);
+    hljs.registerLanguage('typescript', hljsGrammar);
   })();
