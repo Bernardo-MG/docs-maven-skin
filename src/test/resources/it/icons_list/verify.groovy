@@ -7,7 +7,8 @@ def html = new File(basedir, 'target/site/index.html').text
 def body = Jsoup.parse(html).body()
 
 // Verifies the icon in the navbar
-assert body.select('#navbar-icons a').size() == 1
+def icons = body.select('#navbar-icons a')
+assert icons.size() == 1
 
 def link = icons.first()
 assert link.tagName() == 'a'
