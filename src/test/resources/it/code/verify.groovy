@@ -18,5 +18,4 @@ codes.each { code ->
 }
 
 // The code sections were created with the correct tags
-codes = body.select('pre > code')
-assert codes.size() == 3
+assert body.select('pre > code').size() == 3

@@ -6,7 +6,7 @@ import org.jsoup.Jsoup
 def html = new File(basedir, 'target/site/index.html').text
 def parsed = Jsoup.parse(html)
 
-// Images
-def fig = parsed.body().select('figure').first()
-assert fig != null
-assert fig.hasClass('bg-white')
+// Figure color
+def figures = parsed.body().select('figure')
+assert !figures.isEmpty()
+assert figures.first().hasClass('bg-white')

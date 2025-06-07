@@ -9,12 +9,12 @@ def body = Jsoup.parse(html).body()
 // The default style is applied to the nav bar
 def nav = body.select('#navbar-main')
 assert nav.hasClass('bg-light')
-assert nav.attr('data-bs-theme').equals('light')
+assert nav.attr('data-bs-theme') == 'light'
 
 // The default style is applied to the footer
 def footer = body.select('footer')
 assert footer.hasClass('bg-light')
-assert footer.attr('data-bs-theme').equals('light')
+assert footer.attr('data-bs-theme') == 'light'
 
 // The default style is applied to the footer info
 def footerinfo = body.select('#footer-info')

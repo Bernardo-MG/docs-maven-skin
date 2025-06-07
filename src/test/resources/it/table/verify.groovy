@@ -14,5 +14,4 @@ assert table.hasClass('table')
 assert table.hasClass('table-striped')
 assert table.hasClass('table-bordered')
 
-def rows = body.select('tr')
-assert rows.size() == 3
+assert body.select('tr').size() == 3

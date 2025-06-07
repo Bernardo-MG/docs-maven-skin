@@ -9,18 +9,18 @@ def parsed = Jsoup.parse(html)
 def body = parsed.body()
 def head = parsed.head()
 
-// The heading is set
+// The heading is set correctly
 assert body.select('#main-section header').html().trim() == '<h1 id="With-description">With description</h1>'
 
 // The title is included in the HTML head
-assert head.select('title').text().trim() == 'With description – Project with description'
+assert head.select('title').ownText() == 'With description – Project with description'
 
-// The title is included in the header
+// The title is included in the header navigation
 def titleHeader = body.select('#navbar-main a.navbar-brand').first()
 assert titleHeader.tagName() == 'a'
 assert titleHeader.attr('href') == './index.html'
 assert titleHeader.hasClass('navbar-brand')
-assert titleHeader.text().trim() == 'Project with description'
+assert titleHeader.ownText() == 'Project with description'
 
 // The Open Graph site name metadata is set correctly
 def metaOgSite = head.select('meta[property="og:site_name"]')

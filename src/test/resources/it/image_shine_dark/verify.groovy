@@ -6,9 +6,7 @@ import org.jsoup.Jsoup
 def html = new File(basedir, 'target/site/index.html').text
 def parsed = Jsoup.parse(html)
 
-// Select the first figure element
-def fig = parsed.body().select('figure').first()
-
-// Assert that the figure has the 'bg-dark' class
-assert fig != null
-assert fig.hasClass('bg-dark')
+// Figure color
+def figures = parsed.body().select('figure')
+assert !figures.isEmpty()
+assert figures.first().hasClass('bg-dark')

@@ -7,20 +7,20 @@ import java.time.Year
 def html = new File(basedir, 'target/site/index.html').text
 def body = Jsoup.parse(html).body()
 
-// The footer info is unchanged by the menu
+// Verify footer info content and copyright
 def footerInfo = body.select('#footer-info')
 
 def copyrightInfo = footerInfo.select('div').first()
-assert copyrightInfo.text().contains( Year.now().toString() + ' Bernardo Martinez Garrido - MIT License')
+assert copyrightInfo.text().contains("${Year.now()} Bernardo Martinez Garrido - MIT License")
 assert copyrightInfo.select('.fa-copyright').size() == 1
 
-def renderedInfo = footerInfo.select('div').last()
-assert renderedInfo.text().contains('Rendered using Docs Maven Skin')
+assert footerInfo.select('div').last().text().contains('Rendered using Docs Maven Skin')
 
-// Check bottom nav columns
+// Verify bottom navigation column titles
 def titles = body.select('footer dl dt')*.html()
 assert titles == ['General Info', 'Code', 'Releases']
 
+// Expected links per column
 def expectedLinks = [
     [ // General Info
         [href: './acquire.html', title: 'Acquire'],
@@ -37,8 +37,9 @@ def expectedLinks = [
     ]
 ]
 
+// Verify each column's links
 def columns = body.select('footer dl')
-assert columns.size() == 3
+assert columns.size() == expectedLinks.size()
 
 columns.eachWithIndex { col, i ->
     def links = col.select('dd a')

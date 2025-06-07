@@ -14,7 +14,7 @@ assert nav.attr('data-bs-theme') == 'primary'
 // The default style is applied to the footer
 def footer = body.select('footer')
 assert footer.hasClass('bg-primary')
-assert footer.attr('data-bs-theme').equals('primary')
+assert footer.attr('data-bs-theme') == 'primary'
 
 // The default style is applied to the footer info
 def footerinfo = body.select('#footer-info')
