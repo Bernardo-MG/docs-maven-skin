@@ -2,16 +2,21 @@
 
 A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to create documentation sites with Maven.
 
-It is easy to use, just remember to check [the project documentation][site-release] to find out how to set it up, and also to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, takes advantage of this skin and shows how to set it up.
+It is easy to use, just remember to check the included docs (generated with mvn verify site) to find out how to set it up, and also to find out how the skin looks in an actual Maven Site. New projects may as well make use of the [Library Maven Archetype][library-archetype] which, among other features, takes advantage of this skin and shows how to set it up.
 
 The skin has been adapted from the static template [Docs Bootstrap Template][docs-template], which will be the visual reference to be followed by this project.
 
-**Maven support:** *the skin only supports the Maven Site Plugin 3.6 onwards, due to changes to the way the velocity tools are loaded.*
+## Maven Site version support
+
+Due to changes in the Maven Site plugin, the skin doesn't work with all versions of the plugin. Check the table to know which version of the skin is compatible.
+
+|| Maven site version | Skin version  |
+|--------------------|---------------|
+| 3.21.x onwards     | 2.4.0 onwards |
+| 3.6.x up to 3.20.x | 2.3.x         |
+| Before 3.6.x       | 1.1.x         |
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.maven.skins/docs-maven-skin.svg)][maven-repo]
-
-[![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
-[![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
 
 ## Features
 
@@ -28,15 +33,7 @@ The project documentation makes use of the skin, it is always built with the lat
 
 ## Documentation
 
-Documentation is always generated for the latest release, kept in the 'master' branch:
-
-- The [latest release documentation page][site-release].
-
-Documentation is also generated from the latest snapshot, taken from the 'develop' branch:
-
-- The [the latest snapshot documentation page][site-develop].
-
-The documentation site sources come along the source code (as it is a Maven site), so it is always possible to generate them using the following Maven command:
+Documentation can  be generated with the following Maven command:
 
 ```
 mvn verify site
@@ -57,7 +54,7 @@ As any Maven Skin it is handled through the Maven Plugin. Check the docs for mor
 As a Maven Skin, the project requirements are very specific:
 
 - Maven
-- Maven Site plugin (>=3.6)
+- Maven Site plugin (>=3.21.0)
 - Maven Site enabled
 
 ### Installing
@@ -152,8 +149,6 @@ The project has been released under the [MIT License][license].
 [issues]: https://github.com/Bernardo-MG/docs-maven-skin/issues
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/Bernardo-MG/docs-maven-skin
-[site-develop]: https://docs.bernardomg.com/development/maven/docs-maven-skin
-[site-release]: https://docs.bernardomg.com/maven/docs-maven-skin
 
 [maven-invoker]: http://maven.apache.org/plugins/maven-invoker-plugin/
 
