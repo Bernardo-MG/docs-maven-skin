@@ -7,4 +7,6 @@ def html = new File(basedir, 'target/site/index.html').text
 def head = Jsoup.parse(html).head()
 
 // Searches for the additional content
-assert head.select('meta[name="test"]').attr('content').equals('value')
+def metaTag = head.select('meta[name="test"]')
+assert metaTag.size() == 1
+assert metaTag.attr('content') == 'value'

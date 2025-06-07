@@ -7,4 +7,5 @@ def html = new File(basedir, 'target/site/index.html').text
 def body = Jsoup.parse(html).body()
 
 // Verifies that the footer custom content was generated
-assert body.select('#footer-custom-content').html().equals('Custom footer content')
+def footerContent = body.select('#footer-custom-content').text().trim()
+assert footerContent == 'Custom footer content'

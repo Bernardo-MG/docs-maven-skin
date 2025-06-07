@@ -8,4 +8,5 @@ def parsed = Jsoup.parse(html)
 
 // The custom style file is linked
 def customStyle = parsed.head().select('link[href="./css/custom.css"]')
-assert customStyle.outerHtml().equals('<link rel="stylesheet" href="./css/custom.css">')
+assert customStyle.size() == 1
+assert customStyle.attr('rel') == 'stylesheet'

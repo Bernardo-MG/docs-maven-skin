@@ -11,8 +11,11 @@ def icons = body.select('#navbar-icons a')
 assert icons.size() == 1
 
 def link = icons.first()
-assert link.tag().normalName().equals('a')
-assert link.attr('href').equals('https://github.com/Bernardo-MG/docs-maven-skin')
-assert link.attr('title').equals('GitHub')
-assert link.attr('aria-label').equals('GitHub')
-assert link.html().equals('<span class="fa-brands fa-github" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> GitHub</span>')
+assert link.tagName() == 'a'
+assert link.attr('href') == 'https://github.com/Bernardo-MG/docs-maven-skin'
+assert link.attr('title') == 'GitHub'
+assert link.attr('aria-label') == 'GitHub'
+
+// Checking inner HTML exactly as expected
+def expectedHtml = '<span class="fa-brands fa-github" aria-hidden="true"></span> <span class="d-none d-sm-block d-md-none"> GitHub</span>'
+assert link.html() == expectedHtml

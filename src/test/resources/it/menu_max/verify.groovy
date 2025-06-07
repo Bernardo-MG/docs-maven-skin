@@ -1,14 +1,15 @@
-// This script verifies that a minimal site contains only the barebones of a site.
-
 import org.jsoup.Jsoup
 
 // Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
 def body = Jsoup.parse(html).body()
 
-// Verifies the menus exist
+// Verify the number of dropdown toggles (menus)
 assert body.select('#navbar-main-menu .dropdown-toggle').size() == 12
 
-// Verifies the menu links exist
+// Verify dropdown menus exist
 def dropdowns = body.select('#navbar-main-menu .dropdown')
+assert dropdowns.size() > 0
+
+// Verify the number of dropdown items in the first dropdown menu
 assert dropdowns.get(0).select('.dropdown-item').size() == 10

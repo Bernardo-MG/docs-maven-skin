@@ -5,15 +5,19 @@ import org.jsoup.Jsoup
 // Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
 def parsed = Jsoup.parse(html)
-
 def figs = parsed.body().select('figure')
 
+// Helper to check figure classes
+def checkFigureClasses = { fig ->
+    assert fig.hasClass('shadow')
+    assert fig.hasClass('bg-white')
+    assert fig.hasClass('rounded')
+    assert fig.hasClass('p-2')
+}
+
 // Standard image
-def fig = figs.first()
-assert fig.hasClass('shadow')
-assert fig.hasClass('bg-white')
-assert fig.hasClass('rounded')
-assert fig.hasClass('p-2')
+def fig = figs[0]
+checkFigureClasses(fig)
 
 def img = fig.select('img').first()
 assert img.attr('src').contains('./images/example_class_diagram.png')
@@ -25,26 +29,20 @@ assert caption.html().contains('Dice class diagram')
 assert caption.hasClass('font-italic')
 
 // Image without name
-fig = figs.get(1)
-assert fig.hasClass('shadow')
-assert fig.hasClass('bg-white')
-assert fig.hasClass('rounded')
-assert fig.hasClass('p-2')
+fig = figs[1]
+checkFigureClasses(fig)
 
 img = fig.select('img').first()
 assert img.attr('src').contains('./images/example_class_diagram.png')
 assert img.attr('alt').isEmpty()
 assert img.hasClass('img-fluid')
 
-captions = fig.select('figcaption')
-assert captions.size() == 0
+def captions = fig.select('figcaption')
+assert captions.isEmpty()
 
 // Missing image
-fig = figs.get(2)
-assert fig.hasClass('shadow')
-assert fig.hasClass('bg-white')
-assert fig.hasClass('rounded')
-assert fig.hasClass('p-2')
+fig = figs[2]
+checkFigureClasses(fig)
 
 img = fig.select('img').first()
 assert img.attr('src').contains('./images/missing.jpg')

@@ -9,4 +9,5 @@ def parsed = Jsoup.parse(html)
 
 // The default highlight style is applied
 def customStyle = parsed.head().select('link[href="./lib/highlight/styles/default.css"]')
-assert customStyle.outerHtml().equals('<link rel="stylesheet" href="./lib/highlight/styles/default.css">')
+assert customStyle.size() == 1
+assert customStyle.attr('rel') == 'stylesheet'

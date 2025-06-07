@@ -8,4 +8,5 @@ def parsed = Jsoup.parse(html)
 
 // Images
 def fig = parsed.body().select('figure').first()
+assert fig != null
 assert fig.hasClass('bg-white')
