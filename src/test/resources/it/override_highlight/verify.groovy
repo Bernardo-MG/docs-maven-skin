@@ -1,21 +1,12 @@
-// This script verifies that a the highlight.js initialization file can be overriden.
+// This script verifies that the highlight.js initialization file can be overridden.
 
 import org.jsoup.Jsoup
 
-// Verifies that the file was created
-[
-    'target/site/js/initializeHighlight.js'
-].each {
-    def file = new File(basedir, it)
-    if (!file.exists()) {
-        throw new IllegalStateException(
-            "file ${file} doesn't exist"
-        )
-    }
+// Verify that the initialization file exists
+def highlightFile = new File(basedir, 'target/site/js/initializeHighlight.js')
+if (!highlightFile.exists()) {
+    throw new IllegalStateException("File ${highlightFile} doesn't exist")
 }
 
-// Acquires the sample HTML content
-def highlightInit = new File(basedir, 'target/site/js/initializeHighlight.js').text
-
-// Verify the file content has been overriden
-assert highlightInit.equals( 'overriden' )
+// Verify the file content has been overridden
+assert highlightFile.text == 'overriden'

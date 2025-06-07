@@ -1,115 +1,57 @@
 // This script verifies that a site contains the bottom navigation.
 
 import org.jsoup.Jsoup
-import java.util.logging.Logger
 import java.time.Year
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
 def body = Jsoup.parse(html).body()
 
-// Verifies the skin info is included
+// Verify footer info content and copyright
+def footerInfo = body.select('#footer-info')
 
-// Footer info
-def footerInfo = body.select( '#footer-info' )
+def copyrightInfo = footerInfo.select('div').first()
+assert copyrightInfo.text().contains("${Year.now()} Bernardo Martinez Garrido - MIT License")
+assert copyrightInfo.select('.fa-copyright').size() == 1
 
-def copyrightInfo = footerInfo.select( 'div' ).first()
-assert copyrightInfo.text().contains( Year.now().toString() + ' Bernardo Martinez Garrido - MIT License' )
+assert footerInfo.select('div').last().text().contains('Rendered using Docs Maven Skin')
 
-def copyrightIcon = copyrightInfo.select( '.fa-copyright' )
-assert copyrightIcon.size() == 1
+// Verify bottom navigation column titles
+def titles = body.select('footer dl dt')*.html()
+assert titles == ['General Info', 'Code', 'Releases']
 
-def renderedInfo = footerInfo.select( 'div' ).last()
-assert renderedInfo.text().contains( 'Rendered using Docs Maven Skin' )
+// Expected links per column
+def expectedLinks = [
+    [ // General Info
+        [href: './acquire.html', title: 'Acquire'],
+        [href: './usage.html', title: 'Usage']
+    ],
+    [ // Code
+        [href: 'https://github.com/Bernardo-MG/docs-maven-skin', title: 'SCM'],
+        [href: 'https://github.com/Bernardo-MG/docs-maven-skin/actions', title: 'CI'],
+        [href: 'https://www.github.com/bernardo-mg/docs-maven-skin/issues', title: 'Issues']
+    ],
+    [ // Releases
+        [href: 'http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin', title: 'Maven Central'],
+        [href: 'https://github.com/Bernardo-MG?tab=packages&repo_name=docs-maven-skin', title: 'GitHub']
+    ]
+]
 
-// The footer columns exist
-def titles = body.select( 'footer dl dt' )
-assert titles.size() == 3
+// Verify each column's links
+def columns = body.select('footer dl')
+assert columns.size() == expectedLinks.size()
 
-// The footer columns contains the expected titles
-assert titles.get(0).html().equals('General Info')
-assert titles.get(1).html().equals('Code')
-assert titles.get(2).html().equals('Releases')
+columns.eachWithIndex { col, i ->
+    def links = col.select('dd a')
+    def expectedLink = expectedLinks[i]
+    assert links.size() == expectedLink.size()
+    links.eachWithIndex { a, j ->
+        def exp = expectedLink[j]
+        assert a.attr('href') == exp.href
+        assert a.attr('title') == exp.title
+        assert a.attr('aria-label') == exp.title
+        assert a.html() == exp.title
+    }
+}
 
-// The footer columns data exists
-def rows = body.select( 'footer dl dd' )
-assert rows.size() == 7
-
-rows = body.select( 'footer dl' )
-
-// First column
-def row = rows.get(0).select( 'dd' )
-assert row.size() == 2
-
-def link = row.get(0)
-assert link.tag().normalName().equals('dd')
-link = link.children().first()
-assert link.tag().normalName().equals('a')
-assert link.attr( 'href' ).equals('./acquire.html')
-assert link.attr( 'title' ).equals('Acquire')
-assert link.attr( 'aria-label' ).equals('Acquire')
-assert link.html().equals('Acquire')
-
-link = row.get(1)
-assert link.tag().normalName().equals('dd')
-link = link.children().first()
-assert link.tag().normalName().equals('a')
-assert link.attr( 'href' ).equals('./usage.html')
-assert link.attr( 'title' ).equals('Usage')
-assert link.attr( 'aria-label' ).equals('Usage')
-assert link.html().equals('Usage')
-
-// Second column
-row = rows.get(1).select( 'dd' )
-assert row.size() == 3
-
-link = row.get(0)
-assert link.tag().normalName().equals('dd')
-link = link.children().first()
-assert link.tag().normalName().equals('a')
-assert link.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin')
-assert link.attr( 'title' ).equals('SCM')
-assert link.attr( 'aria-label' ).equals('SCM')
-assert link.html().equals('SCM')
-
-link = row.get(1)
-assert link.tag().normalName().equals('dd')
-link = link.children().first()
-assert link.tag().normalName().equals('a')
-assert link.attr( 'href' ).equals('https://github.com/Bernardo-MG/docs-maven-skin/actions')
-assert link.attr( 'title' ).equals('CI')
-assert link.attr( 'aria-label' ).equals('CI')
-assert link.html().equals('CI')
-
-link = row.get(2)
-assert link.tag().normalName().equals('dd')
-link = link.children().first()
-assert link.tag().normalName().equals('a')
-assert link.attr( 'href' ).equals('https://www.github.com/bernardo-mg/docs-maven-skin/issues')
-assert link.attr( 'title' ).equals('Issues')
-assert link.attr( 'aria-label' ).equals('Issues')
-assert link.html().equals('Issues')
-
-// Third column
-row = rows.get(2).select( 'dd' )
-assert row.size() == 2
-
-link = row.get(0)
-assert link.tag().normalName().equals('dd')
-link = link.children().first()
-assert link.tag().normalName().equals('a')
-assert link.attr( 'href' ).equals('http://mvnrepository.com/artifact/com.bernardomg.maven.skins/docs-maven-skin')
-assert link.attr( 'title' ).equals('Maven Central')
-assert link.attr( 'aria-label' ).equals('Maven Central')
-assert link.html().equals('Maven Central')
-
-link = row.get(1)
-assert link.tag().normalName().equals('dd')
-link = link.children().first()
-assert link.tag().normalName().equals('a')
-assert link.attr( 'href' ).equals('https://github.com/Bernardo-MG?tab=packages&repo_name=docs-maven-skin')
-assert link.attr( 'title' ).equals('GitHub')
-assert link.attr( 'aria-label' ).equals('GitHub')
-assert link.html().equals('GitHub')
+assert true
