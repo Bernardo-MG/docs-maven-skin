@@ -12,7 +12,7 @@ Due to changes in the Maven Site plugin, the skin doesn't work with all versions
 
 | Maven site version | Skin version  |
 |--------------------|---------------|
-| 3.21.x onwards     | 2.4.0 onwards |
+| 3.20.x onwards     | 2.4.0 onwards |
 | 3.6.x up to 3.12.x | 2.3.x         |
 | Before 3.6.x       | 1.1.x         |
 
