@@ -1,7 +1,7 @@
 #*
  * The MIT License (MIT)
  * 
- * Copyright (c) 2015-2021 Bernardo Martínez Garrido
+ * Copyright (c) 2015-2025 Bernardo Martínez Garrido
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,5 +26,4 @@
 #parse( "macros/info-macros.vm" )##
 #parse( "macros/list-macros.vm" )##
 #parse( "macros/menu-macros.vm" )##
-#parse( "macros/script-macros.vm" )##
 #parse( "macros/setup-macros.vm" )##

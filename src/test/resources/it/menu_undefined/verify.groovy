@@ -1,24 +1,16 @@
 // This script verifies that a minimal site contains only the barebones of a site.
 
 import org.jsoup.Jsoup
-import java.util.logging.Logger
 
-// Acquires the sample HTML content
+// Parse HTML
 def html = new File(basedir, 'target/site/index.html').text
-
-// Parses HTML
-def parsed = Jsoup.parse(html)
-def body = parsed.body()
-def head = parsed.head()
+def body = Jsoup.parse(html).body()
 
 // Verifies that the footer menus are not generated
-def navbarFooter = body.select( '#navbar-footer' )
-assert navbarFooter.isEmpty()
+assert body.select('#navbar-footer').isEmpty()
 
 // Verifies that the icon menus are not generated
-def iconMenu = body.select( '#navbar-main-menu a' )
-assert iconMenu.isEmpty()
+assert body.select('#navbar-main-menu a').isEmpty()
 
 // Verifies that the right navigation bar was not generated
-def rightNavBar = body.select( '#navbar-main-menu .dropdown-toggle' )
-assert rightNavBar.isEmpty()
+assert body.select('#navbar-main-menu .dropdown-toggle').isEmpty()

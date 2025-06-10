@@ -67,15 +67,9 @@ The following example for a site.xml file will be useful for most sites:
          <item name="JavaDocs" href="./apidocs/" />
       </menu>
       <menu name="Code" inherit="bottom">
-         <item name="SCM" href="${project.scm.url}">
-            <description>GitHub</description>
-         </item>
-         <item name="CI" href="${project.ciManagement.url}">
-            <description>${project.ciManagement.system}</description>
-         </item>
-         <item name="Issues" href="${project.issueManagement.url}">
-            <description>${project.issueManagement.system}</description>
-         </item>
+         <item name="GitHub" href="${project.scm.url}"></item>
+         <item name="${project.ciManagement.system}" href="${project.ciManagement.url}"></item>
+         <item name="${project.issueManagement.system}" href="${project.issueManagement.url}"></item>
       </menu>
       <menu name="Releases" inherit="bottom">
          <item name="Maven Central" href="${mavenURL}" />

@@ -26,4 +26,4 @@
 [dependency-analysis]: ./dependency-analysis.html
 [plugins]: ./plugins.html
 [plugins-manage]: ./plugin-management.html
-[invoker]: ./invoker-report.html
+[invoker]: ./invoker.html

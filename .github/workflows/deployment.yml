@@ -11,7 +11,7 @@ jobs:
     concurrency:
       group: deploy-github-${{ github.ref }}
       cancel-in-progress: true
-    permissions: 
+    permissions:
       contents: read
       packages: write
 
@@ -22,20 +22,20 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         jdk: 17
 
-  ossrh:
-    name: OSSRH deployment
+  central:
+    name: Central deployment
     runs-on: ubuntu-latest
-    environment: deployment_ossrh
+    environment: deployment_central
     concurrency:
-      group: deploy-ossrh-${{ github.ref }}
+      group: deploy-central-${{ github.ref }}
       cancel-in-progress: true
 
     steps:
     - name: Deploy
       uses: bernardo-mg/maven-signed-deployment-action@v1
       with:
-        username: ${{ secrets.OSSRH_USERNAME }}
-        password: ${{ secrets.OSSRH_TOKEN }}
+        username: ${{ secrets.CENTRAL_USERNAME }}
+        password: ${{ secrets.CENTRAL_TOKEN }}
         gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
         gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
         jdk: 17
