@@ -288,7 +288,10 @@
             Updated to Bootstrap 5.3.
          </action>
       </release>
-      <release version="3.0.0" date="2024-09-15" description="">
+      <release version="2.4.0" date="2025-06-11" description="Updated skin structure">
+         <action dev="bmg" type="update">
+            Updated skin to work with Maven site 3.21.x.
+         </action>
       </release>
    </body>
 </document>
