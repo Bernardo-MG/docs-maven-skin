@@ -293,5 +293,7 @@
             Updated skin to work with Maven site 3.21.x.
          </action>
       </release>
+      <release version="2.5.0" date="2025-06-11" description="">
+      </release>
    </body>
 </document>
