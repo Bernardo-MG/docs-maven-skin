@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.5.8</version>
+      <version>1.5.10</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -95,26 +95,12 @@
          </distributionManagement>
       </profile>
       <profile>
-         <!-- OSSRH deployment profile. -->
-         <id>deployment-ossrh</id>
-         <distributionManagement>
-            <repository>
-               <!-- OSSRH repository -->
-               <id>ossrh</id>
-               <name>Central Repository OSSRH</name>
-               <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-            </repository>
-            <snapshotRepository>
-               <!-- OSSRH snapshots repository -->
-               <id>ossrh</id>
-               <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            </snapshotRepository>
-         </distributionManagement>
+         <!-- Central deployment profile. -->
+         <id>deployment-central</id>
          <build>
             <plugins>
                <plugin>
                   <!-- GPG -->
-                  <!-- Signs the artifacts -->
                   <groupId>org.apache.maven.plugins</groupId>
                   <artifactId>maven-gpg-plugin</artifactId>
                   <executions>
@@ -132,6 +118,17 @@
                         <arg>--pinentry-mode</arg>
                         <arg>loopback</arg>
                      </gpgArguments>
+                  </configuration>
+               </plugin>
+               <plugin>
+                  <!-- Maven Central publishing -->
+                  <groupId>org.sonatype.central</groupId>
+                  <artifactId>central-publishing-maven-plugin</artifactId>
+                  <extensions>true</extensions>
+                  <configuration>
+                     <publishingServerId>central</publishingServerId>
+                     <autoPublish>true</autoPublish>
+                     <waitUntil>published</waitUntil>
                   </configuration>
                </plugin>
             </plugins>
