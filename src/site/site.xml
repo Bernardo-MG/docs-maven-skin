@@ -67,7 +67,7 @@
       </menu>
       <menu name="Icons" inherit="bottom">
          <item name="GitHub" href="${project.scm.url}">
-            <image src="fa-brands fa-github" />
+            <image style="fa-brands fa-github" src="icon" />
          </item>
       </menu>
    </body>
