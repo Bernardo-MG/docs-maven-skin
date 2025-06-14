@@ -293,7 +293,10 @@
             Updated skin to work with Maven site 3.21.x.
          </action>
       </release>
-      <release version="2.5.0" date="2025-06-11" description="">
+      <release version="2.4.1" date="2025-06-11" description="Removed fix">
+         <action dev="bmg" type="fix">
+            Removed obsolete report fix.
+         </action>
       </release>
    </body>
 </document>
