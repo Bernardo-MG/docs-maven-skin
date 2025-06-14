@@ -97,7 +97,6 @@
 #**
  * Fixes reports.
  *###
-#**##set( $empty = $siteTool.fixReport($bodyContentParsed, $config.fileId) )##
 #**##set( $empty = $siteTool.transformIcons( $bodyContentParsed ) )##
 #**##set( $empty = $siteTool.fixHeadingIds($bodyContentParsed) )##
 #**##set( $empty = $siteTool.fixAnchorLinks($bodyContentParsed) )##
